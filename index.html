@@ -1,47 +1,114 @@
+<!-- index.html - HOME PAGE -->
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRIC Africa SARL - Importation Équipements Industriels | Cameroun</title>
     <meta name="description"
-        content="CRIC Africa SARL - Votre partenaire de confiance pour l'importation de machines industrielles lourdes au Cameroun. Ensemble Énergisons L'Afrique.">
+        content="CRIC Africa SARL - Votre partenaire de confiance pour l'importation d'équipements industriels au Cameroun. Groupes électrogènes, compresseurs, équipements de sécurité et bien plus.">
     <meta name="keywords"
-        content="import machinery, industrial equipment, Cameroon, heavy machinery, industrial solutions, Africa">
-    <meta name="author" content="CRIC Africa SARL">
-    <title>CRIC Africa SARL | Import de Machines Industrielles au Cameroun</title>
+        content="équipements industriels, groupes électrogènes, compresseurs, Cameroun, installation électrique, maintenance industrielle">
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary-orange': '#FF8C42',
-                        'lemon-green': '#A8D05F',
-                        'dark-blue': '#1A2B4A',
-                        'light-gray': '#F5F7FA',
-                    }
-                }
-            }
-        }
-    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
         * {
-            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* Smooth animations */
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --primary-orange: #FF8C42;
+            --lemon-green: #A8D05F;
+            --dark-blue: #1A2B4A;
+            --light-gray: #F5F7FA;
+        }
+
+        .orange-accent {
+            color: var(--primary-orange);
+        }
+
+        .green-accent {
+            color: var(--lemon-green);
+        }
+
+        .text-dark-blue {
+            color: var(--dark-blue);
+        }
+
+        .bg-primary-orange {
+            background-color: var(--primary-orange);
+        }
+
+        .bg-lemon-green {
+            background-color: var(--lemon-green);
+        }
+
+        .bg-dark-blue {
+            background-color: var(--dark-blue);
+        }
+
+        .bg-light-gray {
+            background-color: var(--light-gray);
+        }
+
+        .btn-orange {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, #ff7028 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-orange:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 140, 66, 0.4);
+        }
+
+        .btn-green {
+            background: linear-gradient(135deg, var(--lemon-green) 0%, #8fb84d 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-green:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(168, 208, 95, 0.4);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, #2d4a7c 50%, var(--primary-orange) 100%);
+        }
+
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
         .fade-in {
-            animation: fadeIn 1s ease-in;
+            animation: fadeIn 0.8s ease-in;
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
 
             to {
@@ -51,7 +118,7 @@
         }
 
         .slide-in-left {
-            animation: slideInLeft 1s ease-out;
+            animation: slideInLeft 0.8s ease-out;
         }
 
         @keyframes slideInLeft {
@@ -67,7 +134,7 @@
         }
 
         .slide-in-right {
-            animation: slideInRight 1s ease-out;
+            animation: slideInRight 0.8s ease-out;
         }
 
         @keyframes slideInRight {
@@ -82,80 +149,6 @@
             }
         }
 
-        /* Testimonial slider animation */
-        .testimonial-slider {
-            animation: slideTestimonial 20s linear infinite;
-        }
-
-        @keyframes slideTestimonial {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        .testimonial-slider:hover {
-            animation-play-state: paused;
-        }
-
-        /* Hover effects */
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .hover-lift:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .hover-zoom {
-            overflow: hidden;
-        }
-
-        .hover-zoom img {
-            transition: transform 0.5s ease;
-        }
-
-        .hover-zoom:hover img {
-            transform: scale(1.1);
-        }
-
-        /* Gradient overlay */
-        .gradient-overlay {
-            background: linear-gradient(135deg, rgba(255, 140, 66, 0.9) 0%, rgba(168, 208, 95, 0.9) 100%);
-        }
-
-        /* Header spacing fix */
-        header {
-            padding: 1.5rem 0;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        /* Parallax effect */
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        /* Counter animation */
-        .counter {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #FF8C42;
-        }
-
-        /* Mobile menu */
         .mobile-menu {
             max-height: 0;
             overflow: hidden;
@@ -166,981 +159,446 @@
             max-height: 500px;
         }
 
-        /* Distinct color separation */
-        .orange-section {
-            background-color: #FF8C42;
+        header {
+            backdrop-filter: blur(10px);
+            background: rgba(26, 43, 74, 0.95);
         }
 
-        .green-section {
-            background-color: #A8D05F;
+        .product-card {
+            position: relative;
+            overflow: hidden;
         }
 
-        .orange-accent {
-            color: #FF8C42;
+        .product-card img {
+            transition: transform 0.5s ease;
         }
 
-        .green-accent {
-            color: #A8D05F;
+        .product-card:hover img {
+            transform: scale(1.1);
         }
 
-        /* Button styles with distinct colors */
-        .btn-orange {
-            background-color: #FF8C42;
+        .partner-logo {
+            filter: grayscale(100%);
+            opacity: 0.6;
             transition: all 0.3s ease;
         }
 
-        .btn-orange:hover {
-            background-color: #E67A32;
-            transform: scale(1.05);
-        }
-
-        .btn-green {
-            background-color: #A8D05F;
-            transition: all 0.3s ease;
-        }
-
-        .btn-green:hover {
-            background-color: #92B84F;
-            transform: scale(1.05);
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
         }
     </style>
 </head>
 
-<body class="bg-white text-gray-800">
-
-    <!-- Header - Fixed with better spacing -->
-    <header class="bg-white shadow-md fixed w-full top-0 z-50">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="header-content">
+<body>
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-4 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
                 <!-- Logo -->
                 <div class="flex items-center space-x-3">
                     <div
-                        class="w-14 h-14 bg-gradient-to-br from-primary-orange to-lemon-green rounded-lg flex items-center justify-center">
-                        <i class="fas fa-industry text-white text-2xl"></i>
+                        class="w-12 h-12 bg-gradient-to-br from-primary-orange to-lemon-green rounded-lg flex items-center justify-center">
+                        <i class="fas fa-industry text-white text-xl"></i>
                     </div>
                     <div>
-                        <h1 class="text-2xl font-bold text-dark-blue">CRIC AFRICA SARL</h1>
-                        <p class="text-xs text-gray-600 italic">Ensemble Énergisons L'Afrique</p>
+                        <h1 class="text-2xl font-bold text-white">CRIC AFRICA</h1>
+                        <p class="text-xs text-gray-300 italic">Ensemble Énergisons L'Afrique</p>
                     </div>
                 </div>
 
                 <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-primary-orange transition font-medium">Accueil</a>
-                    <a href="#services"
-                        class="text-gray-700 hover:text-primary-orange transition font-medium">Services</a>
-                    <a href="#products" class="text-gray-700 hover:text-lemon-green transition font-medium">Produits</a>
-                    <a href="#about" class="text-gray-700 hover:text-primary-orange transition font-medium">À Propos</a>
-                    <a href="#testimonials"
-                        class="text-gray-700 hover:text-lemon-green transition font-medium">Témoignages</a>
-                    <a href="#contact" class="btn-orange text-white px-6 py-2.5 rounded-full font-semibold">Contact</a>
-                </nav>
+                <ul class="hidden lg:flex space-x-8 text-white font-semibold">
+                    <li><a href="index.html" class="hover:text-primary-orange transition">Accueil</a></li>
+                    <li><a href="products.html" class="hover:text-lemon-green transition">Produits</a></li>
+                    <li><a href="services.html" class="hover:text-primary-orange transition">Services</a></li>
+                    <li><a href="realisations.html" class="hover:text-lemon-green transition">Réalisations</a></li>
+                    <li><a href="about.html" class="hover:text-primary-orange transition">À Propos</a></li>
+                    <li><a href="contact.html" class="hover:text-lemon-green transition">Contact</a></li>
+                </ul>
+
+                <!-- CTA Button -->
+                <a href="contact.html"
+                    class="hidden lg:block btn-orange text-white px-6 py-3 rounded-full font-semibold">
+                    <i class="fas fa-phone mr-2"></i>Contactez-nous
+                </a>
 
                 <!-- Mobile Menu Button -->
-                <button class="md:hidden text-dark-blue text-2xl" onclick="toggleMobileMenu()">
+                <button onclick="toggleMobileMenu()" class="lg:hidden text-white text-2xl">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
 
-            <!-- Mobile Navigation -->
-            <div id="mobileMenu" class="mobile-menu md:hidden">
-                <nav class="flex flex-col space-y-4 py-6">
-                    <a href="#home" class="text-gray-700 hover:text-primary-orange transition font-medium">Accueil</a>
-                    <a href="#services"
-                        class="text-gray-700 hover:text-primary-orange transition font-medium">Services</a>
-                    <a href="#products" class="text-gray-700 hover:text-lemon-green transition font-medium">Produits</a>
-                    <a href="#about" class="text-gray-700 hover:text-primary-orange transition font-medium">À Propos</a>
-                    <a href="#testimonials"
-                        class="text-gray-700 hover:text-lemon-green transition font-medium">Témoignages</a>
-                    <a href="#contact"
-                        class="btn-orange text-white px-6 py-2.5 rounded-full font-semibold inline-block text-center">Contact</a>
-                </nav>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu lg:hidden mt-4">
+                <ul class="flex flex-col space-y-4 text-white font-semibold bg-dark-blue/50 p-6 rounded-lg">
+                    <li><a href="index.html" class="block hover:text-primary-orange transition">Accueil</a></li>
+                    <li><a href="products.html" class="block hover:text-lemon-green transition">Produits</a></li>
+                    <li><a href="services.html" class="block hover:text-primary-orange transition">Services</a></li>
+                    <li><a href="realisations.html" class="block hover:text-lemon-green transition">Réalisations</a>
+                    </li>
+                    <li><a href="about.html" class="block hover:text-primary-orange transition">À Propos</a></li>
+                    <li><a href="contact.html" class="block hover:text-lemon-green transition">Contact</a></li>
+                </ul>
             </div>
-        </div>
+        </nav>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-dark-blue via-gray-800 to-dark-blue opacity-95"></div>
-        <div class="absolute inset-0 opacity-20">
-            <div class="absolute top-0 left-0 w-96 h-96 bg-primary-orange rounded-full filter blur-3xl animate-pulse">
-            </div>
-            <div class="absolute bottom-0 right-0 w-96 h-96 bg-lemon-green rounded-full filter blur-3xl animate-pulse"
-                style="animation-delay: 1s;"></div>
-        </div>
-
-        <div class="container mx-auto px-4 lg:px-8 relative z-10">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
+    <section class="hero-gradient min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="text-white slide-in-left">
-                    <h2 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                        Votre Partenaire de <span class="orange-accent">Confiance</span> en <span
-                            class="green-accent">Afrique</span>
+                    <h2 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+                        Votre Partenaire en <span class="orange-accent">Équipements Industriels</span>
                     </h2>
-                    <p class="text-xl mb-8 text-gray-300 leading-relaxed">
-                        Spécialiste de l'importation de machines industrielles lourdes au Cameroun. Nous facilitons vos
-                        projets avec expertise et fiabilité.
+                    <p class="text-xl lg:text-2xl mb-8 text-gray-200 leading-relaxed">
+                        CRIC Africa SARL - Importation, installation et maintenance d'équipements industriels de pointe
+                        au Cameroun
                     </p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="#contact"
-                            class="btn-orange text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg">
-                            <i class="fas fa-envelope mr-2"></i>Demander un Devis
+                        <a href="products.html"
+                            class="btn-orange text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg">
+                            <i class="fas fa-box-open mr-2"></i>Nos Produits
                         </a>
-                        <a href="#products"
-                            class="btn-green text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg">
-                            <i class="fas fa-cogs mr-2"></i>Nos Produits
+                        <a href="contact.html"
+                            class="btn-green text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg">
+                            <i class="fas fa-phone mr-2"></i>Demander un Devis
                         </a>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="grid grid-cols-3 gap-6 mt-12">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold orange-accent counter" data-target="50">0</div>
+                            <p class="text-gray-300 mt-2">Projets Réalisés</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold green-accent counter" data-target="100">0</div>
+                            <p class="text-gray-300 mt-2">Clients Satisfaits</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold orange-accent counter" data-target="5">0</div>
+                            <p class="text-gray-300 mt-2">Années d'Expérience</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="slide-in-right">
-                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800"
-                            alt="Industrial Machinery" class="rounded-xl shadow-2xl w-full h-96 object-cover">
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800"
+                        alt="Industrial Equipment" class="rounded-2xl shadow-2xl w-full h-[700px]">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section with distinct colors -->
-    <section class="py-16 bg-light-gray">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="text-center fade-in hover-lift bg-white p-6 rounded-xl shadow-md">
-                    <div class="counter orange-accent" data-target="150">0</div>
-                    <p class="text-gray-600 font-semibold mt-2">Projets Réalisés</p>
-                </div>
-                <div class="text-center fade-in hover-lift bg-white p-6 rounded-xl shadow-md"
-                    style="animation-delay: 0.2s;">
-                    <div class="counter green-accent" data-target="50">0</div>
-                    <p class="text-gray-600 font-semibold mt-2">Clients Satisfaits</p>
-                </div>
-                <div class="text-center fade-in hover-lift bg-white p-6 rounded-xl shadow-md"
-                    style="animation-delay: 0.4s;">
-                    <div class="counter orange-accent" data-target="10">0</div>
-                    <p class="text-gray-600 font-semibold mt-2">Années d'Expérience</p>
-                </div>
-                <div class="text-center fade-in hover-lift bg-white p-6 rounded-xl shadow-md"
-                    style="animation-delay: 0.6s;">
-                    <div class="counter green-accent" data-target="24">0</div>
-                    <p class="text-gray-600 font-semibold mt-2">Support 24/7</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-white">
+    <!-- Featured Products Section -->
+    <section class="py-20 bg-light-gray">
         <div class="container mx-auto px-4 lg:px-8">
             <div class="text-center mb-16 fade-in">
                 <h2 class="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">Nos <span
-                        class="orange-accent">Services</span></h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Des solutions complètes pour tous vos besoins en
-                    équipements industriels</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Service 1 - Orange accent -->
-                <div class="hover-lift bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-primary-orange">
-                    <div class="p-8">
-                        <div class="w-16 h-16 bg-primary-orange/10 rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-ship text-3xl orange-accent"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-dark-blue mb-4">Import & Export</h3>
-                        <p class="text-gray-600 leading-relaxed mb-6">
-                            Gestion complète de l'importation de machines industrielles lourdes avec documentation et
-                            logistique optimisées.
-                        </p>
-                        <a href="#contact" class="orange-accent font-semibold hover:underline">En savoir plus <i
-                                class="fas fa-arrow-right ml-2"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service 2 - Green accent -->
-                <div class="hover-lift bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-lemon-green">
-                    <div class="p-8">
-                        <div class="w-16 h-16 bg-lemon-green/10 rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-handshake text-3xl green-accent"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-dark-blue mb-4">Intermédiation</h3>
-                        <p class="text-gray-600 leading-relaxed mb-6">
-                            Facilitateur de confiance entre fournisseurs internationaux et entreprises camerounaises
-                            pour des transactions sécurisées.
-                        </p>
-                        <a href="#contact" class="green-accent font-semibold hover:underline">En savoir plus <i
-                                class="fas fa-arrow-right ml-2"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service 3 - Orange accent -->
-                <div class="hover-lift bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-primary-orange">
-                    <div class="p-8">
-                        <div class="w-16 h-16 bg-primary-orange/10 rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-tools text-3xl orange-accent"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-dark-blue mb-4">Conseil Technique</h3>
-                        <p class="text-gray-600 leading-relaxed mb-6">
-                            Expertise technique pour vous guider dans le choix des équipements adaptés à vos besoins
-                            spécifiques.
-                        </p>
-                        <a href="#contact" class="orange-accent font-semibold hover:underline">En savoir plus <i
-                                class="fas fa-arrow-right ml-2"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service 4 - Green accent -->
-                <div class="hover-lift bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-lemon-green">
-                    <div class="p-8">
-                        <div class="w-16 h-16 bg-lemon-green/10 rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-file-contract text-3xl green-accent"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-dark-blue mb-4">Gestion Douanière</h3>
-                        <p class="text-gray-600 leading-relaxed mb-6">
-                            Prise en charge complète des formalités douanières pour une importation sans tracas et
-                            conforme.
-                        </p>
-                        <a href="#contact" class="green-accent font-semibold hover:underline">En savoir plus <i
-                                class="fas fa-arrow-right ml-2"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service 5 - Orange accent -->
-                <div class="hover-lift bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-primary-orange">
-                    <div class="p-8">
-                        <div class="w-16 h-16 bg-primary-orange/10 rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-truck text-3xl orange-accent"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-dark-blue mb-4">Logistique</h3>
-                        <p class="text-gray-600 leading-relaxed mb-6">
-                            Transport et livraison sécurisés de vos équipements jusqu'à votre site avec suivi en temps
-                            réel.
-                        </p>
-                        <a href="#contact" class="orange-accent font-semibold hover:underline">En savoir plus <i
-                                class="fas fa-arrow-right ml-2"></i></a>
-                    </div>
-                </div>
-
-                <!-- Service 6 - Green accent -->
-                <div class="hover-lift bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-lemon-green">
-                    <div class="p-8">
-                        <div class="w-16 h-16 bg-lemon-green/10 rounded-full flex items-center justify-center mb-6">
-                            <i class="fas fa-headset text-3xl green-accent"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-dark-blue mb-4">Support Client</h3>
-                        <p class="text-gray-600 leading-relaxed mb-6">
-                            Assistance continue et suivi après-vente pour garantir votre satisfaction et la performance
-                            de vos équipements.
-                        </p>
-                        <a href="#contact" class="green-accent font-semibold hover:underline">En savoir plus <i
-                                class="fas fa-arrow-right ml-2"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="py-20 bg-light-gray">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">Nos <span
-                        class="green-accent">Produits</span></h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Machines industrielles lourdes de haute qualité pour
-                    tous secteurs</p>
+                        class="orange-accent">Produits</span> Phares</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Des équipements industriels de qualité supérieure
+                    pour tous vos besoins</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Product 1 -->
-                <div class="hover-lift hover-zoom bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600"
-                        alt="Construction Equipment" class="w-full h-64 object-cover">
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-lg hover-lift">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600"
+                            alt="Groupes Électrogènes" class="w-full h-full object-cover">
+                    </div>
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-3">
                             <span
-                                class="bg-primary-orange text-white px-4 py-1 rounded-full text-sm font-semibold">Construction</span>
-                            <i class="fas fa-star orange-accent"></i>
+                                class="bg-primary-orange text-white px-3 py-1 rounded-full text-sm font-semibold">Populaire</span>
+                            <i class="fas fa-bolt text-3xl orange-accent"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-dark-blue mb-3">Équipements de Construction</h3>
-                        <p class="text-gray-600 mb-4">Excavatrices, bulldozers, grues et équipements de terrassement de
-                            marques réputées.</p>
-                        <a href="#contact"
-                            class="btn-orange text-white px-6 py-2 rounded-full font-semibold inline-block">Demander
-                            Info</a>
+                        <h3 class="text-2xl font-bold text-dark-blue mb-3">Groupes Électrogènes Industriels</h3>
+                        <p class="text-gray-600 mb-4">Solutions d'alimentation électrique fiables et performantes pour
+                            vos installations industrielles.</p>
+                        <a href="products.html#generators" class="text-primary-orange font-semibold hover:underline">
+                            En savoir plus <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Product 2 -->
-                <div class="hover-lift hover-zoom bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600"
-                        alt="Manufacturing Equipment" class="w-full h-64 object-cover">
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-lg hover-lift">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600" alt="Compresseurs"
+                            class="w-full h-full object-cover">
+                    </div>
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-3">
                             <span
-                                class="bg-lemon-green text-white px-4 py-1 rounded-full text-sm font-semibold">Fabrication</span>
-                            <i class="fas fa-star green-accent"></i>
+                                class="bg-lemon-green text-white px-3 py-1 rounded-full text-sm font-semibold">Nouveau</span>
+                            <i class="fas fa-cog text-3xl green-accent"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-dark-blue mb-3">Machines de Fabrication</h3>
-                        <p class="text-gray-600 mb-4">Tours CNC, fraiseuses, presses et équipements de production
-                            industrielle.</p>
-                        <a href="#contact"
-                            class="btn-green text-white px-6 py-2 rounded-full font-semibold inline-block">Demander
-                            Info</a>
+                        <h3 class="text-2xl font-bold text-dark-blue mb-3">Compresseurs Industriels</h3>
+                        <p class="text-gray-600 mb-4">Compresseurs à vis et à piston pour applications industrielles
+                            exigeantes.</p>
+                        <a href="products.html#compressors" class="text-lemon-green font-semibold hover:underline">
+                            En savoir plus <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Product 3 -->
-                <div class="hover-lift hover-zoom bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=600" alt="Mining Equipment"
-                        class="w-full h-64 object-cover">
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-lg hover-lift">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?w=600"
+                            alt="Équipements Sécurité" class="w-full h-full object-cover">
+                    </div>
                     <div class="p-6">
                         <div class="flex items-center justify-between mb-3">
                             <span
-                                class="bg-primary-orange text-white px-4 py-1 rounded-full text-sm font-semibold">Mines</span>
-                            <i class="fas fa-star orange-accent"></i>
+                                class="bg-primary-orange text-white px-3 py-1 rounded-full text-sm font-semibold">Essentiel</span>
+                            <i class="fas fa-fire-extinguisher text-3xl orange-accent"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-dark-blue mb-3">Équipements Miniers</h3>
-                        <p class="text-gray-600 mb-4">Foreuses, concasseurs, convoyeurs et machines d'extraction
-                            minière.</p>
-                        <a href="#contact"
-                            class="btn-orange text-white px-6 py-2 rounded-full font-semibold inline-block">Demander
-                            Info</a>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="hover-lift hover-zoom bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?w=600"
-                        alt="Agricultural Equipment" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <span
-                                class="bg-lemon-green text-white px-4 py-1 rounded-full text-sm font-semibold">Agriculture</span>
-                            <i class="fas fa-star green-accent"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-dark-blue mb-3">Machines Agricoles</h3>
-                        <p class="text-gray-600 mb-4">Tracteurs, moissonneuses-batteuses et équipements agricoles
-                            modernes.</p>
-                        <a href="#contact"
-                            class="btn-green text-white px-6 py-2 rounded-full font-semibold inline-block">Demander
-                            Info</a>
-                    </div>
-                </div>
-
-                <!-- Product 5 -->
-                <div class="hover-lift hover-zoom bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=600" alt="Power Generation"
-                        class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <span
-                                class="bg-primary-orange text-white px-4 py-1 rounded-full text-sm font-semibold">Énergie</span>
-                            <i class="fas fa-star orange-accent"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-dark-blue mb-3">Générateurs Industriels</h3>
-                        <p class="text-gray-600 mb-4">Groupes électrogènes, transformateurs et équipements de production
-                            d'énergie.</p>
-                        <a href="#contact"
-                            class="btn-orange text-white px-6 py-2 rounded-full font-semibold inline-block">Demander
-                            Info</a>
-                    </div>
-                </div>
-
-                <!-- Product 6 -->
-                <div class="hover-lift hover-zoom bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600"
-                        alt="Material Handling" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-3">
-                            <span
-                                class="bg-lemon-green text-white px-4 py-1 rounded-full text-sm font-semibold">Manutention</span>
-                            <i class="fas fa-star green-accent"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-dark-blue mb-3">Équipements de Manutention</h3>
-                        <p class="text-gray-600 mb-4">Chariots élévateurs, transpalettes et systèmes de convoyage
-                            industriel.</p>
-                        <a href="#contact"
-                            class="btn-green text-white px-6 py-2 rounded-full font-semibold inline-block">Demander
-                            Info</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="slide-in-left">
-                    <h2 class="text-4xl lg:text-5xl font-bold text-dark-blue mb-6">Pourquoi Choisir <span
-                            class="orange-accent">CRIC Africa</span> ?</h2>
-                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                        Nous sommes votre partenaire de confiance pour l'importation d'équipements industriels au
-                        Cameroun, offrant expertise, fiabilité et service personnalisé.
-                    </p>
-
-                    <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <div
-                                class="w-12 h-12 bg-primary-orange/10 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check orange-accent text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold text-dark-blue mb-2">Expertise Locale</h4>
-                                <p class="text-gray-600">Connaissance approfondie du marché camerounais et des
-                                    réglementations locales.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4">
-                            <div
-                                class="w-12 h-12 bg-lemon-green/10 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check green-accent text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold text-dark-blue mb-2">Réseau International</h4>
-                                <p class="text-gray-600">Partenariats solides avec les meilleurs fournisseurs mondiaux
-                                    d'équipements.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div
-                                class="w-12 h-12 bg-primary-orange/10 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check orange-accent text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold text-dark-blue mb-2">Prix Compétitifs</h4>
-                                <p class="text-gray-600">Négociations avantageuses et tarifs transparents pour maximiser
-                                    votre investissement.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4">
-                            <div
-                                class="w-12 h-12 bg-lemon-green/10 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-check green-accent text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold text-dark-blue mb-2">Service Complet</h4>
-                                <p class="text-gray-600">De la sélection à la livraison, nous gérons chaque étape de
-                                    votre projet.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-in-right">
-                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800"
-                        alt="Industrial Partnership" class="rounded-2xl shadow-2xl w-full h-auto">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gradient-to-br from-dark-blue to-gray-900 text-white">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl lg:text-5xl font-bold mb-4">À Propos de <span class="orange-accent">Nous</span></h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Votre partenaire de confiance pour l'importation de
-                    machines industrielles au Cameroun</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
-                <div class="fade-in">
-                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
-                        <h3 class="text-3xl font-bold mb-6 orange-accent">Notre Mission</h3>
-                        <p class="text-gray-300 leading-relaxed text-lg mb-6">
-                            CRIC Africa SARL est votre intermédiaire de confiance pour l'importation de machines
-                            industrielles lourdes au Cameroun. Nous facilitons vos projets en connectant les entreprises
-                            locales avec les meilleurs fournisseurs internationaux d'équipements industriels.
-                        </p>
-                        <p class="text-gray-300 leading-relaxed text-lg">
-                            Notre expertise couvre tous les aspects de l'importation : sélection des équipements,
-                            négociation, gestion douanière, logistique et support après-vente. Nous nous engageons à
-                            fournir
-                            des solutions fiables et efficaces pour dynamiser l'industrie africaine.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="fade-in" style="animation-delay: 0.2s;">
-                    <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
-                        <h3 class="text-3xl font-bold mb-6 green-accent">Notre Vision</h3>
-                        <p class="text-gray-300 leading-relaxed text-lg mb-6">
-                            <strong class="orange-accent">"Ensemble Énergisons L'Afrique"</strong> - Cette devise
-                            reflète
-                            notre engagement à contribuer au développement industriel du continent africain en
-                            facilitant
-                            l'accès aux technologies et équipements de pointe.
-                        </p>
-                        <p class="text-gray-300 leading-relaxed text-lg">
-                            Nous aspirons à devenir le leader régional de l'importation d'équipements industriels,
-                            reconnu
-                            pour notre intégrité, notre expertise technique et notre service client exceptionnel.
-                        </p>
+                        <h3 class="text-2xl font-bold text-dark-blue mb-3">Équipements Sécurité Incendie</h3>
+                        <p class="text-gray-600 mb-4">Systèmes complets de protection et sécurité incendie pour vos
+                            installations.</p>
+                        <a href="products.html#fire-safety" class="text-primary-orange font-semibold hover:underline">
+                            En savoir plus <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Team Section Placeholder -->
-            <div class="mt-16">
-                <h3 class="text-3xl lg:text-4xl font-bold text-center mb-12">Notre <span
-                        class="green-accent">Équipe</span>
-                </h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    <!-- Team Member 1 - Placeholder for "I will add myself" -->
-                    <div
-                        class="hover-lift bg-white/10 backdrop-blur-lg rounded-2xl overflow-hidden border border-white/20">
-                        <div
-                            class="h-80 bg-gradient-to-br from-primary-orange to-lemon-green flex items-center justify-center">
-                            <div class="text-center">
-                                <i class="fas fa-user-circle text-white text-9xl opacity-50"></i>
-                                <p class="text-white mt-4 text-lg font-semibold">Photo à venir</p>
-                            </div>
-                        </div>
-                        <div class="p-6 text-center">
-                            <h4 class="text-2xl font-bold mb-2">[Votre Nom]</h4>
-                            <p class="orange-accent font-semibold mb-3">[Votre Titre]</p>
-                            <p class="text-gray-300 mb-4">[Votre description professionnelle sera ajoutée ici]</p>
-                            <div class="flex justify-center space-x-4">
-                                <a href="#" class="text-white hover:text-primary-orange transition"><i
-                                        class="fab fa-linkedin text-2xl"></i></a>
-                                <a href="#" class="text-white hover:text-lemon-green transition"><i
-                                        class="fab fa-twitter text-2xl"></i></a>
-                                <a href="#" class="text-white hover:text-primary-orange transition"><i
-                                        class="fas fa-envelope text-2xl"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Team Member 2 - Placeholder -->
-                    <div
-                        class="hover-lift bg-white/10 backdrop-blur-lg rounded-2xl overflow-hidden border border-white/20">
-                        <div
-                            class="h-80 bg-gradient-to-br from-lemon-green to-primary-orange flex items-center justify-center">
-                            <div class="text-center">
-                                <i class="fas fa-user-circle text-white text-9xl opacity-50"></i>
-                                <p class="text-white mt-4 text-lg font-semibold">Photo à venir</p>
-                            </div>
-                        </div>
-                        <div class="p-6 text-center">
-                            <h4 class="text-2xl font-bold mb-2">[Nom du Membre]</h4>
-                            <p class="green-accent font-semibold mb-3">[Titre du Poste]</p>
-                            <p class="text-gray-300 mb-4">[Description et expertise du membre de l'équipe]</p>
-                            <div class="flex justify-center space-x-4">
-                                <a href="#" class="text-white hover:text-primary-orange transition"><i
-                                        class="fab fa-linkedin text-2xl"></i></a>
-                                <a href="#" class="text-white hover:text-lemon-green transition"><i
-                                        class="fab fa-twitter text-2xl"></i></a>
-                                <a href="#" class="text-white hover:text-primary-orange transition"><i
-                                        class="fas fa-envelope text-2xl"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Team Member 3 - Placeholder (Future expansion) -->
-                    <div
-                        class="hover-lift bg-white/10 backdrop-blur-lg rounded-2xl overflow-hidden border border-white/20 md:col-span-2 lg:col-span-1">
-                        <div
-                            class="h-80 bg-gradient-to-br from-primary-orange via-lemon-green to-dark-blue flex items-center justify-center">
-                            <div class="text-center">
-                                <i class="fas fa-users text-white text-9xl opacity-50"></i>
-                                <p class="text-white mt-4 text-lg font-semibold">Rejoignez Notre Équipe</p>
-                            </div>
-                        </div>
-                        <div class="p-6 text-center">
-                            <h4 class="text-2xl font-bold mb-2">Nous Recrutons</h4>
-                            <p class="orange-accent font-semibold mb-3">Plusieurs Postes Disponibles</p>
-                            <p class="text-gray-300 mb-4">Vous souhaitez faire partie de notre équipe dynamique ?
-                                Contactez-nous pour découvrir nos opportunités.</p>
-                            <a href="#contact"
-                                class="btn-green text-white px-6 py-2 rounded-full font-semibold inline-block">Postuler</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section with Sliding Animation -->
-    <section id="testimonials" class="py-20 bg-light-gray overflow-hidden">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">Ce Que Disent Nos <span
-                        class="green-accent">Clients</span></h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Témoignages de satisfaction et de confiance</p>
-            </div>
-
-            <!-- Testimonial Slider Container -->
-            <div class="relative">
-                <div class="overflow-hidden">
-                    <div class="testimonial-slider flex space-x-8" style="width: 200%;">
-                        <!-- Testimonial 1 - Placeholder -->
-                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
-                            <div class="bg-white rounded-2xl shadow-lg p-8 hover-lift h-full">
-                                <div class="flex items-center mb-6">
-                                    <div
-                                        class="w-20 h-20 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center flex-shrink-0">
-                                        <i class="fas fa-user text-white text-3xl"></i>
-                                    </div>
-                                    <div class="ml-4">
-                                        <h4 class="text-xl font-bold text-dark-blue">[Nom du Client]</h4>
-                                        <p class="text-gray-600">[Entreprise / Poste]</p>
-                                        <div class="flex text-yellow-500 mt-1">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-4">
-                                    <span
-                                        class="inline-block bg-lemon-green text-white px-3 py-1 rounded-full text-sm font-semibold">En
-                                        Cours</span>
-                                </div>
-                                <p class="text-gray-700 leading-relaxed italic">
-                                    "[Votre témoignage client sera ajouté ici. Décrivez l'expérience positive, la
-                                    qualité du
-                                    service, la fiabilité et les résultats obtenus grâce à CRIC Africa SARL.]"
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Testimonial 2 - Placeholder -->
-                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
-                            <div class="bg-white rounded-2xl shadow-lg p-8 hover-lift h-full">
-                                <div class="flex items-center mb-6">
-                                    <div
-                                        class="w-20 h-20 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center flex-shrink-0">
-                                        <i class="fas fa-user text-white text-3xl"></i>
-                                    </div>
-                                    <div class="ml-4">
-                                        <h4 class="text-xl font-bold text-dark-blue">[Nom du Client]</h4>
-                                        <p class="text-gray-600">[Entreprise / Poste]</p>
-                                        <div class="flex text-yellow-500 mt-1">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-4">
-                                    <span
-                                        class="inline-block bg-primary-orange text-white px-3 py-1 rounded-full text-sm font-semibold">Satisfait</span>
-                                </div>
-                                <p class="text-gray-700 leading-relaxed italic">
-                                    "[Témoignage d'un client satisfait concernant la qualité des équipements importés,
-                                    le
-                                    professionnalisme de l'équipe et l'efficacité du processus d'importation.]"
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Testimonial 3 - Placeholder -->
-                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
-                            <div class="bg-white rounded-2xl shadow-lg p-8 hover-lift h-full">
-                                <div class="flex items-center mb-6">
-                                    <div
-                                        class="w-20 h-20 bg-gradient-to-br from-dark-blue to-primary-orange rounded-full flex items-center justify-center flex-shrink-0">
-                                        <i class="fas fa-user text-white text-3xl"></i>
-                                    </div>
-                                    <div class="ml-4">
-                                        <h4 class="text-xl font-bold text-dark-blue">[Nom du Client]</h4>
-                                        <p class="text-gray-600">[Entreprise / Poste]</p>
-                                        <div class="flex text-yellow-500 mt-1">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-4">
-                                    <span
-                                        class="inline-block bg-lemon-green text-white px-3 py-1 rounded-full text-sm font-semibold">Très
-                                        Satisfait</span>
-                                </div>
-                                <p class="text-gray-700 leading-relaxed italic">
-                                    "[Retour d'expérience positif sur la collaboration avec CRIC Africa, mettant en
-                                    avant
-                                    l'expertise technique, les délais respectés et le support client exceptionnel.]"
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Duplicate testimonials for seamless loop -->
-                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
-                            <div class="bg-white rounded-2xl shadow-lg p-8 hover-lift h-full">
-                                <div class="flex items-center mb-6">
-                                    <div
-                                        class="w-20 h-20 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center flex-shrink-0">
-                                        <i class="fas fa-user text-white text-3xl"></i>
-                                    </div>
-                                    <div class="ml-4">
-                                        <h4 class="text-xl font-bold text-dark-blue">[Nom du Client]</h4>
-                                        <p class="text-gray-600">[Entreprise / Poste]</p>
-                                        <div class="flex text-yellow-500 mt-1">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-4">
-                                    <span
-                                        class="inline-block bg-lemon-green text-white px-3 py-1 rounded-full text-sm font-semibold">En
-                                        Cours</span>
-                                </div>
-                                <p class="text-gray-700 leading-relaxed italic">
-                                    "[Votre témoignage client sera ajouté ici. Décrivez l'expérience positive, la
-                                    qualité du
-                                    service, la fiabilité et les résultats obtenus grâce à CRIC Africa SARL.]"
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4">
-                            <div class="bg-white rounded-2xl shadow-lg p-8 hover-lift h-full">
-                                <div class="flex items-center mb-6">
-                                    <div
-                                        class="w-20 h-20 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center flex-shrink-0">
-                                        <i class="fas fa-user text-white text-3xl"></i>
-                                    </div>
-                                    <div class="ml-4">
-                                        <h4 class="text-xl font-bold text-dark-blue">[Nom du Client]</h4>
-                                        <p class="text-gray-600">[Entreprise / Poste]</p>
-                                        <div class="flex text-yellow-500 mt-1">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-4">
-                                    <span
-                                        class="inline-block bg-primary-orange text-white px-3 py-1 rounded-full text-sm font-semibold">Satisfait</span>
-                                </div>
-                                <p class="text-gray-700 leading-relaxed italic">
-                                    "[Témoignage d'un client satisfait concernant la qualité des équipements importés,
-                                    le
-                                    professionnalisme de l'équipe et l'efficacité du processus d'importation.]"
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Add Testimonial CTA -->
             <div class="text-center mt-12">
-                <p class="text-gray-600 mb-4 text-lg">Vous avez travaillé avec nous ? Partagez votre expérience !</p>
-                <a href="#contact"
-                    class="btn-orange text-white px-8 py-3 rounded-full font-semibold text-lg inline-block">
-                    <i class="fas fa-comment-dots mr-2"></i>Laisser un Témoignage
+                <a href="products.html"
+                    class="btn-orange text-white px-8 py-4 rounded-full font-bold text-lg inline-block shadow-lg">
+                    <i class="fas fa-th mr-2"></i>Voir Tous Nos Produits
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Map & Contact Section -->
-    <section id="contact" class="py-20 bg-white">
+    <!-- Services Overview -->
+    <section class="py-20 bg-white">
         <div class="container mx-auto px-4 lg:px-8">
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">Contactez-<span
-                        class="orange-accent">Nous</span></h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Nous sommes là pour répondre à toutes vos questions
-                </p>
+                <h2 class="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">Nos <span
+                        class="green-accent">Services</span></h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Solutions complètes d'installation, maintenance et
+                    automatisation</p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-12">
-                <!-- Contact Form -->
-                <div class="fade-in">
-                    <div class="bg-light-gray rounded-2xl p-8 shadow-lg">
-                        <h3 class="text-2xl font-bold text-dark-blue mb-6">Envoyez-nous un Message</h3>
-                        <form class="space-y-6">
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2">Nom Complet *</label>
-                                <input type="text" required
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-orange focus:ring-2 focus:ring-primary-orange/20 outline-none transition"
-                                    placeholder="Votre nom">
-                            </div>
-
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2">Email *</label>
-                                <input type="email" required
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-lemon-green focus:ring-2 focus:ring-lemon-green/20 outline-none transition"
-                                    placeholder="votre@email.com">
-                            </div>
-
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2">Téléphone</label>
-                                <input type="tel"
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-orange focus:ring-2 focus:ring-primary-orange/20 outline-none transition"
-                                    placeholder="+237 XXX XXX XXX">
-                            </div>
-
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2">Type d'Équipement</label>
-                                <select
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-lemon-green focus:ring-2 focus:ring-lemon-green/20 outline-none transition">
-                                    <option>Sélectionnez une catégorie</option>
-                                    <option>Équipements de Construction</option>
-                                    <option>Machines de Fabrication</option>
-                                    <option>Équipements Miniers</option>
-                                    <option>Machines Agricoles</option>
-                                    <option>Générateurs Industriels</option>
-                                    <option>Équipements de Manutention</option>
-                                    <option>Autre</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2">Message *</label>
-                                <textarea required rows="5"
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-orange focus:ring-2 focus:ring-primary-orange/20 outline-none transition"
-                                    placeholder="Décrivez votre projet ou vos besoins..."></textarea>
-                            </div>
-
-                            <button type="submit"
-                                class="w-full btn-orange text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg">
-                                <i class="fas fa-paper-plane mr-2"></i>Envoyer le Message
-                            </button>
-                        </form>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="text-center hover-lift bg-light-gray rounded-2xl p-8">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-plug text-white text-3xl"></i>
                     </div>
+                    <h3 class="text-xl font-bold text-dark-blue mb-3">Installation Réseau Électrique</h3>
+                    <p class="text-gray-600">Installation complète de réseaux électriques industriels</p>
                 </div>
 
-                <!-- Contact Info & Map -->
-                <div class="space-y-8 fade-in" style="animation-delay: 0.2s;">
-                    <!-- Contact Information -->
-                    <div class="bg-gradient-to-br from-dark-blue to-gray-900 text-white rounded-2xl p-8 shadow-lg">
-                        <h3 class="text-2xl font-bold mb-6 orange-accent">Informations de Contact</h3>
-
-                        <div class="space-y-6">
-                            <div class="flex items-start space-x-4">
-                                <div
-                                    class="w-12 h-12 bg-primary-orange/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-map-marker-alt orange-accent text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold mb-1">Adresse</h4>
-                                    <p class="text-gray-300">Pharmacie des Hopitaux<br>Douala, Cameroun</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start space-x-4">
-                                <div
-                                    class="w-12 h-12 bg-lemon-green/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-phone green-accent text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold mb-1">Téléphone</h4>
-                                    <p class="text-gray-300">+237 650 001 587<br>+237 690 078 357</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start space-x-4">
-                                <div
-                                    class="w-12 h-12 bg-primary-orange/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-envelope orange-accent text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold mb-1">Email</h4>
-                                    <p class="text-gray-300">contact@cricafrica.com<br>cricafrika@yahoo.com</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start space-x-4">
-                                <div
-                                    class="w-12 h-12 bg-lemon-green/20 rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-clock green-accent text-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold mb-1">Horaires</h4>
-                                    <p class="text-gray-300">Lun - Ven: 8h00 - 18h00<br>Sam: 9h00 - 13h00</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-8 pt-8 border-t border-white/20">
-                            <h4 class="font-semibold mb-4">Suivez-nous</h4>
-                            <div class="flex space-x-4">
-                                <a href="#"
-                                    class="w-12 h-12 bg-white/10 hover:bg-primary-orange rounded-full flex items-center justify-center transition">
-                                    <i class="fab fa-facebook-f text-xl"></i>
-                                </a>
-                                <a href="#"
-                                    class="w-12 h-12 bg-white/10 hover:bg-lemon-green rounded-full flex items-center justify-center transition">
-                                    <i class="fab fa-linkedin-in text-xl"></i>
-                                </a>
-                                <a href="#"
-                                    class="w-12 h-12 bg-white/10 hover:bg-primary-orange rounded-full flex items-center justify-center transition">
-                                    <i class="fab fa-twitter text-xl"></i>
-                                </a>
-                                <a href="#"
-                                    class="w-12 h-12 bg-white/10 hover:bg-lemon-green rounded-full flex items-center justify-center transition">
-                                    <i class="fab fa-instagram text-xl"></i>
-                                </a>
-                                <a href="#"
-                                    class="w-12 h-12 bg-white/10 hover:bg-primary-orange rounded-full flex items-center justify-center transition">
-                                    <i class="fab fa-whatsapp text-xl"></i>
-                                </a>
-                            </div>
-                        </div>
+                <!-- Service 2 -->
+                <div class="text-center hover-lift bg-light-gray rounded-2xl p-8">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-tools text-white text-3xl"></i>
                     </div>
-                    <!-- Map Placeholder -->
-                    <div class="bg-gray-200 rounded-2xl overflow-hidden shadow-lg h-96">
-                        <!-- <div
-                            class="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary-orange/20 to-lemon-green/20">
-                            <div class="text-center p-8">
-                                <i class="fas fa-map-marked-alt text-6xl text-gray-400 mb-4"></i>
-                                <h4 class="text-xl font-bold text-gray-700 mb-2">Carte Interactive</h4>
-                                <p class="text-gray-600">La carte Google Maps sera intégrée ici</p>
-                                <p class="text-sm text-gray-500 mt-2">Douala, Cameroun</p>
-                            </div>
-                        </div> -->
-                        To add real Google Map, replace the above div with:
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1327.2729016403387!2d9.700338544712315!3d4.048830762185053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2scm!4v1760579591956!5m2!1sen!2scm"
-                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                        >
-                        </iframe>
+                    <h3 class="text-xl font-bold text-dark-blue mb-3">Maintenance Industrielle</h3>
+                    <p class="text-gray-600">Maintenance préventive et prédictive de vos équipements</p>
+                </div>
 
+                <!-- Service 3 -->
+                <div class="text-center hover-lift bg-light-gray rounded-2xl p-8">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-robot text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark-blue mb-3">Automatisation Usines</h3>
+                    <p class="text-gray-600">Solutions d'automatisation pour optimiser votre production</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="services.html"
+                    class="btn-green text-white px-8 py-4 rounded-full font-bold text-lg inline-block shadow-lg">
+                    <i class="fas fa-list mr-2"></i>Tous Nos Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banking Partners -->
+    <section class="py-20 bg-light-gray">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">Nos <span
+                        class="orange-accent">Partenaires</span> Bancaires</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Des solutions de financement flexibles pour vos
+                    projets</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 items-center">
+                <!-- Partner 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift text-center">
+                    <div class="h-24 flex items-center justify-center mb-4">
+                        <i class="fas fa-university text-6xl text-primary-orange"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark-blue">Afriland First Bank</h3>
+                </div>
+
+                <!-- Partner 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift text-center">
+                    <div class="h-24 flex items-center justify-center mb-4">
+                        <i class="fas fa-hand-holding-usd text-6xl text-lemon-green"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark-blue">Alios Finance</h3>
+                </div>
+
+                <!-- Partner 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift text-center">
+                    <div class="h-24 flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-6xl text-primary-orange"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark-blue">Vision Finance</h3>
+                </div>
+
+                <!-- Partner 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift text-center">
+                    <div class="h-24 flex items-center justify-center mb-4">
+                        <i class="fas fa-building text-6xl text-lemon-green"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark-blue">Access Bank</h3>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-white rounded-2xl p-8 shadow-lg max-w-4xl mx-auto">
+                <div class="flex items-start space-x-4">
+                    <div
+                        class="w-16 h-16 bg-primary-orange/10 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-info-circle orange-accent text-2xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold text-dark-blue mb-3">Financement Facilité</h4>
+                        <p class="text-gray-600 leading-relaxed">
+                            Grâce à nos partenariats avec les principales institutions financières du Cameroun, nous
+                            vous aidons à obtenir des solutions de financement adaptées à vos projets d'équipement
+                            industriel. Contactez-nous pour en savoir plus sur les options disponibles.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Recent Projects -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">Nos <span
+                        class="green-accent">Réalisations</span></h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Projets récents et références clients</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-gradient-to-br from-dark-blue to-gray-900 text-white rounded-2xl p-8 hover-lift">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-primary-orange/20 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-bolt orange-accent text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Livraison Transformateurs ENEO</h3>
+                            <p class="text-gray-300">Fourniture et installation de transformateurs haute tension pour
+                                ENEO</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4 text-sm">
+                        <span class="bg-lemon-green px-3 py-1 rounded-full">Complété</span>
+                        <span class="text-gray-400">2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-gradient-to-br from-dark-blue to-gray-900 text-white rounded-2xl p-8 hover-lift">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-lemon-green/20 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-industry green-accent text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Mise en Place Équipements CIMAF</h3>
+                            <p class="text-gray-300">Installation complète d'équipements industriels pour CIMAF</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4 text-sm">
+                        <span class="bg-primary-orange px-3 py-1 rounded-full">Complété</span>
+                        <span class="text-gray-400">2024</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-gradient-to-br from-dark-blue to-gray-900 text-white rounded-2xl p-8 hover-lift">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-primary-orange/20 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-box orange-accent text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Fournitures Spécifiques ALUBASSA</h3>
+                            <p class="text-gray-300">Approvisionnement en équipements spécialisés pour ALUBASSA</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4 text-sm">
+                        <span class="bg-lemon-green px-3 py-1 rounded-full">Complété</span>
+                        <span class="text-gray-400">2023</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-gradient-to-br from-dark-blue to-gray-900 text-white rounded-2xl p-8 hover-lift">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-lemon-green/20 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-train green-accent text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Installation Métallurgique CAMRAIL</h3>
+                            <p class="text-gray-300">Mise sur pied d'installations métallurgiques pour CAMRAIL</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4 text-sm">
+                        <span class="bg-primary-orange px-3 py-1 rounded-full">Complété</span>
+                        <span class="text-gray-400">2023</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="realisations.html"
+                    class="btn-orange text-white px-8 py-4 rounded-full font-bold text-lg inline-block shadow-lg">
+                    <i class="fas fa-folder-open mr-2"></i>Voir Toutes Nos Réalisations
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="py-20 bg-gradient-to-r from-primary-orange to-lemon-green">
         <div class="container mx-auto px-4 lg:px-8 text-center">
             <div class="max-w-4xl mx-auto fade-in">
                 <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">Prêt à Démarrer Votre Projet ?</h2>
-                <p class="text-xl text-white/90 mb-8 leading-relaxed">
-                    Contactez-nous dès aujourd'hui pour discuter de vos besoins en équipements industriels. Notre équipe
-                    d'experts est prête à vous accompagner.
-                </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="#contact"
+                <p class="text-xl text-white/90 mb-8 leading-relaxed"> Contactez-nous dès aujourd'hui pour discuter de
+                    vos besoins en
+                    équipements industriels. Notre équipe d'experts est prête à vous accompagner. </p>
+                <div class="flex flex-wrap justify-center gap-4"> <a href="contact.html"
                         class="bg-white text-primary-orange px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition">
-                        <i class="fas fa-phone mr-2"></i>Appelez-nous Maintenant
-                    </a>
-                </div>
+                        <i class="fas fa-phone mr-2"></i>Demander un Devis </a> <a href="products.html"
+                        class="bg-dark-blue text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition">
+                        <i class="fas fa-box-open mr-2"></i>Voir Nos Produits </a> </div>
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer class="bg-dark-blue text-white pt-16 pb-8">
         <div class="container mx-auto px-4 lg:px-8">
@@ -1158,7 +616,8 @@
                         </div>
                     </div>
                     <p class="text-gray-400 leading-relaxed mb-6">
-                        Votre partenaire de confiance pour l'importation de machines industrielles lourdes au Cameroun.
+                        Votre partenaire de confiance pour l'importation, l'installation et la maintenance d'équipements
+                        industriels au Cameroun.
                     </p>
                     <div class="flex space-x-3">
                         <a href="#"
@@ -1175,63 +634,92 @@
                         </a>
                         <a href="#"
                             class="w-10 h-10 bg-white/10 hover:bg-lemon-green rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Quick Links -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6 orange-accent">Liens Rapides</h4>
+                    <h4 class="text-lg font-bold mb-6 orange-accent">Navigation</h4>
                     <ul class="space-y-3">
-                        <li><a href="#home"
+                        <li><a href="index.html"
                                 class="text-gray-400 hover:text-primary-orange transition flex items-center"><i
                                     class="fas fa-chevron-right text-xs mr-2"></i>Accueil</a></li>
-                        <li><a href="#services"
+                        <li><a href="products.html"
                                 class="text-gray-400 hover:text-lemon-green transition flex items-center"><i
-                                    class="fas fa-chevron-right text-xs mr-2"></i>Services</a></li>
-                        <li><a href="#products"
-                                class="text-gray-400 hover:text-primary-orange transition flex items-center"><i
                                     class="fas fa-chevron-right text-xs mr-2"></i>Produits</a></li>
-                        <li><a href="#about"
-                                class="text-gray-400 hover:text-lemon-green transition flex items-center"><i
-                                    class="fas fa-chevron-right text-xs mr-2"></i>À Propos</a></li>
-                        <li><a href="#testimonials"
+                        <li><a href="services.html"
                                 class="text-gray-400 hover:text-primary-orange transition flex items-center"><i
-                                    class="fas fa-chevron-right text-xs mr-2"></i>Témoignages</a></li>
-                        <li><a href="#contact"
+                                    class="fas fa-chevron-right text-xs mr-2"></i>Services</a></li>
+                        <li><a href="realisations.html"
+                                class="text-gray-400 hover:text-lemon-green transition flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2"></i>Réalisations</a></li>
+                        <li><a href="about.html"
+                                class="text-gray-400 hover:text-primary-orange transition flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2"></i>À Propos</a></li>
+                        <li><a href="contact.html"
                                 class="text-gray-400 hover:text-lemon-green transition flex items-center"><i
                                     class="fas fa-chevron-right text-xs mr-2"></i>Contact</a></li>
                     </ul>
                 </div>
 
-                <!-- Services -->
+                <!-- Products -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6 green-accent">Nos Services</h4>
+                    <h4 class="text-lg font-bold mb-6 green-accent">Nos Produits</h4>
                     <ul class="space-y-3">
                         <li class="text-gray-400 flex items-start"><i
-                                class="fas fa-check orange-accent text-xs mr-2 mt-1"></i>Import & Export</li>
+                                class="fas fa-check orange-accent text-xs mr-2 mt-1"></i>Groupes Électrogènes</li>
                         <li class="text-gray-400 flex items-start"><i
-                                class="fas fa-check green-accent text-xs mr-2 mt-1"></i>Intermédiation</li>
+                                class="fas fa-check green-accent text-xs mr-2 mt-1"></i>Compresseurs Industriels</li>
                         <li class="text-gray-400 flex items-start"><i
-                                class="fas fa-check orange-accent text-xs mr-2 mt-1"></i>Conseil Technique</li>
+                                class="fas fa-check orange-accent text-xs mr-2 mt-1"></i>Équipements Sécurité</li>
                         <li class="text-gray-400 flex items-start"><i
-                                class="fas fa-check green-accent text-xs mr-2 mt-1"></i>Gestion Douanière</li>
+                                class="fas fa-check green-accent text-xs mr-2 mt-1"></i>Matériels de Pompage</li>
                         <li class="text-gray-400 flex items-start"><i
-                                class="fas fa-check orange-accent text-xs mr-2 mt-1"></i>Logistique</li>
+                                class="fas fa-check orange-accent text-xs mr-2 mt-1"></i>Engins de Manutention</li>
                         <li class="text-gray-400 flex items-start"><i
-                                class="fas fa-check green-accent text-xs mr-2 mt-1"></i>Support Client 24/7</li>
+                                class="fas fa-check green-accent text-xs mr-2 mt-1"></i>Transformateurs</li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 orange-accent">Contact</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt orange-accent mt-1"></i>
+                            <span class="text-gray-400">Douala, Cameroun</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-phone green-accent mt-1"></i>
+                            <span class="text-gray-400">+237 XXX XXX XXX</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-envelope orange-accent mt-1"></i>
+                            <span class="text-gray-400">contact@cricafrica.com</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-clock green-accent mt-1"></i>
+                            <span class="text-gray-400">Lun-Ven: 8h-18h<br>Sam: 9h-13h</span>
+                        </li>
                     </ul>
                 </div>
             </div>
 
             <!-- Bottom Footer -->
             <div class="border-t border-white/10 pt-8">
-                <div class="flex  md:flex-row justify-center space-y-4 md:space-y-0">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                     <p class="text-gray-400 text-sm text-center md:text-left">
                         &copy; 2025 <span class="orange-accent font-semibold">CRIC Africa SARL</span>. Tous droits
                         réservés.
                     </p>
+                    <div class="flex flex-wrap justify-center gap-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-primary-orange transition">Politique de
+                            Confidentialité</a>
+                        <a href="#" class="text-gray-400 hover:text-lemon-green transition">Conditions d'Utilisation</a>
+                        <a href="#" class="text-gray-400 hover:text-primary-orange transition">Mentions Légales</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1239,12 +727,12 @@
 
     <!-- Scroll to Top Button -->
     <button id="scrollToTop"
-        class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-primary-orange to-lemon-green text-white rounded-full shadow-lg hover:shadow-2xl transition opacity-0 pointer-events-none z-50">
+        class="fixed bottom-8 right-8 w-14 h-14 bg-dark-blue text-white rounded-full shadow-lg hover:shadow-2xl transition pointer-events-none z-50">
         <i class="fas fa-arrow-up text-xl"></i>
     </button>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/23769308715" target="_blank"
+    <a href="https://wa.me/237XXXXXXXXX" target="_blank"
         class="fixed bottom-24 right-8 w-14 h-14 bg-green-500 text-white rounded-full shadow-lg hover:shadow-2xl hover:scale-110 transition flex items-center justify-center z-50">
         <i class="fab fa-whatsapp text-3xl"></i>
     </a>
@@ -1293,9 +781,9 @@
         }, { threshold: 0.5 });
 
         // Observe stats section
-        const statsSection = document.querySelector('.counter').closest('section');
+        const statsSection = document.querySelector('.counter');
         if (statsSection) {
-            counterObserver.observe(statsSection);
+            counterObserver.observe(statsSection.closest('section'));
         }
 
         // Scroll to Top Button
@@ -1333,46 +821,12 @@
                         behavior: 'smooth'
                     });
 
-                    // Close mobile menu if open
                     const mobileMenu = document.getElementById('mobileMenu');
                     if (mobileMenu.classList.contains('active')) {
                         mobileMenu.classList.remove('active');
                     }
                 }
             });
-        });
-
-        // Form Submission Handler (Placeholder)
-        document.querySelector('form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('Merci pour votre message ! Nous vous contacterons bientôt.\n\nNote: Cette fonctionnalité sera connectée à votre système de messagerie.');
-            this.reset();
-        });
-
-        // Newsletter Form Handler
-        document.querySelectorAll('form')[1].addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('Merci de vous être abonné à notre newsletter !\n\nNote: Cette fonctionnalité sera connectée à votre système d\'emailing.');
-            this.reset();
-        });
-
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
         });
 
         // Header scroll effect
@@ -1388,10 +842,8 @@
             }
 
             if (currentScroll > lastScroll && currentScroll > 100) {
-                // Scrolling down
                 header.style.transform = 'translateY(-100%)';
             } else {
-                // Scrolling up
                 header.style.transform = 'translateY(0)';
                 header.classList.add('shadow-lg');
             }
@@ -1399,54 +851,7 @@
             lastScroll = currentScroll;
         });
 
-        // Add transition to header
         header.style.transition = 'transform 0.3s ease-in-out, box-shadow 0.3s ease';
-
-        // Preloader (Optional - can be added)
-        window.addEventListener('load', () => {
-            document.body.classList.add('loaded');
-        });
-
-        // Lazy loading for images (modern browsers support this natively with loading="lazy")
-        if ('loading' in HTMLImageElement.prototype) {
-            const images = document.querySelectorAll('img[loading="lazy"]');
-            images.forEach(img => {
-                img.src = img.dataset.src;
-            });
-        } else {
-            // Fallback for older browsers
-            const script = document.createElement('script');
-            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-            document.body.appendChild(script);
-        }
-
-        // Print page functionality
-        function printPage() {
-            window.print();
-        }
-
-        // Share functionality (Web Share API)
-        async function shareWebsite() {
-            if (navigator.share) {
-                try {
-                    await navigator.share({
-                        title: 'CRIC Africa SARL',
-                        text: 'Découvrez CRIC Africa SARL - Votre partenaire pour l\'importation de machines industrielles',
-                        url: window.location.href
-                    });
-                } catch (err) {
-                    console.log('Error sharing:', err);
-                }
-            } else {
-                alert('Le partage n\'est pas supporté par votre navigateur');
-            }
-        }
-
-        // Console message for developers
-        console.log('%c🏭 CRIC Africa SARL', 'font-size: 24px; font-weight: bold; color: #FF8C42;');
-        console.log('%cEnsemble Énergisons L\'Afrique', 'font-size: 14px; color: #A8D05F; font-style: italic;');
-        console.log('%c\nWebsite developed with modern web technologies', 'color: #1A2B4A;');
-        console.log('%cFor inquiries: contact@cricafrica.com', 'color: #666;');
     </script>
 </body>
 

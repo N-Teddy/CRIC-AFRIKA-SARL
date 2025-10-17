@@ -1,0 +1,873 @@
+<!-- services.html - SERVICES PAGE -->
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services - CRIC Africa SARL | Installation & Maintenance Industrielle</title>
+    <meta name="description"
+        content="Services complets d'installation, maintenance et automatisation industrielle. CRIC Africa SARL, votre partenaire technique au Cameroun.">
+
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --primary-orange: #FF8C42;
+            --lemon-green: #A8D05F;
+            --dark-blue: #1A2B4A;
+            --light-gray: #F5F7FA;
+        }
+
+        .orange-accent {
+            color: var(--primary-orange);
+        }
+
+        .green-accent {
+            color: var(--lemon-green);
+        }
+
+        .text-dark-blue {
+            color: var(--dark-blue);
+        }
+
+        .bg-primary-orange {
+            background-color: var(--primary-orange);
+        }
+
+        .bg-lemon-green {
+            background-color: var(--lemon-green);
+        }
+
+        .bg-dark-blue {
+            background-color: var(--dark-blue);
+        }
+
+        .bg-light-gray {
+            background-color: var(--light-gray);
+        }
+
+        .btn-orange {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, #ff7028 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-orange:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 140, 66, 0.4);
+        }
+
+        .btn-green {
+            background: linear-gradient(135deg, var(--lemon-green) 0%, #8fb84d 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-green:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(168, 208, 95, 0.4);
+        }
+
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+
+        header {
+            backdrop-filter: blur(10px);
+            background: rgba(26, 43, 74, 0.95);
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, #2d4a7c 50%, var(--lemon-green) 100%);
+        }
+
+        .service-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-orange), var(--lemon-green));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-4 lg:px-8 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-primary-orange to-lemon-green rounded-lg flex items-center justify-center">
+                        <i class="fas fa-industry text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-white">CRIC AFRICA</h1>
+                        <p class="text-xs text-gray-300 italic">Ensemble Énergisons L'Afrique</p>
+                    </div>
+                </div>
+
+                <ul class="hidden lg:flex space-x-8 text-white font-semibold">
+                    <li><a href="index.html" class="hover:text-primary-orange transition">Accueil</a></li>
+                    <li><a href="products.html" class="hover:text-lemon-green transition">Produits</a></li>
+                    <li><a href="services.html" class="text-lemon-green">Services</a></li>
+                    <li><a href="realisations.html" class="hover:text-lemon-green transition">Réalisations</a></li>
+                    <li><a href="about.html" class="hover:text-primary-orange transition">À Propos</a></li>
+                    <li><a href="contact.html" class="hover:text-lemon-green transition">Contact</a></li>
+                </ul>
+
+                <a href="contact.html"
+                    class="hidden lg:block btn-orange text-white px-6 py-3 rounded-full font-semibold">
+                    <i class="fas fa-phone mr-2"></i>Contactez-nous
+                </a>
+
+                <button onclick="toggleMobileMenu()" class="lg:hidden text-white text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <div id="mobileMenu" class="mobile-menu lg:hidden mt-4">
+                <ul class="flex flex-col space-y-4 text-white font-semibold bg-dark-blue/50 p-6 rounded-lg">
+                    <li><a href="index.html" class="block hover:text-primary-orange transition">Accueil</a></li>
+                    <li><a href="products.html" class="block hover:text-lemon-green transition">Produits</a></li>
+                    <li><a href="services.html" class="block text-lemon-green">Services</a></li>
+                    <li><a href="realisations.html" class="block hover:text-lemon-green transition">Réalisations</a>
+                    </li>
+                    <li><a href="about.html" class="block hover:text-primary-orange transition">À Propos</a></li>
+                    <li><a href="contact.html" class="block hover:text-lemon-green transition">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header pt-32 pb-20">
+        <div class="container mx-auto px-4 lg:px-8 text-center">
+            <h1 class="text-5xl lg:text-6xl font-bold text-white mb-6">Nos <span class="orange-accent">Services</span>
+            </h1>
+            <p class="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
+                Solutions complètes d'installation, maintenance et automatisation pour l'industrie
+            </p>
+            <div class="flex justify-center space-x-2 text-white">
+                <a href="index.html" class="hover:text-primary-orange transition">Accueil</a>
+                <span>/</span>
+                <span class="green-accent">Services</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-20 bg-light-gray">
+        <div class="container mx-auto px-4 lg:px-8">
+
+            <!-- Service 1: Installation Réseau Électrique -->
+            <div class="service-card bg-white rounded-2xl shadow-lg p-8 lg:p-12 mb-8 hover-lift">
+                <div class="grid lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-plug text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-sm font-semibold orange-accent uppercase">Installation</span>
+                                <h2 class="text-3xl font-bold text-dark-blue">Installation Réseau Électrique</h2>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                            Conception, installation et mise en service de réseaux électriques industriels complets. De
+                            la basse tension à la moyenne tension, nous assurons des installations conformes aux normes
+                            en vigueur.
+                        </p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle green-accent text-xl mr-3 mt-1"></i>
+                                <span class="text-gray-700">Études et dimensionnement électrique</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle orange-accent text-xl mr-3 mt-1"></i>
+                                <span class="text-gray-700">Installation de tableaux électriques</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle green-accent text-xl mr-3 mt-1"></i>
+                                <span class="text-gray-700">Câblage et raccordement</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle orange-accent text-xl mr-3 mt-1"></i>
+                                <span class="text-gray-700">Mise à la terre et protection</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html"
+                            class="btn-orange text-white px-6 py-3 rounded-full font-semibold inline-block">
+                            <i class="fas fa-phone mr-2"></i>Demander un Devis
+                        </a>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800"
+                            alt="Installation Réseau Électrique" class="w-full h-80 object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 2: Assistance Service Après-Vente -->
+            <div class="service-card bg-white rounded-2xl shadow-lg p-8 lg:p-12 mb-8 hover-lift">
+                <div class="grid lg:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 lg:order-1 rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800"
+                            alt="Service Après-Vente" class="w-full h-80 object-cover">
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-headset text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-sm font-semibold green-accent uppercase">Support</span>
+                                <h2 class="text-3xl font-bold text-dark-blue">Assistance Service Après-Vente</h2>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                            Support technique professionnel disponible 24/7 pour assurer la continuité de vos
+                            opérations. Notre équipe d'experts intervient rapidement pour résoudre tous vos problèmes.
+                        </p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle orange-accent text-xl mr-3 mt-1"></i>
+                                <span class="text-gray-700">Hotline technique 24/7</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle green-accent text-xl mr-3 mt-1"></i>
+                                <span class="text-gray-700">Intervention rapide sur site</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle orange-accent text-xl mr-3 mt-1"></i>
+                                <span class="text-gray-700">Diagnostic et dépannage</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle green-accent text-xl mr-3 mt-1"></i>
+                                <span class="text-gray-700">Fourniture de pièces détachées</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html"
+                            class="btn-green text-white px-6 py-3 rounded-full font-semibold inline-block">
+                            <i class="fas fa-phone mr-2"></i>Contacter le Support
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 3: Automatisation des Usines -->
+            <div class="service-card bg-white rounded-2xl shadow-lg p-8 lg:p-12 mb-8 hover-lift">
+                <div class="grid lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-robot text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-sm font-semibold orange-accent uppercase">Automatisation</span>
+                                <h2 class="text-3xl font-bold text-dark-blue">Automatisation des Usines</h2>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                            Solutions d'automatisation industrielle pour optimiser votre production, réduire les coûts
+                            et améliorer la qualité. Systèmes de contrôle et supervision modernes.
+                        </p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle green-accent text-xl mr-3 mt-1"></i>
+                                <span class="text-gray-700">Programmation d'automates (PLC)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle orange-accent text-xl mr-3 mt-1"></i>
+                                <span class="text-gray-700">Systèmes SCADA et supervision</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle green-accent text-xl mr-3 mt-1"></i>
+                                <span class="text-gray-700">Robotique industrielle</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle orange-accent text-xl mr-3 mt-1"></i>
+                                <span class="text-gray-700">Intégration Industrie 4.0</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html"
+                            class="btn-orange text-white px-6 py-3 rounded-full font-semibold inline-block">
+                            <i class="fas fa-phone mr-2"></i>Demander un Devis
+                        </a>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800"
+                            alt="Automatisation Usines" class="w-full h-80 object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 4: Paramétrage des Groupes Électrogènes -->
+            <div class="service-card bg-white rounded-2xl shadow-lg p-8 lg:p-12 mb-8 hover-lift">
+                <div class="grid lg:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 lg:order-1 rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800"
+                            alt="Paramétrage Groupes Électrogènes" class="w-full h-80 object-cover">
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-sliders-h text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-sm font-semibold green-accent uppercase">Configuration</span>
+                                <h2 class="text-3xl font-bold text-dark-blue">Paramétrage des Groupes Électrogènes</h2>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                            Configuration et optimisation de vos groupes électrogènes pour des performances maximales.
+                            Réglages précis et tests de fonctionnement complets.
+                        </p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle orange-accent text-xl mr-3 mt-1"></i>
+                                <span class="text-gray-700">Paramétrage des régulateurs</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle green-accent text-xl mr-3 mt-1"></i>
+                                <span class="text-gray-700">Synchronisation et couplage</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle orange-accent text-xl mr-3 mt-1"></i>
+                                <span class="text-gray-700">Tests de charge et performance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle green-accent text-xl mr-3 mt-1"></i>
+                                <span class="text-gray-700">Formation des opérateurs</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html"
+                            class="btn-green text-white px-6 py-3 rounded-full font-semibold inline-block">
+                            <i class="fas fa-phone mr-2"></i>Demander un Devis
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 5: Maintenance Parc Engins Lourds et Légers -->
+            <div class="service-card bg-white rounded-2xl shadow-lg p-8 lg:p-12 mb-8 hover-lift">
+                <div class="grid lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-truck text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-sm font-semibold orange-accent uppercase">Maintenance</span>
+                                <h2 class="text-3xl font-bold text-dark-blue">Maintenance Parc Engins Lourds et Légers
+                                </h2>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-6"> Maintenance préventive et curative de
+                            votre parc d'engins de
+                            chantier et de manutention. Prolongez la durée de vie de vos équipements et optimisez leur
+                            disponibilité. </p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start"> <i
+                                    class="fas fa-check-circle green-accent text-xl mr-3 mt-1"></i> <span
+                                    class="text-gray-700">Maintenance préventive planifiée</span> </li>
+                            <li class="flex items-start"> <i
+                                    class="fas fa-check-circle orange-accent text-xl mr-3 mt-1"></i> <span
+                                    class="text-gray-700">Réparations et révisions complètes</span> </li>
+                            <li class="flex items-start"> <i
+                                    class="fas fa-check-circle green-accent text-xl mr-3 mt-1"></i> <span
+                                    class="text-gray-700">Diagnostic électronique</span> </li>
+                            <li class="flex items-start"> <i
+                                    class="fas fa-check-circle orange-accent text-xl mr-3 mt-1"></i> <span
+                                    class="text-gray-700">Gestion de flotte et suivi</span> </li>
+                        </ul> <a href="contact.html"
+                            class="btn-orange text-white px-6 py-3 rounded-full font-semibold inline-block"> <i
+                                class="fas fa-phone mr-2"></i>Demander un Devis </a>
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-xl"> <img
+                            src="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?w=800"
+                            alt="Maintenance Engins" class="w-full h-80 object-cover"> </div>
+                </div>
+            </div>
+            <!-- Service 6: Maintenance Préventive et Prédictive -->
+            <div class="service-card bg-white rounded-2xl shadow-lg p-8 lg:p-12 mb-8 hover-lift">
+                <div class="grid lg:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 lg:order-1 rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800"
+                            alt="Maintenance Préventive" class="w-full h-80 object-cover">
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-calendar-check text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-sm font-semibold green-accent uppercase">Maintenance</span>
+                                <h2 class="text-3xl font-bold text-dark-blue">Maintenance Préventive et Prédictive</h2>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                            Programmes de maintenance avancés pour anticiper les pannes et optimiser la disponibilité de
+                            vos
+                            équipements. Réduisez vos coûts d'exploitation et évitez les arrêts imprévus.
+                        </p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle orange-accent text-xl mr-3 mt-1"></i>
+                                <span class="text-gray-700">Plans de maintenance personnalisés</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle green-accent text-xl mr-3 mt-1"></i>
+                                <span class="text-gray-700">Analyse vibratoire et thermographie</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle orange-accent text-xl mr-3 mt-1"></i>
+                                <span class="text-gray-700">Surveillance en temps réel</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle green-accent text-xl mr-3 mt-1"></i>
+                                <span class="text-gray-700">Rapports et recommandations</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html"
+                            class="btn-green text-white px-6 py-3 rounded-full font-semibold inline-block">
+                            <i class="fas fa-phone mr-2"></i>Demander un Devis
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Service Process -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">Notre <span
+                        class="orange-accent">Processus</span></h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Une méthodologie éprouvée pour garantir votre
+                    satisfaction</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center hover-lift">
+                    <div class="relative mb-6">
+                        <div
+                            class="w-24 h-24 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mx-auto shadow-lg">
+                            <span class="text-4xl font-bold text-white">1</span>
+                        </div>
+                        <div class="absolute top-12 right-0 hidden lg:block">
+                            <i class="fas fa-arrow-right text-4xl text-gray-300"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark-blue mb-3">Analyse des Besoins</h3>
+                    <p class="text-gray-600">Étude approfondie de vos besoins et contraintes spécifiques</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center hover-lift">
+                    <div class="relative mb-6">
+                        <div
+                            class="w-24 h-24 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mx-auto shadow-lg">
+                            <span class="text-4xl font-bold text-white">2</span>
+                        </div>
+                        <div class="absolute top-12 right-0 hidden lg:block">
+                            <i class="fas fa-arrow-right text-4xl text-gray-300"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark-blue mb-3">Proposition Technique</h3>
+                    <p class="text-gray-600">Élaboration d'une solution technique adaptée et chiffrée</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center hover-lift">
+                    <div class="relative mb-6">
+                        <div
+                            class="w-24 h-24 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mx-auto shadow-lg">
+                            <span class="text-4xl font-bold text-white">3</span>
+                        </div>
+                        <div class="absolute top-12 right-0 hidden lg:block">
+                            <i class="fas fa-arrow-right text-4xl text-gray-300"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark-blue mb-3">Réalisation</h3>
+                    <p class="text-gray-600">Exécution des travaux par nos équipes qualifiées</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="text-center hover-lift">
+                    <div class="relative mb-6">
+                        <div
+                            class="w-24 h-24 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mx-auto shadow-lg">
+                            <span class="text-4xl font-bold text-white">4</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark-blue mb-3">Suivi & Support</h3>
+                    <p class="text-gray-600">Accompagnement continu et service après-vente</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Guarantees -->
+    <section class="py-20 bg-light-gray">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">Nos <span
+                        class="green-accent">Garanties</span></h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Votre satisfaction est notre priorité</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Guarantee 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift">
+                    <div class="w-16 h-16 bg-primary-orange/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt orange-accent text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark-blue mb-4">Garantie Qualité</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Tous nos services sont garantis et réalisés selon les normes internationales. Nous utilisons
+                        uniquement des pièces et équipements certifiés.
+                    </p>
+                </div>
+
+                <!-- Guarantee 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift">
+                    <div class="w-16 h-16 bg-lemon-green/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-clock green-accent text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark-blue mb-4">Respect des Délais</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Nous nous engageons à respecter les délais convenus. Notre organisation rigoureuse garantit la
+                        livraison de vos projets dans les temps.
+                    </p>
+                </div>
+
+                <!-- Guarantee 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift">
+                    <div class="w-16 h-16 bg-primary-orange/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-users orange-accent text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark-blue mb-4">Équipe Qualifiée</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Nos techniciens et ingénieurs sont formés et certifiés. Ils disposent de l'expertise nécessaire
+                        pour
+                        tous types d'interventions.
+                    </p>
+                </div>
+
+                <!-- Guarantee 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift">
+                    <div class="w-16 h-16 bg-lemon-green/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-headset green-accent text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark-blue mb-4">Support 24/7</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Notre service d'assistance technique est disponible en permanence pour répondre à vos urgences
+                        et
+                        questions.
+                    </p>
+                </div>
+
+                <!-- Guarantee 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift">
+                    <div class="w-16 h-16 bg-primary-orange/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-file-contract orange-accent text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark-blue mb-4">Transparence Tarifaire</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Devis détaillés et transparents sans frais cachés. Vous savez exactement ce que vous payez avant
+                        de
+                        vous engager.
+                    </p>
+                </div>
+
+                <!-- Guarantee 6 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift">
+                    <div class="w-16 h-16 bg-lemon-green/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-thumbs-up green-accent text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-dark-blue mb-4">Satisfaction Client</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Nous ne considérons un projet terminé que lorsque vous êtes entièrement satisfait. Votre avis
+                        compte
+                        pour nous.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-lemon-green to-primary-orange">
+        <div class="container mx-auto px-4 lg:px-8 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">Prêt à Optimiser Vos Installations ?</h2>
+                <p class="text-xl text-white/90 mb-8 leading-relaxed">
+                    Contactez nos experts pour discuter de vos besoins en services industriels. Nous vous proposerons la
+                    solution la plus adaptée.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="contact.html"
+                        class="bg-white text-lemon-green px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition">
+                        <i class="fas fa-phone mr-2"></i>Contactez-nous
+                    </a>
+                    <a href="realisations.html"
+                        class="bg-dark-blue text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition">
+                        <i class="fas fa-folder-open mr-2"></i>Voir Nos Réalisations
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-blue text-white pt-16 pb-8">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-primary-orange to-lemon-green rounded-lg flex items-center justify-center">
+                            <i class="fas fa-industry text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">CRIC AFRICA</h3>
+                            <p class="text-xs text-gray-400 italic">Ensemble Énergisons L'Afrique</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Votre partenaire de confiance pour l'importation, l'installation et la maintenance d'équipements
+                        industriels au Cameroun.
+                    </p>
+                    <div class="flex space-x-3">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 hover:bg-primary-orange rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 hover:bg-lemon-green rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 hover:bg-primary-orange rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 hover:bg-lemon-green rounded-full flex items-center justify-center transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6 orange-accent">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html"
+                                class="text-gray-400 hover:text-primary-orange transition flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2"></i>Accueil</a></li>
+                        <li><a href="products.html"
+                                class="text-gray-400 hover:text-lemon-green transition flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2"></i>Produits</a></li>
+                        <li><a href="services.html"
+                                class="text-gray-400 hover:text-primary-orange transition flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2"></i>Services</a></li>
+                        <li><a href="realisations.html"
+                                class="text-gray-400 hover:text-lemon-green transition flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2"></i>Réalisations</a></li>
+                        <li><a href="about.html"
+                                class="text-gray-400 hover:text-primary-orange transition flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2"></i>À Propos</a></li>
+                        <li><a href="contact.html"
+                                class="text-gray-400 hover:text-lemon-green transition flex items-center"><i
+                                    class="fas fa-chevron-right text-xs mr-2"></i>Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6 green-accent">Nos Services</h4>
+                    <ul class="space-y-3">
+                        <li class="text-gray-400 flex items-start"><i
+                                class="fas fa-check orange-accent text-xs mr-2 mt-1"></i>Installation Électrique</li>
+                        <li class="text-gray-400 flex items-start"><i
+                                class="fas fa-check green-accent text-xs mr-2 mt-1"></i>Maintenance Industrielle</li>
+                        <li class="text-gray-400 flex items-start"><i
+                                class="fas fa-check orange-accent text-xs mr-2 mt-1"></i>Automatisation</li>
+                        <li class="text-gray-400 flex items-start"><i
+                                class="fas fa-check green-accent text-xs mr-2 mt-1"></i>Service Après-Vente</li>
+                        <li class="text-gray-400 flex items-start"><i
+                                class="fas fa-check orange-accent text-xs mr-2"></i>Paramétrage</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6 orange-accent">Contact</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt orange-accent mt-1"></i>
+                            <span class="text-gray-400">Douala, Cameroun</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-phone green-accent mt-1"></i>
+                            <span class="text-gray-400">+237 XXX XXX XXX</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-envelope orange-accent mt-1"></i>
+                            <span class="text-gray-400">contact@cricafrica.com</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-clock green-accent mt-1"></i>
+                            <span class="text-gray-400">Lun-Ven: 8h-18h<br>Sam: 9h-13h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-gray-400 text-sm text-center md:text-left">
+                        &copy; 2025 <span class="orange-accent font-semibold">CRIC Africa SARL</span>. Tous droits
+                        réservés.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-6 text-sm">
+                        <a href="#" class="text-gray-400 hover:text-primary-orange transition">Politique de
+                            Confidentialité</a>
+                        <a href="#" class="text-gray-400 hover:text-lemon-green transition">Conditions d'Utilisation</a>
+                        <a href="#" class="text-gray-400 hover:text-primary-orange transition">Mentions Légales</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop"
+        class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-primary-orange to-lemon-green text-white rounded-full shadow-lg hover:shadow-2xl transition opacity-0 pointer-events-none z-50">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/237XXXXXXXXX" target="_blank"
+        class="fixed bottom-24 right-8 w-14 h-14 bg-green-500 text-white rounded-full shadow-lg hover:shadow-2xl hover:scale-110 transition flex items-center justify-center z-50">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                scrollToTopBtn.classList.add('opacity-100');
+            } else {
+                scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                scrollToTopBtn.classList.remove('opacity-100');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll <= 0) {
+                header.classList.remove('shadow-lg');
+                return;
+            }
+
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+                header.classList.add('shadow-lg');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        header.style.transition = 'transform 0.3s ease-in-out, box-shadow 0.3s ease';
+    </script>
+</body>
+
+</html>

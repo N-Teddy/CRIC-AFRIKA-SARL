@@ -1,0 +1,640 @@
+// src/pages/About.jsx
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Helmet } from 'react-helmet-async'
+import { Link } from 'react-router-dom'
+import {
+    Factory,
+    Phone,
+    Handshake,
+    FolderOpen,
+    Target,
+    Eye,
+    Zap,
+    Star,
+    Shield,
+    Lightbulb,
+    Users,
+    Award,
+    Briefcase,
+    Linkedin,
+    Mail,
+    Calendar,
+    ChevronRight,
+    Check
+} from 'lucide-react'
+
+const About = () => {
+    const teamMembers = [
+        {
+            name: 'Jean ATANGANA',
+            position: 'Directeur Général',
+            description: '15 ans d\'expérience dans l\'industrie',
+            color: 'orange'
+        },
+        {
+            name: 'Marie NKOTTO',
+            position: 'Directrice Technique',
+            description: 'Ingénieure électricienne certifiée',
+            color: 'green'
+        },
+        {
+            name: 'Paul MBARGA',
+            position: 'Chef de Projet',
+            description: 'Expert en automatisation industrielle',
+            color: 'orange'
+        },
+        {
+            name: 'Sophie EKANI',
+            position: 'Responsable Commercial',
+            description: 'Spécialiste relation client',
+            color: 'green'
+        }
+    ]
+
+    const certifications = [
+        {
+            name: 'ISO 9001:2015',
+            description: 'Management de la Qualité',
+            color: 'orange'
+        },
+        {
+            name: 'ISO 14001:2015',
+            description: 'Management Environnemental',
+            color: 'green'
+        },
+        {
+            name: 'ISO 45001:2018',
+            description: 'Santé et Sécurité au Travail',
+            color: 'orange'
+        },
+        {
+            name: 'Certification Électrique',
+            description: 'Habilitations MT/BT',
+            color: 'green'
+        }
+    ]
+
+    const partners = [
+        'SIEMENS', 'SCHNEIDER', 'ABB', 'CATERPILLAR', 'CUMMINS', 'ATLAS COPCO'
+    ]
+
+    const values = [
+        {
+            icon: Star,
+            title: 'Excellence',
+            description: 'Nous visons l\'excellence dans tout ce que nous faisons',
+            color: 'orange'
+        },
+        {
+            icon: Shield,
+            title: 'Intégrité',
+            description: 'Honnêteté et transparence dans toutes nos relations',
+            color: 'green'
+        },
+        {
+            icon: Lightbulb,
+            title: 'Innovation',
+            description: 'Recherche constante de solutions innovantes',
+            color: 'orange'
+        },
+        {
+            icon: Users,
+            title: 'Collaboration',
+            description: 'Travail d\'équipe et partenariats durables',
+            color: 'green'
+        }
+    ]
+
+    const timeline = [
+        {
+            year: '2008',
+            title: 'Création de CRIC Africa',
+            description: 'Fondation de l\'entreprise à Douala avec une équipe de 5 personnes. Premiers contrats d\'importation d\'équipements électriques.',
+            color: 'orange'
+        },
+        {
+            year: '2012',
+            title: 'Expansion des Services',
+            description: 'Lancement du département installation et maintenance. Obtention de certifications internationales. Équipe de 15 techniciens.',
+            color: 'green'
+        },
+        {
+            year: '2015',
+            title: 'Partenariats Internationaux',
+            description: 'Signature de partenariats exclusifs avec des fabricants européens et asiatiques. Ouverture d\'une agence à Yaoundé.',
+            color: 'orange'
+        },
+        {
+            year: '2018',
+            title: 'Diversification',
+            description: 'Lancement de l\'activité automatisation industrielle et systèmes de supervision. Plus de 100 projets réalisés.',
+            color: 'green'
+        },
+        {
+            year: '2021',
+            title: 'Leadership Régional',
+            description: 'CRIC Africa devient leader de l\'équipement industriel au Cameroun. Extension des activités au Gabon et en Guinée Équatoriale.',
+            color: 'orange'
+        },
+        {
+            year: '2025',
+            title: 'Aujourd\'hui',
+            description: '45 collaborateurs, 80+ clients satisfaits, 150+ projets réalisés. Engagement continu pour l\'excellence et l\'innovation.',
+            color: 'gradient',
+            isCurrent: true
+        }
+    ]
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2
+            }
+        }
+    }
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.8
+            }
+        }
+    }
+
+    return (
+        <>
+            <Helmet>
+                <title>À Propos - CRIC Africa SARL | Notre Histoire et Notre Vision</title>
+                <meta
+                    name="description"
+                    content="Découvrez CRIC Africa SARL, leader de l'équipement industriel au Cameroun. Notre histoire, nos valeurs, notre équipe."
+                />
+                <meta
+                    name="keywords"
+                    content="CRIC Africa histoire, équipe industrielle Cameroun, valeurs entreprise, certifications industrielles"
+                />
+                <meta property="og:title" content="À Propos - CRIC Africa SARL" />
+                <meta property="og:description" content="Notre histoire, notre vision et notre équipe" />
+                <meta property="og:type" content="website" />
+                <link rel="canonical" href="https://cricafrica.com/about" />
+            </Helmet>
+
+            <div className="pt-20">
+                {/* Page Header */}
+                <section className="pt-32 pb-20 bg-gradient-to-br from-dark-blue via-blue-900 to-lemon-green">
+                    <div className="container px-4 mx-auto text-center lg:px-8">
+                        <motion.h1
+                            className="mb-6 text-5xl font-bold text-white lg:text-6xl"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            À Propos de <span className="text-primary-orange">CRIC Africa</span>
+                        </motion.h1>
+                        <motion.p
+                            className="max-w-3xl mx-auto mb-8 text-xl text-gray-200"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                        >
+                            Leader de l'équipement industriel au Cameroun depuis plus de 15 ans
+                        </motion.p>
+                        <motion.div
+                            className="flex justify-center space-x-2 text-white"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                        >
+                            <Link to="/" className="transition hover:text-primary-orange">Accueil</Link>
+                            <span>/</span>
+                            <span className="text-lemon-green">À Propos</span>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* Company Story */}
+                <section className="py-20 bg-white">
+                    <div className="container px-4 mx-auto lg:px-8">
+                        <div className="grid items-center gap-12 lg:grid-cols-2">
+                            <motion.div
+                                initial={{ opacity: 0, x: -50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.8 }}
+                                viewport={{ once: true }}
+                            >
+                                <span className="inline-block px-4 py-2 mb-4 text-sm font-semibold rounded-full bg-primary-orange/10 text-primary-orange">
+                                    NOTRE HISTOIRE
+                                </span>
+                                <h2 className="mb-6 text-4xl font-bold lg:text-5xl text-dark-blue">
+                                    Une Entreprise <span className="text-lemon-green">Camerounaise</span> au Service de l'Industrie
+                                </h2>
+                                <p className="mb-6 text-lg leading-relaxed text-gray-600">
+                                    Fondée en 2008, <strong className="text-primary-orange">CRIC Africa SARL</strong> est née de la vision de créer une entreprise camerounaise capable de répondre aux besoins croissants du secteur industriel en équipements de qualité et en services techniques professionnels.
+                                </p>
+                                <p className="mb-6 text-lg leading-relaxed text-gray-600">
+                                    Depuis nos débuts, nous avons accompagné plus de <strong className="text-lemon-green">80 entreprises</strong> dans leurs projets d'installation, de maintenance et d'optimisation de leurs équipements industriels. Notre engagement envers l'excellence et la satisfaction client nous a permis de devenir un acteur incontournable du secteur.
+                                </p>
+                                <p className="mb-8 text-lg leading-relaxed text-gray-600">
+                                    Aujourd'hui, CRIC Africa c'est une équipe de <strong className="text-primary-orange">45 professionnels qualifiés</strong>, des partenariats avec les plus grandes marques internationales, et une présence sur tout le territoire camerounais.
+                                </p>
+                                <div className="flex flex-wrap gap-4">
+                                    <Link
+                                        to="/contact"
+                                        className="px-6 py-3 font-semibold text-white rounded-full btn-orange"
+                                    >
+                                        <Handshake className="inline mr-2" size={16} />
+                                        Devenir Partenaire
+                                    </Link>
+                                    <Link
+                                        to="/realisations"
+                                        className="px-6 py-3 font-semibold text-white rounded-full btn-green"
+                                    >
+                                        <FolderOpen className="inline mr-2" size={16} />
+                                        Nos Réalisations
+                                    </Link>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                className="grid grid-cols-2 gap-4"
+                                initial={{ opacity: 0, x: 50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.8 }}
+                                viewport={{ once: true }}
+                            >
+                                <img
+                                    src="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?w=600"
+                                    alt="CRIC Africa"
+                                    className="object-cover w-full h-64 shadow-lg rounded-2xl hover-lift"
+                                />
+                                <img
+                                    src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600"
+                                    alt="Équipe CRIC Africa"
+                                    className="object-cover w-full h-64 mt-8 shadow-lg rounded-2xl hover-lift"
+                                />
+                                <img
+                                    src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600"
+                                    alt="Projets CRIC Africa"
+                                    className="object-cover w-full h-64 shadow-lg rounded-2xl hover-lift"
+                                />
+                                <img
+                                    src="https://images.unsplash.com/photo-1621905252472-9b6e78c09a0f?w=600"
+                                    alt="Installations CRIC Africa"
+                                    className="object-cover w-full h-64 mt-8 shadow-lg rounded-2xl hover-lift"
+                                />
+                            </motion.div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Mission, Vision, Values */}
+                <section className="py-20 bg-light-gray">
+                    <div className="container px-4 mx-auto lg:px-8">
+                        <motion.div
+                            className="mb-16 text-center"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
+                            <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
+                                Notre <span className="text-primary-orange">Identité</span>
+                            </h2>
+                            <p className="max-w-3xl mx-auto text-xl text-gray-600">
+                                Les principes qui guident notre action au quotidien
+                            </p>
+                        </motion.div>
+
+                        <motion.div
+                            className="grid gap-8 mb-16 lg:grid-cols-3"
+                            variants={containerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                        >
+                            {/* Mission */}
+                            <motion.div
+                                className="p-8 bg-white rounded-2xl hover-lift"
+                                variants={itemVariants}
+                            >
+                                <div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary-orange to-lemon-green">
+                                    <Target className="text-3xl text-white" />
+                                </div>
+                                <h3 className="mb-4 text-2xl font-bold text-center text-dark-blue">Notre Mission</h3>
+                                <p className="leading-relaxed text-center text-gray-600">
+                                    Fournir aux entreprises camerounaises et d'Afrique Centrale des équipements industriels de qualité supérieure et des services techniques d'excellence, contribuant ainsi au développement industriel du continent.
+                                </p>
+                            </motion.div>
+
+                            {/* Vision */}
+                            <motion.div
+                                className="p-8 bg-white rounded-2xl hover-lift"
+                                variants={itemVariants}
+                            >
+                                <div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-lemon-green to-primary-orange">
+                                    <Eye className="text-3xl text-white" />
+                                </div>
+                                <h3 className="mb-4 text-2xl font-bold text-center text-dark-blue">Notre Vision</h3>
+                                <p className="leading-relaxed text-center text-gray-600">
+                                    Devenir le leader incontesté de l'équipement industriel en Afrique Centrale, reconnu pour notre expertise technique, notre innovation et notre engagement envers nos clients.
+                                </p>
+                            </motion.div>
+
+                            {/* Slogan */}
+                            <motion.div
+                                className="p-8 text-white bg-gradient-to-br from-primary-orange to-lemon-green rounded-2xl hover-lift"
+                                variants={itemVariants}
+                            >
+                                <div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 rounded-full bg-white/20">
+                                    <Zap className="text-3xl text-white" />
+                                </div>
+                                <h3 className="mb-4 text-2xl font-bold text-center">Notre Devise</h3>
+                                <p className="text-xl italic font-semibold leading-relaxed text-center text-white">
+                                    "Ensemble Énergisons L'Afrique"
+                                </p>
+                                <p className="mt-4 leading-relaxed text-center text-white/90">
+                                    Un engagement collectif pour le développement industriel et énergétique du continent africain.
+                                </p>
+                            </motion.div>
+                        </motion.div>
+
+                        {/* Values */}
+                        <motion.div
+                            className="p-8 bg-white rounded-2xl lg:p-12"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
+                            <h3 className="mb-12 text-3xl font-bold text-center text-dark-blue">
+                                Nos <span className="text-lemon-green">Valeurs</span>
+                            </h3>
+                            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                                {values.map((value, index) => {
+                                    const Icon = value.icon
+                                    return (
+                                        <motion.div
+                                            key={value.title}
+                                            className="relative overflow-hidden text-center value-card"
+                                            whileHover={{ scale: 1.05 }}
+                                            transition={{ duration: 0.3 }}
+                                        >
+                                            <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${value.color === 'orange'
+                                                    ? 'from-primary-orange to-lemon-green'
+                                                    : 'from-lemon-green to-primary-orange'
+                                                }`} />
+                                            <div className={`w-16 h-16 ${value.color === 'orange' ? 'bg-primary-orange/10' : 'bg-lemon-green/10'
+                                                } rounded-full flex items-center justify-center mx-auto mb-4`}>
+                                                <Icon className={`${value.color === 'orange' ? 'text-primary-orange' : 'text-lemon-green'
+                                                    } text-2xl`} />
+                                            </div>
+                                            <h4 className="mb-3 text-xl font-bold text-dark-blue">{value.title}</h4>
+                                            <p className="text-gray-600">{value.description}</p>
+                                        </motion.div>
+                                    )
+                                })}
+                            </div>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* Timeline */}
+                <section className="py-20 bg-white">
+                    <div className="container px-4 mx-auto lg:px-8">
+                        <motion.div
+                            className="mb-16 text-center"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
+                            <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
+                                Notre <span className="text-primary-orange">Parcours</span>
+                            </h2>
+                            <p className="max-w-3xl mx-auto text-xl text-gray-600">
+                                Les grandes étapes de notre développement
+                            </p>
+                        </motion.div>
+
+                        <div className="max-w-4xl mx-auto">
+                            {timeline.map((item, index) => (
+                                <motion.div
+                                    key={item.year}
+                                    className="relative pb-12 pl-12 border-l-2 timeline-item border-lemon-green last:border-l-0"
+                                    initial={{ opacity: 0, x: -50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                                    viewport={{ once: true }}
+                                >
+                                    <div className="absolute top-0 w-4 h-4 rounded-full timeline-dot -left-2 bg-gradient-to-br from-primary-orange to-lemon-green" />
+                                    <div className={`rounded-xl p-6 ${item.isCurrent
+                                            ? 'bg-gradient-to-br from-primary-orange to-lemon-green text-white'
+                                            : 'bg-light-gray'
+                                        }`}>
+                                        <span className={`inline-block ${item.isCurrent
+                                                ? 'bg-white/20 text-white'
+                                                : item.color === 'orange' ? 'bg-primary-orange text-white' : 'bg-lemon-green text-white'
+                                            } px-3 py-1 rounded-full text-sm font-semibold mb-3`}>
+                                            {item.year}
+                                        </span>
+                                        <h3 className={`text-2xl font-bold mb-2 ${item.isCurrent ? 'text-white' : 'text-dark-blue'
+                                            }`}>
+                                            {item.title}
+                                        </h3>
+                                        <p className={item.isCurrent ? 'text-white/90' : 'text-gray-600'}>
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Team Section */}
+                <section className="py-20 bg-light-gray">
+                    <div className="container px-4 mx-auto lg:px-8">
+                        <motion.div
+                            className="mb-16 text-center"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
+                            <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
+                                Notre <span className="text-lemon-green">Équipe</span>
+                            </h2>
+                            <p className="max-w-3xl mx-auto text-xl text-gray-600">
+                                Des professionnels passionnés et qualifiés à votre service
+                            </p>
+                        </motion.div>
+
+                        <motion.div
+                            className="grid gap-8 md:grid-cols-2 lg:grid-cols-4"
+                            variants={containerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                        >
+                            {teamMembers.map((member, index) => (
+                                <motion.div
+                                    key={member.name}
+                                    className="overflow-hidden bg-white rounded-2xl hover-lift"
+                                    variants={itemVariants}
+                                >
+                                    <div className={`h-64 bg-gradient-to-br ${member.color === 'orange'
+                                            ? 'from-primary-orange to-lemon-green'
+                                            : 'from-lemon-green to-primary-orange'
+                                        } flex items-center justify-center`}>
+                                        <Users className="text-6xl text-white" />
+                                    </div>
+                                    <div className="p-6 text-center">
+                                        <h3 className="mb-1 text-xl font-bold text-dark-blue">{member.name}</h3>
+                                        <p className={`${member.color === 'orange' ? 'text-primary-orange' : 'text-lemon-green'
+                                            } font-semibold mb-3`}>
+                                            {member.position}
+                                        </p>
+                                        <p className="mb-4 text-sm text-gray-600">{member.description}</p>
+                                        <div className="flex justify-center space-x-3">
+                                            <a
+                                                href="#"
+                                                className={`w-8 h-8 ${member.color === 'orange' ? 'bg-primary-orange/10 hover:bg-primary-orange' : 'bg-lemon-green/10 hover:bg-lemon-green'
+                                                    } ${member.color === 'orange' ? 'text-primary-orange hover:text-white' : 'text-lemon-green hover:text-white'
+                                                    } rounded-full flex items-center justify-center transition`}
+                                            >
+                                                <Linkedin size={12} />
+                                            </a>
+                                            <a
+                                                href="#"
+                                                className={`w-8 h-8 ${member.color === 'orange' ? 'bg-primary-orange/10 hover:bg-primary-orange' : 'bg-lemon-green/10 hover:bg-lemon-green'
+                                                    } ${member.color === 'orange' ? 'text-primary-orange hover:text-white' : 'text-lemon-green hover:text-white'
+                                                    } rounded-full flex items-center justify-center transition`}
+                                            >
+                                                <Mail size={12} />
+                                            </a>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </motion.div>
+
+                        <motion.div
+                            className="mt-12 text-center"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
+                            <p className="mb-6 text-lg text-gray-600">Rejoignez une équipe dynamique et passionnée</p>
+                            <Link
+                                to="/contact"
+                                className="inline-block px-8 py-4 text-lg font-bold text-white rounded-full btn-orange"
+                            >
+                                <Briefcase className="inline mr-2" size={20} />
+                                Carrières chez CRIC Africa
+                            </Link>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* Certifications & Partners */}
+                <section className="py-20 bg-white">
+                    <div className="container px-4 mx-auto lg:px-8">
+                        <div className="grid gap-16 lg:grid-cols-2">
+                            {/* Certifications */}
+                            <motion.div
+                                initial={{ opacity: 0, x: -50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.8 }}
+                                viewport={{ once: true }}
+                            >
+                                <h2 className="mb-8 text-3xl font-bold lg:text-4xl text-dark-blue">
+                                    Nos <span className="text-primary-orange">Certifications</span>
+                                </h2>
+                                <div className="space-y-4">
+                                    {certifications.map((cert, index) => (
+                                        <div key={cert.name} className="flex items-center p-4 bg-light-gray rounded-xl hover-lift">
+                                            <div className={`w-16 h-16 ${cert.color === 'orange' ? 'bg-primary-orange/10' : 'bg-lemon-green/10'
+                                                } rounded-full flex items-center justify-center mr-4`}>
+                                                <Award className={`${cert.color === 'orange' ? 'text-primary-orange' : 'text-lemon-green'
+                                                    } text-2xl`} />
+                                            </div>
+                                            <div>
+                                                <h4 className="font-bold text-dark-blue">{cert.name}</h4>
+                                                <p className="text-sm text-gray-600">{cert.description}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </motion.div>
+
+                            {/* Partners */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.8 }}
+                                viewport={{ once: true }}
+                            >
+                                <h2 className="mb-8 text-3xl font-bold lg:text-4xl text-dark-blue">
+                                    Nos <span className="text-lemon-green">Partenaires</span>
+                                </h2>
+                                <p className="mb-8 leading-relaxed text-gray-600">
+                                    Nous travaillons avec les plus grandes marques internationales pour vous garantir des équipements de qualité supérieure.
+                                </p>
+                                <div className="grid grid-cols-2 gap-6">
+                                    {partners.map((partner, index) => (
+                                        <div key={partner} className="flex items-center justify-center p-6 bg-light-gray rounded-xl hover-lift">
+                                            <span className="text-2xl font-bold text-gray-400">{partner}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </motion.div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* CTA Section */}
+                <section className="py-20 bg-gradient-to-r from-primary-orange to-lemon-green">
+                    <div className="container px-4 mx-auto text-center lg:px-8">
+                        <motion.div
+                            className="max-w-4xl mx-auto"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            viewport={{ once: true }}
+                        >
+                            <h2 className="mb-6 text-4xl font-bold text-white lg:text-5xl">Travaillons Ensemble</h2>
+                            <p className="mb-8 text-xl leading-relaxed text-white/90">
+                                Rejoignez les dizaines d'entreprises qui nous font confiance pour leurs projets industriels. Contactez-nous pour discuter de vos besoins.
+                            </p>
+                            <div className="flex flex-wrap justify-center gap-4">
+                                <Link
+                                    to="/contact"
+                                    className="px-8 py-4 text-lg font-bold transition bg-white rounded-full shadow-lg text-primary-orange hover:shadow-2xl hover:scale-105"
+                                >
+                                    <Phone className="inline mr-2" size={20} />
+                                    Contactez-nous
+                                </Link>
+                                <Link
+                                    to="/services"
+                                    className="px-8 py-4 text-lg font-bold text-white transition rounded-full shadow-lg bg-dark-blue hover:shadow-2xl hover:scale-105"
+                                >
+                                    <Factory className="inline mr-2" size={20} />
+                                    Nos Services
+                                </Link>
+                            </div>
+                        </motion.div>
+                    </div>
+                </section>
+            </div>
+        </>
+    )
+}
+
+export default About

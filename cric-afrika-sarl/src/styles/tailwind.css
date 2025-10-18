@@ -1,0 +1,53 @@
+/* src/styles/tailwind.css */
+@import "tailwindcss";
+
+@theme {
+    /* Your custom theme configuration goes here */
+    --color-primary-orange: #FF8C42;
+    --color-lemon-green: #A8D05F;
+    --color-dark-blue: #1A2B4A;
+    --color-light-gray: #F5F7FA;
+
+    --font-family-inter: 'Inter', sans-serif;
+
+    /* Custom animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    --animate-fade-in: fadeIn 0.8s ease-in;
+    --animate-slide-in-left: slideInLeft 0.8s ease-out;
+    --animate-slide-in-right: slideInRight 0.8s ease-out;
+}

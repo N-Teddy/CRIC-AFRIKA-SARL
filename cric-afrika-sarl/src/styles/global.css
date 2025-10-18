@@ -1,0 +1,44 @@
+/* src/styles/globals.css */
+@import './tailwind.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap');
+
+/* Base styles */
+@layer base {
+    html {
+        font-family: 'Inter', sans-serif;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+}
+
+/* Component styles */
+@layer components {
+    .btn-orange {
+        @apply px-6 py-3 font-semibold text-white transition-all rounded-full bg-gradient-to-r from-primary-orange to-orange-600 hover:shadow-lg hover:scale-105;
+    }
+
+    .btn-green {
+        @apply px-6 py-3 font-semibold text-white transition-all rounded-full bg-gradient-to-r from-lemon-green to-green-600 hover:shadow-lg hover:scale-105;
+    }
+
+    .hover-lift {
+        @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+    }
+
+    .stats-counter {
+        @apply text-5xl font-black text-transparent lg:text-6xl bg-gradient-to-r from-primary-orange to-lemon-green bg-clip-text;
+    }
+}
+
+/* Custom utilities */
+@layer utilities {
+    .text-shadow {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .backdrop-blur-md {
+        backdrop-filter: blur(12px);
+    }
+}

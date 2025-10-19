@@ -1,16 +1,16 @@
 // src/pages/Products.jsx
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import {
     Mail,
-    Phone,
     CheckCircle,
     Boxes,
     Download
 } from 'lucide-react'
 import { additionalProducts, benefits, products } from '../constants/products'
+import PageHeader from '../components/ui/PageHeader'
+import CTA from '../components/ui/CTA'
 
 const Products = () => {
 
@@ -55,36 +55,11 @@ const Products = () => {
 
             <div className="pt-20">
                 {/* Page Header */}
-                <section className="pt-32 pb-20 bg-gradient-to-br from-dark-blue via-blue-900 to-primary-orange">
-                    <div className="container px-4 mx-auto text-center lg:px-8">
-                        <motion.h1
-                            className="mb-6 text-5xl font-bold text-white lg:text-6xl"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                        >
-                            Nos <span className="text-primary-orange">Produits</span>
-                        </motion.h1>
-                        <motion.p
-                            className="max-w-3xl mx-auto mb-8 text-xl text-gray-200"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                        >
-                            Une gamme complète d'équipements industriels de haute qualité pour répondre à tous vos besoins
-                        </motion.p>
-                        <motion.div
-                            className="flex justify-center space-x-2 text-white"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
-                        >
-                            <Link to="/" className="transition hover:text-primary-orange">Accueil</Link>
-                            <span>/</span>
-                            <span className="text-primary-orange">Produits</span>
-                        </motion.div>
-                    </div>
-                </section>
+                <PageHeader
+                    title="Nos Produits"
+                    subtitle="Une gamme complète d'équipements industriels de haute qualité pour répondre à tous vos besoins"
+                    breadcrumbs={['Produits']}
+                />
 
                 {/* Products Grid */}
                 <section className="py-20 bg-light-gray">
@@ -137,8 +112,8 @@ const Products = () => {
                                                 {product.features.map((feature, featureIndex) => (
                                                     <li key={feature} className="flex items-start">
                                                         <CheckCircle className={`${featureIndex % 2 === 0
-                                                                ? 'text-lemon-green'
-                                                                : 'text-primary-orange'
+                                                            ? 'text-lemon-green'
+                                                            : 'text-primary-orange'
                                                             } text-xl mr-3 mt-1 flex-shrink-0`} />
                                                         <span className="text-gray-700">{feature}</span>
                                                     </li>
@@ -239,8 +214,8 @@ const Products = () => {
                                         variants={itemVariants}
                                     >
                                         <div className={`w-20 h-20 bg-gradient-to-br rounded-full flex items-center justify-center mx-auto mb-6 ${benefit.color === 'orange'
-                                                ? 'from-primary-orange to-lemon-green'
-                                                : 'from-lemon-green to-primary-orange'
+                                            ? 'from-primary-orange to-lemon-green'
+                                            : 'from-lemon-green to-primary-orange'
                                             }`}>
                                             <Icon className="text-3xl text-white" />
                                         </div>
@@ -254,40 +229,24 @@ const Products = () => {
                 </section>
 
                 {/* CTA Section */}
-                <section className="py-20 bg-gradient-to-r from-primary-orange to-lemon-green">
-                    <div className="container px-4 mx-auto text-center lg:px-8">
-                        <motion.div
-                            className="max-w-4xl mx-auto"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
-                        >
-                            <h2 className="mb-6 text-4xl font-bold text-white lg:text-5xl">
-                                Besoin d'un Équipement Spécifique ?
-                            </h2>
-                            <p className="mb-8 text-xl leading-relaxed text-white/90">
-                                Notre équipe d'experts est à votre disposition pour vous conseiller et vous proposer les meilleures solutions adaptées à vos besoins.
-                            </p>
-                            <div className="flex flex-wrap justify-center gap-4">
-                                <Link
-                                    to="/contact"
-                                    className="px-8 py-4 text-lg font-bold transition bg-white rounded-full shadow-lg text-primary-orange hover:shadow-2xl hover:scale-105"
-                                >
-                                    <Phone className="inline mr-2" size={20} />
-                                    Contactez un Expert
-                                </Link>
-                                <Link
-                                    to="/contact"
-                                    className="px-8 py-4 text-lg font-bold text-white transition rounded-full shadow-lg bg-dark-blue hover:shadow-2xl hover:scale-105"
-                                >
-                                    <Download className="inline mr-2" size={20} />
-                                    Télécharger le Catalogue
-                                </Link>
-                            </div>
-                        </motion.div>
-                    </div>
-                </section>
+                <CTA
+                    title="Besoin d'un Équipement Spécifique ?"
+                    description="Notre équipe d'experts est à votre disposition pour vous conseiller et vous proposer les meilleures solutions adaptées à vos besoins."
+                    buttons={[
+                        {
+                            text: "Contactez un Expert",
+                            to: "/contact",
+                            icon: "Phone",
+                            className: "bg-white text-primary-orange hover:bg-gray-50"
+                        },
+                        {
+                            text: "Télécharger le Catalogue",
+                            to: "/contact", // Or link to actual catalog
+                            icon: "Download",
+                            className: "bg-dark-blue text-white hover:bg-blue-900"
+                        }
+                    ]}
+                />
             </div>
         </>
     )

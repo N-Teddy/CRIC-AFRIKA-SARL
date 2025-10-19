@@ -1,16 +1,16 @@
 // src/pages/Contact.jsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
 import {
     Phone,
     Send,
-    Navigation,
     MessageCircle,
-    Box,
 } from 'lucide-react'
-import { contactInfo, faqs, offices, socialMedia } from '../constants/contact'
+import { contactInfo, faqs, socialMedia } from '../constants/contact'
+import PageHeader from '../components/ui/PageHeader'
+import { WhatsAppNumber } from '../constants'
+import CTA from '../components/ui/CTA'
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -87,36 +87,11 @@ const Contact = () => {
 
             <div className="pt-20">
                 {/* Page Header */}
-                <section className="pt-32 pb-20 bg-gradient-to-br from-dark-blue via-blue-900 to-primary-orange">
-                    <div className="container px-4 mx-auto text-center lg:px-8">
-                        <motion.h1
-                            className="mb-6 text-5xl font-bold text-white lg:text-6xl"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                        >
-                            Contactez <span className="text-lemon-green">CRIC Africa</span>
-                        </motion.h1>
-                        <motion.p
-                            className="max-w-3xl mx-auto mb-8 text-xl text-gray-200"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                        >
-                            Notre équipe est à votre écoute pour répondre à toutes vos questions et vous accompagner dans vos projets
-                        </motion.p>
-                        <motion.div
-                            className="flex justify-center space-x-2 text-white"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
-                        >
-                            <Link to="/" className="transition hover:text-primary-orange">Accueil</Link>
-                            <span>/</span>
-                            <span className="text-primary-orange">Contact</span>
-                        </motion.div>
-                    </div>
-                </section>
+                <PageHeader
+                    title="Nos Contact"
+                    subtitle="Notre équipe est à votre écoute pour répondre à toutes vos questions et vous accompagner dans vos projets"
+                    breadcrumbs={['Contact']}
+                />
 
                 {/* Contact Info Cards */}
                 <section className="py-20 bg-light-gray">
@@ -137,12 +112,12 @@ const Contact = () => {
                                         variants={itemVariants}
                                     >
                                         <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${info.color === 'orange'
-                                                ? 'from-primary-orange to-lemon-green'
-                                                : 'from-lemon-green to-primary-orange'
+                                            ? 'from-primary-orange to-lemon-green'
+                                            : 'from-lemon-green to-primary-orange'
                                             }`} />
                                         <div className={`w-16 h-16 bg-gradient-to-br rounded-full flex items-center justify-center mx-auto mb-4 ${info.color === 'orange'
-                                                ? 'from-primary-orange to-lemon-green'
-                                                : 'from-lemon-green to-primary-orange'
+                                            ? 'from-primary-orange to-lemon-green'
+                                            : 'from-lemon-green to-primary-orange'
                                             }`}>
                                             <Icon className="text-2xl text-white" />
                                         </div>
@@ -307,17 +282,17 @@ const Contact = () => {
                                     </p>
                                     <div className="space-y-4">
                                         <a
-                                            href="tel:+237XXXXXXXXX"
+                                            href={`tel:+237 ${WhatsAppNumber}`}
                                             className="flex items-center p-4 space-x-3 transition bg-white/20 hover:bg-white/30 rounded-xl"
                                         >
                                             <Phone className="text-2xl" />
                                             <div>
                                                 <p className="font-semibold">Appelez-nous</p>
-                                                <p className="text-sm text-white/90">+237 XXX XXX XXX</p>
+                                                <p className="text-sm text-white/90">+237 {WhatsAppNumber}</p>
                                             </div>
                                         </a>
                                         <a
-                                            href="https://wa.me/237XXXXXXXXX"
+                                            href={`https://wa.me/237 ${WhatsAppNumber}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="flex items-center p-4 space-x-3 transition bg-white/20 hover:bg-white/30 rounded-xl"
@@ -361,7 +336,7 @@ const Contact = () => {
                                                 <a
                                                     key={index}
                                                     href={social.href}
-                                                    className={`w-12 h-12 bg-white ${social.color} ${social.textColor} rounded-full flex items-center justify-center transition shadow-md`}
+                                                    className={`w-12 h-12 bg-white ${social.color} ${social.textColor} hover:text-white rounded-full flex items-center justify-center transition shadow-md`}
                                                 >
                                                     <Icon className="text-xl" />
                                                 </a>
@@ -413,107 +388,25 @@ const Contact = () => {
                     </div>
                 </section>
 
-                {/* Other Locations */}
-                <section className="py-20 bg-light-gray">
-                    <div className="container px-4 mx-auto lg:px-8">
-                        <motion.div
-                            className="mb-12 text-center"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
-                        >
-                            <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
-                                Nos <span className="text-lemon-green">Agences</span>
-                            </h2>
-                            <p className="max-w-3xl mx-auto text-xl text-gray-600">
-                                Nous sommes présents dans plusieurs villes
-                            </p>
-                        </motion.div>
-
-                        <motion.div
-                            className="grid gap-8 md:grid-cols-3"
-                            variants={containerVariants}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                        >
-                            {offices.map((office, index) => {
-                                const Icon = office.icon
-                                return (
-                                    <motion.div
-                                        key={office.title}
-                                        className="p-8 bg-white rounded-2xl hover-lift"
-                                        variants={itemVariants}
-                                    >
-                                        <div className={`w-16 h-16 bg-gradient-to-br rounded-full flex items-center justify-center mb-4 ${office.color === 'orange'
-                                                ? 'from-primary-orange to-lemon-green'
-                                                : 'from-lemon-green to-primary-orange'
-                                            }`}>
-                                            <Icon className="text-2xl text-white" />
-                                        </div>
-                                        <h3 className="mb-2 text-2xl font-bold text-dark-blue">{office.title}</h3>
-                                        <div className="mb-6 space-y-3 text-gray-600">
-                                            {office.details.map((detail, i) => {
-                                                const DetailIcon = detail.icon
-                                                return (
-                                                    <p key={i} className="flex items-start">
-                                                        <DetailIcon className={`${detail.color === 'orange' ? 'text-primary-orange' : 'text-lemon-green'} mr-3 mt-1 flex-shrink-0`} />
-                                                        {detail.text}
-                                                    </p>
-                                                )
-                                            })}
-                                        </div>
-                                        <a
-                                            href={office.action.href}
-                                            className={`inline-flex items-center font-semibold hover:underline ${office.color === 'orange' ? 'text-primary-orange' : 'text-lemon-green'
-                                                }`}
-                                        >
-                                            <Navigation className="mr-2" size={16} />
-                                            {office.action.label}
-                                        </a>
-                                    </motion.div>
-                                )
-                            })}
-                        </motion.div>
-                    </div>
-                </section>
-
                 {/* CTA Section */}
-                <section className="py-20 bg-gradient-to-r from-primary-orange to-lemon-green">
-                    <div className="container px-4 mx-auto text-center lg:px-8">
-                        <motion.div
-                            className="max-w-4xl mx-auto"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
-                        >
-                            <h2 className="mb-6 text-4xl font-bold text-white lg:text-5xl">
-                                Prêt à Démarrer Votre Projet ?
-                            </h2>
-                            <p className="mb-8 text-xl leading-relaxed text-white/90">
-                                Notre équipe d'experts est prête à vous accompagner. Contactez-nous dès aujourd'hui pour un devis gratuit et personnalisé.
-                            </p>
-                            <div className="flex flex-wrap justify-center gap-4">
-                                <a
-                                    href="tel:+237XXXXXXXXX"
-                                    className="px-8 py-4 text-lg font-bold transition bg-white rounded-full shadow-lg text-primary-orange hover:shadow-2xl hover:scale-105"
-                                >
-                                    <Phone className="inline mr-2" size={20} />
-                                    Appelez Maintenant
-                                </a>
-                                <Link
-                                    to="/products"
-                                    className="px-8 py-4 text-lg font-bold text-white transition rounded-full shadow-lg bg-dark-blue hover:shadow-2xl hover:scale-105"
-                                >
-                                    <Box className="inline mr-2" size={20} />
-                                    Voir Nos Produits
-                                </Link>
-                            </div>
-                        </motion.div>
-                    </div>
-                </section>
+                <CTA
+                    title="Prêt à Démarrer Votre Projet ?"
+                    description="Notre équipe d'experts est prête à vous accompagner. Contactez-nous dès aujourd'hui pour un devis gratuit et personnalisé."
+                    buttons={[
+                        {
+                            text: "Appelez Maintenant",
+                            href: `tel:+237 ${WhatsAppNumber}`,
+                            icon: "Phone",
+                            className: "bg-white text-primary-orange hover:bg-gray-50"
+                        },
+                        {
+                            text: "Voir Nos Produits",
+                            to: "/products",
+                            icon: "Box",
+                            className: "bg-dark-blue text-white hover:bg-blue-900"
+                        }
+                    ]}
+                />
             </div>
         </>
     )

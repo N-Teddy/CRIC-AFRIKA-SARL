@@ -1,5 +1,5 @@
 // src/components/layout/Header.jsx
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link, useLocation } from 'react-router-dom'
 import {
@@ -7,24 +7,13 @@ import {
     Phone,
     Menu,
     X,
-    Bolt,
-    Cog,
-    FireExtinguisher
 } from 'lucide-react'
+import { CompanyName, navigation } from '../../constants'
 
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false)
     const location = useLocation()
-
-    const navigation = [
-        { name: 'Accueil', href: '/', icon: Bolt },
-        { name: 'Produits', href: '/products', icon: Cog },
-        { name: 'Services', href: '/services', icon: Factory },
-        { name: 'Réalisations', href: '/realisations', icon: FireExtinguisher },
-        { name: 'À Propos', href: '/about', icon: Factory },
-        { name: 'Contact', href: '/contact', icon: Phone },
-    ]
 
     useEffect(() => {
         const handleScroll = () => {
@@ -56,7 +45,7 @@ const Header = () => {
                             <Factory className="text-xl text-white" />
                         </div>
                         <div>
-                            <h1 className="text-2xl font-bold text-white">CRIC AFRICA</h1>
+                            <h1 className="text-2xl font-bold text-white">{CompanyName.toLocaleUpperCase()}</h1>
                             <p className="text-xs italic text-gray-300">Ensemble Énergisons L'Afrique</p>
                         </div>
                     </Link>

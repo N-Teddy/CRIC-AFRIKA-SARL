@@ -2,17 +2,15 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
 import {
     ThumbsUp,
     Calendar,
     Star,
     Plus,
-    Phone,
-    Box
 } from 'lucide-react'
 import { filters, industries, processSteps, projects, testimonials } from '../constants/realisations'
 import PageHeader from '../components/ui/PageHeader'
+import CTA from '../components/ui/CTA'
 
 const Realisations = () => {
     const [activeFilter, setActiveFilter] = useState('all')
@@ -69,41 +67,10 @@ const Realisations = () => {
 
             <div className="pt-20">
                 {/* Page Header */}
-                <section className="pt-32 pb-20 bg-gradient-to-br from-dark-blue via-blue-900 to-primary-orange">
-                    <div className="container px-4 mx-auto text-center lg:px-8">
-                        <motion.h1
-                            className="mb-6 text-5xl font-bold text-white lg:text-6xl"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                        >
-                            Nos <span className="text-lemon-green">Réalisations</span>
-                        </motion.h1>
-                        <motion.p
-                            className="max-w-3xl mx-auto mb-8 text-xl text-gray-200"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                        >
-                            Découvrez nos projets industriels réalisés avec succès au Cameroun et en Afrique Centrale
-                        </motion.p>
-                        <motion.div
-                            className="flex justify-center space-x-2 text-white"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
-                        >
-                            <Link to="/" className="transition hover:text-primary-orange">Accueil</Link>
-                            <span>/</span>
-                            <span className="text-primary-orange">Réalisations</span>
-                        </motion.div>
-                    </div>
-                </section>
-
                 <PageHeader
-                    title="Nos Produits"
-                    subtitle="Large gamme d'équipements industriels de qualité supérieure"
-                    breadcrumbs={['Produits']}
+                    title="Nos Réalisations"
+                    subtitle="Découvrez nos projets industriels réalisés avec succès au Cameroun et en Afrique Centrale"
+                    breadcrumbs={['Réalisations']}
                 />
 
                 {/* Stats Section */}
@@ -390,40 +357,24 @@ const Realisations = () => {
                 </section>
 
                 {/* CTA Section */}
-                <section className="py-20 bg-gradient-to-r from-primary-orange to-lemon-green">
-                    <div className="container px-4 mx-auto text-center lg:px-8">
-                        <motion.div
-                            className="max-w-4xl mx-auto"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
-                        >
-                            <h2 className="mb-6 text-4xl font-bold text-white lg:text-5xl">
-                                Votre Projet Mérite le Meilleur
-                            </h2>
-                            <p className="mb-8 text-xl leading-relaxed text-white/90">
-                                Faites confiance à CRIC Africa pour la réalisation de vos projets industriels. Notre expertise et notre engagement garantissent votre succès.
-                            </p>
-                            <div className="flex flex-wrap justify-center gap-4">
-                                <Link
-                                    to="/contact"
-                                    className="px-8 py-4 text-lg font-bold transition bg-white rounded-full shadow-lg text-primary-orange hover:shadow-2xl hover:scale-105"
-                                >
-                                    <Phone className="inline mr-2" size={20} />
-                                    Démarrer un Projet
-                                </Link>
-                                <Link
-                                    to="/products"
-                                    className="px-8 py-4 text-lg font-bold text-white transition rounded-full shadow-lg bg-dark-blue hover:shadow-2xl hover:scale-105"
-                                >
-                                    <Box className="inline mr-2" size={20} />
-                                    Voir Nos Produits
-                                </Link>
-                            </div>
-                        </motion.div>
-                    </div>
-                </section>
+                <CTA
+                    title="Votre Projet Mérite le Meilleur"
+                    description="Faites confiance à CRIC Africa pour la réalisation de vos projets industriels. Notre expertise et notre engagement garantissent votre succès."
+                    buttons={[
+                        {
+                            text: "Démarrer un Projet",
+                            to: "/contact",
+                            icon: "Phone",
+                            className: "bg-white text-primary-orange hover:bg-gray-50"
+                        },
+                        {
+                            text: "Voir Nos Produits",
+                            to: "/products",
+                            icon: "Box",
+                            className: "bg-dark-blue text-white hover:bg-blue-900"
+                        }
+                    ]}
+                />
             </div>
         </>
     )

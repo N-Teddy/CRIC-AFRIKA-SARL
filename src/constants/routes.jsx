@@ -1,6 +1,7 @@
 // src/constants/routes.js
 import { lazy } from 'react'
 import About from '../pages/About'
+import NotFound from '../pages/NotFound'
 
 // Lazy load pages for better performance
 const Home = lazy(() => import('../pages/Home'))
@@ -47,4 +48,10 @@ export const routes = [
         title: 'Contact - CRIC Africa SARL',
         description: 'Contactez-nous pour vos projets industriels.'
     },
+    {
+        path: '*',
+        element: <NotFound />,
+        title: 'Not Found - CRIC Afrika SARL',
+        description: ''
+    }
 ]

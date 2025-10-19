@@ -1,20 +1,21 @@
 import {
     Building, Clock, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, ToolCase, Twitter,
     MessageCircle, } from "lucide-react"
+import { Email, WhatsAppNumber } from "."
 
 export const contactInfo = [
     {
         icon: Phone,
         title: 'Téléphone',
         details: ['+237 XXX XXX XXX', '+237 XXX XXX XXX'],
-        action: { label: 'Appelez-nous', href: 'tel:+237XXXXXXXXX' },
+        action: { label: 'Appelez-nous', href: `tel:+237 ${WhatsAppNumber}` },
         color: 'orange'
     },
     {
         icon: Mail,
         title: 'Email',
         details: ['contact@cricafrica.com', 'info@cricafrica.com'],
-        action: { label: 'Envoyez un email', href: 'mailto:contact@cricafrica.com' },
+        action: { label: 'Envoyez un email', href: `mailto:${Email}` },
         color: 'green'
     },
     {
@@ -48,42 +49,6 @@ export const faqs = [
     {
         question: 'Quelle est la garantie ?',
         answer: 'Garantie constructeur de 12 à 24 mois selon les équipements'
-    }
-]
-
-export const offices = [
-    {
-        icon: Building,
-        title: 'Siège Social - Douala',
-        details: [
-            { icon: MapPin, text: 'Zone Industrielle Bassa, Douala', color: 'orange' },
-            { icon: Phone, text: '+237 XXX XXX XXX', color: 'green' },
-            { icon: Mail, text: 'douala@cricafrica.com', color: 'orange' }
-        ],
-        action: { label: 'Obtenir l\'itinéraire', href: '#' },
-        color: 'orange'
-    },
-    {
-        icon: Building,
-        title: 'Agence Yaoundé',
-        details: [
-            { icon: MapPin, text: 'Bastos, Yaoundé', color: 'green' },
-            { icon: Phone, text: '+237 XXX XXX XXX', color: 'orange' },
-            { icon: Mail, text: 'yaounde@cricafrica.com', color: 'green' }
-        ],
-        action: { label: 'Obtenir l\'itinéraire', href: '#' },
-        color: 'green'
-    },
-    {
-        icon: ToolCase,
-        title: 'Centre Technique',
-        details: [
-            { icon: MapPin, text: 'Zone Industrielle Bonabéri, Douala', color: 'orange' },
-            { icon: Phone, text: '+237 XXX XXX XXX', color: 'green' },
-            { icon: Mail, text: 'technique@cricafrica.com', color: 'orange' }
-        ],
-        action: { label: 'Obtenir l\'itinéraire', href: '#' },
-        color: 'orange'
     }
 ]
 

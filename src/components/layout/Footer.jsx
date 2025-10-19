@@ -14,6 +14,7 @@ import {
     Twitter,
     MessageCircle
 } from 'lucide-react'
+import { CompanyName, navigation, WhatsAppNumber } from '../../constants'
 
 const Footer = () => {
     const currentYear = new Date().getFullYear()
@@ -29,7 +30,7 @@ const Footer = () => {
                                 <Factory className="text-xl text-white" />
                             </div>
                             <div>
-                                <h3 className="text-xl font-bold">CRIC AFRICA</h3>
+                                <h3 className="text-xl font-bold">{CompanyName.toUpperCase()}</h3>
                                 <p className="text-xs italic text-gray-400">Ensemble Énergisons L'Afrique</p>
                             </div>
                         </div>
@@ -68,17 +69,10 @@ const Footer = () => {
                     <div>
                         <h4 className="mb-6 text-lg font-bold text-primary-orange">Navigation</h4>
                         <ul className="space-y-3">
-                            {[
-                                { name: 'Accueil', path: '/' },
-                                { name: 'Produits', path: '/products' },
-                                { name: 'Services', path: '/services' },
-                                { name: 'Réalisations', path: '/realisations' },
-                                { name: 'À Propos', path: '/about' },
-                                { name: 'Contact', path: '/contact' }
-                            ].map((item) => (
+                            {navigation.map((item) => (
                                 <li key={item.name}>
                                     <Link
-                                        to={item.path}
+                                        to={item.href}
                                         className="flex items-center text-gray-400 transition hover:text-primary-orange"
                                     >
                                         <ChevronRight className="mr-2 text-xs" size={12} />
@@ -120,7 +114,7 @@ const Footer = () => {
                             </li>
                             <li className="flex items-start space-x-3">
                                 <Phone className="flex-shrink-0 mt-1 text-lemon-green" />
-                                <span className="text-gray-400">+237 XXX XXX XXX</span>
+                                <span className="text-gray-400">+237 {WhatsAppNumber}</span>
                             </li>
                             <li className="flex items-start space-x-3">
                                 <Mail className="flex-shrink-0 mt-1 text-primary-orange" />
@@ -136,21 +130,10 @@ const Footer = () => {
 
                 {/* Bottom Footer */}
                 <div className="pt-8 border-t border-white/10">
-                    <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
+                    <div className="flex justify-center">
                         <p className="text-sm text-center text-gray-400 md:text-left">
                             &copy; {currentYear} <span className="font-semibold text-primary-orange">CRIC Africa SARL</span>. Tous droits réservés.
                         </p>
-                        <div className="flex flex-wrap justify-center gap-6 text-sm">
-                            <a href="#" className="text-gray-400 transition hover:text-primary-orange">
-                                Politique de Confidentialité
-                            </a>
-                            <a href="#" className="text-gray-400 transition hover:text-lemon-green">
-                                Conditions d'Utilisation
-                            </a>
-                            <a href="#" className="text-gray-400 transition hover:text-primary-orange">
-                                Mentions Légales
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>

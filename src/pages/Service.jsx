@@ -1,15 +1,15 @@
 // src/pages/Services.jsx
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import {
     ArrowRight,
     Phone,
-    FolderOpen,
     CheckCircle,
 } from 'lucide-react'
 import { guarantees, processSteps, services } from '../constants/services'
+import PageHeader from '../components/ui/PageHeader'
+import CTA from '../components/ui/CTA'
 
 const Services = () => {
 
@@ -54,40 +54,15 @@ const Services = () => {
 
             <div className="pt-20">
                 {/* Page Header */}
-                <section className="bg-gradient-to-br from-dark-blue via-blue-900 to-lemon-green pt-32 pb-20">
-                    <div className="container mx-auto px-4 lg:px-8 text-center">
-                        <motion.h1
-                            className="text-5xl lg:text-6xl font-bold text-white mb-6"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                        >
-                            Nos <span className="text-primary-orange">Services</span>
-                        </motion.h1>
-                        <motion.p
-                            className="text-xl text-gray-200 max-w-3xl mx-auto mb-8"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                        >
-                            Solutions complètes d'installation, maintenance et automatisation pour l'industrie
-                        </motion.p>
-                        <motion.div
-                            className="flex justify-center space-x-2 text-white"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
-                        >
-                            <Link to="/" className="hover:text-primary-orange transition">Accueil</Link>
-                            <span>/</span>
-                            <span className="text-lemon-green">Services</span>
-                        </motion.div>
-                    </div>
-                </section>
+                <PageHeader
+                    title="Nos Services"
+                    subtitle="Solutions complètes d'installation, maintenance et automatisation pour l'industrie"
+                    breadcrumbs={['Services']}
+                />
 
                 {/* Services Grid */}
                 <section className="py-20 bg-light-gray">
-                    <div className="container mx-auto px-4 lg:px-8">
+                    <div className="container px-4 mx-auto lg:px-8">
                         {services.map((service, index) => (
                             <motion.div
                                 key={service.title}
@@ -98,14 +73,14 @@ const Services = () => {
                                 transition={{ duration: 0.8, delay: index * 0.1 }}
                                 viewport={{ once: true }}
                             >
-                                <div className="grid lg:grid-cols-2 gap-8 items-center">
+                                <div className="grid items-center gap-8 lg:grid-cols-2">
                                     <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                                         <div className="flex items-center mb-6">
                                             <div className={`w-16 h-16 bg-gradient-to-br ${service.color === 'orange'
-                                                    ? 'from-primary-orange to-lemon-green'
-                                                    : 'from-lemon-green to-primary-orange'
+                                                ? 'from-primary-orange to-lemon-green'
+                                                : 'from-lemon-green to-primary-orange'
                                                 } rounded-full flex items-center justify-center mr-4`}>
-                                                <service.icon className="text-white text-2xl" />
+                                                <service.icon className="text-2xl text-white" />
                                             </div>
                                             <div>
                                                 <span className={`text-sm font-semibold ${service.color === 'orange' ? 'text-primary-orange' : 'text-lemon-green'
@@ -115,10 +90,10 @@ const Services = () => {
                                                 <h2 className="text-3xl font-bold text-dark-blue">{service.title}</h2>
                                             </div>
                                         </div>
-                                        <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                                        <p className="mb-6 text-lg leading-relaxed text-gray-600">
                                             {service.description}
                                         </p>
-                                        <ul className="space-y-3 mb-6">
+                                        <ul className="mb-6 space-y-3">
                                             {service.features.map((feature, featureIndex) => (
                                                 <li key={feature} className="flex items-start">
                                                     <CheckCircle className={`${featureIndex % 2 === 0 ? 'text-lemon-green' : 'text-primary-orange'
@@ -140,7 +115,7 @@ const Services = () => {
                                         <motion.img
                                             src={service.image}
                                             alt={service.title}
-                                            className="w-full h-80 object-cover"
+                                            className="object-cover w-full h-80"
                                             whileHover={{ scale: 1.05 }}
                                             transition={{ duration: 0.3 }}
                                         />
@@ -153,24 +128,24 @@ const Services = () => {
 
                 {/* Service Process */}
                 <section className="py-20 bg-white">
-                    <div className="container mx-auto px-4 lg:px-8">
+                    <div className="container px-4 mx-auto lg:px-8">
                         <motion.div
-                            className="text-center mb-16"
+                            className="mb-16 text-center"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">
+                            <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
                                 Notre <span className="text-primary-orange">Processus</span>
                             </h2>
-                            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            <p className="max-w-3xl mx-auto text-xl text-gray-600">
                                 Une méthodologie éprouvée pour garantir votre satisfaction
                             </p>
                         </motion.div>
 
                         <motion.div
-                            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+                            className="grid gap-8 md:grid-cols-2 lg:grid-cols-4"
                             variants={containerVariants}
                             initial="hidden"
                             whileInView="visible"
@@ -184,18 +159,18 @@ const Services = () => {
                                 >
                                     <div className="relative mb-6">
                                         <div className={`w-24 h-24 bg-gradient-to-br rounded-full flex items-center justify-center mx-auto shadow-lg ${index % 2 === 0
-                                                ? 'from-primary-orange to-lemon-green'
-                                                : 'from-lemon-green to-primary-orange'
+                                            ? 'from-primary-orange to-lemon-green'
+                                            : 'from-lemon-green to-primary-orange'
                                             }`}>
                                             <span className="text-4xl font-bold text-white">{step.number}</span>
                                         </div>
                                         {index < processSteps.length - 1 && (
-                                            <div className="absolute top-12 right-0 hidden lg:block">
+                                            <div className="absolute right-0 hidden top-12 lg:block">
                                                 <ArrowRight className="text-4xl text-gray-300" />
                                             </div>
                                         )}
                                     </div>
-                                    <h3 className="text-xl font-bold text-dark-blue mb-3">{step.title}</h3>
+                                    <h3 className="mb-3 text-xl font-bold text-dark-blue">{step.title}</h3>
                                     <p className="text-gray-600">{step.description}</p>
                                 </motion.div>
                             ))}
@@ -205,24 +180,24 @@ const Services = () => {
 
                 {/* Service Guarantees */}
                 <section className="py-20 bg-light-gray">
-                    <div className="container mx-auto px-4 lg:px-8">
+                    <div className="container px-4 mx-auto lg:px-8">
                         <motion.div
-                            className="text-center mb-16"
+                            className="mb-16 text-center"
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">
+                            <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
                                 Nos <span className="text-lemon-green">Garanties</span>
                             </h2>
-                            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                            <p className="max-w-3xl mx-auto text-xl text-gray-600">
                                 Votre satisfaction est notre priorité
                             </p>
                         </motion.div>
 
                         <motion.div
-                            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+                            className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
                             variants={containerVariants}
                             initial="hidden"
                             whileInView="visible"
@@ -231,20 +206,20 @@ const Services = () => {
                             {guarantees.map((guarantee, index) => (
                                 <motion.div
                                     key={guarantee.title}
-                                    className="bg-white rounded-2xl p-8 shadow-lg hover-lift relative overflow-hidden"
+                                    className="relative p-8 overflow-hidden bg-white shadow-lg rounded-2xl hover-lift"
                                     variants={itemVariants}
                                 >
                                     <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${guarantee.color === 'orange'
-                                            ? 'from-primary-orange to-lemon-green'
-                                            : 'from-lemon-green to-primary-orange'
+                                        ? 'from-primary-orange to-lemon-green'
+                                        : 'from-lemon-green to-primary-orange'
                                         }`} />
                                     <div className={`w-16 h-16 ${guarantee.color === 'orange' ? 'bg-primary-orange/10' : 'bg-lemon-green/10'
                                         } rounded-full flex items-center justify-center mb-6`}>
                                         <guarantee.icon className={`${guarantee.color === 'orange' ? 'text-primary-orange' : 'text-lemon-green'
                                             } text-3xl`} />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-dark-blue mb-4">{guarantee.title}</h3>
-                                    <p className="text-gray-600 leading-relaxed">{guarantee.description}</p>
+                                    <h3 className="mb-4 text-2xl font-bold text-dark-blue">{guarantee.title}</h3>
+                                    <p className="leading-relaxed text-gray-600">{guarantee.description}</p>
                                 </motion.div>
                             ))}
                         </motion.div>
@@ -252,40 +227,25 @@ const Services = () => {
                 </section>
 
                 {/* CTA Section */}
-                <section className="py-20 bg-gradient-to-r from-lemon-green to-primary-orange">
-                    <div className="container mx-auto px-4 lg:px-8 text-center">
-                        <motion.div
-                            className="max-w-4xl mx-auto"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
-                        >
-                            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                                Prêt à Optimiser Vos Installations ?
-                            </h2>
-                            <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                                Contactez nos experts pour discuter de vos besoins en services industriels. Nous vous proposerons la solution la plus adaptée.
-                            </p>
-                            <div className="flex flex-wrap justify-center gap-4">
-                                <Link
-                                    to="/contact"
-                                    className="bg-white text-lemon-green px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition"
-                                >
-                                    <Phone className="mr-2 inline" size={20} />
-                                    Contactez-nous
-                                </Link>
-                                <Link
-                                    to="/realisations"
-                                    className="bg-dark-blue text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition"
-                                >
-                                    <FolderOpen className="mr-2 inline" size={20} />
-                                    Voir Nos Réalisations
-                                </Link>
-                            </div>
-                        </motion.div>
-                    </div>
-                </section>
+                <CTA
+                    title="Prêt à Optimiser Vos Installations ?"
+                    description="Contactez nos experts pour discuter de vos besoins en services industriels. Nous vous proposerons la solution la plus adaptée."
+                    gradient="from-lemon-green to-primary-orange"
+                    buttons={[
+                        {
+                            text: "Contactez-nous",
+                            to: "/contact",
+                            icon: "Phone",
+                            className: "bg-white text-lemon-green hover:bg-gray-50"
+                        },
+                        {
+                            text: "Voir Nos Réalisations",
+                            to: "/realisations",
+                            icon: "FolderOpen",
+                            className: "bg-dark-blue text-white hover:bg-blue-900"
+                        }
+                    ]}
+                />
             </div>
         </>
     )

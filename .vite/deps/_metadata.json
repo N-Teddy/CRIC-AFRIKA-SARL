@@ -2,7 +2,51 @@
   "hash": "433fab9c",
   "configHash": "91d00fa6",
   "lockfileHash": "97a8c9c4",
-  "browserHash": "4a246e1e",
-  "optimized": {},
-  "chunks": {}
+  "browserHash": "6f9b76b5",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/.pnpm/react@19.2.0/node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "3aefabe0",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/.pnpm/react-dom@19.2.0_react@19.2.0/node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "079d13e6",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/.pnpm/react-router-dom@7.9.4_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "ce38a667",
+      "needsInterop": false
+    },
+    "react-helmet-async": {
+      "src": "../../node_modules/.pnpm/react-helmet-async@2.0.5_react@19.2.0/node_modules/react-helmet-async/lib/index.esm.js",
+      "file": "react-helmet-async.js",
+      "fileHash": "0acdd06f",
+      "needsInterop": false
+    },
+    "lucide-react": {
+      "src": "../../node_modules/.pnpm/lucide-react@0.546.0_react@19.2.0/node_modules/lucide-react/dist/esm/lucide-react.js",
+      "file": "lucide-react.js",
+      "fileHash": "da05a7b3",
+      "needsInterop": false
+    },
+    "framer-motion": {
+      "src": "../../node_modules/.pnpm/framer-motion@12.23.24_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/framer-motion/dist/es/index.mjs",
+      "file": "framer-motion.js",
+      "fileHash": "77271398",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-AS46QCJR": {
+      "file": "chunk-AS46QCJR.js"
+    },
+    "chunk-SBWQ5KBM": {
+      "file": "chunk-SBWQ5KBM.js"
+    }
+  }
 }

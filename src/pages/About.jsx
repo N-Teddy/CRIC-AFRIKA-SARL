@@ -1,150 +1,24 @@
 // src/pages/About.jsx
-import React from 'react'
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import {
-    Factory,
-    Phone,
     Handshake,
     FolderOpen,
     Target,
     Eye,
     Zap,
-    Star,
-    Shield,
-    Lightbulb,
     Users,
     Award,
     Briefcase,
     Linkedin,
     Mail,
-    Calendar,
-    ChevronRight,
-    Check
 } from 'lucide-react'
+import PageHeader from '../components/ui/PageHeader'
+import { certifications, partners, teamMembers, timeline, values } from '../constants/about'
+import CTA from '../components/ui/CTA'
 
 const About = () => {
-    const teamMembers = [
-        {
-            name: 'Jean ATANGANA',
-            position: 'Directeur Général',
-            description: '15 ans d\'expérience dans l\'industrie',
-            color: 'orange'
-        },
-        {
-            name: 'Marie NKOTTO',
-            position: 'Directrice Technique',
-            description: 'Ingénieure électricienne certifiée',
-            color: 'green'
-        },
-        {
-            name: 'Paul MBARGA',
-            position: 'Chef de Projet',
-            description: 'Expert en automatisation industrielle',
-            color: 'orange'
-        },
-        {
-            name: 'Sophie EKANI',
-            position: 'Responsable Commercial',
-            description: 'Spécialiste relation client',
-            color: 'green'
-        }
-    ]
-
-    const certifications = [
-        {
-            name: 'ISO 9001:2015',
-            description: 'Management de la Qualité',
-            color: 'orange'
-        },
-        {
-            name: 'ISO 14001:2015',
-            description: 'Management Environnemental',
-            color: 'green'
-        },
-        {
-            name: 'ISO 45001:2018',
-            description: 'Santé et Sécurité au Travail',
-            color: 'orange'
-        },
-        {
-            name: 'Certification Électrique',
-            description: 'Habilitations MT/BT',
-            color: 'green'
-        }
-    ]
-
-    const partners = [
-        'SIEMENS', 'SCHNEIDER', 'ABB', 'CATERPILLAR', 'CUMMINS', 'ATLAS COPCO'
-    ]
-
-    const values = [
-        {
-            icon: Star,
-            title: 'Excellence',
-            description: 'Nous visons l\'excellence dans tout ce que nous faisons',
-            color: 'orange'
-        },
-        {
-            icon: Shield,
-            title: 'Intégrité',
-            description: 'Honnêteté et transparence dans toutes nos relations',
-            color: 'green'
-        },
-        {
-            icon: Lightbulb,
-            title: 'Innovation',
-            description: 'Recherche constante de solutions innovantes',
-            color: 'orange'
-        },
-        {
-            icon: Users,
-            title: 'Collaboration',
-            description: 'Travail d\'équipe et partenariats durables',
-            color: 'green'
-        }
-    ]
-
-    const timeline = [
-        {
-            year: '2008',
-            title: 'Création de CRIC Africa',
-            description: 'Fondation de l\'entreprise à Douala avec une équipe de 5 personnes. Premiers contrats d\'importation d\'équipements électriques.',
-            color: 'orange'
-        },
-        {
-            year: '2012',
-            title: 'Expansion des Services',
-            description: 'Lancement du département installation et maintenance. Obtention de certifications internationales. Équipe de 15 techniciens.',
-            color: 'green'
-        },
-        {
-            year: '2015',
-            title: 'Partenariats Internationaux',
-            description: 'Signature de partenariats exclusifs avec des fabricants européens et asiatiques. Ouverture d\'une agence à Yaoundé.',
-            color: 'orange'
-        },
-        {
-            year: '2018',
-            title: 'Diversification',
-            description: 'Lancement de l\'activité automatisation industrielle et systèmes de supervision. Plus de 100 projets réalisés.',
-            color: 'green'
-        },
-        {
-            year: '2021',
-            title: 'Leadership Régional',
-            description: 'CRIC Africa devient leader de l\'équipement industriel au Cameroun. Extension des activités au Gabon et en Guinée Équatoriale.',
-            color: 'orange'
-        },
-        {
-            year: '2025',
-            title: 'Aujourd\'hui',
-            description: '45 collaborateurs, 80+ clients satisfaits, 150+ projets réalisés. Engagement continu pour l\'excellence et l\'innovation.',
-            color: 'gradient',
-            isCurrent: true
-        }
-    ]
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -187,36 +61,11 @@ const About = () => {
 
             <div className="pt-20">
                 {/* Page Header */}
-                <section className="pt-32 pb-20 bg-gradient-to-br from-dark-blue via-blue-900 to-lemon-green">
-                    <div className="container px-4 mx-auto text-center lg:px-8">
-                        <motion.h1
-                            className="mb-6 text-5xl font-bold text-white lg:text-6xl"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                        >
-                            À Propos de <span className="text-primary-orange">CRIC Africa</span>
-                        </motion.h1>
-                        <motion.p
-                            className="max-w-3xl mx-auto mb-8 text-xl text-gray-200"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                        >
-                            Leader de l'équipement industriel au Cameroun depuis plus de 15 ans
-                        </motion.p>
-                        <motion.div
-                            className="flex justify-center space-x-2 text-white"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
-                        >
-                            <Link to="/" className="transition hover:text-primary-orange">Accueil</Link>
-                            <span>/</span>
-                            <span className="text-lemon-green">À Propos</span>
-                        </motion.div>
-                    </div>
-                </section>
+                <PageHeader
+                    title="À Propos de CRIC AFRIKA SARL"
+                    subtitle="Leader de l'équipement industriel au Cameroun depuis plus de 15 ans"
+                    breadcrumbs={['À Propos']}
+                />
 
                 {/* Company Story */}
                 <section className="py-20 bg-white">
@@ -386,8 +235,8 @@ const About = () => {
                                             transition={{ duration: 0.3 }}
                                         >
                                             <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${value.color === 'orange'
-                                                    ? 'from-primary-orange to-lemon-green'
-                                                    : 'from-lemon-green to-primary-orange'
+                                                ? 'from-primary-orange to-lemon-green'
+                                                : 'from-lemon-green to-primary-orange'
                                                 }`} />
                                             <div className={`w-16 h-16 ${value.color === 'orange' ? 'bg-primary-orange/10' : 'bg-lemon-green/10'
                                                 } rounded-full flex items-center justify-center mx-auto mb-4`}>
@@ -434,12 +283,12 @@ const About = () => {
                                 >
                                     <div className="absolute top-0 w-4 h-4 rounded-full timeline-dot -left-2 bg-gradient-to-br from-primary-orange to-lemon-green" />
                                     <div className={`rounded-xl p-6 ${item.isCurrent
-                                            ? 'bg-gradient-to-br from-primary-orange to-lemon-green text-white'
-                                            : 'bg-light-gray'
+                                        ? 'bg-gradient-to-br from-primary-orange to-lemon-green text-white'
+                                        : 'bg-light-gray'
                                         }`}>
                                         <span className={`inline-block ${item.isCurrent
-                                                ? 'bg-white/20 text-white'
-                                                : item.color === 'orange' ? 'bg-primary-orange text-white' : 'bg-lemon-green text-white'
+                                            ? 'bg-white/20 text-white'
+                                            : item.color === 'orange' ? 'bg-primary-orange text-white' : 'bg-lemon-green text-white'
                                             } px-3 py-1 rounded-full text-sm font-semibold mb-3`}>
                                             {item.year}
                                         </span>
@@ -489,8 +338,8 @@ const About = () => {
                                     variants={itemVariants}
                                 >
                                     <div className={`h-64 bg-gradient-to-br ${member.color === 'orange'
-                                            ? 'from-primary-orange to-lemon-green'
-                                            : 'from-lemon-green to-primary-orange'
+                                        ? 'from-primary-orange to-lemon-green'
+                                        : 'from-lemon-green to-primary-orange'
                                         } flex items-center justify-center`}>
                                         <Users className="text-6xl text-white" />
                                     </div>
@@ -600,38 +449,24 @@ const About = () => {
                 </section>
 
                 {/* CTA Section */}
-                <section className="py-20 bg-gradient-to-r from-primary-orange to-lemon-green">
-                    <div className="container px-4 mx-auto text-center lg:px-8">
-                        <motion.div
-                            className="max-w-4xl mx-auto"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: true }}
-                        >
-                            <h2 className="mb-6 text-4xl font-bold text-white lg:text-5xl">Travaillons Ensemble</h2>
-                            <p className="mb-8 text-xl leading-relaxed text-white/90">
-                                Rejoignez les dizaines d'entreprises qui nous font confiance pour leurs projets industriels. Contactez-nous pour discuter de vos besoins.
-                            </p>
-                            <div className="flex flex-wrap justify-center gap-4">
-                                <Link
-                                    to="/contact"
-                                    className="px-8 py-4 text-lg font-bold transition bg-white rounded-full shadow-lg text-primary-orange hover:shadow-2xl hover:scale-105"
-                                >
-                                    <Phone className="inline mr-2" size={20} />
-                                    Contactez-nous
-                                </Link>
-                                <Link
-                                    to="/services"
-                                    className="px-8 py-4 text-lg font-bold text-white transition rounded-full shadow-lg bg-dark-blue hover:shadow-2xl hover:scale-105"
-                                >
-                                    <Factory className="inline mr-2" size={20} />
-                                    Nos Services
-                                </Link>
-                            </div>
-                        </motion.div>
-                    </div>
-                </section>
+                <CTA
+                    title="Travaillons Ensemble"
+                    description="Rejoignez les dizaines d'entreprises qui nous font confiance pour leurs projets industriels. Contactez-nous pour discuter de vos besoins."
+                    buttons={[
+                        {
+                            text: "Contactez-nous",
+                            to: "/contact",
+                            icon: "Phone",
+                            className: "bg-white text-primary-orange hover:bg-gray-50"
+                        },
+                        {
+                            text: "Nos Services",
+                            to: "/services",
+                            icon: "Factory",
+                            className: "bg-dark-blue text-white hover:bg-blue-900"
+                        }
+                    ]}
+                />
             </div>
         </>
     )

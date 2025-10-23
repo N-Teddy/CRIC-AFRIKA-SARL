@@ -1,27 +1,25 @@
-import {
-    Building, Clock, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, ToolCase, Twitter,
-    MessageCircle, } from "lucide-react"
-import { Email, WhatsAppNumber } from "."
+import { Clock, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter, MessageCircle, } from "lucide-react"
+import { Email, phone, WhatsAppNumber } from "."
 
 export const contactInfo = [
     {
         icon: Phone,
         title: 'Téléphone',
-        details: ['+237 XXX XXX XXX', '+237 XXX XXX XXX'],
+        details: [`+237${WhatsAppNumber}`, `+237${phone}`],
         action: { label: 'Appelez-nous', href: `tel:+237 ${WhatsAppNumber}` },
         color: 'orange'
     },
     {
         icon: Mail,
         title: 'Email',
-        details: ['contact@cricafrica.com', 'info@cricafrica.com'],
+        details: ['cricafrica@yahoo.com', 'info@cricafrica.com'],
         action: { label: 'Envoyez un email', href: `mailto:${Email}` },
         color: 'green'
     },
     {
         icon: MapPin,
         title: 'Adresse',
-        details: ['Douala, Cameroun', 'Zone Industrielle Bassa'],
+        details: ['Douala, Cameroun', 'Akwa'],
         action: { label: 'Voir sur la carte', href: '#map' },
         color: 'orange'
     },

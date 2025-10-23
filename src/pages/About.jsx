@@ -17,8 +17,11 @@ import {
 import PageHeader from '../components/ui/PageHeader'
 import { certifications, partners, teamMembers, timeline, values } from '../constants/about'
 import CTA from '../components/ui/CTA'
+import { useTranslation } from '../context/TranslationContext'
 
 const About = () => {
+
+    const { t } = useTranslation();
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -44,10 +47,10 @@ const About = () => {
     return (
         <>
             <Helmet>
-                <title>À Propos - CRIC Africa SARL | Notre Histoire et Notre Vision</title>
+                <title>{t('about.title')} - CRIC Africa SARL | Notre Histoire et Notre Vision</title>
                 <meta
                     name="description"
-                    content="Découvrez CRIC Africa SARL, leader de l'équipement industriel au Cameroun. Notre histoire, nos valeurs, notre équipe."
+                    content={t('about.metaDescription')}
                 />
                 <meta
                     name="keywords"
@@ -62,9 +65,9 @@ const About = () => {
             <div className="pt-20">
                 {/* Page Header */}
                 <PageHeader
-                    title="À Propos de CRIC AFRIKA SARL"
-                    subtitle="Leader de l'équipement industriel au Cameroun depuis plus de 15 ans"
-                    breadcrumbs={['À Propos']}
+                    title={t('about.title')}
+                    subtitle={t('about.subtitle')}
+                    breadcrumbs={[t('common.aboutUs')]}
                 />
 
                 {/* Company Story */}
@@ -78,20 +81,16 @@ const About = () => {
                                 viewport={{ once: true }}
                             >
                                 <span className="inline-block px-4 py-2 mb-4 text-sm font-semibold rounded-full bg-primary-orange/10 text-primary-orange">
-                                    NOTRE HISTOIRE
+                                    {t('about.ourStory')}
                                 </span>
                                 <h2 className="mb-6 text-4xl font-bold lg:text-5xl text-dark-blue">
-                                    Une Entreprise <span className="text-lemon-green">Camerounaise</span> au Service de l'Industrie
+                                    {t('about.storyTitle', { 1: (chunks) => <span className="text-lemon-green">{chunks}</span> })}
                                 </h2>
-                                <p className="mb-6 text-lg leading-relaxed text-gray-600">
-                                    Fondée en 2008, <strong className="text-primary-orange">CRIC Africa SARL</strong> est née de la vision de créer une entreprise camerounaise capable de répondre aux besoins croissants du secteur industriel en équipements de qualité et en services techniques professionnels.
-                                </p>
-                                <p className="mb-6 text-lg leading-relaxed text-gray-600">
-                                    Depuis nos débuts, nous avons accompagné plus de <strong className="text-lemon-green">80 entreprises</strong> dans leurs projets d'installation, de maintenance et d'optimisation de leurs équipements industriels. Notre engagement envers l'excellence et la satisfaction client nous a permis de devenir un acteur incontournable du secteur.
-                                </p>
-                                <p className="mb-8 text-lg leading-relaxed text-gray-600">
-                                    Aujourd'hui, CRIC Africa c'est une équipe de <strong className="text-primary-orange">45 professionnels qualifiés</strong>, des partenariats avec les plus grandes marques internationales, et une présence sur tout le territoire camerounais.
-                                </p>
+                                {t('about.storyContent', { returnObjects: true }).map((paragraph, index) => (
+                                    <p key={index} className="mb-6 text-lg leading-relaxed text-gray-600">
+                                        {paragraph}
+                                    </p>
+                                ))}
                                 <div className="flex flex-wrap gap-4">
                                     <Link
                                         to="/contact"

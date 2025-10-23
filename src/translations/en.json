@@ -1,0 +1,48 @@
+{
+    "common": {
+        "companyName": "CRIC AFRIKA SARL",
+        "slogan": "Together Powering Africa",
+        "learnMore": "Learn More",
+        "contactUs": "Contact Us",
+        "getQuote": "Get a Quote",
+        "seeMore": "See More",
+        "ourProducts": "Our Products",
+        "ourServices": "Our Services",
+        "ourProjects": "Our Projects",
+        "aboutUs": "About Us",
+        "home": "Home"
+    },
+    "navigation": {
+        "home": "Home",
+        "products": "Products",
+        "services": "Services",
+        "projects": "Projects",
+        "about": "About",
+        "contact": "Contact"
+    },
+    "home": {
+        "hero": {
+            "title": "Together <1>Powering</1> Africa",
+            "subtitle": "Import, installation and maintenance of superior quality industrial equipment. Your trusted partner for over 15 years.",
+            "ctaQuote": "Get a Quote",
+            "ctaProducts": "Our Products"
+        },
+        "stats": {
+            "experience": "Years of Experience",
+            "clients": "Satisfied Clients",
+            "projects": "Projects Completed",
+            "experts": "Qualified Experts"
+        }
+    },
+    "about": {
+        "title": "About CRIC AFRIKA SARL",
+        "subtitle": "Leader in industrial equipment in Cameroon for over 15 years",
+        "ourStory": "OUR STORY",
+        "storyTitle": "A <1>Cameroonian</1> Company Serving Industry",
+        "storyContent": [
+            "Founded in 2008, <1>CRIC Africa SARL</1> was born from the vision of creating a Cameroonian company capable of meeting the growing needs of the industrial sector for quality equipment and professional technical services.",
+            "Since our beginnings, we have supported more than <1>80 companies</1> in their installation, maintenance and equipment optimization projects.",
+            "Today, CRIC Africa is a team of <1>45 qualified professionals</1>, partnerships with major international brands, and a presence throughout Cameroon."
+        ]
+    }
+}

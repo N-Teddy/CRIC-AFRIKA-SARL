@@ -9,7 +9,7 @@ import {
 } from 'lucide-react'
 import { contactInfo, faqs, socialMedia } from '../constants/contact'
 import PageHeader from '../components/ui/PageHeader'
-import { WhatsAppNumber } from '../constants'
+import { location, WhatsAppNumber } from '../constants'
 import CTA from '../components/ui/CTA'
 
 const Contact = () => {
@@ -282,17 +282,17 @@ const Contact = () => {
                                     </p>
                                     <div className="space-y-4">
                                         <a
-                                            href={`tel:+237 ${WhatsAppNumber}`}
+                                            href={`tel:+237${WhatsAppNumber}`}
                                             className="flex items-center p-4 space-x-3 transition bg-white/20 hover:bg-white/30 rounded-xl"
                                         >
                                             <Phone className="text-2xl" />
                                             <div>
                                                 <p className="font-semibold">Appelez-nous</p>
-                                                <p className="text-sm text-white/90">+237 {WhatsAppNumber}</p>
+                                                <p className="text-sm text-white/90">+237{WhatsAppNumber}</p>
                                             </div>
                                         </a>
                                         <a
-                                            href={`https://wa.me/237 ${WhatsAppNumber}`}
+                                            href={`https://wa.me/237${WhatsAppNumber}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="flex items-center p-4 space-x-3 transition bg-white/20 hover:bg-white/30 rounded-xl"
@@ -326,7 +326,7 @@ const Contact = () => {
                                 </div>
 
                                 {/* Social Media */}
-                                <div className="p-8 bg-light-gray rounded-2xl">
+                                {/* <div className="p-8 bg-light-gray rounded-2xl">
                                     <h3 className="mb-4 text-2xl font-bold text-dark-blue">Suivez-nous</h3>
                                     <p className="mb-6 text-gray-600">Restez informés de nos actualités et nouveautés</p>
                                     <div className="flex space-x-4">
@@ -343,7 +343,7 @@ const Contact = () => {
                                             )
                                         })}
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </motion.div>
                     </div>
@@ -375,7 +375,7 @@ const Contact = () => {
                             viewport={{ once: true }}
                         >
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127118.09103633!2d9.738499!3d4.0510563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10610d0d3b6be0cb%3A0x8b6b6b6b6b6b6b6b!2sDouala%2C%20Cameroon!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
+                                src={location}
                                 width="100%"
                                 height="500"
                                 style={{ border: 0 }}

@@ -7,10 +7,12 @@ import ScrollToTop from './components/ui/ScrollToTop'
 import WhatsAppButton from './components/ui/WhatsAppButton'
 import { routes } from './constants/routes'
 import './styles/global.css'
+import { TranslationProvider } from './context/TranslationContext'
 
 function App() {
   return (
     <HelmetProvider>
+      <TranslationProvider>
       <Router>
         <div className="min-h-screen bg-white">
           <Header />
@@ -29,7 +31,8 @@ function App() {
           <ScrollToTop />
           <WhatsAppButton />
         </div>
-      </Router>
+        </Router>
+      </TranslationProvider>
     </HelmetProvider>
   )
 }

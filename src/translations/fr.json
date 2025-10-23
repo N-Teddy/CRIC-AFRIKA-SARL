@@ -1,0 +1,48 @@
+{
+    "common": {
+        "companyName": "CRIC AFRIKA SARL",
+        "slogan": "Ensemble Énergisons L'Afrique",
+        "learnMore": "En savoir plus",
+        "contactUs": "Contactez-nous",
+        "getQuote": "Demander un Devis",
+        "seeMore": "Voir plus",
+        "ourProducts": "Nos Produits",
+        "ourServices": "Nos Services",
+        "ourProjects": "Nos Réalisations",
+        "aboutUs": "À Propos",
+        "home": "Accueil"
+    },
+    "navigation": {
+        "home": "Accueil",
+        "products": "Produits",
+        "services": "Services",
+        "projects": "Réalisations",
+        "about": "À Propos",
+        "contact": "Contact"
+    },
+    "home": {
+        "hero": {
+            "title": "Ensemble <1>Énergisons</1> L'Afrique",
+            "subtitle": "Importation, installation et maintenance d'équipements industriels de qualité supérieure. Votre partenaire de confiance depuis plus de 15 ans.",
+            "ctaQuote": "Demander un Devis",
+            "ctaProducts": "Nos Produits"
+        },
+        "stats": {
+            "experience": "Années d'Expérience",
+            "clients": "Clients Satisfaits",
+            "projects": "Projets Réalisés",
+            "experts": "Experts Qualifiés"
+        }
+    },
+    "about": {
+        "title": "À Propos de CRIC AFRIKA SARL",
+        "subtitle": "Leader de l'équipement industriel au Cameroun depuis plus de 15 ans",
+        "ourStory": "NOTRE HISTOIRE",
+        "storyTitle": "Une Entreprise <1>Camerounaise</1> au Service de l'Industrie",
+        "storyContent": [
+            "Fondée en 2008, <1>CRIC Africa SARL</1> est née de la vision de créer une entreprise camerounaise capable de répondre aux besoins croissants du secteur industriel en équipements de qualité et en services techniques professionnels.",
+            "Depuis nos débuts, nous avons accompagné plus de <1>80 entreprises</1> dans leurs projets d'installation, de maintenance et d'optimisation de leurs équipements industriels.",
+            "Aujourd'hui, CRIC Africa c'est une équipe de <1>45 professionnels qualifiés</1>, des partenariats avec les plus grandes marques internationales, et une présence sur tout le territoire camerounais."
+        ]
+    }
+}

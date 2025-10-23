@@ -14,10 +14,12 @@ import {
     Twitter,
     MessageCircle
 } from 'lucide-react'
-import { CompanyName, navigation, WhatsAppNumber } from '../../constants'
+import { CompanyName, Email, navigation, WhatsAppNumber } from '../../constants'
+import { useTranslation } from '../../context/TranslationContext'
 
 const Footer = () => {
     const currentYear = new Date().getFullYear()
+    const { t } = useTranslation();
 
     return (
         <footer className="pt-16 pb-8 text-white bg-dark-blue">
@@ -26,18 +28,18 @@ const Footer = () => {
                     {/* Company Info */}
                     <div>
                         <div className="flex items-center mb-6 space-x-3">
-                            <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br from-primary-orange to-lemon-green">
-                                <Factory className="text-xl text-white" />
+                            <div className="flex items-center justify-center w-12 h-12 rounded-lg">
+                                <img src="/logo.png" alt="logo" srcset="" />
                             </div>
                             <div>
-                                <h3 className="text-xl font-bold">{CompanyName.toUpperCase()}</h3>
-                                <p className="text-xs italic text-gray-400">Ensemble Énergisons L'Afrique</p>
+                                <h3 className="text-xl font-bold">{t('common.companyName')}</h3>
+                                <p className="text-xs italic text-gray-400">{t('common.slogan')}</p>
                             </div>
                         </div>
                         <p className="mb-6 leading-relaxed text-gray-400">
-                            Votre partenaire de confiance pour l'importation, l'installation et la maintenance d'équipements industriels au Cameroun.
+                            {t('footer.companyDescription')}
                         </p>
-                        <div className="flex space-x-3">
+                        {/* <div className="flex space-x-3">
                             <a
                                 href="#"
                                 className="flex items-center justify-center w-10 h-10 transition rounded-full bg-white/10 hover:bg-primary-orange"
@@ -62,12 +64,14 @@ const Footer = () => {
                             >
                                 <MessageCircle size={16} />
                             </a>
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* Navigation */}
                     <div>
-                        <h4 className="mb-6 text-lg font-bold text-primary-orange">Navigation</h4>
+                        <h4 className="mb-6 text-lg font-bold text-primary-orange">
+                            {t('footer.navigation')}
+                        </h4>
                         <ul className="space-y-3">
                             {navigation.map((item) => (
                                 <li key={item.name}>
@@ -76,7 +80,7 @@ const Footer = () => {
                                         className="flex items-center text-gray-400 transition hover:text-primary-orange"
                                     >
                                         <ChevronRight className="mr-2 text-xs" size={12} />
-                                        {item.name}
+                                        {t(`navigation.${item.name.toLowerCase()}`)}
                                     </Link>
                                 </li>
                             ))}
@@ -114,11 +118,11 @@ const Footer = () => {
                             </li>
                             <li className="flex items-start space-x-3">
                                 <Phone className="flex-shrink-0 mt-1 text-lemon-green" />
-                                <span className="text-gray-400">+237 {WhatsAppNumber}</span>
+                                <span className="text-gray-400">+237{WhatsAppNumber}</span>
                             </li>
                             <li className="flex items-start space-x-3">
                                 <Mail className="flex-shrink-0 mt-1 text-primary-orange" />
-                                <span className="text-gray-400">contact@cricafrica.com</span>
+                                <span className="text-gray-400">{Email}</span>
                             </li>
                             <li className="flex items-start space-x-3">
                                 <Clock className="flex-shrink-0 mt-1 text-lemon-green" />

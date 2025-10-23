@@ -1,3 +1,4 @@
+import { Headset } from "lucide-react"
 import { Award, Bolt, Circle, Cog, Droplets, FireExtinguisher, Forklift, Gauge, Microchip, Plug, Shield, Ship, Star, ToolCase, Wine, Wrench } from "lucide-react"
 
 export const products = [
@@ -187,5 +188,11 @@ export const benefits = [
         title: 'Installation Professionnelle',
         description: 'Équipe technique qualifiée pour l\'installation et la mise en service',
         color: 'orange'
+    },
+    {
+        icon: Headset,
+        title: 'Service apres vente 24h/7',
+        description: '',
+        color: 'green'
     }
 ]

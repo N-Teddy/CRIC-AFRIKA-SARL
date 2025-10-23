@@ -11,10 +11,10 @@ import { Users } from "lucide-react";
 import { Award } from "lucide-react";
 
 export const stats = [
-    { number: 15, label: 'Années d\'Expérience', icon: Award, suffix: '+' },
-    { number: 80, label: 'Clients Satisfaits', icon: Users, suffix: '+' },
-    { number: 150, label: 'Projets Réalisés', icon: CheckCircle, suffix: '+' },
-    { number: 45, label: 'Experts Qualifiés', icon: Star, suffix: '' },
+    { number: 5, label: 'Années d\'Expérience', icon: Award, suffix: '+' },
+    { number: 20, label: 'Clients Satisfaits', icon: Users, suffix: '+' },
+    { number: 25, label: 'Projets Réalisés', icon: CheckCircle, suffix: '+' },
+    { number: 10, label: 'Experts Qualifiés', icon: Star, suffix: '' },
 
 ];
 

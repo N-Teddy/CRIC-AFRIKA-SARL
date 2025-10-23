@@ -1,3 +1,5 @@
+import { Zap } from "lucide-react"
+import { Battery } from "lucide-react"
 import { BatteryCharging, Bolt, Bot, Building, HardHat, Hotel, Ship, Sprout, ThumbsUp, ToolCase, University } from "lucide-react"
 
 export const projects = [
@@ -116,13 +118,9 @@ export const testimonials = [
 
 export const industries = [
     { icon: Building, name: 'Industrie Manufacturière', description: 'Usines de production, lignes d\'assemblage' },
-    { icon: Hotel, name: 'Santé', description: 'Hôpitaux, cliniques, centres médicaux' },
-    { icon: Building, name: 'Hôtellerie', description: 'Hôtels, complexes touristiques' },
-    { icon: University, name: 'Tertiaire', description: 'Bureaux, centres commerciaux' },
     { icon: Ship, name: 'Portuaire', description: 'Ports, zones logistiques' },
-    { icon: University, name: 'Éducation', description: 'Universités, écoles, centres de formation' },
-    { icon: Sprout, name: 'Agroalimentaire', description: 'Usines de transformation, brasseries' },
-    { icon: HardHat, name: 'BTP', description: 'Chantiers, infrastructures' }
+    { icon: HardHat, name: 'BTP', description: 'Chantiers, infrastructures' },
+    { icon: Zap, name: 'Energie', description: 'Stockage, systèmes énergétiques' }
 ]
 
 export const processSteps = [

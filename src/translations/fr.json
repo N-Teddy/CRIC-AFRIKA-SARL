@@ -197,5 +197,170 @@
             "title": "Travaillons Ensemble",
             "description": "Rejoignez les dizaines d'entreprises qui nous font confiance pour leurs projets industriels. Contactez-nous pour discuter de vos besoins."
         }
+    },
+    "products": {
+        "title": "Nos Produits",
+        "subtitle": "Une gamme complète d'équipements industriels de haute qualité pour répondre à tous vos besoins",
+        "metaDescription": "Découvrez notre gamme complète d'équipements industriels : groupes électrogènes, compresseurs, équipements de sécurité, transformateurs et plus encore.",
+        "metaKeywords": "groupes électrogènes, compresseurs industriels, équipements sécurité, transformateurs, matériel industriel Cameroun",
+        "whyChooseUs": {
+            "title": "Pourquoi Choisir CRIC Africa ?",
+            "subtitle": "Des avantages qui font la différence"
+        },
+        "benefits": {
+            "quality": {
+                "title": "Qualité Garantie",
+                "description": "Équipements certifiés de marques reconnues internationalement"
+            },
+            "delivery": {
+                "title": "Livraison Rapide",
+                "description": "Logistique optimisée pour des délais de livraison courts"
+            },
+            "installation": {
+                "title": "Installation Professionnelle",
+                "description": "Équipe technique qualifiée pour l'installation et la mise en service"
+            },
+            "support": {
+                "title": "Service après-vente 24h/7",
+                "description": "Support technique disponible 24 heures sur 24, 7 jours sur 7"
+            }
+        },
+        "additional": {
+            "title": "Et Bien Plus Encore...",
+            "description": "Notre catalogue comprend de nombreux autres équipements industriels pour répondre à tous vos besoins spécifiques. Contactez-nous pour découvrir notre gamme complète.",
+            "cta": "Demander le Catalogue Complet",
+            "items": {
+                "tools": {
+                    "name": "Outillage Industriel",
+                    "description": "Outils professionnels de qualité"
+                },
+                "valves": {
+                    "name": "Robinetterie",
+                    "description": "Vannes et accessoires industriels"
+                },
+                "automation": {
+                    "name": "Automatismes",
+                    "description": "Systèmes de contrôle et régulation"
+                }
+            }
+        },
+        "cta": {
+            "title": "Besoin d'un Équipement Spécifique ?",
+            "description": "Notre équipe d'experts est à votre disposition pour vous conseiller et vous proposer les meilleures solutions adaptées à vos besoins.",
+            "contactExpert": "Contactez un Expert",
+            "downloadCatalog": "Télécharger le Catalogue"
+        },
+        "items": {
+            "generators": {
+                "title": "Groupes Électrogènes Industriels",
+                "description": "Solutions d'alimentation électrique fiables et performantes pour vos installations industrielles. Nos groupes électrogènes sont conçus pour fonctionner en continu dans les conditions les plus exigeantes.",
+                "badge": "Produit Phare",
+                "features": [
+                    "Puissances de 10 kVA à 3000 kVA",
+                    "Moteurs diesel de marques réputées",
+                    "Systèmes de démarrage automatique",
+                    "Installation et mise en service incluses"
+                ]
+            },
+            "compressors": {
+                "title": "Compresseurs à Vis et à Piston Industriels",
+                "description": "Compresseurs industriels robustes pour applications exigeantes. Solutions d'air comprimé efficaces et économiques pour tous types d'industries.",
+                "badge": "Haute Performance",
+                "features": [
+                    "Compresseurs à vis rotatifs",
+                    "Compresseurs à piston alternatifs",
+                    "Débits de 0,5 à 100 m³/min",
+                    "Maintenance préventive disponible"
+                ]
+            },
+            "fireSafety": {
+                "title": "Équipements Sécurité Incendie",
+                "description": "Systèmes complets de protection et sécurité incendie pour vos installations industrielles. Conformes aux normes internationales de sécurité.",
+                "badge": "Sécurité Essentielle",
+                "features": [
+                    "Extincteurs tous types (CO2, poudre, mousse)",
+                    "Systèmes de détection incendie",
+                    "Sprinklers et systèmes d'extinction automatique",
+                    "Installation et formation du personnel"
+                ]
+            },
+            "ppe": {
+                "title": "Équipements Protection Individuelle (EPI)",
+                "description": "Gamme complète d'équipements de protection individuelle pour assurer la sécurité de vos équipes sur tous les sites industriels.",
+                "badge": "Protection Personnel",
+                "features": [
+                    "Casques, lunettes et protections auditives",
+                    "Gants de protection tous types",
+                    "Chaussures et bottes de sécurité",
+                    "Vêtements de travail et harnais"
+                ]
+            },
+            "pumping": {
+                "title": "Matériels de Pompage Industriel",
+                "description": "Pompes industrielles haute performance pour le transfert de liquides, eaux usées, produits chimiques et applications spéciales.",
+                "badge": "Solutions Hydrauliques",
+                "features": [
+                    "Pompes centrifuges et volumétriques",
+                    "Pompes submersibles et de surface",
+                    "Stations de pompage complètes",
+                    "Accessoires et pièces de rechange"
+                ]
+            },
+            "handling": {
+                "title": "Engins de Manutention",
+                "description": "Équipements de manutention et de levage pour optimiser vos opérations logistiques et industrielles.",
+                "badge": "Manutention",
+                "features": [
+                    "Chariots élévateurs électriques et thermiques",
+                    "Transpalettes manuels et électriques",
+                    "Ponts roulants et palans",
+                    "Gerbeurs et nacelles élévatrices"
+                ]
+            },
+            "motors": {
+                "title": "Moteurs Électriques",
+                "description": "Moteurs électriques industriels haute performance pour toutes applications. Solutions fiables et économes en énergie.",
+                "badge": "Motorisation",
+                "features": [
+                    "Moteurs asynchrones triphasés",
+                    "Moteurs à courant continu",
+                    "Puissances de 0,5 kW à 500 kW",
+                    "Normes IE2, IE3, IE4 (haute efficacité)"
+                ]
+            },
+            "gearboxes": {
+                "title": "Moto-réducteurs",
+                "description": "Moto-réducteurs industriels pour transmission de puissance optimale. Solutions compactes et efficaces pour vos machines.",
+                "badge": "Transmission",
+                "features": [
+                    "Réducteurs à engrenages hélicoïdaux",
+                    "Réducteurs à vis sans fin",
+                    "Couples de 10 Nm à 50 000 Nm",
+                    "Configurations sur mesure disponibles"
+                ]
+            },
+            "fillingMachines": {
+                "title": "Souffleuses, Boucheuses et Remplisseuses",
+                "description": "Équipements de conditionnement automatisés pour l'industrie agroalimentaire, pharmaceutique et cosmétique.",
+                "badge": "Conditionnement",
+                "features": [
+                    "Souffleuses de bouteilles PET",
+                    "Remplisseuses volumétriques et pondérales",
+                    "Boucheuses automatiques et semi-automatiques",
+                    "Lignes complètes de conditionnement"
+                ]
+            },
+            "transformers": {
+                "title": "Transformateurs",
+                "description": "Transformateurs électriques industriels pour distribution et adaptation de tension. Solutions fiables pour vos réseaux électriques.",
+                "badge": "Haute Tension",
+                "features": [
+                    "Transformateurs de distribution MT/BT",
+                    "Transformateurs secs et à huile",
+                    "Puissances de 50 kVA à 2500 kVA",
+                    "Installation et mise en service complète"
+                ]
+            }
+        }
     }
 }

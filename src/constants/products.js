@@ -1,9 +1,11 @@
+// src/constants/products.js
 import { Headset } from "lucide-react"
 import { Award, Bolt, Circle, Cog, Droplets, FireExtinguisher, Forklift, Gauge, Microchip, Plug, Shield, Ship, Star, ToolCase, Wine, Wrench } from "lucide-react"
 
 export const products = [
     {
         id: 'generators',
+        key: 'generators',
         icon: Bolt,
         title: 'Groupes Électrogènes Industriels',
         description: 'Solutions d\'alimentation électrique fiables et performantes pour vos installations industrielles. Nos groupes électrogènes sont conçus pour fonctionner en continu dans les conditions les plus exigeantes.',
@@ -20,6 +22,7 @@ export const products = [
     },
     {
         id: 'compressors',
+        key: 'compressors',
         icon: Cog,
         title: 'Compresseurs à Vis et à Piston Industriels',
         description: 'Compresseurs industriels robustes pour applications exigeantes. Solutions d\'air comprimé efficaces et économiques pour tous types d\'industries.',
@@ -36,6 +39,7 @@ export const products = [
     },
     {
         id: 'fire-safety',
+        key: 'fireSafety',
         icon: FireExtinguisher,
         title: 'Équipements Sécurité Incendie',
         description: 'Systèmes complets de protection et sécurité incendie pour vos installations industrielles. Conformes aux normes internationales de sécurité.',
@@ -52,6 +56,7 @@ export const products = [
     },
     {
         id: 'ppe',
+        key: 'ppe',
         icon: Shield,
         title: 'Équipements Protection Individuelle (EPI)',
         description: 'Gamme complète d\'équipements de protection individuelle pour assurer la sécurité de vos équipes sur tous les sites industriels.',
@@ -68,6 +73,7 @@ export const products = [
     },
     {
         id: 'pumping',
+        key: 'pumping',
         icon: Droplets,
         title: 'Matériels de Pompage Industriel',
         description: 'Pompes industrielles haute performance pour le transfert de liquides, eaux usées, produits chimiques et applications spéciales.',
@@ -84,6 +90,7 @@ export const products = [
     },
     {
         id: 'handling',
+        key: 'handling',
         icon: Forklift,
         title: 'Engins de Manutention',
         description: 'Équipements de manutention et de levage pour optimiser vos opérations logistiques et industrielles.',
@@ -100,6 +107,7 @@ export const products = [
     },
     {
         id: 'motors',
+        key: 'motors',
         icon: Circle,
         title: 'Moteurs Électriques',
         description: 'Moteurs électriques industriels haute performance pour toutes applications. Solutions fiables et économes en énergie.',
@@ -116,6 +124,7 @@ export const products = [
     },
     {
         id: 'gearboxes',
+        key: 'gearboxes',
         icon: Cog,
         title: 'Moto-réducteurs',
         description: 'Moto-réducteurs industriels pour transmission de puissance optimale. Solutions compactes et efficaces pour vos machines.',
@@ -132,6 +141,7 @@ export const products = [
     },
     {
         id: 'filling-machines',
+        key: 'fillingMachines',
         icon: Wine,
         title: 'Souffleuses, Boucheuses et Remplisseuses',
         description: 'Équipements de conditionnement automatisés pour l\'industrie agroalimentaire, pharmaceutique et cosmétique.',
@@ -148,6 +158,7 @@ export const products = [
     },
     {
         id: 'transformers',
+        key: 'transformers',
         icon: Plug,
         title: 'Transformateurs',
         description: 'Transformateurs électriques industriels pour distribution et adaptation de tension. Solutions fiables pour vos réseaux électriques.',
@@ -165,9 +176,24 @@ export const products = [
 ]
 
 export const additionalProducts = [
-    { icon: Wrench, name: 'Outillage Industriel', description: 'Outils professionnels de qualité' },
-    { icon: Gauge, name: 'Robinetterie', description: 'Vannes et accessoires industriels' },
-    { icon: Microchip, name: 'Automatismes', description: 'Systèmes de contrôle et régulation' }
+    {
+        icon: Wrench,
+        name: 'Outillage Industriel',
+        description: 'Outils professionnels de qualité',
+        key: 'tools'
+    },
+    {
+        icon: Gauge,
+        name: 'Robinetterie',
+        description: 'Vannes et accessoires industriels',
+        key: 'valves'
+    },
+    {
+        icon: Microchip,
+        name: 'Automatismes',
+        description: 'Systèmes de contrôle et régulation',
+        key: 'automation'
+    }
 ]
 
 export const benefits = [
@@ -175,24 +201,28 @@ export const benefits = [
         icon: Award,
         title: 'Qualité Garantie',
         description: 'Équipements certifiés de marques reconnues internationalement',
-        color: 'orange'
+        color: 'orange',
+        key: 'quality'
     },
     {
         icon: Ship,
         title: 'Livraison Rapide',
         description: 'Logistique optimisée pour des délais de livraison courts',
-        color: 'green'
+        color: 'green',
+        key: 'delivery'
     },
     {
         icon: ToolCase,
         title: 'Installation Professionnelle',
         description: 'Équipe technique qualifiée pour l\'installation et la mise en service',
-        color: 'orange'
+        color: 'orange',
+        key: 'installation'
     },
     {
         icon: Headset,
         title: 'Service apres vente 24h/7',
-        description: '',
-        color: 'green'
+        description: 'Support technique disponible 24 heures sur 24, 7 jours sur 7',
+        color: 'green',
+        key: 'support'
     }
 ]

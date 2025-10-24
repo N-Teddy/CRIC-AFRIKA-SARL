@@ -197,5 +197,170 @@
             "title": "Let's Work Together",
             "description": "Join the dozens of companies that trust us for their industrial projects. Contact us to discuss your needs."
         }
+    },
+    "products": {
+        "title": "Our Products",
+        "subtitle": "A complete range of high-quality industrial equipment to meet all your needs",
+        "metaDescription": "Discover our complete range of industrial equipment: generators, compressors, safety equipment, transformers and more.",
+        "metaKeywords": "generators, industrial compressors, safety equipment, transformers, industrial equipment Cameroon",
+        "whyChooseUs": {
+            "title": "Why Choose CRIC Africa?",
+            "subtitle": "Benefits that make the difference"
+        },
+        "benefits": {
+            "quality": {
+                "title": "Guaranteed Quality",
+                "description": "Certified equipment from internationally recognized brands"
+            },
+            "delivery": {
+                "title": "Fast Delivery",
+                "description": "Optimized logistics for short delivery times"
+            },
+            "installation": {
+                "title": "Professional Installation",
+                "description": "Qualified technical team for installation and commissioning"
+            },
+            "support": {
+                "title": "24/7 After-Sales Service",
+                "description": "Technical support available 24 hours a day, 7 days a week"
+            }
+        },
+        "additional": {
+            "title": "And Much More...",
+            "description": "Our catalog includes many other industrial equipment to meet all your specific needs. Contact us to discover our complete range.",
+            "cta": "Request Full Catalog",
+            "items": {
+                "tools": {
+                    "name": "Industrial Tools",
+                    "description": "Professional quality tools"
+                },
+                "valves": {
+                    "name": "Valves",
+                    "description": "Industrial valves and accessories"
+                },
+                "automation": {
+                    "name": "Automation",
+                    "description": "Control and regulation systems"
+                }
+            }
+        },
+        "cta": {
+            "title": "Need Specific Equipment?",
+            "description": "Our team of experts is available to advise you and propose the best solutions adapted to your needs.",
+            "contactExpert": "Contact an Expert",
+            "downloadCatalog": "Download Catalog"
+        },
+        "items": {
+            "generators": {
+                "title": "Industrial Generators",
+                "description": "Reliable and high-performance power supply solutions for your industrial installations. Our generators are designed to operate continuously in the most demanding conditions.",
+                "badge": "Featured Product",
+                "features": [
+                    "Power from 10 kVA to 3000 kVA",
+                    "Diesel engines from reputable brands",
+                    "Automatic starting systems",
+                    "Installation and commissioning included"
+                ]
+            },
+            "compressors": {
+                "title": "Screw and Piston Industrial Compressors",
+                "description": "Robust industrial compressors for demanding applications. Efficient and economical compressed air solutions for all types of industries.",
+                "badge": "High Performance",
+                "features": [
+                    "Rotary screw compressors",
+                    "Reciprocating piston compressors",
+                    "Flow rates from 0.5 to 100 m³/min",
+                    "Preventive maintenance available"
+                ]
+            },
+            "fireSafety": {
+                "title": "Fire Safety Equipment",
+                "description": "Complete fire protection and safety systems for your industrial installations. Compliant with international safety standards.",
+                "badge": "Essential Safety",
+                "features": [
+                    "All types of fire extinguishers (CO2, powder, foam)",
+                    "Fire detection systems",
+                    "Sprinklers and automatic extinguishing systems",
+                    "Installation and staff training"
+                ]
+            },
+            "ppe": {
+                "title": "Personal Protective Equipment (PPE)",
+                "description": "Complete range of personal protective equipment to ensure the safety of your teams on all industrial sites.",
+                "badge": "Personal Protection",
+                "features": [
+                    "Helmets, glasses and hearing protection",
+                    "All types of protective gloves",
+                    "Safety shoes and boots",
+                    "Work clothes and harnesses"
+                ]
+            },
+            "pumping": {
+                "title": "Industrial Pumping Equipment",
+                "description": "High-performance industrial pumps for liquid transfer, wastewater, chemicals and special applications.",
+                "badge": "Hydraulic Solutions",
+                "features": [
+                    "Centrifugal and positive displacement pumps",
+                    "Submersible and surface pumps",
+                    "Complete pumping stations",
+                    "Accessories and spare parts"
+                ]
+            },
+            "handling": {
+                "title": "Handling Equipment",
+                "description": "Handling and lifting equipment to optimize your logistics and industrial operations.",
+                "badge": "Handling",
+                "features": [
+                    "Electric and thermal forklifts",
+                    "Manual and electric pallet trucks",
+                    "Overhead cranes and hoists",
+                    "Stackers and lifting platforms"
+                ]
+            },
+            "motors": {
+                "title": "Electric Motors",
+                "description": "High-performance industrial electric motors for all applications. Reliable and energy-efficient solutions.",
+                "badge": "Motorization",
+                "features": [
+                    "Three-phase asynchronous motors",
+                    "Direct current motors",
+                    "Power from 0.5 kW to 500 kW",
+                    "IE2, IE3, IE4 standards (high efficiency)"
+                ]
+            },
+            "gearboxes": {
+                "title": "Gearmotors",
+                "description": "Industrial gearmotors for optimal power transmission. Compact and efficient solutions for your machines.",
+                "badge": "Transmission",
+                "features": [
+                    "Helical gear reducers",
+                    "Worm gear reducers",
+                    "Torque from 10 Nm to 50,000 Nm",
+                    "Custom configurations available"
+                ]
+            },
+            "fillingMachines": {
+                "title": "Blowers, Cappers and Fillers",
+                "description": "Automated packaging equipment for the food, pharmaceutical and cosmetic industries.",
+                "badge": "Packaging",
+                "features": [
+                    "PET bottle blowers",
+                    "Volumetric and weighing fillers",
+                    "Automatic and semi-automatic cappers",
+                    "Complete packaging lines"
+                ]
+            },
+            "transformers": {
+                "title": "Transformers",
+                "description": "Industrial electrical transformers for distribution and voltage adaptation. Reliable solutions for your electrical networks.",
+                "badge": "High Voltage",
+                "features": [
+                    "MV/LV distribution transformers",
+                    "Dry-type and oil-filled transformers",
+                    "Power from 50 kVA to 2500 kVA",
+                    "Complete installation and commissioning"
+                ]
+            }
+        }
     }
 }

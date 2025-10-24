@@ -42,12 +42,23 @@ export const TranslationProvider = ({ children }) => {
 
         for (const k of keys) {
             translation = translation?.[k];
-            if (translation === undefined) return key;
+            if (translation === undefined) {
+                // If translation not found and we want objects, return empty array
+                if (options.returnObjects) return [];
+                return key;
+            }
         }
 
-        // Handle arrays and objects
-        if (options.returnObjects && (Array.isArray(translation) || typeof translation === 'object')) {
-            return translation;
+        // Handle arrays and objects when returnObjects is true
+        if (options.returnObjects) {
+            if (Array.isArray(translation)) {
+                return translation;
+            }
+            if (typeof translation === 'object' && translation !== null) {
+                return translation;
+            }
+            // If it's a string but we want objects, return empty array
+            return [];
         }
 
         // Handle strings with parameters

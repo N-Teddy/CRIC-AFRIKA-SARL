@@ -11,8 +11,10 @@ import {
 import { additionalProducts, benefits, products } from '../constants/products'
 import PageHeader from '../components/ui/PageHeader'
 import CTA from '../components/ui/CTA'
+import { useTranslation } from '../context/TranslationContext'
 
 const Products = () => {
+    const { t } = useTranslation();
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -38,17 +40,17 @@ const Products = () => {
     return (
         <>
             <Helmet>
-                <title>Nos Produits - CRIC Africa SARL | Équipements Industriels</title>
+                <title>{t('products.title')} - CRIC Africa SARL</title>
                 <meta
                     name="description"
-                    content="Découvrez notre gamme complète d'équipements industriels : groupes électrogènes, compresseurs, équipements de sécurité, transformateurs et plus encore."
+                    content={t('products.metaDescription')}
                 />
                 <meta
                     name="keywords"
-                    content="groupes électrogènes, compresseurs industriels, équipements sécurité, transformateurs, matériel industriel Cameroun"
+                    content={t('products.metaKeywords')}
                 />
-                <meta property="og:title" content="Nos Produits - CRIC Africa SARL" />
-                <meta property="og:description" content="Gamme complète d'équipements industriels de haute qualité" />
+                <meta property="og:title" content={t('products.title')} />
+                <meta property="og:description" content={t('products.metaDescription')} />
                 <meta property="og:type" content="website" />
                 <link rel="canonical" href="https://cricafrica.com/products" />
             </Helmet>
@@ -56,9 +58,9 @@ const Products = () => {
             <div className="pt-20">
                 {/* Page Header */}
                 <PageHeader
-                    title="Nos Produits"
-                    subtitle="Une gamme complète d'équipements industriels de haute qualité pour répondre à tous vos besoins"
-                    breadcrumbs={['Produits']}
+                    title={t('products.title')}
+                    subtitle={t('products.subtitle')}
+                    breadcrumbs={[t('common.ourProducts')]}
                 />
 
                 {/* Products Grid */}
@@ -84,7 +86,7 @@ const Products = () => {
                                             }`}>
                                             <motion.img
                                                 src={product.image}
-                                                alt={product.title}
+                                                alt={t(`products.items.${product.key}.title`)}
                                                 className="object-cover w-full h-96"
                                                 whileHover={{ scale: 1.05 }}
                                                 transition={{ duration: 0.5 }}
@@ -95,21 +97,21 @@ const Products = () => {
                                         <div className={product.reverse ? 'lg:order-1' : ''}>
                                             <div className={`inline-flex items-center ${product.badge.color} text-white px-4 py-2 rounded-full text-sm font-semibold mb-4`}>
                                                 <BadgeIcon className="mr-2" size={16} />
-                                                {product.badge.text}
+                                                {t(`products.items.${product.key}.badge`)}
                                             </div>
 
                                             <h2 className="mb-4 text-4xl font-bold text-dark-blue">
                                                 <Icon className={`inline mr-3 ${product.color === 'orange' ? 'text-primary-orange' : 'text-lemon-green'
                                                     }`} size={32} />
-                                                {product.title}
+                                                {t(`products.items.${product.key}.title`)}
                                             </h2>
 
                                             <p className="mb-6 text-lg leading-relaxed text-gray-600">
-                                                {product.description}
+                                                {t(`products.items.${product.key}.description`)}
                                             </p>
 
                                             <ul className="mb-8 space-y-3">
-                                                {product.features.map((feature, featureIndex) => (
+                                                {t(`products.items.${product.key}.features`, { returnObjects: true }).map((feature, featureIndex) => (
                                                     <li key={feature} className="flex items-start">
                                                         <CheckCircle className={`${featureIndex % 2 === 0
                                                             ? 'text-lemon-green'
@@ -126,7 +128,7 @@ const Products = () => {
                                                     } text-white px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-xl transition-all`}
                                             >
                                                 <Mail className="mr-2" size={20} />
-                                                Demander un Devis
+                                                {t('common.getQuote')}
                                             </Link>
                                         </div>
                                     </div>
@@ -144,9 +146,9 @@ const Products = () => {
                         >
                             <div className="max-w-4xl mx-auto">
                                 <Boxes className="mx-auto mb-6 text-6xl text-primary-orange" />
-                                <h2 className="mb-6 text-4xl font-bold">Et Bien Plus Encore...</h2>
+                                <h2 className="mb-6 text-4xl font-bold">{t('products.additional.title')}</h2>
                                 <p className="mb-8 text-xl leading-relaxed text-gray-300">
-                                    Notre catalogue comprend de nombreux autres équipements industriels pour répondre à tous vos besoins spécifiques. Contactez-nous pour découvrir notre gamme complète.
+                                    {t('products.additional.description')}
                                 </p>
 
                                 <div className="grid gap-6 mb-8 md:grid-cols-3">
@@ -161,8 +163,12 @@ const Products = () => {
                                             >
                                                 <Icon className={`text-3xl ${index % 2 === 0 ? 'text-lemon-green' : 'text-primary-orange'
                                                     } mb-3 mx-auto`} />
-                                                <h3 className="mb-2 text-lg font-bold">{product.name}</h3>
-                                                <p className="text-sm text-gray-400">{product.description}</p>
+                                                <h3 className="mb-2 text-lg font-bold">
+                                                    {t(`products.additional.items.${product.key}.name`)}
+                                                </h3>
+                                                <p className="text-sm text-gray-400">
+                                                    {t(`products.additional.items.${product.key}.description`)}
+                                                </p>
                                             </motion.div>
                                         )
                                     })}
@@ -173,7 +179,7 @@ const Products = () => {
                                     className="inline-block px-10 py-5 text-lg font-bold text-white transition-all rounded-full shadow-2xl btn-orange hover:shadow-3xl"
                                 >
                                     <Download className="inline mr-2" size={20} />
-                                    Demander le Catalogue Complet
+                                    {t('products.additional.cta')}
                                 </Link>
                             </div>
                         </motion.div>
@@ -191,10 +197,10 @@ const Products = () => {
                             viewport={{ once: true }}
                         >
                             <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
-                                Pourquoi Choisir <span className="text-primary-orange">CRIC Africa</span> ?
+                                {t('products.whyChooseUs.title')}
                             </h2>
                             <p className="max-w-3xl mx-auto text-xl text-gray-600">
-                                Des avantages qui font la différence
+                                {t('products.whyChooseUs.subtitle')}
                             </p>
                         </motion.div>
 
@@ -207,6 +213,9 @@ const Products = () => {
                         >
                             {benefits.map((benefit, index) => {
                                 const Icon = benefit.icon
+                                const benefitKeys = ['quality', 'delivery', 'installation', 'support'];
+                                const currentKey = benefitKeys[index];
+
                                 return (
                                     <motion.div
                                         key={benefit.title}
@@ -219,8 +228,12 @@ const Products = () => {
                                             }`}>
                                             <Icon className="text-3xl text-white" />
                                         </div>
-                                        <h3 className="mb-3 text-xl font-bold text-dark-blue">{benefit.title}</h3>
-                                        <p className="text-gray-600">{benefit.description}</p>
+                                        <h3 className="mb-3 text-xl font-bold text-dark-blue">
+                                            {t(`products.benefits.${currentKey}.title`)}
+                                        </h3>
+                                        <p className="text-gray-600">
+                                            {t(`products.benefits.${currentKey}.description`)}
+                                        </p>
                                     </motion.div>
                                 )
                             })}
@@ -230,18 +243,18 @@ const Products = () => {
 
                 {/* CTA Section */}
                 <CTA
-                    title="Besoin d'un Équipement Spécifique ?"
-                    description="Notre équipe d'experts est à votre disposition pour vous conseiller et vous proposer les meilleures solutions adaptées à vos besoins."
+                    title={t('products.cta.title')}
+                    description={t('products.cta.description')}
                     buttons={[
                         {
-                            text: "Contactez un Expert",
+                            text: t('products.cta.contactExpert'),
                             to: "/contact",
                             icon: "Phone",
                             className: "bg-white text-primary-orange hover:bg-gray-50"
                         },
                         {
-                            text: "Télécharger le Catalogue",
-                            to: "/contact", // Or link to actual catalog
+                            text: t('products.cta.downloadCatalog'),
+                            to: "/contact",
                             icon: "Download",
                             className: "bg-dark-blue text-white hover:bg-blue-900"
                         }

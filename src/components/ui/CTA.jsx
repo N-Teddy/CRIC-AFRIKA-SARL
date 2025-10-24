@@ -84,14 +84,18 @@ const CTA = ({
                                 </>
                             );
 
+                            // Common props WITHOUT the key
                             const commonProps = {
-                                className: `px-8 py-4 text-lg font-bold transition rounded-full shadow-lg hover:shadow-2xl hover:scale-105 ${button.className}`,
-                                key: index
+                                className: `px-8 py-4 text-lg font-bold transition rounded-full shadow-lg hover:shadow-2xl hover:scale-105 ${button.className}`
                             };
 
                             if (isExternal) {
                                 return (
-                                    <a href={button.href} {...commonProps}>
+                                    <a
+                                        key={index} // Key passed directly here
+                                        href={button.href}
+                                        {...commonProps}
+                                    >
                                         {buttonContent}
                                     </a>
                                 );
@@ -99,14 +103,22 @@ const CTA = ({
 
                             if (button.to) {
                                 return (
-                                    <Link to={button.to} {...commonProps}>
+                                    <Link
+                                        key={index} // Key passed directly here
+                                        to={button.to}
+                                        {...commonProps}
+                                    >
                                         {buttonContent}
                                     </Link>
                                 );
                             }
 
                             return (
-                                <button onClick={button.onClick} {...commonProps}>
+                                <button
+                                    key={index} // Key passed directly here
+                                    onClick={button.onClick}
+                                    {...commonProps}
+                                >
                                     {buttonContent}
                                 </button>
                             );

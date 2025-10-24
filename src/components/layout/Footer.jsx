@@ -29,7 +29,7 @@ const Footer = () => {
                     <div>
                         <div className="flex items-center mb-6 space-x-3">
                             <div className="flex items-center justify-center w-12 h-12 rounded-lg">
-                                <img src="/logo.png" alt="logo" srcset="" />
+                                <img src="/logo.png" alt="logo"/>
                             </div>
                             <div>
                                 <h3 className="text-xl font-bold">{t('common.companyName')}</h3>

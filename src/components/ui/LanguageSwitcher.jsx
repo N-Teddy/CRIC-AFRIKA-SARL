@@ -1,7 +1,7 @@
-// Alternative version - More compact mobile design
+// src/components/ui/LanguageSwitcher.jsx
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Globe, Check, ChevronDown } from 'lucide-react';
+import { Globe, Check } from 'lucide-react';
 import { useTranslation } from '../../context/TranslationContext';
 
 const LanguageSwitcher = () => {
@@ -26,13 +26,12 @@ const LanguageSwitcher = () => {
                 <span className="text-sm font-medium">{currentLanguage?.flag}</span>
             </button>
 
-            {/* Mobile Button - Compact with chevron */}
+            {/* Mobile Button - Shows Code Only */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center px-2 py-2 space-x-1 text-white transition-colors rounded-lg md:hidden bg-white/10 hover:bg-white/20"
+                className="flex items-center justify-center w-10 h-10 text-white transition-colors rounded-lg md:hidden bg-white/10 hover:bg-white/20"
             >
-                <span className="text-xs font-bold">{currentLanguage?.shortCode}</span>
-                <ChevronDown size={12} className={`transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+                <span className="text-sm font-bold">{currentLanguage?.shortCode}</span>
             </button>
 
             <AnimatePresence>
@@ -44,12 +43,12 @@ const LanguageSwitcher = () => {
                             onClick={() => setIsOpen(false)}
                         />
 
-                        {/* Dropdown - Compact on mobile */}
+                        {/* Dropdown */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95, y: -10 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95, y: -10 }}
-                            className="absolute right-0 z-50 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg top-full md:w-48 w-36"
+                            className="absolute right-0 z-50 w-48 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg top-full"
                         >
                             <div className="p-2">
                                 {languages.map((lang) => (
@@ -65,13 +64,13 @@ const LanguageSwitcher = () => {
                                             }`}
                                     >
                                         <div className="flex items-center space-x-2">
-                                            {/* Show flag and full name on desktop, flag + code on mobile */}
+                                            {/* Show flag and full name on desktop, code only on mobile in dropdown */}
                                             <span className="text-base">{lang.flag}</span>
                                             <span className="hidden md:inline">{lang.name}</span>
-                                            <span className="text-xs font-bold md:hidden">{lang.shortCode}</span>
+                                            <span className="font-bold md:hidden">{lang.shortCode}</span>
                                         </div>
                                         {language === lang.code && (
-                                            <Check size={14} className="text-primary-orange" />
+                                            <Check size={16} className="text-primary-orange" />
                                         )}
                                     </button>
                                 ))}

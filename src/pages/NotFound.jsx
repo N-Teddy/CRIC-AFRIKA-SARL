@@ -176,58 +176,6 @@ const NotFound = () => {
                 </div>
             </section>
 
-            {/* Popular Pages */}
-            <section className="py-20 bg-light-gray">
-                <div className="container px-4 mx-auto lg:px-8">
-                    <div className="max-w-4xl mx-auto">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="mb-12 text-center"
-                        >
-                            <h2 className="mb-4 text-3xl font-bold lg:text-4xl text-dark-blue">
-                                Pages <span className="text-gradient">Populaires</span>
-                            </h2>
-                            <p className="text-lg text-gray-600">
-                                Peut-être cherchez-vous l'une de ces pages ?
-                            </p>
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="p-8 bg-white shadow-lg rounded-2xl"
-                        >
-                            <div className="grid gap-4 md:grid-cols-2">
-                                {popularPages.map((page, index) => (
-                                    <motion.div
-                                        key={index}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: index * 0.05 }}
-                                        whileHover={{ x: 10 }}
-                                    >
-                                        <Link
-                                            to={page.link}
-                                            className="flex items-center p-4 space-x-3 transition-colors rounded-xl hover:bg-light-gray group"
-                                        >
-                                            <div className="w-2 h-2 transition-transform rounded-full bg-primary-orange group-hover:scale-150"></div>
-                                            <span className="font-medium text-gray-700 transition-colors group-hover:text-primary-orange">
-                                                {page.name}
-                                            </span>
-                                            <ArrowLeft className="ml-auto text-gray-400 transition-colors rotate-180 group-hover:text-primary-orange" size={18} />
-                                        </Link>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
-
             {/* Help Section */}
             <CTA
                 title="Besoin d'Aide ?"

@@ -22,16 +22,120 @@
     },
     "home": {
         "hero": {
-            "title": "Together <1>Powering</1> Africa",
+            "badge": "Leader in Industrial Equipment in Cameroon",
+            "title": "Together Powering Africa",
             "subtitle": "Import, installation and maintenance of superior quality industrial equipment. Your trusted partner for over 15 years.",
             "ctaQuote": "Get a Quote",
-            "ctaProducts": "Our Products"
+            "ctaProducts": "Our Products",
+            "images": {
+                "equipment": "Industrial Equipment",
+                "generator": "Generator",
+                "site": "Industrial Site",
+                "maintenance": "Maintenance"
+            }
         },
         "stats": {
             "experience": "Years of Experience",
             "clients": "Satisfied Clients",
             "projects": "Projects Completed",
             "experts": "Qualified Experts"
+        },
+        "services": {
+            "badge": "OUR SERVICES",
+            "title": "Complete Solutions",
+            "subtitle": "From import to maintenance, we support you at every step",
+            "learnMore": "Learn More",
+            "items": {
+                "import": {
+                    "title": "Import",
+                    "description": "Superior quality industrial equipment"
+                },
+                "installation": {
+                    "title": "Installation",
+                    "description": "Professional setup by our experts"
+                },
+                "maintenance": {
+                    "title": "Maintenance",
+                    "description": "Reactive and efficient after-sales service"
+                },
+                "automation": {
+                    "title": "Automation",
+                    "description": "Industrial automation solutions"
+                }
+            }
+        },
+        "products": {
+            "badge": "OUR PRODUCTS",
+            "title": "Wide Range of Equipment",
+            "subtitle": "Quality industrial equipment for all your needs",
+            "discover": "Discover",
+            "cta": "See All Products",
+            "items": {
+                "generators": {
+                    "name": "Generators",
+                    "count": "50+ Models"
+                },
+                "compressors": {
+                    "name": "Compressors",
+                    "count": "30+ Models"
+                },
+                "safety": {
+                    "name": "Safety Equipment",
+                    "count": "40+ Products"
+                },
+                "pumping": {
+                    "name": "Pumping Equipment",
+                    "count": "25+ Models"
+                },
+                "handling": {
+                    "name": "Handling Equipment",
+                    "count": "20+ Models"
+                },
+                "transformers": {
+                    "name": "Transformers",
+                    "count": "15+ Models"
+                }
+            }
+        },
+        "whyChooseUs": {
+            "badge": "WHY CHOOSE US",
+            "title": "Your Trusted Partner",
+            "subtitle": "CRIC Africa is committed to providing superior quality equipment and exceptional customer service.",
+            "imageAlt": "Industrial Equipment",
+            "benefits": [
+                "Certified and guaranteed equipment",
+                "Installation by qualified experts",
+                "24/7 reactive after-sales service",
+                "Partnerships with the best brands",
+                "Training and support",
+                "Competitive prices and financing solutions"
+            ]
+        },
+        "testimonials": {
+            "badge": "TESTIMONIALS",
+            "title": "What Our Clients Say",
+            "subtitle": "Our clients' satisfaction is our priority",
+            "items": {
+                "jean": {
+                    "name": "Jean MBARGA",
+                    "company": "Technical Director, SABC",
+                    "text": "CRIC Africa installed our generators with remarkable professionalism. Impeccable service!"
+                },
+                "marie": {
+                    "name": "Marie NKOTTO",
+                    "company": "Production Manager, SOCAVER",
+                    "text": "Quality equipment and very responsive team. We highly recommend their services."
+                },
+                "paul": {
+                    "name": "Paul ATANGANA",
+                    "company": "Manager, Le Meridien Hotel",
+                    "text": "Impeccable electrical installation for our hotel. Careful work and respect for standards."
+                }
+            }
+        },
+        "cta": {
+            "title": "Ready to Start Your Project?",
+            "description": "Contact us today for a free and personalized quote"
         }
     },
     "about": {

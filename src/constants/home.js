@@ -1,3 +1,4 @@
+// src/constants/home.js
 import { CheckCircle } from "lucide-react";
 import { Factory } from "lucide-react";
 import { Shield } from "lucide-react";
@@ -11,11 +12,10 @@ import { Users } from "lucide-react";
 import { Award } from "lucide-react";
 
 export const stats = [
-    { number: 5, label: 'Années d\'Expérience', icon: Award, suffix: '+' },
-    { number: 20, label: 'Clients Satisfaits', icon: Users, suffix: '+' },
-    { number: 25, label: 'Projets Réalisés', icon: CheckCircle, suffix: '+' },
-    { number: 10, label: 'Experts Qualifiés', icon: Star, suffix: '' },
-
+    { number: 5, label: 'Années d\'Expérience', icon: Award, suffix: '+', key: 'experience' },
+    { number: 20, label: 'Clients Satisfaits', icon: Users, suffix: '+', key: 'clients' },
+    { number: 25, label: 'Projets Réalisés', icon: CheckCircle, suffix: '+', key: 'projects' },
+    { number: 10, label: 'Experts Qualifiés', icon: Star, suffix: '', key: 'experts' },
 ];
 
 export const services = [
@@ -23,35 +23,39 @@ export const services = [
         icon: Factory,
         title: 'Importation',
         description: 'Équipements industriels de qualité supérieure',
-        color: 'from-primary-orange to-lemon-green'
+        color: 'from-primary-orange to-lemon-green',
+        key: 'import'
     },
     {
         icon: Wrench,
         title: 'Installation',
         description: 'Mise en place professionnelle par nos experts',
-        color: 'from-lemon-green to-primary-orange'
+        color: 'from-lemon-green to-primary-orange',
+        key: 'installation'
     },
     {
         icon: Shield,
         title: 'Maintenance',
         description: 'Service après-vente réactif et efficace',
-        color: 'from-primary-orange to-lemon-green'
+        color: 'from-primary-orange to-lemon-green',
+        key: 'maintenance'
     },
     {
         icon: Zap,
         title: 'Automatisation',
         description: 'Solutions d\'automatisation industrielle',
-        color: 'from-lemon-green to-primary-orange'
+        color: 'from-lemon-green to-primary-orange',
+        key: 'automation'
     },
 ];
 
 export const products = [
-    { icon: Zap, name: 'Groupes Électrogènes', count: '50+ Modèles' },
-    { icon: Wind, name: 'Compresseurs', count: '30+ Modèles' },
-    { icon: Shield, name: 'Équipements Sécurité', count: '40+ Produits' },
-    { icon: Droplet, name: 'Matériels de Pompage', count: '25+ Modèles' },
-    { icon: Truck, name: 'Engins de Manutention', count: '20+ Modèles' },
-    { icon: Factory, name: 'Transformateurs', count: '15+ Modèles' },
+    { icon: Zap, name: 'Groupes Électrogènes', count: '50+ Modèles', key: 'generators' },
+    { icon: Wind, name: 'Compresseurs', count: '30+ Modèles', key: 'compressors' },
+    { icon: Shield, name: 'Équipements Sécurité', count: '40+ Produits', key: 'safety' },
+    { icon: Droplet, name: 'Matériels de Pompage', count: '25+ Modèles', key: 'pumping' },
+    { icon: Truck, name: 'Engins de Manutention', count: '20+ Modèles', key: 'handling' },
+    { icon: Factory, name: 'Transformateurs', count: '15+ Modèles', key: 'transformers' },
 ];
 
 export const testimonials = [
@@ -59,18 +63,21 @@ export const testimonials = [
         name: 'Jean MBARGA',
         company: 'Directeur Technique, SABC',
         text: 'CRIC Africa a installé nos groupes électrogènes avec un professionnalisme remarquable. Service impeccable!',
-        rating: 5
+        rating: 5,
+        key: 'jean'
     },
     {
         name: 'Marie NKOTTO',
         company: 'Responsable Production, SOCAVER',
         text: 'Équipements de qualité et équipe très réactive. Nous recommandons vivement leurs services.',
-        rating: 5
+        rating: 5,
+        key: 'marie'
     },
     {
         name: 'Paul ATANGANA',
         company: 'Gérant, Hôtel Le Meridien',
         text: 'Installation électrique impeccable pour notre hôtel. Travail soigné et respect des normes.',
-        rating: 5
+        rating: 5,
+        key: 'paul'
     },
 ];

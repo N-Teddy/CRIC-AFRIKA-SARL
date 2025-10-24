@@ -36,7 +36,7 @@ export const TranslationProvider = ({ children }) => {
         loadTranslations(newLang);
     };
 
-    const t = (key, params = {}) => {
+    const t = (key, options = {}) => {
         let translation = translations;
         const keys = key.split('.');
 
@@ -45,14 +45,14 @@ export const TranslationProvider = ({ children }) => {
             if (translation === undefined) return key;
         }
 
-        // Handle arrays
-        if (Array.isArray(translation)) {
+        // Handle arrays and objects
+        if (options.returnObjects && (Array.isArray(translation) || typeof translation === 'object')) {
             return translation;
         }
 
         // Handle strings with parameters
         if (typeof translation === 'string') {
-            return translation.replace(/\{\{(\w+)\}\}/g, (match, param) => params[param] || match);
+            return translation.replace(/\{\{(\w+)\}\}/g, (match, param) => options[param] || match);
         }
 
         return translation || key;

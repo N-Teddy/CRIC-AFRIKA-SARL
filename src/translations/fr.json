@@ -22,16 +22,120 @@
     },
     "home": {
         "hero": {
-            "title": "Ensemble <1>Énergisons</1> L'Afrique",
+            "badge": "Leader de l'Équipement Industriel au Cameroun",
+            "title": "Ensemble Énergisons L'Afrique",
             "subtitle": "Importation, installation et maintenance d'équipements industriels de qualité supérieure. Votre partenaire de confiance depuis plus de 15 ans.",
             "ctaQuote": "Demander un Devis",
-            "ctaProducts": "Nos Produits"
+            "ctaProducts": "Nos Produits",
+            "images": {
+                "equipment": "Équipement Industriel",
+                "generator": "Groupe Électrogène",
+                "site": "Site Industriel",
+                "maintenance": "Maintenance"
+            }
         },
         "stats": {
             "experience": "Années d'Expérience",
             "clients": "Clients Satisfaits",
             "projects": "Projets Réalisés",
             "experts": "Experts Qualifiés"
+        },
+        "services": {
+            "badge": "NOS SERVICES",
+            "title": "Des Solutions Complètes",
+            "subtitle": "De l'importation à la maintenance, nous vous accompagnons à chaque étape",
+            "learnMore": "En savoir plus",
+            "items": {
+                "import": {
+                    "title": "Importation",
+                    "description": "Équipements industriels de qualité supérieure"
+                },
+                "installation": {
+                    "title": "Installation",
+                    "description": "Mise en place professionnelle par nos experts"
+                },
+                "maintenance": {
+                    "title": "Maintenance",
+                    "description": "Service après-vente réactif et efficace"
+                },
+                "automation": {
+                    "title": "Automatisation",
+                    "description": "Solutions d'automatisation industrielle"
+                }
+            }
+        },
+        "products": {
+            "badge": "NOS PRODUITS",
+            "title": "Large Gamme d'Équipements",
+            "subtitle": "Des équipements industriels de qualité pour tous vos besoins",
+            "discover": "Découvrir",
+            "cta": "Voir Tous les Produits",
+            "items": {
+                "generators": {
+                    "name": "Groupes Électrogènes",
+                    "count": "50+ Modèles"
+                },
+                "compressors": {
+                    "name": "Compresseurs",
+                    "count": "30+ Modèles"
+                },
+                "safety": {
+                    "name": "Équipements Sécurité",
+                    "count": "40+ Produits"
+                },
+                "pumping": {
+                    "name": "Matériels de Pompage",
+                    "count": "25+ Modèles"
+                },
+                "handling": {
+                    "name": "Engins de Manutention",
+                    "count": "20+ Modèles"
+                },
+                "transformers": {
+                    "name": "Transformateurs",
+                    "count": "15+ Modèles"
+                }
+            }
+        },
+        "whyChooseUs": {
+            "badge": "POURQUOI NOUS CHOISIR",
+            "title": "Votre Partenaire de Confiance",
+            "subtitle": "CRIC Africa s'engage à fournir des équipements de qualité supérieure et un service client exceptionnel.",
+            "imageAlt": "Équipement Industriel",
+            "benefits": [
+                "Équipements certifiés et garantis",
+                "Installation par des experts qualifiés",
+                "Service après-vente réactif 24/7",
+                "Partenariats avec les meilleures marques",
+                "Formations et accompagnement",
+                "Prix compétitifs et solutions de financement"
+            ]
+        },
+        "testimonials": {
+            "badge": "TÉMOIGNAGES",
+            "title": "Ce Que Disent Nos Clients",
+            "subtitle": "La satisfaction de nos clients est notre priorité",
+            "items": {
+                "jean": {
+                    "name": "Jean MBARGA",
+                    "company": "Directeur Technique, SABC",
+                    "text": "CRIC Africa a installé nos groupes électrogènes avec un professionnalisme remarquable. Service impeccable!"
+                },
+                "marie": {
+                    "name": "Marie NKOTTO",
+                    "company": "Responsable Production, SOCAVER",
+                    "text": "Équipements de qualité et équipe très réactive. Nous recommandons vivement leurs services."
+                },
+                "paul": {
+                    "name": "Paul ATANGANA",
+                    "company": "Gérant, Hôtel Le Meridien",
+                    "text": "Installation électrique impeccable pour notre hôtel. Travail soigné et respect des normes."
+                }
+            }
+        },
+        "cta": {
+            "title": "Prêt à Démarrer Votre Projet ?",
+            "description": "Contactez-nous dès aujourd'hui pour un devis gratuit et personnalisé"
         }
     },
     "about": {

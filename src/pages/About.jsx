@@ -20,7 +20,6 @@ import CTA from '../components/ui/CTA'
 import { useTranslation } from '../context/TranslationContext'
 
 const About = () => {
-
     const { t } = useTranslation();
 
     const containerVariants = {
@@ -44,20 +43,23 @@ const About = () => {
         }
     }
 
+    // Get story content as array
+    const storyContent = t('about.storyContent');
+
     return (
         <>
             <Helmet>
-                <title>{t('about.title')} - CRIC Africa SARL | Notre Histoire et Notre Vision</title>
+                <title>{t('about.title')} - CRIC Africa SARL</title>
                 <meta
                     name="description"
                     content={t('about.metaDescription')}
                 />
                 <meta
                     name="keywords"
-                    content="CRIC Africa histoire, équipe industrielle Cameroun, valeurs entreprise, certifications industrielles"
+                    content="CRIC Africa history, industrial team Cameroon, company values, industrial certifications"
                 />
-                <meta property="og:title" content="À Propos - CRIC Africa SARL" />
-                <meta property="og:description" content="Notre histoire, notre vision et notre équipe" />
+                <meta property="og:title" content={t('about.title')} />
+                <meta property="og:description" content={t('about.metaDescription')} />
                 <meta property="og:type" content="website" />
                 <link rel="canonical" href="https://cricafrica.com/about" />
             </Helmet>
@@ -84,27 +86,33 @@ const About = () => {
                                     {t('about.ourStory')}
                                 </span>
                                 <h2 className="mb-6 text-4xl font-bold lg:text-5xl text-dark-blue">
-                                    {t('about.storyTitle', { 1: (chunks) => <span className="text-lemon-green">{chunks}</span> })}
+                                    {t('about.storyTitle')}
                                 </h2>
-                                {t('about.storyContent', { returnObjects: true }).map((paragraph, index) => (
-                                    <p key={index} className="mb-6 text-lg leading-relaxed text-gray-600">
-                                        {paragraph}
+                                {Array.isArray(storyContent) ? (
+                                    storyContent.map((paragraph, index) => (
+                                        <p key={index} className="mb-6 text-lg leading-relaxed text-gray-600">
+                                            {paragraph}
+                                        </p>
+                                    ))
+                                ) : (
+                                    <p className="mb-6 text-lg leading-relaxed text-gray-600">
+                                        {storyContent}
                                     </p>
-                                ))}
+                                )}
                                 <div className="flex flex-wrap gap-4">
                                     <Link
                                         to="/contact"
                                         className="px-6 py-3 font-semibold text-white rounded-full btn-orange"
                                     >
                                         <Handshake className="inline mr-2" size={16} />
-                                        Devenir Partenaire
+                                        {t('common.becomePartner')}
                                     </Link>
                                     <Link
                                         to="/realisations"
                                         className="px-6 py-3 font-semibold text-white rounded-full btn-green"
                                     >
                                         <FolderOpen className="inline mr-2" size={16} />
-                                        Nos Réalisations
+                                        {t('common.ourProjects')}
                                     </Link>
                                 </div>
                             </motion.div>
@@ -123,17 +131,17 @@ const About = () => {
                                 />
                                 <img
                                     src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600"
-                                    alt="Équipe CRIC Africa"
+                                    alt="CRIC Africa Team"
                                     className="object-cover w-full h-64 mt-8 shadow-lg rounded-2xl hover-lift"
                                 />
                                 <img
                                     src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600"
-                                    alt="Projets CRIC Africa"
+                                    alt="CRIC Africa Projects"
                                     className="object-cover w-full h-64 shadow-lg rounded-2xl hover-lift"
                                 />
                                 <img
                                     src="https://images.unsplash.com/photo-1621905252472-9b6e78c09a0f?w=600"
-                                    alt="Installations CRIC Africa"
+                                    alt="CRIC Africa Installations"
                                     className="object-cover w-full h-64 mt-8 shadow-lg rounded-2xl hover-lift"
                                 />
                             </motion.div>
@@ -152,10 +160,10 @@ const About = () => {
                             viewport={{ once: true }}
                         >
                             <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
-                                Notre <span className="text-primary-orange">Identité</span>
+                                {t('about.identity.title')}
                             </h2>
                             <p className="max-w-3xl mx-auto text-xl text-gray-600">
-                                Les principes qui guident notre action au quotidien
+                                {t('about.identity.subtitle')}
                             </p>
                         </motion.div>
 
@@ -174,9 +182,11 @@ const About = () => {
                                 <div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary-orange to-lemon-green">
                                     <Target className="text-3xl text-white" />
                                 </div>
-                                <h3 className="mb-4 text-2xl font-bold text-center text-dark-blue">Notre Mission</h3>
+                                <h3 className="mb-4 text-2xl font-bold text-center text-dark-blue">
+                                    {t('about.mission.title')}
+                                </h3>
                                 <p className="leading-relaxed text-center text-gray-600">
-                                    Fournir aux entreprises camerounaises et d'Afrique Centrale des équipements industriels de qualité supérieure et des services techniques d'excellence, contribuant ainsi au développement industriel du continent.
+                                    {t('about.mission.description')}
                                 </p>
                             </motion.div>
 
@@ -188,9 +198,11 @@ const About = () => {
                                 <div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-lemon-green to-primary-orange">
                                     <Eye className="text-3xl text-white" />
                                 </div>
-                                <h3 className="mb-4 text-2xl font-bold text-center text-dark-blue">Notre Vision</h3>
+                                <h3 className="mb-4 text-2xl font-bold text-center text-dark-blue">
+                                    {t('about.vision.title')}
+                                </h3>
                                 <p className="leading-relaxed text-center text-gray-600">
-                                    Devenir le leader incontesté de l'équipement industriel en Afrique Centrale, reconnu pour notre expertise technique, notre innovation et notre engagement envers nos clients.
+                                    {t('about.vision.description')}
                                 </p>
                             </motion.div>
 
@@ -202,12 +214,14 @@ const About = () => {
                                 <div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 rounded-full bg-white/20">
                                     <Zap className="text-3xl text-white" />
                                 </div>
-                                <h3 className="mb-4 text-2xl font-bold text-center">Notre Devise</h3>
+                                <h3 className="mb-4 text-2xl font-bold text-center">
+                                    {t('about.motto.title')}
+                                </h3>
                                 <p className="text-xl italic font-semibold leading-relaxed text-center text-white">
-                                    "Ensemble Énergisons L'Afrique"
+                                    {t('about.motto.text')}
                                 </p>
                                 <p className="mt-4 leading-relaxed text-center text-white/90">
-                                    Un engagement collectif pour le développement industriel et énergétique du continent africain.
+                                    {t('about.motto.description')}
                                 </p>
                             </motion.div>
                         </motion.div>
@@ -221,11 +235,14 @@ const About = () => {
                             viewport={{ once: true }}
                         >
                             <h3 className="mb-12 text-3xl font-bold text-center text-dark-blue">
-                                Nos <span className="text-lemon-green">Valeurs</span>
+                                {t('about.values.title')}
                             </h3>
                             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                                 {values.map((value, index) => {
-                                    const Icon = value.icon
+                                    const Icon = value.icon;
+                                    const valueKeys = ['excellence', 'integrity', 'innovation', 'collaboration'];
+                                    const currentKey = valueKeys[index];
+
                                     return (
                                         <motion.div
                                             key={value.title}
@@ -242,8 +259,12 @@ const About = () => {
                                                 <Icon className={`${value.color === 'orange' ? 'text-primary-orange' : 'text-lemon-green'
                                                     } text-2xl`} />
                                             </div>
-                                            <h4 className="mb-3 text-xl font-bold text-dark-blue">{value.title}</h4>
-                                            <p className="text-gray-600">{value.description}</p>
+                                            <h4 className="mb-3 text-xl font-bold text-dark-blue">
+                                                {t(`about.values.${currentKey}`)}
+                                            </h4>
+                                            <p className="text-gray-600">
+                                                {t(`about.values.${currentKey}Desc`)}
+                                            </p>
                                         </motion.div>
                                     )
                                 })}
@@ -263,10 +284,10 @@ const About = () => {
                             viewport={{ once: true }}
                         >
                             <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
-                                Notre <span className="text-primary-orange">Parcours</span>
+                                {t('about.journey.title')}
                             </h2>
                             <p className="max-w-3xl mx-auto text-xl text-gray-600">
-                                Les grandes étapes de notre développement
+                                {t('about.journey.subtitle')}
                             </p>
                         </motion.div>
 
@@ -316,10 +337,10 @@ const About = () => {
                             viewport={{ once: true }}
                         >
                             <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
-                                Notre <span className="text-lemon-green">Équipe</span>
+                                {t('about.team.title')}
                             </h2>
                             <p className="max-w-3xl mx-auto text-xl text-gray-600">
-                                Des professionnels passionnés et qualifiés à votre service
+                                {t('about.team.subtitle')}
                             </p>
                         </motion.div>
 
@@ -379,13 +400,15 @@ const About = () => {
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <p className="mb-6 text-lg text-gray-600">Rejoignez une équipe dynamique et passionnée</p>
+                            <p className="mb-6 text-lg text-gray-600">
+                                {t('about.team.joinText')}
+                            </p>
                             <Link
                                 to="/contact"
                                 className="inline-block px-8 py-4 text-lg font-bold text-white rounded-full btn-orange"
                             >
                                 <Briefcase className="inline mr-2" size={20} />
-                                Carrières chez CRIC Africa
+                                {t('common.careers')}
                             </Link>
                         </motion.div>
                     </div>
@@ -403,7 +426,7 @@ const About = () => {
                                 viewport={{ once: true }}
                             >
                                 <h2 className="mb-8 text-3xl font-bold lg:text-4xl text-dark-blue">
-                                    Nos <span className="text-primary-orange">Certifications</span>
+                                    {t('about.certifications.title')}
                                 </h2>
                                 <div className="space-y-4">
                                     {certifications.map((cert, index) => (
@@ -430,10 +453,10 @@ const About = () => {
                                 viewport={{ once: true }}
                             >
                                 <h2 className="mb-8 text-3xl font-bold lg:text-4xl text-dark-blue">
-                                    Nos <span className="text-lemon-green">Partenaires</span>
+                                    {t('about.partners.title')}
                                 </h2>
                                 <p className="mb-8 leading-relaxed text-gray-600">
-                                    Nous travaillons avec les plus grandes marques internationales pour vous garantir des équipements de qualité supérieure.
+                                    {t('about.partners.description')}
                                 </p>
                                 <div className="grid grid-cols-2 gap-6">
                                     {partners.map((partner, index) => (
@@ -449,17 +472,17 @@ const About = () => {
 
                 {/* CTA Section */}
                 <CTA
-                    title="Travaillons Ensemble"
-                    description="Rejoignez les dizaines d'entreprises qui nous font confiance pour leurs projets industriels. Contactez-nous pour discuter de vos besoins."
+                    title={t('about.cta.title')}
+                    description={t('about.cta.description')}
                     buttons={[
                         {
-                            text: "Contactez-nous",
+                            text: t('common.contactUs'),
                             to: "/contact",
                             icon: "Phone",
                             className: "bg-white text-primary-orange hover:bg-gray-50"
                         },
                         {
-                            text: "Nos Services",
+                            text: t('common.ourServices'),
                             to: "/services",
                             icon: "Factory",
                             className: "bg-dark-blue text-white hover:bg-blue-900"

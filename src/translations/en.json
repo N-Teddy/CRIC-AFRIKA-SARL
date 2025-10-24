@@ -37,12 +37,61 @@
     "about": {
         "title": "About CRIC AFRIKA SARL",
         "subtitle": "Leader in industrial equipment in Cameroon for over 15 years",
+        "metaDescription": "Discover CRIC Africa SARL, leader in industrial equipment in Cameroon. Our story, our values, our team.",
         "ourStory": "OUR STORY",
-        "storyTitle": "A <1>Cameroonian</1> Company Serving Industry",
+        "storyTitle": "A Cameroonian Company Serving Industry",
         "storyContent": [
-            "Founded in 2008, <1>CRIC Africa SARL</1> was born from the vision of creating a Cameroonian company capable of meeting the growing needs of the industrial sector for quality equipment and professional technical services.",
-            "Since our beginnings, we have supported more than <1>80 companies</1> in their installation, maintenance and equipment optimization projects.",
-            "Today, CRIC Africa is a team of <1>45 qualified professionals</1>, partnerships with major international brands, and a presence throughout Cameroon."
-        ]
+            "Founded in 2008, CRIC Africa SARL was born from the vision of creating a Cameroonian company capable of meeting the growing needs of the industrial sector for quality equipment and professional technical services.",
+            "Since our beginnings, we have supported more than 80 companies in their installation, maintenance and equipment optimization projects.",
+            "Today, CRIC Africa is a team of 45 qualified professionals, partnerships with major international brands, and a presence throughout Cameroon."
+        ],
+        "identity": {
+            "title": "Our Identity",
+            "subtitle": "The principles that guide our daily actions"
+        },
+        "mission": {
+            "title": "Our Mission",
+            "description": "Provide Cameroonian and Central African companies with superior quality industrial equipment and excellent technical services, thus contributing to the industrial development of the continent."
+        },
+        "vision": {
+            "title": "Our Vision",
+            "description": "Become the undisputed leader in industrial equipment in Central Africa, recognized for our technical expertise, innovation and commitment to our customers."
+        },
+        "motto": {
+            "title": "Our Motto",
+            "text": "\"Together Powering Africa\"",
+            "description": "A collective commitment to the industrial and energy development of the African continent."
+        },
+        "values": {
+            "title": "Our Values",
+            "excellence": "Excellence",
+            "excellenceDesc": "We aim for excellence in everything we do",
+            "integrity": "Integrity",
+            "integrityDesc": "Honesty and transparency in all our relationships",
+            "innovation": "Innovation",
+            "innovationDesc": "Constant search for innovative solutions",
+            "collaboration": "Collaboration",
+            "collaborationDesc": "Teamwork and sustainable partnerships"
+        },
+        "journey": {
+            "title": "Our Journey",
+            "subtitle": "The major stages of our development"
+        },
+        "team": {
+            "title": "Our Team",
+            "subtitle": "Passionate and qualified professionals at your service",
+            "joinText": "Join a dynamic and passionate team"
+        },
+        "certifications": {
+            "title": "Our Certifications"
+        },
+        "partners": {
+            "title": "Our Partners",
+            "description": "We work with the biggest international brands to guarantee you superior quality equipment."
+        },
+        "cta": {
+            "title": "Let's Work Together",
+            "description": "Join the dozens of companies that trust us for their industrial projects. Contact us to discuss your needs."
+        }
     }
 }

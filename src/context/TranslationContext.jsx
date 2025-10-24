@@ -1,4 +1,4 @@
-// src/contexts/TranslationContext.jsx
+// src/context/TranslationContext.jsx
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const TranslationContext = createContext();
@@ -16,7 +16,6 @@ export const TranslationProvider = ({ children }) => {
     const [translations, setTranslations] = useState({});
 
     useEffect(() => {
-        // Load language from localStorage or default to French
         const savedLanguage = localStorage.getItem('language') || 'fr';
         setLanguage(savedLanguage);
         loadTranslations(savedLanguage);
@@ -46,7 +45,12 @@ export const TranslationProvider = ({ children }) => {
             if (translation === undefined) return key;
         }
 
-        // Replace parameters in translation
+        // Handle arrays
+        if (Array.isArray(translation)) {
+            return translation;
+        }
+
+        // Handle strings with parameters
         if (typeof translation === 'string') {
             return translation.replace(/\{\{(\w+)\}\}/g, (match, param) => params[param] || match);
         }

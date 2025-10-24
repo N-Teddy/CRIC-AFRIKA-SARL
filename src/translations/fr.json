@@ -37,12 +37,61 @@
     "about": {
         "title": "À Propos de CRIC AFRIKA SARL",
         "subtitle": "Leader de l'équipement industriel au Cameroun depuis plus de 15 ans",
+        "metaDescription": "Découvrez CRIC Africa SARL, leader de l'équipement industriel au Cameroun. Notre histoire, nos valeurs, notre équipe.",
         "ourStory": "NOTRE HISTOIRE",
-        "storyTitle": "Une Entreprise <1>Camerounaise</1> au Service de l'Industrie",
+        "storyTitle": "Une Entreprise Camerounaise au Service de l'Industrie",
         "storyContent": [
-            "Fondée en 2008, <1>CRIC Africa SARL</1> est née de la vision de créer une entreprise camerounaise capable de répondre aux besoins croissants du secteur industriel en équipements de qualité et en services techniques professionnels.",
-            "Depuis nos débuts, nous avons accompagné plus de <1>80 entreprises</1> dans leurs projets d'installation, de maintenance et d'optimisation de leurs équipements industriels.",
-            "Aujourd'hui, CRIC Africa c'est une équipe de <1>45 professionnels qualifiés</1>, des partenariats avec les plus grandes marques internationales, et une présence sur tout le territoire camerounais."
-        ]
+            "Fondée en 2008, CRIC Africa SARL est née de la vision de créer une entreprise camerounaise capable de répondre aux besoins croissants du secteur industriel en équipements de qualité et en services techniques professionnels.",
+            "Depuis nos débuts, nous avons accompagné plus de 80 entreprises dans leurs projets d'installation, de maintenance et d'optimisation de leurs équipements industriels.",
+            "Aujourd'hui, CRIC Africa c'est une équipe de 45 professionnels qualifiés, des partenariats avec les plus grandes marques internationales, et une présence sur tout le territoire camerounais."
+        ],
+        "identity": {
+            "title": "Notre Identité",
+            "subtitle": "Les principes qui guident notre action au quotidien"
+        },
+        "mission": {
+            "title": "Notre Mission",
+            "description": "Fournir aux entreprises camerounaises et d'Afrique Centrale des équipements industriels de qualité supérieure et des services techniques d'excellence, contribuant ainsi au développement industriel du continent."
+        },
+        "vision": {
+            "title": "Notre Vision",
+            "description": "Devenir le leader incontesté de l'équipement industriel en Afrique Centrale, reconnu pour notre expertise technique, notre innovation et notre engagement envers nos clients."
+        },
+        "motto": {
+            "title": "Notre Devise",
+            "text": "\"Ensemble Énergisons L'Afrique\"",
+            "description": "Un engagement collectif pour le développement industriel et énergétique du continent africain."
+        },
+        "values": {
+            "title": "Nos Valeurs",
+            "excellence": "Excellence",
+            "excellenceDesc": "Nous visons l'excellence dans tout ce que nous faisons",
+            "integrity": "Intégrité",
+            "integrityDesc": "Honnêteté et transparence dans toutes nos relations",
+            "innovation": "Innovation",
+            "innovationDesc": "Recherche constante de solutions innovantes",
+            "collaboration": "Collaboration",
+            "collaborationDesc": "Travail d'équipe et partenariats durables"
+        },
+        "journey": {
+            "title": "Notre Parcours",
+            "subtitle": "Les grandes étapes de notre développement"
+        },
+        "team": {
+            "title": "Notre Équipe",
+            "subtitle": "Des professionnels passionnés et qualifiés à votre service",
+            "joinText": "Rejoignez une équipe dynamique et passionnée"
+        },
+        "certifications": {
+            "title": "Nos Certifications"
+        },
+        "partners": {
+            "title": "Nos Partenaires",
+            "description": "Nous travaillons avec les plus grandes marques internationales pour vous garantir des équipements de qualité supérieure."
+        },
+        "cta": {
+            "title": "Travaillons Ensemble",
+            "description": "Rejoignez les dizaines d'entreprises qui nous font confiance pour leurs projets industriels. Contactez-nous pour discuter de vos besoins."
+        }
     }
 }

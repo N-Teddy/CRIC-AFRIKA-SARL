@@ -11,8 +11,10 @@ import { contactInfo, faqs, socialMedia } from '../constants/contact'
 import PageHeader from '../components/ui/PageHeader'
 import { location, WhatsAppNumber } from '../constants'
 import CTA from '../components/ui/CTA'
+import { useTranslation } from '../context/TranslationContext'
 
 const Contact = () => {
+    const { t } = useTranslation();
     const [formData, setFormData] = useState({
         name: '',
         company: '',
@@ -34,7 +36,7 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         // Here you would typically send the form data to your backend
-        alert('Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.')
+        alert(t('contact.form.successMessage'))
         setFormData({
             name: '',
             company: '',
@@ -70,17 +72,17 @@ const Contact = () => {
     return (
         <>
             <Helmet>
-                <title>Contact - CRIC Africa SARL | Contactez-nous pour vos Projets Industriels</title>
+                <title>{t('contact.title')} - CRIC Africa SARL</title>
                 <meta
                     name="description"
-                    content="Contactez CRIC Africa SARL pour vos projets industriels au Cameroun. Devis gratuit, conseil personnalisé."
+                    content={t('contact.metaDescription')}
                 />
                 <meta
                     name="keywords"
-                    content="contact CRIC Africa, devis équipements industriels, installation maintenance Cameroun"
+                    content={t('contact.metaKeywords')}
                 />
-                <meta property="og:title" content="Contact - CRIC Africa SARL" />
-                <meta property="og:description" content="Contactez-nous pour vos projets industriels au Cameroun" />
+                <meta property="og:title" content={t('contact.title')} />
+                <meta property="og:description" content={t('contact.metaDescription')} />
                 <meta property="og:type" content="website" />
                 <link rel="canonical" href="https://cricafrica.com/contact" />
             </Helmet>
@@ -88,9 +90,9 @@ const Contact = () => {
             <div className="pt-20">
                 {/* Page Header */}
                 <PageHeader
-                    title="Nos Contact"
-                    subtitle="Notre équipe est à votre écoute pour répondre à toutes vos questions et vous accompagner dans vos projets"
-                    breadcrumbs={['Contact']}
+                    title={t('contact.title')}
+                    subtitle={t('contact.subtitle')}
+                    breadcrumbs={[t('common.contactUs')]}
                 />
 
                 {/* Contact Info Cards */}
@@ -121,7 +123,9 @@ const Contact = () => {
                                             }`}>
                                             <Icon className="text-2xl text-white" />
                                         </div>
-                                        <h3 className="mb-2 text-xl font-bold text-dark-blue">{info.title}</h3>
+                                        <h3 className="mb-2 text-xl font-bold text-dark-blue">
+                                            {t(`contact.info.${info.key}.title`)}
+                                        </h3>
                                         <div className="mb-4 space-y-1">
                                             {info.details.map((detail, i) => (
                                                 <p key={i} className="text-gray-600">{detail}</p>
@@ -133,7 +137,7 @@ const Contact = () => {
                                                 className={`inline-block mt-2 font-semibold hover:underline ${info.color === 'orange' ? 'text-primary-orange' : 'text-lemon-green'
                                                     }`}
                                             >
-                                                {info.action.label}
+                                                {t(`contact.info.${info.key}.action`)}
                                             </a>
                                         )}
                                     </motion.div>
@@ -152,16 +156,18 @@ const Contact = () => {
                             {/* Contact Form */}
                             <div className="p-8 bg-white shadow-lg rounded-2xl lg:p-12">
                                 <h2 className="mb-2 text-3xl font-bold text-dark-blue">
-                                    Envoyez-nous un <span className="text-primary-orange">Message</span>
+                                    {t('contact.form.title')}
                                 </h2>
                                 <p className="mb-8 text-gray-600">
-                                    Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais
+                                    {t('contact.form.subtitle')}
                                 </p>
 
                                 <form onSubmit={handleSubmit} className="space-y-6">
                                     <div className="grid gap-6 md:grid-cols-2">
                                         <div>
-                                            <label className="block mb-2 font-semibold text-gray-700">Nom Complet *</label>
+                                            <label className="block mb-2 font-semibold text-gray-700">
+                                                {t('contact.form.fields.name')} *
+                                            </label>
                                             <input
                                                 type="text"
                                                 name="name"
@@ -169,25 +175,29 @@ const Contact = () => {
                                                 value={formData.name}
                                                 onChange={handleInputChange}
                                                 className="w-full px-4 py-3 transition border-2 border-gray-200 rounded-xl focus:border-primary-orange focus:ring-2 focus:ring-primary-orange/10"
-                                                placeholder="Votre nom"
+                                                placeholder={t('contact.form.placeholders.name')}
                                             />
                                         </div>
                                         <div>
-                                            <label className="block mb-2 font-semibold text-gray-700">Entreprise</label>
+                                            <label className="block mb-2 font-semibold text-gray-700">
+                                                {t('contact.form.fields.company')}
+                                            </label>
                                             <input
                                                 type="text"
                                                 name="company"
                                                 value={formData.company}
                                                 onChange={handleInputChange}
                                                 className="w-full px-4 py-3 transition border-2 border-gray-200 rounded-xl focus:border-primary-orange focus:ring-2 focus:ring-primary-orange/10"
-                                                placeholder="Nom de votre entreprise"
+                                                placeholder={t('contact.form.placeholders.company')}
                                             />
                                         </div>
                                     </div>
 
                                     <div className="grid gap-6 md:grid-cols-2">
                                         <div>
-                                            <label className="block mb-2 font-semibold text-gray-700">Email *</label>
+                                            <label className="block mb-2 font-semibold text-gray-700">
+                                                {t('contact.form.fields.email')} *
+                                            </label>
                                             <input
                                                 type="email"
                                                 name="email"
@@ -195,11 +205,13 @@ const Contact = () => {
                                                 value={formData.email}
                                                 onChange={handleInputChange}
                                                 className="w-full px-4 py-3 transition border-2 border-gray-200 rounded-xl focus:border-primary-orange focus:ring-2 focus:ring-primary-orange/10"
-                                                placeholder="votre@email.com"
+                                                placeholder={t('contact.form.placeholders.email')}
                                             />
                                         </div>
                                         <div>
-                                            <label className="block mb-2 font-semibold text-gray-700">Téléphone *</label>
+                                            <label className="block mb-2 font-semibold text-gray-700">
+                                                {t('contact.form.fields.phone')} *
+                                            </label>
                                             <input
                                                 type="tel"
                                                 name="phone"
@@ -207,13 +219,15 @@ const Contact = () => {
                                                 value={formData.phone}
                                                 onChange={handleInputChange}
                                                 className="w-full px-4 py-3 transition border-2 border-gray-200 rounded-xl focus:border-primary-orange focus:ring-2 focus:ring-primary-orange/10"
-                                                placeholder="+237 XXX XXX XXX"
+                                                placeholder={t('contact.form.placeholders.phone')}
                                             />
                                         </div>
                                     </div>
 
                                     <div>
-                                        <label className="block mb-2 font-semibold text-gray-700">Sujet *</label>
+                                        <label className="block mb-2 font-semibold text-gray-700">
+                                            {t('contact.form.fields.subject')} *
+                                        </label>
                                         <select
                                             name="subject"
                                             required
@@ -221,19 +235,21 @@ const Contact = () => {
                                             onChange={handleInputChange}
                                             className="w-full px-4 py-3 transition border-2 border-gray-200 rounded-xl focus:border-primary-orange focus:ring-2 focus:ring-primary-orange/10"
                                         >
-                                            <option value="">Sélectionnez un sujet</option>
-                                            <option value="devis">Demande de Devis</option>
-                                            <option value="info-produit">Information sur un Produit</option>
-                                            <option value="info-service">Information sur un Service</option>
-                                            <option value="sav">Service Après-Vente</option>
-                                            <option value="partenariat">Opportunité de Partenariat</option>
-                                            <option value="recrutement">Candidature Spontanée</option>
-                                            <option value="autre">Autre</option>
+                                            <option value="">{t('contact.form.placeholders.subject')}</option>
+                                            <option value="devis">{t('contact.form.subjects.quote')}</option>
+                                            <option value="info-produit">{t('contact.form.subjects.productInfo')}</option>
+                                            <option value="info-service">{t('contact.form.subjects.serviceInfo')}</option>
+                                            <option value="sav">{t('contact.form.subjects.afterSales')}</option>
+                                            <option value="partenariat">{t('contact.form.subjects.partnership')}</option>
+                                            <option value="recrutement">{t('contact.form.subjects.recruitment')}</option>
+                                            <option value="autre">{t('contact.form.subjects.other')}</option>
                                         </select>
                                     </div>
 
                                     <div>
-                                        <label className="block mb-2 font-semibold text-gray-700">Message *</label>
+                                        <label className="block mb-2 font-semibold text-gray-700">
+                                            {t('contact.form.fields.message')} *
+                                        </label>
                                         <textarea
                                             name="message"
                                             required
@@ -241,7 +257,7 @@ const Contact = () => {
                                             value={formData.message}
                                             onChange={handleInputChange}
                                             className="w-full px-4 py-3 transition border-2 border-gray-200 rounded-xl focus:border-primary-orange focus:ring-2 focus:ring-primary-orange/10"
-                                            placeholder="Décrivez votre projet ou votre demande..."
+                                            placeholder={t('contact.form.placeholders.message')}
                                         />
                                     </div>
 
@@ -256,7 +272,7 @@ const Contact = () => {
                                             className="mt-1 mr-3"
                                         />
                                         <label htmlFor="consent" className="text-sm text-gray-600">
-                                            J'accepte que mes données soient utilisées pour me recontacter concernant ma demande. *
+                                            {t('contact.form.consent')} *
                                         </label>
                                     </div>
 
@@ -265,10 +281,12 @@ const Contact = () => {
                                         className="w-full py-4 text-lg font-bold text-white rounded-full btn-orange"
                                     >
                                         <Send className="inline mr-2" size={20} />
-                                        Envoyer le Message
+                                        {t('contact.form.submit')}
                                     </button>
 
-                                    <p className="text-sm text-center text-gray-500">* Champs obligatoires</p>
+                                    <p className="text-sm text-center text-gray-500">
+                                        {t('contact.form.requiredFields')}
+                                    </p>
                                 </form>
                             </div>
 
@@ -276,9 +294,11 @@ const Contact = () => {
                             <div className="space-y-8">
                                 {/* Quick Contact */}
                                 <div className="p-8 text-white bg-gradient-to-br from-primary-orange to-lemon-green rounded-2xl">
-                                    <h3 className="mb-4 text-2xl font-bold">Besoin d'une Réponse Rapide ?</h3>
+                                    <h3 className="mb-4 text-2xl font-bold">
+                                        {t('contact.quickContact.title')}
+                                    </h3>
                                     <p className="mb-6 text-white/90">
-                                        Notre équipe commerciale est disponible pour répondre à vos questions par téléphone ou MessageCircle
+                                        {t('contact.quickContact.description')}
                                     </p>
                                     <div className="space-y-4">
                                         <a
@@ -287,7 +307,9 @@ const Contact = () => {
                                         >
                                             <Phone className="text-2xl" />
                                             <div>
-                                                <p className="font-semibold">Appelez-nous</p>
+                                                <p className="font-semibold">
+                                                    {t('contact.quickContact.call')}
+                                                </p>
                                                 <p className="text-sm text-white/90">+237{WhatsAppNumber}</p>
                                             </div>
                                         </a>
@@ -299,8 +321,12 @@ const Contact = () => {
                                         >
                                             <MessageCircle className="text-2xl" />
                                             <div>
-                                                <p className="font-semibold">MessageCircle</p>
-                                                <p className="text-sm text-white/90">Discutez avec nous</p>
+                                                <p className="font-semibold">
+                                                    {t('contact.quickContact.whatsapp')}
+                                                </p>
+                                                <p className="text-sm text-white/90">
+                                                    {t('contact.quickContact.chat')}
+                                                </p>
                                             </div>
                                         </a>
                                     </div>
@@ -309,7 +335,7 @@ const Contact = () => {
                                 {/* FAQ Quick Links */}
                                 <div className="p-8 bg-white shadow-lg rounded-2xl">
                                     <h3 className="mb-4 text-2xl font-bold text-dark-blue">
-                                        Questions <span className="text-lemon-green">Fréquentes</span>
+                                        {t('contact.faq.title')}
                                     </h3>
                                     <div className="space-y-4">
                                         {faqs.map((faq, index) => (
@@ -318,8 +344,12 @@ const Contact = () => {
                                                 className={`border-l-4 pl-4 ${index % 2 === 0 ? 'border-primary-orange' : 'border-lemon-green'
                                                     }`}
                                             >
-                                                <h4 className="mb-1 font-bold text-dark-blue">{faq.question}</h4>
-                                                <p className="text-sm text-gray-600">{faq.answer}</p>
+                                                <h4 className="mb-1 font-bold text-dark-blue">
+                                                    {t(`contact.faq.items.${faq.key}.question`)}
+                                                </h4>
+                                                <p className="text-sm text-gray-600">
+                                                    {t(`contact.faq.items.${faq.key}.answer`)}
+                                                </p>
                                             </div>
                                         ))}
                                     </div>
@@ -327,8 +357,12 @@ const Contact = () => {
 
                                 {/* Social Media */}
                                 {/* <div className="p-8 bg-light-gray rounded-2xl">
-                                    <h3 className="mb-4 text-2xl font-bold text-dark-blue">Suivez-nous</h3>
-                                    <p className="mb-6 text-gray-600">Restez informés de nos actualités et nouveautés</p>
+                                    <h3 className="mb-4 text-2xl font-bold text-dark-blue">
+                                        {t('contact.social.title')}
+                                    </h3>
+                                    <p className="mb-6 text-gray-600">
+                                        {t('contact.social.description')}
+                                    </p>
                                     <div className="flex space-x-4">
                                         {socialMedia.map((social, index) => {
                                             const Icon = social.icon
@@ -360,10 +394,10 @@ const Contact = () => {
                             viewport={{ once: true }}
                         >
                             <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
-                                Notre <span className="text-primary-orange">Localisation</span>
+                                {t('contact.location.title')}
                             </h2>
                             <p className="max-w-3xl mx-auto text-xl text-gray-600">
-                                Trouvez-nous facilement à Douala
+                                {t('contact.location.subtitle')}
                             </p>
                         </motion.div>
 
@@ -382,7 +416,7 @@ const Contact = () => {
                                 allowFullScreen=""
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
-                                title="CRIC Africa Location"
+                                title={t('contact.location.mapTitle')}
                             />
                         </motion.div>
                     </div>
@@ -390,17 +424,17 @@ const Contact = () => {
 
                 {/* CTA Section */}
                 <CTA
-                    title="Prêt à Démarrer Votre Projet ?"
-                    description="Notre équipe d'experts est prête à vous accompagner. Contactez-nous dès aujourd'hui pour un devis gratuit et personnalisé."
+                    title={t('contact.cta.title')}
+                    description={t('contact.cta.description')}
                     buttons={[
                         {
-                            text: "Appelez Maintenant",
+                            text: t('contact.cta.callNow'),
                             href: `tel:+237 ${WhatsAppNumber}`,
                             icon: "Phone",
                             className: "bg-white text-primary-orange hover:bg-gray-50"
                         },
                         {
-                            text: "Voir Nos Produits",
+                            text: t('common.ourProducts'),
                             to: "/products",
                             icon: "Box",
                             className: "bg-dark-blue text-white hover:bg-blue-900"

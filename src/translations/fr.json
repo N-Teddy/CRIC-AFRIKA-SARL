@@ -20,6 +20,9 @@
         "about": "À Propos",
         "contact": "Contact"
     },
+    "footer": {
+        "companyDescription": "Votre partenaire de confiance pour l'importation, l'installation et la maintenance d'équipements industriels au Cameroun."
+    },
     "home": {
         "hero": {
             "badge": "Leader de l'Équipement Industriel au Cameroun",
@@ -623,6 +626,104 @@
             "title": "Votre Projet Mérite le Meilleur",
             "description": "Faites confiance à CRIC Africa pour la réalisation de vos projets industriels. Notre expertise et notre engagement garantissent votre succès.",
             "startProject": "Démarrer un Projet"
+        }
+    },
+    "contact": {
+        "title": "Nos Contact",
+        "subtitle": "Notre équipe est à votre écoute pour répondre à toutes vos questions et vous accompagner dans vos projets",
+        "metaDescription": "Contactez CRIC Africa SARL pour vos projets industriels au Cameroun. Devis gratuit, conseil personnalisé.",
+        "metaKeywords": "contact CRIC Africa, devis équipements industriels, installation maintenance Cameroun",
+        "info": {
+            "phone": {
+                "title": "Téléphone",
+                "action": "Appelez-nous"
+            },
+            "email": {
+                "title": "Email",
+                "action": "Envoyez un email"
+            },
+            "address": {
+                "title": "Adresse",
+                "action": "Voir sur la carte"
+            },
+            "hours": {
+                "title": "Horaires"
+            }
+        },
+        "form": {
+            "title": "Envoyez-nous un Message",
+            "subtitle": "Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais",
+            "successMessage": "Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.",
+            "fields": {
+                "name": "Nom Complet",
+                "company": "Entreprise",
+                "email": "Email",
+                "phone": "Téléphone",
+                "subject": "Sujet",
+                "message": "Message"
+            },
+            "placeholders": {
+                "name": "Votre nom",
+                "company": "Nom de votre entreprise",
+                "email": "votre@email.com",
+                "phone": "+237 XXX XXX XXX",
+                "subject": "Sélectionnez un sujet",
+                "message": "Décrivez votre projet ou votre demande..."
+            },
+            "subjects": {
+                "quote": "Demande de Devis",
+                "productInfo": "Information sur un Produit",
+                "serviceInfo": "Information sur un Service",
+                "afterSales": "Service Après-Vente",
+                "partnership": "Opportunité de Partenariat",
+                "recruitment": "Candidature Spontanée",
+                "other": "Autre"
+            },
+            "consent": "J'accepte que mes données soient utilisées pour me recontacter concernant ma demande.",
+            "submit": "Envoyer le Message",
+            "requiredFields": "* Champs obligatoires"
+        },
+        "quickContact": {
+            "title": "Besoin d'une Réponse Rapide ?",
+            "description": "Notre équipe commerciale est disponible pour répondre à vos questions par téléphone ou WhatsApp",
+            "call": "Appelez-nous",
+            "whatsapp": "WhatsApp",
+            "chat": "Discutez avec nous"
+        },
+        "faq": {
+            "title": "Questions Fréquentes",
+            "items": {
+                "delivery": {
+                    "question": "Quel est le délai de livraison ?",
+                    "answer": "Généralement 2-4 semaines selon le produit et la disponibilité"
+                },
+                "financing": {
+                    "question": "Proposez-vous des financements ?",
+                    "answer": "Oui, nous travaillons avec plusieurs partenaires financiers"
+                },
+                "coverage": {
+                    "question": "Intervenez-vous hors de Douala ?",
+                    "answer": "Oui, nous intervenons sur tout le territoire camerounais"
+                },
+                "warranty": {
+                    "question": "Quelle est la garantie ?",
+                    "answer": "Garantie constructeur de 12 à 24 mois selon les équipements"
+                }
+            }
+        },
+        "social": {
+            "title": "Suivez-nous",
+            "description": "Restez informés de nos actualités et nouveautés"
+        },
+        "location": {
+            "title": "Notre Localisation",
+            "subtitle": "Trouvez-nous facilement à Douala",
+            "mapTitle": "Localisation CRIC Africa"
+        },
+        "cta": {
+            "title": "Prêt à Démarrer Votre Projet ?",
+            "description": "Notre équipe d'experts est prête à vous accompagner. Contactez-nous dès aujourd'hui pour un devis gratuit et personnalisé.",
+            "callNow": "Appelez Maintenant"
         }
     }
 }

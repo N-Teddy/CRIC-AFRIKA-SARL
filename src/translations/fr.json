@@ -362,5 +362,135 @@
                 ]
             }
         }
+    },
+    "services": {
+        "title": "Nos Services",
+        "subtitle": "Solutions complètes d'installation, maintenance et automatisation pour l'industrie",
+        "metaDescription": "Services complets d'installation, maintenance et automatisation industrielle. CRIC Africa SARL, votre partenaire technique au Cameroun.",
+        "metaKeywords": "installation électrique, maintenance industrielle, automatisation, service après-vente, Cameroun",
+        "process": {
+            "title": "Notre Processus",
+            "subtitle": "Une méthodologie éprouvée pour garantir votre satisfaction",
+            "steps": {
+                "analysis": {
+                    "title": "Analyse des Besoins",
+                    "description": "Étude approfondie de vos besoins et contraintes spécifiques"
+                },
+                "proposal": {
+                    "title": "Proposition Technique",
+                    "description": "Élaboration d'une solution technique adaptée et chiffrée"
+                },
+                "execution": {
+                    "title": "Réalisation",
+                    "description": "Exécution des travaux par nos équipes qualifiées"
+                },
+                "support": {
+                    "title": "Suivi & Support",
+                    "description": "Accompagnement continu et service après-vente"
+                }
+            }
+        },
+        "guarantees": {
+            "title": "Nos Garanties",
+            "subtitle": "Votre satisfaction est notre priorité",
+            "items": {
+                "quality": {
+                    "title": "Garantie Qualité",
+                    "description": "Tous nos services sont garantis et réalisés selon les normes internationales. Nous utilisons uniquement des pièces et équipements certifiés."
+                },
+                "timeliness": {
+                    "title": "Respect des Délais",
+                    "description": "Nous nous engageons à respecter les délais convenus. Notre organisation rigoureuse garantit la livraison de vos projets dans les temps."
+                },
+                "team": {
+                    "title": "Équipe Qualifiée",
+                    "description": "Nos techniciens et ingénieurs sont formés et certifiés. Ils disposent de l'expertise nécessaire pour tous types d'interventions."
+                },
+                "support247": {
+                    "title": "Support 24/7",
+                    "description": "Notre service d'assistance technique est disponible en permanence pour répondre à vos urgences et questions."
+                },
+                "transparency": {
+                    "title": "Transparence Tarifaire",
+                    "description": "Devis détaillés et transparents sans frais cachés. Vous savez exactement ce que vous payez avant de vous engager."
+                },
+                "satisfaction": {
+                    "title": "Satisfaction Client",
+                    "description": "Nous ne considérons un projet terminé que lorsque vous êtes entièrement satisfait. Votre avis compte pour nous."
+                }
+            }
+        },
+        "cta": {
+            "title": "Prêt à Optimiser Vos Installations ?",
+            "description": "Contactez nos experts pour discuter de vos besoins en services industriels. Nous vous proposerons la solution la plus adaptée."
+        },
+        "items": {
+            "electrical": {
+                "category": "Installation",
+                "title": "Installation Réseau Électrique",
+                "description": "Conception, installation et mise en service de réseaux électriques industriels complets. De la basse tension à la moyenne tension, nous assurons des installations conformes aux normes en vigueur.",
+                "features": [
+                    "Études et dimensionnement électrique",
+                    "Installation de tableaux électriques",
+                    "Câblage et raccordement",
+                    "Mise à la terre et protection"
+                ]
+            },
+            "support": {
+                "category": "Support",
+                "title": "Assistance Service Après-Vente",
+                "description": "Support technique professionnel disponible 24/7 pour assurer la continuité de vos opérations. Notre équipe d'experts intervient rapidement pour résoudre tous vos problèmes.",
+                "features": [
+                    "Hotline technique 24/7",
+                    "Intervention rapide sur site",
+                    "Diagnostic et dépannage",
+                    "Fourniture de pièces détachées"
+                ]
+            },
+            "automation": {
+                "category": "Automatisation",
+                "title": "Automatisation des Usines",
+                "description": "Solutions d'automatisation industrielle pour optimiser votre production, réduire les coûts et améliorer la qualité. Systèmes de contrôle et supervision modernes.",
+                "features": [
+                    "Programmation d'automates (PLC)",
+                    "Systèmes SCADA et supervision",
+                    "Robotique industrielle",
+                    "Intégration Industrie 4.0"
+                ]
+            },
+            "generatorConfig": {
+                "category": "Configuration",
+                "title": "Paramétrage des Groupes Électrogènes",
+                "description": "Configuration et optimisation de vos groupes électrogènes pour des performances maximales. Réglages précis et tests de fonctionnement complets.",
+                "features": [
+                    "Paramétrage des régulateurs",
+                    "Synchronisation et couplage",
+                    "Tests de charge et performance",
+                    "Formation des opérateurs"
+                ]
+            },
+            "equipmentMaintenance": {
+                "category": "Maintenance",
+                "title": "Maintenance Parc Engins Lourds et Légers",
+                "description": "Maintenance préventive et curative de votre parc d'engins de chantier et de manutention. Prolongez la durée de vie de vos équipements et optimisez leur disponibilité.",
+                "features": [
+                    "Maintenance préventive planifiée",
+                    "Réparations et révisions complètes",
+                    "Diagnostic électronique",
+                    "Gestion de flotte et suivi"
+                ]
+            },
+            "predictiveMaintenance": {
+                "category": "Maintenance",
+                "title": "Maintenance Préventive et Prédictive",
+                "description": "Programmes de maintenance avancés pour anticiper les pannes et optimiser la disponibilité de vos équipements. Réduisez vos coûts d'exploitation et évitez les arrêts imprévus.",
+                "features": [
+                    "Plans de maintenance personnalisés",
+                    "Analyse vibratoire et thermographie",
+                    "Surveillance en temps réel",
+                    "Rapports et recommandations"
+                ]
+            }
+        }
     }
 }

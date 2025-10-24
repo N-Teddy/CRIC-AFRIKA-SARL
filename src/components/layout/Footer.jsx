@@ -28,7 +28,7 @@ const Footer = () => {
                     {/* Company Info */}
                     <div>
                         <div className="flex items-center mb-6 space-x-3">
-                            <div className="flex items-center justify-center w-12 h-12 rounded-lg">
+                            <div className="flex items-center justify-center rounded-lg h-14 w-14">
                                 <img src="/logo.png" alt="logo"/>
                             </div>
                             <div>

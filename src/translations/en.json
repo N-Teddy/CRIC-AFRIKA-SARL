@@ -362,5 +362,135 @@
                 ]
             }
         }
+    },
+    "services": {
+        "title": "Our Services",
+        "subtitle": "Complete installation, maintenance and automation solutions for industry",
+        "metaDescription": "Complete industrial installation, maintenance and automation services. CRIC Africa SARL, your technical partner in Cameroon.",
+        "metaKeywords": "electrical installation, industrial maintenance, automation, after-sales service, Cameroon",
+        "process": {
+            "title": "Our Process",
+            "subtitle": "A proven methodology to guarantee your satisfaction",
+            "steps": {
+                "analysis": {
+                    "title": "Needs Analysis",
+                    "description": "In-depth study of your specific needs and constraints"
+                },
+                "proposal": {
+                    "title": "Technical Proposal",
+                    "description": "Development of an adapted and costed technical solution"
+                },
+                "execution": {
+                    "title": "Execution",
+                    "description": "Execution of works by our qualified teams"
+                },
+                "support": {
+                    "title": "Follow-up & Support",
+                    "description": "Continuous support and after-sales service"
+                }
+            }
+        },
+        "guarantees": {
+            "title": "Our Guarantees",
+            "subtitle": "Your satisfaction is our priority",
+            "items": {
+                "quality": {
+                    "title": "Quality Guarantee",
+                    "description": "All our services are guaranteed and carried out according to international standards. We use only certified parts and equipment."
+                },
+                "timeliness": {
+                    "title": "Respect of Deadlines",
+                    "description": "We commit to respecting agreed deadlines. Our rigorous organization guarantees the delivery of your projects on time."
+                },
+                "team": {
+                    "title": "Qualified Team",
+                    "description": "Our technicians and engineers are trained and certified. They have the necessary expertise for all types of interventions."
+                },
+                "support247": {
+                    "title": "24/7 Support",
+                    "description": "Our technical assistance service is available permanently to respond to your emergencies and questions."
+                },
+                "transparency": {
+                    "title": "Price Transparency",
+                    "description": "Detailed and transparent quotes without hidden costs. You know exactly what you're paying before committing."
+                },
+                "satisfaction": {
+                    "title": "Customer Satisfaction",
+                    "description": "We consider a project completed only when you are completely satisfied. Your opinion matters to us."
+                }
+            }
+        },
+        "cta": {
+            "title": "Ready to Optimize Your Installations?",
+            "description": "Contact our experts to discuss your industrial service needs. We will propose the most suitable solution for you."
+        },
+        "items": {
+            "electrical": {
+                "category": "Installation",
+                "title": "Electrical Network Installation",
+                "description": "Design, installation and commissioning of complete industrial electrical networks. From low voltage to medium voltage, we ensure installations compliant with current standards.",
+                "features": [
+                    "Electrical studies and sizing",
+                    "Electrical panel installation",
+                    "Wiring and connection",
+                    "Grounding and protection"
+                ]
+            },
+            "support": {
+                "category": "Support",
+                "title": "After-Sales Service Assistance",
+                "description": "Professional technical support available 24/7 to ensure the continuity of your operations. Our team of experts intervenes quickly to solve all your problems.",
+                "features": [
+                    "24/7 technical hotline",
+                    "Rapid on-site intervention",
+                    "Diagnosis and troubleshooting",
+                    "Supply of spare parts"
+                ]
+            },
+            "automation": {
+                "category": "Automation",
+                "title": "Factory Automation",
+                "description": "Industrial automation solutions to optimize your production, reduce costs and improve quality. Modern control and supervision systems.",
+                "features": [
+                    "PLC programming",
+                    "SCADA and supervision systems",
+                    "Industrial robotics",
+                    "Industry 4.0 integration"
+                ]
+            },
+            "generatorConfig": {
+                "category": "Configuration",
+                "title": "Generator Parameter Setting",
+                "description": "Configuration and optimization of your generators for maximum performance. Precise settings and complete functional tests.",
+                "features": [
+                    "Regulator parameter setting",
+                    "Synchronization and coupling",
+                    "Load and performance tests",
+                    "Operator training"
+                ]
+            },
+            "equipmentMaintenance": {
+                "category": "Maintenance",
+                "title": "Heavy and Light Equipment Maintenance",
+                "description": "Preventive and curative maintenance of your construction and handling equipment fleet. Extend the lifespan of your equipment and optimize their availability.",
+                "features": [
+                    "Planned preventive maintenance",
+                    "Complete repairs and overhauls",
+                    "Electronic diagnostics",
+                    "Fleet management and tracking"
+                ]
+            },
+            "predictiveMaintenance": {
+                "category": "Maintenance",
+                "title": "Preventive and Predictive Maintenance",
+                "description": "Advanced maintenance programs to anticipate breakdowns and optimize equipment availability. Reduce your operating costs and avoid unexpected downtime.",
+                "features": [
+                    "Customized maintenance plans",
+                    "Vibration analysis and thermography",
+                    "Real-time monitoring",
+                    "Reports and recommendations"
+                ]
+            }
+        }
     }
 }

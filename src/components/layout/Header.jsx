@@ -44,7 +44,7 @@ const Header = () => {
                 <div className="flex items-center justify-between">
                     {/* Logo */}
                     <Link to="/" className="flex items-center space-x-3 group">
-                        <div className="flex items-center justify-center w-12 h-12 transition-transform rounded-lg bg-gradient-to-br">
+                        <div className="flex items-center justify-center transition-transform rounded-lg h-14 w-14 bg-gradient-to-br">
                             <img src="/logo.png" alt="logo" />
                         </div>
                         <div>

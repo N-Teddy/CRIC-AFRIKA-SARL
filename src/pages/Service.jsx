@@ -10,8 +10,10 @@ import {
 import { guarantees, processSteps, services } from '../constants/services'
 import PageHeader from '../components/ui/PageHeader'
 import CTA from '../components/ui/CTA'
+import { useTranslation } from '../context/TranslationContext'
 
 const Services = () => {
+    const { t } = useTranslation();
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -37,17 +39,17 @@ const Services = () => {
     return (
         <>
             <Helmet>
-                <title>Nos Services - CRIC Afrika SARL | Installation & Maintenance Industrielle</title>
+                <title>{t('services.title')} - CRIC Africa SARL</title>
                 <meta
                     name="description"
-                    content="Services complets d'installation, maintenance et automatisation industrielle. CRIC Africa SARL, votre partenaire technique au Cameroun."
+                    content={t('services.metaDescription')}
                 />
                 <meta
                     name="keywords"
-                    content="installation électrique, maintenance industrielle, automatisation, service après-vente, Cameroun"
+                    content={t('services.metaKeywords')}
                 />
-                <meta property="og:title" content="Nos Services - CRIC Africa SARL" />
-                <meta property="og:description" content="Services complets d'installation, maintenance et automatisation industrielle" />
+                <meta property="og:title" content={t('services.title')} />
+                <meta property="og:description" content={t('services.metaDescription')} />
                 <meta property="og:type" content="website" />
                 <link rel="canonical" href="https://cricafrica.com/services" />
             </Helmet>
@@ -55,9 +57,9 @@ const Services = () => {
             <div className="pt-20">
                 {/* Page Header */}
                 <PageHeader
-                    title="Nos Services"
-                    subtitle="Solutions complètes d'installation, maintenance et automatisation pour l'industrie"
-                    breadcrumbs={['Services']}
+                    title={t('services.title')}
+                    subtitle={t('services.subtitle')}
+                    breadcrumbs={[t('common.ourServices')]}
                 />
 
                 {/* Services Grid */}
@@ -85,17 +87,19 @@ const Services = () => {
                                             <div>
                                                 <span className={`text-sm font-semibold ${service.color === 'orange' ? 'text-primary-orange' : 'text-lemon-green'
                                                     } uppercase`}>
-                                                    {service.category}
+                                                    {t(`services.items.${service.key}.category`)}
                                                 </span>
-                                                <h2 className="text-3xl font-bold text-dark-blue">{service.title}</h2>
+                                                <h2 className="text-3xl font-bold text-dark-blue">
+                                                    {t(`services.items.${service.key}.title`)}
+                                                </h2>
                                             </div>
                                         </div>
                                         <p className="mb-6 text-lg leading-relaxed text-gray-600">
-                                            {service.description}
+                                            {t(`services.items.${service.key}.description`)}
                                         </p>
                                         <ul className="mb-6 space-y-3">
-                                            {service.features.map((feature, featureIndex) => (
-                                                <li key={feature} className="flex items-start">
+                                            {t(`services.items.${service.key}.features`, { returnObjects: true }).map((feature, featureIndex) => (
+                                                <li key={featureIndex} className="flex items-start">
                                                     <CheckCircle className={`${featureIndex % 2 === 0 ? 'text-lemon-green' : 'text-primary-orange'
                                                         } text-xl mr-3 mt-1 flex-shrink-0`} />
                                                     <span className="text-gray-700">{feature}</span>
@@ -108,13 +112,13 @@ const Services = () => {
                                                 } text-white px-6 py-3 rounded-full font-semibold`}
                                         >
                                             <Phone className="mr-2" size={16} />
-                                            Demander un Devis
+                                            {t('common.getQuote')}
                                         </Link>
                                     </div>
                                     <div className={`rounded-xl overflow-hidden shadow-xl ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                                         <motion.img
                                             src={service.image}
-                                            alt={service.title}
+                                            alt={t(`services.items.${service.key}.title`)}
                                             className="object-cover w-full h-80"
                                             whileHover={{ scale: 1.05 }}
                                             transition={{ duration: 0.3 }}
@@ -137,10 +141,10 @@ const Services = () => {
                             viewport={{ once: true }}
                         >
                             <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
-                                Notre <span className="text-primary-orange">Processus</span>
+                                {t('services.process.title')}
                             </h2>
                             <p className="max-w-3xl mx-auto text-xl text-gray-600">
-                                Une méthodologie éprouvée pour garantir votre satisfaction
+                                {t('services.process.subtitle')}
                             </p>
                         </motion.div>
 
@@ -170,8 +174,12 @@ const Services = () => {
                                             </div>
                                         )}
                                     </div>
-                                    <h3 className="mb-3 text-xl font-bold text-dark-blue">{step.title}</h3>
-                                    <p className="text-gray-600">{step.description}</p>
+                                    <h3 className="mb-3 text-xl font-bold text-dark-blue">
+                                        {t(`services.process.steps.${step.key}.title`)}
+                                    </h3>
+                                    <p className="text-gray-600">
+                                        {t(`services.process.steps.${step.key}.description`)}
+                                    </p>
                                 </motion.div>
                             ))}
                         </motion.div>
@@ -189,10 +197,10 @@ const Services = () => {
                             viewport={{ once: true }}
                         >
                             <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
-                                Nos <span className="text-lemon-green">Garanties</span>
+                                {t('services.guarantees.title')}
                             </h2>
                             <p className="max-w-3xl mx-auto text-xl text-gray-600">
-                                Votre satisfaction est notre priorité
+                                {t('services.guarantees.subtitle')}
                             </p>
                         </motion.div>
 
@@ -218,8 +226,12 @@ const Services = () => {
                                         <guarantee.icon className={`${guarantee.color === 'orange' ? 'text-primary-orange' : 'text-lemon-green'
                                             } text-3xl`} />
                                     </div>
-                                    <h3 className="mb-4 text-2xl font-bold text-dark-blue">{guarantee.title}</h3>
-                                    <p className="leading-relaxed text-gray-600">{guarantee.description}</p>
+                                    <h3 className="mb-4 text-2xl font-bold text-dark-blue">
+                                        {t(`services.guarantees.items.${guarantee.key}.title`)}
+                                    </h3>
+                                    <p className="leading-relaxed text-gray-600">
+                                        {t(`services.guarantees.items.${guarantee.key}.description`)}
+                                    </p>
                                 </motion.div>
                             ))}
                         </motion.div>
@@ -228,18 +240,18 @@ const Services = () => {
 
                 {/* CTA Section */}
                 <CTA
-                    title="Prêt à Optimiser Vos Installations ?"
-                    description="Contactez nos experts pour discuter de vos besoins en services industriels. Nous vous proposerons la solution la plus adaptée."
+                    title={t('services.cta.title')}
+                    description={t('services.cta.description')}
                     gradient="from-lemon-green to-primary-orange"
                     buttons={[
                         {
-                            text: "Contactez-nous",
+                            text: t('common.contactUs'),
                             to: "/contact",
                             icon: "Phone",
                             className: "bg-white text-lemon-green hover:bg-gray-50"
                         },
                         {
-                            text: "Voir Nos Réalisations",
+                            text: t('common.ourProjects'),
                             to: "/realisations",
                             icon: "FolderOpen",
                             className: "bg-dark-blue text-white hover:bg-blue-900"

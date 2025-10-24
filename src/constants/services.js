@@ -1,3 +1,4 @@
+// src/constants/services.js
 import { Bot, CalendarCheck, Clock, FileText, Headset, Plug, Shield, Sliders, ThumbsUp, Truck, Users } from "lucide-react"
 
 export const services = [
@@ -13,7 +14,8 @@ export const services = [
             'Mise à la terre et protection'
         ],
         image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800',
-        color: 'orange'
+        color: 'orange',
+        key: 'electrical'
     },
     {
         icon: Headset,
@@ -28,7 +30,8 @@ export const services = [
         ],
         image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800',
         color: 'green',
-        reverse: true
+        reverse: true,
+        key: 'support'
     },
     {
         icon: Bot,
@@ -42,7 +45,8 @@ export const services = [
             'Intégration Industrie 4.0'
         ],
         image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800',
-        color: 'orange'
+        color: 'orange',
+        key: 'automation'
     },
     {
         icon: Sliders,
@@ -57,7 +61,8 @@ export const services = [
         ],
         image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800',
         color: 'green',
-        reverse: true
+        reverse: true,
+        key: 'generatorConfig'
     },
     {
         icon: Truck,
@@ -71,7 +76,8 @@ export const services = [
             'Gestion de flotte et suivi'
         ],
         image: 'https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?w=800',
-        color: 'orange'
+        color: 'orange',
+        key: 'equipmentMaintenance'
     },
     {
         icon: CalendarCheck,
@@ -86,7 +92,8 @@ export const services = [
         ],
         image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800',
         color: 'green',
-        reverse: true
+        reverse: true,
+        key: 'predictiveMaintenance'
     }
 ]
 
@@ -94,22 +101,26 @@ export const processSteps = [
     {
         number: 1,
         title: 'Analyse des Besoins',
-        description: 'Étude approfondie de vos besoins et contraintes spécifiques'
+        description: 'Étude approfondie de vos besoins et contraintes spécifiques',
+        key: 'analysis'
     },
     {
         number: 2,
         title: 'Proposition Technique',
-        description: 'Élaboration d\'une solution technique adaptée et chiffrée'
+        description: 'Élaboration d\'une solution technique adaptée et chiffrée',
+        key: 'proposal'
     },
     {
         number: 3,
         title: 'Réalisation',
-        description: 'Exécution des travaux par nos équipes qualifiées'
+        description: 'Exécution des travaux par nos équipes qualifiées',
+        key: 'execution'
     },
     {
         number: 4,
         title: 'Suivi & Support',
-        description: 'Accompagnement continu et service après-vente'
+        description: 'Accompagnement continu et service après-vente',
+        key: 'support'
     }
 ]
 
@@ -118,36 +129,42 @@ export const guarantees = [
         icon: Shield,
         title: 'Garantie Qualité',
         description: 'Tous nos services sont garantis et réalisés selon les normes internationales. Nous utilisons uniquement des pièces et équipements certifiés.',
-        color: 'orange'
+        color: 'orange',
+        key: 'quality'
     },
     {
         icon: Clock,
         title: 'Respect des Délais',
         description: 'Nous nous engageons à respecter les délais convenus. Notre organisation rigoureuse garantit la livraison de vos projets dans les temps.',
-        color: 'green'
+        color: 'green',
+        key: 'timeliness'
     },
     {
         icon: Users,
         title: 'Équipe Qualifiée',
         description: 'Nos techniciens et ingénieurs sont formés et certifiés. Ils disposent de l\'expertise nécessaire pour tous types d\'interventions.',
-        color: 'orange'
+        color: 'orange',
+        key: 'team'
     },
     {
         icon: Headset,
         title: 'Support 24/7',
         description: 'Notre service d\'assistance technique est disponible en permanence pour répondre à vos urgences et questions.',
-        color: 'green'
+        color: 'green',
+        key: 'support247'
     },
     {
         icon: FileText,
         title: 'Transparence Tarifaire',
         description: 'Devis détaillés et transparents sans frais cachés. Vous savez exactement ce que vous payez avant de vous engager.',
-        color: 'orange'
+        color: 'orange',
+        key: 'transparency'
     },
     {
         icon: ThumbsUp,
         title: 'Satisfaction Client',
         description: 'Nous ne considérons un projet terminé que lorsque vous êtes entièrement satisfait. Votre avis compte pour nous.',
-        color: 'green'
+        color: 'green',
+        key: 'satisfaction'
     }
 ]

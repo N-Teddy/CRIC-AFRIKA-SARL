@@ -48,7 +48,7 @@ const Header = () => {
                             <img src="/logo.png" alt="logo" />
                         </div>
                         <div>
-                            <h1 className="text-2xl font-bold text-white">{t('common.companyName')}</h1>
+                            <h1 className="font-bold text-white  sm:text-xl lg:text-2xl">{t('common.companyName')}</h1>
                             <p className="text-xs italic text-gray-300">{t('common.slogan')}</p>
                         </div>
                     </Link>

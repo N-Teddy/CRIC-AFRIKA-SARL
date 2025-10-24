@@ -89,22 +89,18 @@ const Footer = () => {
 
                     {/* Products */}
                     <div>
-                        <h4 className="mb-6 text-lg font-bold text-lemon-green">Nos Produits</h4>
+                        <h4 className="mb-6 text-lg font-bold text-lemon-green">{t(`footer.products`)}</h4>
                         <ul className="space-y-3">
-                            {[
-                                'Groupes Électrogènes',
-                                'Compresseurs Industriels',
-                                'Équipements Sécurité',
-                                'Matériels de Pompage',
-                                'Engins de Manutention',
-                                'Transformateurs'
-                            ].map((product, index) => (
+                            {t("footer.productList", { returnObjects: true })?.map((product, index) => (
                                 <li key={product} className="flex items-start text-gray-400">
-                                    <Check className={`${index % 2 === 0 ? 'text-primary-orange' : 'text-lemon-green'
-                                        } text-xs mr-2 mt-1 flex-shrink-0`} />
+                                    <Check
+                                        className={`${index % 2 === 0 ? "text-primary-orange" : "text-lemon-green"
+                                            } text-xs mr-2 mt-1 flex-shrink-0`}
+                                    />
                                     {product}
                                 </li>
                             ))}
+
                         </ul>
                     </div>
 

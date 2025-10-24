@@ -21,7 +21,17 @@
         "contact": "Contact"
     },
     "footer": {
-        "companyDescription": "Votre partenaire de confiance pour l'importation, l'installation et la maintenance d'équipements industriels au Cameroun."
+        "companyDescription": "Votre partenaire de confiance pour l'importation, l'installation et la maintenance d'équipements industriels au Cameroun.",
+        "navigation": "Navigation",
+        "products": "Nos Produits",
+        "productList": [
+            "Groupes Électrogènes",
+            "Compresseurs Industriels",
+            "Équipements Sécurité",
+            "Matériels de Pompage",
+            "Engins de Manutention",
+            "Transformateurs"
+        ]
     },
     "home": {
         "hero": {
@@ -724,6 +734,45 @@
             "title": "Prêt à Démarrer Votre Projet ?",
             "description": "Notre équipe d'experts est prête à vous accompagner. Contactez-nous dès aujourd'hui pour un devis gratuit et personnalisé.",
             "callNow": "Appelez Maintenant"
+        }
+    },
+    "notFound": {
+        "title": "Page Non Trouvée",
+        "hero": {
+            "title": "Oups ! Page Introuvable",
+            "description": "La page que vous recherchez n'existe pas ou a été déplacée. Ne vous inquiétez pas, nous sommes là pour vous aider !",
+            "buttons": {
+                "home": "Retour à l'Accueil",
+                "contact": "Contactez-nous"
+            }
+        },
+        "quickLinks": {
+            "badge": "LIENS RAPIDES",
+            "title": "Où Voulez-vous Aller ?",
+            "subtitle": "Explorez nos principales sections",
+            "items": {
+                "home": {
+                    "title": "Accueil",
+                    "description": "Retour à la page d'accueil"
+                },
+                "products": {
+                    "title": "Produits",
+                    "description": "Voir nos équipements"
+                },
+                "services": {
+                    "title": "Services",
+                    "description": "Découvrir nos services"
+                },
+                "contact": {
+                    "title": "Contact",
+                    "description": "Nous contacter"
+                }
+            },
+            "access": "Accéder"
+        },
+        "help": {
+            "title": "Besoin d'Aide ?",
+            "description": "Notre équipe est disponible pour vous aider à trouver ce que vous cherchez"
         }
     }
 }

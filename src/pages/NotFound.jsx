@@ -5,8 +5,10 @@ import { popularPages, quickLinks } from '../constants/not-found';
 import CTA from '../components/ui/CTA';
 import { Email, WhatsAppNumber } from '../constants';
 import { motion } from 'framer-motion';
+import { useTranslation } from '../context/TranslationContext';
 
 const NotFound = () => {
+    const { t } = useTranslation();
 
     return (
         <div className="min-h-screen pt-20 bg-light-gray">
@@ -90,11 +92,10 @@ const NotFound = () => {
                             className="max-w-2xl mx-auto"
                         >
                             <h2 className="mb-6 text-3xl font-bold text-white lg:text-5xl">
-                                Oups ! Page Introuvable
+                                {t('notFound.hero.title')}
                             </h2>
                             <p className="mb-8 text-xl leading-relaxed text-white/90">
-                                La page que vous recherchez n'existe pas ou a été déplacée.
-                                Ne vous inquiétez pas, nous sommes là pour vous aider !
+                                {t('notFound.hero.description')}
                             </p>
                         </motion.div>
 
@@ -110,14 +111,14 @@ const NotFound = () => {
                                 className="inline-flex items-center px-8 py-4 text-lg font-bold transition bg-white rounded-full shadow-lg text-primary-orange hover:shadow-2xl hover:scale-105"
                             >
                                 <Home className="mr-2" size={20} />
-                                Retour à l'Accueil
+                                {t('notFound.hero.buttons.home')}
                             </Link>
                             <Link
                                 to="/contact"
                                 className="inline-flex items-center px-8 py-4 text-lg font-bold text-white transition rounded-full shadow-lg bg-dark-blue hover:shadow-2xl hover:scale-105"
                             >
                                 <Mail className="mr-2" size={20} />
-                                Contactez-nous
+                                {t('notFound.hero.buttons.contact')}
                             </Link>
                         </motion.div>
                     </div>
@@ -134,13 +135,13 @@ const NotFound = () => {
                         className="mb-16 text-center"
                     >
                         <span className="inline-block px-4 py-2 mb-4 text-sm font-semibold rounded-full bg-primary-orange/10 text-primary-orange">
-                            LIENS RAPIDES
+                            {t('notFound.quickLinks.badge')}
                         </span>
                         <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
-                            Où Voulez-vous <span className="text-gradient">Aller</span> ?
+                            {t('notFound.quickLinks.title')}
                         </h2>
                         <p className="max-w-3xl mx-auto text-xl text-gray-600">
-                            Explorez nos principales sections
+                            {t('notFound.quickLinks.subtitle')}
                         </p>
                     </motion.div>
 
@@ -163,11 +164,13 @@ const NotFound = () => {
                                         <item.icon className="text-white" size={32} />
                                     </div>
                                     <h3 className="mb-3 text-2xl font-bold transition-colors text-dark-blue group-hover:text-primary-orange">
-                                        {item.title}
+                                        {t(`notFound.quickLinks.items.${item.key}.title`)}
                                     </h3>
-                                    <p className="mb-4 text-gray-600">{item.description}</p>
+                                    <p className="mb-4 text-gray-600">
+                                        {t(`notFound.quickLinks.items.${item.key}.description`)}
+                                    </p>
                                     <span className="inline-flex items-center font-semibold transition-all text-primary-orange group-hover:gap-2">
-                                        Accéder <ArrowLeft className="ml-1 rotate-180" size={18} />
+                                        {t('notFound.quickLinks.access')} <ArrowLeft className="ml-1 rotate-180" size={18} />
                                     </span>
                                 </Link>
                             </motion.div>
@@ -178,8 +181,8 @@ const NotFound = () => {
 
             {/* Help Section */}
             <CTA
-                title="Besoin d'Aide ?"
-                description="Notre équipe est disponible pour vous aider à trouver ce que vous cherchez"
+                title={t('notFound.help.title')}
+                description={t('notFound.help.description')}
                 icon="FileText"
                 buttons={[
                     {

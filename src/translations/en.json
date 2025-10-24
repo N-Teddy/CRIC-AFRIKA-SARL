@@ -20,6 +20,19 @@
         "about": "About",
         "contact": "Contact"
     },
+    "footer": {
+        "companyDescription": "Your trusted partner for the import, installation, and maintenance of industrial equipment in Cameroon.",
+        "navigation": "Navigation",
+        "products": "Our Products",
+        "productList": [
+            "Generators",
+            "Industrial Compressors",
+            "Safety Equipment",
+            "Pumping Equipment",
+            "Handling Machinery",
+            "Transformers"
+        ]
+    },
     "home": {
         "hero": {
             "badge": "Leader in Industrial Equipment in Cameroon",
@@ -722,5 +735,44 @@
             "description": "Our team of experts is ready to support you. Contact us today for a free and personalized quote.",
             "callNow": "Call Now"
         }
-    } 
+    },
+    "notFound": {
+        "title": "Page Not Found",
+        "hero": {
+            "title": "Oops! Page Not Found",
+            "description": "The page you're looking for doesn't exist or has been moved. Don't worry, we're here to help!",
+            "buttons": {
+                "home": "Back to Home",
+                "contact": "Contact Us"
+            }
+        },
+        "quickLinks": {
+            "badge": "QUICK LINKS",
+            "title": "Where Do You Want to Go?",
+            "subtitle": "Explore our main sections",
+            "items": {
+                "home": {
+                    "title": "Home",
+                    "description": "Back to home page"
+                },
+                "products": {
+                    "title": "Products",
+                    "description": "View our equipment"
+                },
+                "services": {
+                    "title": "Services",
+                    "description": "Discover our services"
+                },
+                "contact": {
+                    "title": "Contact",
+                    "description": "Contact us"
+                }
+            },
+            "access": "Access"
+        },
+        "help": {
+            "title": "Need Help?",
+            "description": "Our team is available to help you find what you're looking for"
+        }
+    }
 }

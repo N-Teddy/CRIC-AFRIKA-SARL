@@ -492,5 +492,137 @@
                 ]
             }
         }
+    },
+    "realisations": {
+        "title": "Our Projects",
+        "subtitle": "Discover our industrial projects successfully completed in Cameroon and Central Africa",
+        "metaDescription": "Discover our industrial projects completed in Cameroon. Electrical installation, maintenance, automation - CRIC Africa SARL.",
+        "metaKeywords": "industrial projects, achievements, electrical installation, maintenance, automation, Cameroon",
+        "stats": {
+            "projects": "Projects Completed",
+            "clients": "Satisfied Clients",
+            "experience": "Years of Experience",
+            "satisfaction": "Satisfaction Rate"
+        },
+        "filters": {
+            "all": "All Projects",
+            "electrical": "Electrical Installation",
+            "automation": "Automation",
+            "maintenance": "Maintenance",
+            "generators": "Generators"
+        },
+        "loadMore": "Load More Projects",
+        "testimonials": {
+            "title": "What Our Clients Say",
+            "subtitle": "Satisfaction testimonials from our partners",
+            "items": {
+                "jean": {
+                    "name": "Jean-Pierre MBARGA",
+                    "position": "Technical Director, Food Processing Plant",
+                    "content": "CRIC Africa completed the full automation of our production line. Remarkable professionalism and expertise. I highly recommend!"
+                },
+                "marie": {
+                    "name": "Marie NKOLO",
+                    "position": "Maintenance Manager, Central Hospital",
+                    "content": "Our generator installation was completed on time. The after-sales service is excellent. Very responsive team!"
+                },
+                "paul": {
+                    "name": "Paul EKANI",
+                    "position": "Manager, Hotel Complex",
+                    "content": "Impeccable electrical installation for our hotel. Careful work, respect for standards and very professional team. Thank you CRIC Africa!"
+                }
+            }
+        },
+        "process": {
+            "title": "Our Methodology",
+            "subtitle": "A proven process to guarantee the success of your projects",
+            "steps": {
+                "analysis": {
+                    "title": "Study and Analysis",
+                    "description": "Site visit, needs analysis, technical and financial feasibility study. We take the time to understand your constraints and objectives."
+                },
+                "planning": {
+                    "title": "Design and Planning",
+                    "description": "Development of technical plans, equipment sizing, detailed planning with clearly defined milestones and deliverables."
+                },
+                "procurement": {
+                    "title": "Procurement",
+                    "description": "Selection and import of quality equipment from our international partners. Rigorous quality control upon receipt."
+                },
+                "installation": {
+                    "title": "Installation and Commissioning",
+                    "description": "Execution of works by our qualified teams, complete tests and trials, progressive commissioning with support for your teams."
+                },
+                "maintenance": {
+                    "title": "Follow-up and Maintenance",
+                    "description": "Training of your teams, complete documentation, reactive after-sales service and personalized maintenance contracts to ensure sustainability."
+                }
+            }
+        },
+        "industries": {
+            "title": "Business Sectors",
+            "subtitle": "We operate in many industrial sectors",
+            "items": {
+                "manufacturing": {
+                    "name": "Manufacturing Industry",
+                    "description": "Production plants, assembly lines"
+                },
+                "port": {
+                    "name": "Port",
+                    "description": "Ports, logistics zones"
+                },
+                "construction": {
+                    "name": "Construction",
+                    "description": "Construction sites, infrastructure"
+                },
+                "energy": {
+                    "name": "Energy",
+                    "description": "Storage, energy systems"
+                }
+            }
+        },
+        "projects": {
+            "factoryDouala": {
+                "title": "Production Plant - Douala",
+                "description": "Complete MV/LV electrical network installation for a 5000m² factory"
+            },
+            "hospitalYaounde": {
+                "title": "Central Hospital - Yaoundé",
+                "description": "Installation of 2 x 500 kVA generators with coupling system"
+            },
+            "foodFactory": {
+                "title": "Food Processing Plant - Douala",
+                "description": "Complete automation of production line with SCADA system"
+            },
+            "industrialComplex": {
+                "title": "Industrial Complex - Limbé",
+                "description": "Preventive maintenance contract for 15 equipment fleet"
+            },
+            "shoppingCenter": {
+                "title": "Shopping Center - Douala",
+                "description": "Installation of 8 electrical panels and energy management system"
+            },
+            "textileFactory": {
+                "title": "Textile Factory - Garoua",
+                "description": "1000 kVA generator installation with complete parameter setting"
+            },
+            "brewery": {
+                "title": "Brewery - Douala",
+                "description": "Bottling line automation with centralized supervision"
+            },
+            "hotelComplex": {
+                "title": "Hotel Complex - Kribi",
+                "description": "Complete electrical network with 630 kVA transformer"
+            },
+            "port": {
+                "title": "Autonomous Port - Douala",
+                "description": "Preventive maintenance of 25 port handling equipment"
+            }
+        },
+        "cta": {
+            "title": "Your Project Deserves the Best",
+            "description": "Trust CRIC Africa for the realization of your industrial projects. Our expertise and commitment guarantee your success.",
+            "startProject": "Start a Project"
+        }
     }
 }

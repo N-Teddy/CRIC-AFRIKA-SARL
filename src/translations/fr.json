@@ -492,5 +492,137 @@
                 ]
             }
         }
+    },
+    "realisations": {
+        "title": "Nos Réalisations",
+        "subtitle": "Découvrez nos projets industriels réalisés avec succès au Cameroun et en Afrique Centrale",
+        "metaDescription": "Découvrez nos projets industriels réalisés au Cameroun. Installation électrique, maintenance, automatisation - CRIC Africa SARL.",
+        "metaKeywords": "projets industriels, réalisations, installation électrique, maintenance, automatisation, Cameroun",
+        "stats": {
+            "projects": "Projets Réalisés",
+            "clients": "Clients Satisfaits",
+            "experience": "Années d'Expérience",
+            "satisfaction": "Taux de Satisfaction"
+        },
+        "filters": {
+            "all": "Tous les Projets",
+            "electrical": "Installation Électrique",
+            "automation": "Automatisation",
+            "maintenance": "Maintenance",
+            "generators": "Groupes Électrogènes"
+        },
+        "loadMore": "Charger Plus de Projets",
+        "testimonials": {
+            "title": "Ce Que Disent Nos Clients",
+            "subtitle": "Témoignages de satisfaction de nos partenaires",
+            "items": {
+                "jean": {
+                    "name": "Jean-Pierre MBARGA",
+                    "position": "Directeur Technique, Usine Agroalimentaire",
+                    "content": "CRIC Africa a réalisé l'automatisation complète de notre ligne de production. Professionnalisme et expertise remarquables. Je recommande vivement!"
+                },
+                "marie": {
+                    "name": "Marie NKOLO",
+                    "position": "Responsable Maintenance, Hôpital Central",
+                    "content": "L'installation de nos groupes électrogènes a été réalisée dans les délais. Le service après-vente est excellent. Équipe très réactive!"
+                },
+                "paul": {
+                    "name": "Paul EKANI",
+                    "position": "Gérant, Complexe Hôtelier",
+                    "content": "Installation électrique impeccable pour notre hôtel. Travail soigné, respect des normes et équipe très professionnelle. Merci CRIC Africa!"
+                }
+            }
+        },
+        "process": {
+            "title": "Notre Méthodologie",
+            "subtitle": "Un processus éprouvé pour garantir le succès de vos projets",
+            "steps": {
+                "analysis": {
+                    "title": "Étude et Analyse",
+                    "description": "Visite sur site, analyse des besoins, étude de faisabilité technique et financière. Nous prenons le temps de comprendre vos contraintes et objectifs."
+                },
+                "planning": {
+                    "title": "Conception et Planification",
+                    "description": "Élaboration des plans techniques, dimensionnement des équipements, planification détaillée avec jalons et livrables clairement définis."
+                },
+                "procurement": {
+                    "title": "Approvisionnement",
+                    "description": "Sélection et importation des équipements de qualité auprès de nos partenaires internationaux. Contrôle qualité rigoureux à la réception."
+                },
+                "installation": {
+                    "title": "Installation et Mise en Service",
+                    "description": "Réalisation des travaux par nos équipes qualifiées, tests et essais complets, mise en service progressive avec accompagnement de vos équipes."
+                },
+                "maintenance": {
+                    "title": "Suivi et Maintenance",
+                    "description": "Formation de vos équipes, documentation complète, service après-vente réactif et contrats de maintenance personnalisés pour assurer la pérennité."
+                }
+            }
+        },
+        "industries": {
+            "title": "Secteurs d'Activité",
+            "subtitle": "Nous intervenons dans de nombreux secteurs industriels",
+            "items": {
+                "manufacturing": {
+                    "name": "Industrie Manufacturière",
+                    "description": "Usines de production, lignes d'assemblage"
+                },
+                "port": {
+                    "name": "Portuaire",
+                    "description": "Ports, zones logistiques"
+                },
+                "construction": {
+                    "name": "BTP",
+                    "description": "Chantiers, infrastructures"
+                },
+                "energy": {
+                    "name": "Energie",
+                    "description": "Stockage, systèmes énergétiques"
+                }
+            }
+        },
+        "projects": {
+            "factoryDouala": {
+                "title": "Usine de Production - Douala",
+                "description": "Installation complète du réseau électrique MT/BT pour une usine de 5000m²"
+            },
+            "hospitalYaounde": {
+                "title": "Hôpital Central - Yaoundé",
+                "description": "Installation de 2 groupes électrogènes 500 kVA avec système de couplage"
+            },
+            "foodFactory": {
+                "title": "Usine Agroalimentaire - Douala",
+                "description": "Automatisation complète de la ligne de production avec système SCADA"
+            },
+            "industrialComplex": {
+                "title": "Complexe Industriel - Limbé",
+                "description": "Contrat de maintenance préventive pour parc de 15 équipements"
+            },
+            "shoppingCenter": {
+                "title": "Centre Commercial - Douala",
+                "description": "Installation de 8 tableaux électriques et système de gestion d'énergie"
+            },
+            "textileFactory": {
+                "title": "Usine Textile - Garoua",
+                "description": "Installation groupe électrogène 1000 kVA avec paramétrage complet"
+            },
+            "brewery": {
+                "title": "Brasserie - Douala",
+                "description": "Automatisation ligne d'embouteillage avec supervision centralisée"
+            },
+            "hotelComplex": {
+                "title": "Complexe Hôtelier - Kribi",
+                "description": "Réseau électrique complet avec transformateur 630 kVA"
+            },
+            "port": {
+                "title": "Port Autonome - Douala",
+                "description": "Maintenance préventive de 25 engins de manutention portuaire"
+            }
+        },
+        "cta": {
+            "title": "Votre Projet Mérite le Meilleur",
+            "description": "Faites confiance à CRIC Africa pour la réalisation de vos projets industriels. Notre expertise et notre engagement garantissent votre succès.",
+            "startProject": "Démarrer un Projet"
+        }
     }
 }

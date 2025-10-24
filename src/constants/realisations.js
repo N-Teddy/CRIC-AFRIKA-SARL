@@ -1,3 +1,4 @@
+// src/constants/realisations.js
 import { Zap } from "lucide-react"
 import { Battery } from "lucide-react"
 import { BatteryCharging, Bolt, Bot, Building, HardHat, Hotel, Ship, Sprout, ThumbsUp, ToolCase, University } from "lucide-react"
@@ -11,7 +12,8 @@ export const projects = [
         image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800',
         date: 'Janvier 2024',
         icon: Bolt,
-        color: 'orange'
+        color: 'orange',
+        key: 'factoryDouala'
     },
     {
         id: 2,
@@ -21,7 +23,8 @@ export const projects = [
         image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800',
         date: 'Décembre 2023',
         icon: BatteryCharging,
-        color: 'green'
+        color: 'green',
+        key: 'hospitalYaounde'
     },
     {
         id: 3,
@@ -31,7 +34,8 @@ export const projects = [
         image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800',
         date: 'Novembre 2023',
         icon: Bot,
-        color: 'orange'
+        color: 'orange',
+        key: 'foodFactory'
     },
     {
         id: 4,
@@ -41,7 +45,8 @@ export const projects = [
         image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800',
         date: 'Octobre 2023',
         icon: ToolCase,
-        color: 'green'
+        color: 'green',
+        key: 'industrialComplex'
     },
     {
         id: 5,
@@ -51,7 +56,8 @@ export const projects = [
         image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800',
         date: 'Septembre 2023',
         icon: Bolt,
-        color: 'orange'
+        color: 'orange',
+        key: 'shoppingCenter'
     },
     {
         id: 6,
@@ -61,7 +67,8 @@ export const projects = [
         image: 'https://images.unsplash.com/photo-1621905252472-9b6e78c09a0f?w=800',
         date: 'Août 2023',
         icon: BatteryCharging,
-        color: 'green'
+        color: 'green',
+        key: 'textileFactory'
     },
     {
         id: 7,
@@ -71,7 +78,8 @@ export const projects = [
         image: 'https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?w=800',
         date: 'Juillet 2023',
         icon: Bot,
-        color: 'orange'
+        color: 'orange',
+        key: 'brewery'
     },
     {
         id: 8,
@@ -81,7 +89,8 @@ export const projects = [
         image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800',
         date: 'Juin 2023',
         icon: Bolt,
-        color: 'green'
+        color: 'green',
+        key: 'hotelComplex'
     },
     {
         id: 9,
@@ -91,7 +100,8 @@ export const projects = [
         image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800',
         date: 'Mai 2023',
         icon: ToolCase,
-        color: 'orange'
+        color: 'orange',
+        key: 'port'
     }
 ]
 
@@ -100,54 +110,82 @@ export const testimonials = [
         name: 'Jean-Pierre MBARGA',
         position: 'Directeur Technique, Usine Agroalimentaire',
         content: 'CRIC Africa a réalisé l\'automatisation complète de notre ligne de production. Professionnalisme et expertise remarquables. Je recommande vivement!',
-        rating: 5
+        rating: 5,
+        key: 'jean'
     },
     {
         name: 'Marie NKOLO',
         position: 'Responsable Maintenance, Hôpital Central',
         content: 'L\'installation de nos groupes électrogènes a été réalisée dans les délais. Le service après-vente est excellent. Équipe très réactive!',
-        rating: 5
+        rating: 5,
+        key: 'marie'
     },
     {
         name: 'Paul EKANI',
         position: 'Gérant, Complexe Hôtelier',
         content: 'Installation électrique impeccable pour notre hôtel. Travail soigné, respect des normes et équipe très professionnelle. Merci CRIC Africa!',
-        rating: 5
+        rating: 5,
+        key: 'paul'
     }
 ]
 
 export const industries = [
-    { icon: Building, name: 'Industrie Manufacturière', description: 'Usines de production, lignes d\'assemblage' },
-    { icon: Ship, name: 'Portuaire', description: 'Ports, zones logistiques' },
-    { icon: HardHat, name: 'BTP', description: 'Chantiers, infrastructures' },
-    { icon: Zap, name: 'Energie', description: 'Stockage, systèmes énergétiques' }
+    {
+        icon: Building,
+        name: 'Industrie Manufacturière',
+        description: 'Usines de production, lignes d\'assemblage',
+        key: 'manufacturing'
+    },
+    {
+        icon: Ship,
+        name: 'Portuaire',
+        description: 'Ports, zones logistiques',
+        key: 'port'
+    },
+    {
+        icon: HardHat,
+        name: 'BTP',
+        description: 'Chantiers, infrastructures',
+        key: 'construction'
+    },
+    {
+        icon: Zap,
+        name: 'Energie',
+        description: 'Stockage, systèmes énergétiques',
+        key: 'energy'
+    }
 ]
 
 export const processSteps = [
     {
         number: 1,
         title: 'Étude et Analyse',
-        description: 'Visite sur site, analyse des besoins, étude de faisabilité technique et financière. Nous prenons le temps de comprendre vos contraintes et objectifs.'
+        description: 'Visite sur site, analyse des besoins, étude de faisabilité technique et financière. Nous prenons le temps de comprendre vos contraintes et objectifs.',
+        key: 'analysis'
     },
     {
         number: 2,
         title: 'Conception et Planification',
-        description: 'Élaboration des plans techniques, dimensionnement des équipements, planification détaillée avec jalons et livrables clairement définis.'
+        description: 'Élaboration des plans techniques, dimensionnement des équipements, planification détaillée avec jalons et livrables clairement définis.',
+        key: 'planning'
     },
     {
         number: 3,
         title: 'Approvisionnement',
-        description: 'Sélection et importation des équipements de qualité auprès de nos partenaires internationaux. Contrôle qualité rigoureux à la réception.'
+        description: 'Sélection et importation des équipements de qualité auprès de nos partenaires internationaux. Contrôle qualité rigoureux à la réception.',
+        key: 'procurement'
     },
     {
         number: 4,
         title: 'Installation et Mise en Service',
-        description: 'Réalisation des travaux par nos équipes qualifiées, tests et essais complets, mise en service progressive avec accompagnement de vos équipes.'
+        description: 'Réalisation des travaux par nos équipes qualifiées, tests et essais complets, mise en service progressive avec accompagnement de vos équipes.',
+        key: 'installation'
     },
     {
         number: 5,
         title: 'Suivi et Maintenance',
-        description: 'Formation de vos équipes, documentation complète, service après-vente réactif et contrats de maintenance personnalisés pour assurer la pérennité.'
+        description: 'Formation de vos équipes, documentation complète, service après-vente réactif et contrats de maintenance personnalisés pour assurer la pérennité.',
+        key: 'maintenance'
     }
 ]
 

@@ -11,8 +11,10 @@ import {
 import { filters, industries, processSteps, projects, testimonials } from '../constants/realisations'
 import PageHeader from '../components/ui/PageHeader'
 import CTA from '../components/ui/CTA'
+import { useTranslation } from '../context/TranslationContext'
 
 const Realisations = () => {
+    const { t } = useTranslation();
     const [activeFilter, setActiveFilter] = useState('all')
     const [visibleProjects, setVisibleProjects] = useState(6)
 
@@ -50,17 +52,17 @@ const Realisations = () => {
     return (
         <>
             <Helmet>
-                <title>Nos Réalisations - CRIC Africa SARL | Projets Industriels au Cameroun</title>
+                <title>{t('realisations.title')} - CRIC Africa SARL</title>
                 <meta
                     name="description"
-                    content="Découvrez nos projets industriels réalisés au Cameroun. Installation électrique, maintenance, automatisation - CRIC Africa SARL."
+                    content={t('realisations.metaDescription')}
                 />
                 <meta
                     name="keywords"
-                    content="projets industriels, réalisations, installation électrique, maintenance, automatisation, Cameroun"
+                    content={t('realisations.metaKeywords')}
                 />
-                <meta property="og:title" content="Nos Réalisations - CRIC Africa SARL" />
-                <meta property="og:description" content="Découvrez nos projets industriels réalisés au Cameroun" />
+                <meta property="og:title" content={t('realisations.title')} />
+                <meta property="og:description" content={t('realisations.metaDescription')} />
                 <meta property="og:type" content="website" />
                 <link rel="canonical" href="https://cricafrica.com/realisations" />
             </Helmet>
@@ -68,9 +70,9 @@ const Realisations = () => {
             <div className="pt-20">
                 {/* Page Header */}
                 <PageHeader
-                    title="Nos Réalisations"
-                    subtitle="Découvrez nos projets industriels réalisés avec succès au Cameroun et en Afrique Centrale"
-                    breadcrumbs={['Réalisations']}
+                    title={t('realisations.title')}
+                    subtitle={t('realisations.subtitle')}
+                    breadcrumbs={[t('common.ourProjects')]}
                 />
 
                 {/* Stats Section */}
@@ -84,20 +86,22 @@ const Realisations = () => {
                             viewport={{ once: true }}
                         >
                             {[
-                                { number: '150+', label: 'Projets Réalisés' },
-                                { number: '80+', label: 'Clients Satisfaits' },
-                                { number: '15+', label: 'Années d\'Expérience' },
-                                { number: '98%', label: 'Taux de Satisfaction' }
+                                { number: '150+', key: 'projects' },
+                                { number: '80+', key: 'clients' },
+                                { number: '15+', key: 'experience' },
+                                { number: '98%', key: 'satisfaction' }
                             ].map((stat, index) => (
                                 <motion.div
-                                    key={stat.label}
+                                    key={stat.key}
                                     className="text-center"
                                     variants={itemVariants}
                                 >
                                     <div className="mb-2 text-5xl font-black text-transparent stats-counter lg:text-6xl bg-gradient-to-r from-primary-orange to-lemon-green bg-clip-text">
                                         {stat.number}
                                     </div>
-                                    <p className="font-semibold text-gray-600">{stat.label}</p>
+                                    <p className="font-semibold text-gray-600">
+                                        {t(`realisations.stats.${stat.key}`)}
+                                    </p>
                                 </motion.div>
                             ))}
                         </motion.div>
@@ -126,7 +130,7 @@ const Realisations = () => {
                                             }`}
                                     >
                                         <Icon className="mr-2" size={16} />
-                                        {filter.label}
+                                        {t(`realisations.filters.${filter.key}`)}
                                     </button>
                                 )
                             })}
@@ -157,7 +161,7 @@ const Realisations = () => {
                                             <div className="relative overflow-hidden">
                                                 <motion.img
                                                     src={project.image}
-                                                    alt={project.title}
+                                                    alt={t(`realisations.projects.${project.key}.title`)}
                                                     className="object-cover w-full h-80"
                                                     whileHover={{ scale: 1.1 }}
                                                     transition={{ duration: 0.5 }}
@@ -166,10 +170,14 @@ const Realisations = () => {
                                                 <div className="absolute bottom-0 left-0 right-0 p-6 transition-transform duration-300 transform translate-y-6 group-hover:translate-y-0">
                                                     <span className={`inline-block ${project.color === 'orange' ? 'bg-primary-orange' : 'bg-lemon-green'
                                                         } text-white px-3 py-1 rounded-full text-sm mb-3`}>
-                                                        {filters.find(f => f.key === project.category)?.label}
+                                                        {t(`realisations.filters.${project.category}`)}
                                                     </span>
-                                                    <h3 className="mb-2 text-2xl font-bold text-white">{project.title}</h3>
-                                                    <p className="mb-4 text-gray-300">{project.description}</p>
+                                                    <h3 className="mb-2 text-2xl font-bold text-white">
+                                                        {t(`realisations.projects.${project.key}.title`)}
+                                                    </h3>
+                                                    <p className="mb-4 text-gray-300">
+                                                        {t(`realisations.projects.${project.key}.description`)}
+                                                    </p>
                                                     <div className="flex items-center text-sm text-gray-300">
                                                         <Calendar className="mr-2" size={16} />
                                                         <span>{project.date}</span>
@@ -196,7 +204,7 @@ const Realisations = () => {
                                     className="px-8 py-4 text-lg font-bold text-white rounded-full btn-orange"
                                 >
                                     <Plus className="inline mr-2" size={20} />
-                                    Charger Plus de Projets
+                                    {t('realisations.loadMore')}
                                 </button>
                             </motion.div>
                         )}
@@ -214,10 +222,10 @@ const Realisations = () => {
                             viewport={{ once: true }}
                         >
                             <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
-                                Ce Que Disent <span className="text-primary-orange">Nos Clients</span>
+                                {t('realisations.testimonials.title')}
                             </h2>
                             <p className="max-w-3xl mx-auto text-xl text-gray-600">
-                                Témoignages de satisfaction de nos partenaires
+                                {t('realisations.testimonials.subtitle')}
                             </p>
                         </motion.div>
 
@@ -242,8 +250,12 @@ const Realisations = () => {
                                             <ThumbsUp className="text-2xl text-white" />
                                         </div>
                                         <div>
-                                            <h4 className="font-bold text-dark-blue">{testimonial.name}</h4>
-                                            <p className="text-sm text-gray-600">{testimonial.position}</p>
+                                            <h4 className="font-bold text-dark-blue">
+                                                {t(`realisations.testimonials.items.${testimonial.key}.name`)}
+                                            </h4>
+                                            <p className="text-sm text-gray-600">
+                                                {t(`realisations.testimonials.items.${testimonial.key}.position`)}
+                                            </p>
                                         </div>
                                     </div>
                                     <div className="flex mb-4">
@@ -256,7 +268,7 @@ const Realisations = () => {
                                         ))}
                                     </div>
                                     <p className="italic leading-relaxed text-gray-600">
-                                        "{testimonial.content}"
+                                        "{t(`realisations.testimonials.items.${testimonial.key}.content`)}"
                                     </p>
                                 </motion.div>
                             ))}
@@ -275,10 +287,10 @@ const Realisations = () => {
                             viewport={{ once: true }}
                         >
                             <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
-                                Notre <span className="text-lemon-green">Méthodologie</span>
+                                {t('realisations.process.title')}
                             </h2>
                             <p className="max-w-3xl mx-auto text-xl text-gray-600">
-                                Un processus éprouvé pour garantir le succès de vos projets
+                                {t('realisations.process.subtitle')}
                             </p>
                         </motion.div>
 
@@ -299,8 +311,12 @@ const Realisations = () => {
                                         {step.number}
                                     </div>
                                     <div className="flex-grow">
-                                        <h3 className="mb-2 text-2xl font-bold text-dark-blue">{step.title}</h3>
-                                        <p className="leading-relaxed text-gray-600">{step.description}</p>
+                                        <h3 className="mb-2 text-2xl font-bold text-dark-blue">
+                                            {t(`realisations.process.steps.${step.key}.title`)}
+                                        </h3>
+                                        <p className="leading-relaxed text-gray-600">
+                                            {t(`realisations.process.steps.${step.key}.description`)}
+                                        </p>
                                     </div>
                                 </motion.div>
                             ))}
@@ -319,10 +335,10 @@ const Realisations = () => {
                             viewport={{ once: true }}
                         >
                             <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
-                                Secteurs <span className="text-primary-orange">d'Activité</span>
+                                {t('realisations.industries.title')}
                             </h2>
                             <p className="max-w-3xl mx-auto text-xl text-gray-600">
-                                Nous intervenons dans de nombreux secteurs industriels
+                                {t('realisations.industries.subtitle')}
                             </p>
                         </motion.div>
 
@@ -347,8 +363,12 @@ const Realisations = () => {
                                             }`}>
                                             <Icon className="text-3xl text-white" />
                                         </div>
-                                        <h3 className="mb-2 text-xl font-bold text-dark-blue">{industry.name}</h3>
-                                        <p className="text-gray-600">{industry.description}</p>
+                                        <h3 className="mb-2 text-xl font-bold text-dark-blue">
+                                            {t(`realisations.industries.items.${industry.key}.name`)}
+                                        </h3>
+                                        <p className="text-gray-600">
+                                            {t(`realisations.industries.items.${industry.key}.description`)}
+                                        </p>
                                     </motion.div>
                                 )
                             })}
@@ -358,17 +378,17 @@ const Realisations = () => {
 
                 {/* CTA Section */}
                 <CTA
-                    title="Votre Projet Mérite le Meilleur"
-                    description="Faites confiance à CRIC Africa pour la réalisation de vos projets industriels. Notre expertise et notre engagement garantissent votre succès."
+                    title={t('realisations.cta.title')}
+                    description={t('realisations.cta.description')}
                     buttons={[
                         {
-                            text: "Démarrer un Projet",
+                            text: t('realisations.cta.startProject'),
                             to: "/contact",
                             icon: "Phone",
                             className: "bg-white text-primary-orange hover:bg-gray-50"
                         },
                         {
-                            text: "Voir Nos Produits",
+                            text: t('common.ourProducts'),
                             to: "/products",
                             icon: "Box",
                             className: "bg-dark-blue text-white hover:bg-blue-900"

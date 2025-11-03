@@ -1,13 +1,13 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import { ChevronRight } from 'lucide-react'
 
 const PageHeader = ({
     title,
     subtitle,
     breadcrumbs,
-    gradient = "from-dark-blue via-blue-900 to-primary-orange"
+    gradient = 'from-dark-blue via-blue-900 to-primary-orange'
 }) => {
     return (
         <section className={`pt-32 pb-20 bg-gradient-to-br ${gradient}`}>
@@ -34,20 +34,29 @@ const PageHeader = ({
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    <Link to="/" className="transition hover:text-primary-orange">Accueil</Link>
-                    <span >/</span>
-                    {breadcrumbs && breadcrumbs.map((crumb, index) => (
-                        <React.Fragment key={index}>
-                            <span className={index === breadcrumbs.length - 1 ? 'text-primary-orange' : ''}>
-                                {crumb}
-                            </span>
-                            {index < breadcrumbs.length - 1 && <ChevronRight size={16} />}
-                        </React.Fragment>
-                    ))}
+                    <Link to="/" className="transition hover:text-primary-orange">
+                        Accueil
+                    </Link>
+                    <span>/</span>
+                    {breadcrumbs &&
+                        breadcrumbs.map((crumb, index) => (
+                            <React.Fragment key={index}>
+                                <span
+                                    className={
+                                        index === breadcrumbs.length - 1
+                                            ? 'text-primary-orange'
+                                            : ''
+                                    }
+                                >
+                                    {crumb}
+                                </span>
+                                {index < breadcrumbs.length - 1 && <ChevronRight size={16} />}
+                            </React.Fragment>
+                        ))}
                 </motion.div>
             </div>
         </section>
-    );
-};
+    )
+}
 
-export default PageHeader;
+export default PageHeader

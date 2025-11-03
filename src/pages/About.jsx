@@ -12,7 +12,7 @@ import {
     Award,
     Briefcase,
     Linkedin,
-    Mail,
+    Mail
 } from 'lucide-react'
 import PageHeader from '../components/ui/PageHeader'
 import { certifications, partners, teamMembers, timeline, values } from '../constants/about'
@@ -20,7 +20,7 @@ import CTA from '../components/ui/CTA'
 import { useTranslation } from '../context/TranslationContext'
 
 const About = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation()
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -44,16 +44,13 @@ const About = () => {
     }
 
     // Get story content as array
-    const storyContent = t('about.storyContent');
+    const storyContent = t('about.storyContent')
 
     return (
         <>
             <Helmet>
                 <title>{t('about.title')} - CRIC Africa SARL</title>
-                <meta
-                    name="description"
-                    content={t('about.metaDescription')}
-                />
+                <meta name="description" content={t('about.metaDescription')} />
                 <meta
                     name="keywords"
                     content="CRIC Africa history, industrial team Cameroon, company values, industrial certifications"
@@ -90,7 +87,10 @@ const About = () => {
                                 </h2>
                                 {Array.isArray(storyContent) ? (
                                     storyContent.map((paragraph, index) => (
-                                        <p key={index} className="mb-6 text-lg leading-relaxed text-gray-600">
+                                        <p
+                                            key={index}
+                                            className="mb-6 text-lg leading-relaxed text-gray-600"
+                                        >
                                             {paragraph}
                                         </p>
                                     ))
@@ -239,9 +239,14 @@ const About = () => {
                             </h3>
                             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                                 {values.map((value, index) => {
-                                    const Icon = value.icon;
-                                    const valueKeys = ['excellence', 'integrity', 'innovation', 'collaboration'];
-                                    const currentKey = valueKeys[index];
+                                    const Icon = value.icon
+                                    const valueKeys = [
+                                        'excellence',
+                                        'integrity',
+                                        'innovation',
+                                        'collaboration'
+                                    ]
+                                    const currentKey = valueKeys[index]
 
                                     return (
                                         <motion.div
@@ -250,14 +255,27 @@ const About = () => {
                                             whileHover={{ scale: 1.05 }}
                                             transition={{ duration: 0.3 }}
                                         >
-                                            <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${value.color === 'orange'
-                                                ? 'from-primary-orange to-lemon-green'
-                                                : 'from-lemon-green to-primary-orange'
-                                                }`} />
-                                            <div className={`w-16 h-16 ${value.color === 'orange' ? 'bg-primary-orange/10' : 'bg-lemon-green/10'
-                                                } rounded-full flex items-center justify-center mx-auto mb-4`}>
-                                                <Icon className={`${value.color === 'orange' ? 'text-primary-orange' : 'text-lemon-green'
-                                                    } text-2xl`} />
+                                            <div
+                                                className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${
+                                                    value.color === 'orange'
+                                                        ? 'from-primary-orange to-lemon-green'
+                                                        : 'from-lemon-green to-primary-orange'
+                                                }`}
+                                            />
+                                            <div
+                                                className={`w-16 h-16 ${
+                                                    value.color === 'orange'
+                                                        ? 'bg-primary-orange/10'
+                                                        : 'bg-lemon-green/10'
+                                                } rounded-full flex items-center justify-center mx-auto mb-4`}
+                                            >
+                                                <Icon
+                                                    className={`${
+                                                        value.color === 'orange'
+                                                            ? 'text-primary-orange'
+                                                            : 'text-lemon-green'
+                                                    } text-2xl`}
+                                                />
                                             </div>
                                             <h4 className="mb-3 text-xl font-bold text-dark-blue">
                                                 {t(`about.values.${currentKey}`)}
@@ -302,21 +320,36 @@ const About = () => {
                                     viewport={{ once: true }}
                                 >
                                     <div className="absolute top-0 w-4 h-4 rounded-full timeline-dot -left-2 bg-gradient-to-br from-primary-orange to-lemon-green" />
-                                    <div className={`rounded-xl p-6 ${item.isCurrent
-                                        ? 'bg-gradient-to-br from-primary-orange to-lemon-green text-white'
-                                        : 'bg-light-gray'
-                                        }`}>
-                                        <span className={`inline-block ${item.isCurrent
-                                            ? 'bg-white/20 text-white'
-                                            : item.color === 'orange' ? 'bg-primary-orange text-white' : 'bg-lemon-green text-white'
-                                            } px-3 py-1 rounded-full text-sm font-semibold mb-3`}>
+                                    <div
+                                        className={`rounded-xl p-6 ${
+                                            item.isCurrent
+                                                ? 'bg-gradient-to-br from-primary-orange to-lemon-green text-white'
+                                                : 'bg-light-gray'
+                                        }`}
+                                    >
+                                        <span
+                                            className={`inline-block ${
+                                                item.isCurrent
+                                                    ? 'bg-white/20 text-white'
+                                                    : item.color === 'orange'
+                                                      ? 'bg-primary-orange text-white'
+                                                      : 'bg-lemon-green text-white'
+                                            } px-3 py-1 rounded-full text-sm font-semibold mb-3`}
+                                        >
                                             {item.year}
                                         </span>
-                                        <h3 className={`text-2xl font-bold mb-2 ${item.isCurrent ? 'text-white' : 'text-dark-blue'
-                                            }`}>
+                                        <h3
+                                            className={`text-2xl font-bold mb-2 ${
+                                                item.isCurrent ? 'text-white' : 'text-dark-blue'
+                                            }`}
+                                        >
                                             {item.title}
                                         </h3>
-                                        <p className={item.isCurrent ? 'text-white/90' : 'text-gray-600'}>
+                                        <p
+                                            className={
+                                                item.isCurrent ? 'text-white/90' : 'text-gray-600'
+                                            }
+                                        >
                                             {item.description}
                                         </p>
                                     </div>
@@ -357,33 +390,57 @@ const About = () => {
                                     className="overflow-hidden bg-white rounded-2xl hover-lift"
                                     variants={itemVariants}
                                 >
-                                    <div className={`h-64 bg-gradient-to-br ${member.color === 'orange'
-                                        ? 'from-primary-orange to-lemon-green'
-                                        : 'from-lemon-green to-primary-orange'
-                                        } flex items-center justify-center`}>
+                                    <div
+                                        className={`h-64 bg-gradient-to-br ${
+                                            member.color === 'orange'
+                                                ? 'from-primary-orange to-lemon-green'
+                                                : 'from-lemon-green to-primary-orange'
+                                        } flex items-center justify-center`}
+                                    >
                                         <Users className="text-6xl text-white" />
                                     </div>
                                     <div className="p-6 text-center">
-                                        <h3 className="mb-1 text-xl font-bold text-dark-blue">{member.name}</h3>
-                                        <p className={`${member.color === 'orange' ? 'text-primary-orange' : 'text-lemon-green'
-                                            } font-semibold mb-3`}>
+                                        <h3 className="mb-1 text-xl font-bold text-dark-blue">
+                                            {member.name}
+                                        </h3>
+                                        <p
+                                            className={`${
+                                                member.color === 'orange'
+                                                    ? 'text-primary-orange'
+                                                    : 'text-lemon-green'
+                                            } font-semibold mb-3`}
+                                        >
                                             {member.position}
                                         </p>
-                                        <p className="mb-4 text-sm text-gray-600">{member.description}</p>
+                                        <p className="mb-4 text-sm text-gray-600">
+                                            {member.description}
+                                        </p>
                                         <div className="flex justify-center space-x-3">
                                             <a
                                                 href="#"
-                                                className={`w-8 h-8 ${member.color === 'orange' ? 'bg-primary-orange/10 hover:bg-primary-orange' : 'bg-lemon-green/10 hover:bg-lemon-green'
-                                                    } ${member.color === 'orange' ? 'text-primary-orange hover:text-white' : 'text-lemon-green hover:text-white'
-                                                    } rounded-full flex items-center justify-center transition`}
+                                                className={`w-8 h-8 ${
+                                                    member.color === 'orange'
+                                                        ? 'bg-primary-orange/10 hover:bg-primary-orange'
+                                                        : 'bg-lemon-green/10 hover:bg-lemon-green'
+                                                } ${
+                                                    member.color === 'orange'
+                                                        ? 'text-primary-orange hover:text-white'
+                                                        : 'text-lemon-green hover:text-white'
+                                                } rounded-full flex items-center justify-center transition`}
                                             >
                                                 <Linkedin size={12} />
                                             </a>
                                             <a
                                                 href="#"
-                                                className={`w-8 h-8 ${member.color === 'orange' ? 'bg-primary-orange/10 hover:bg-primary-orange' : 'bg-lemon-green/10 hover:bg-lemon-green'
-                                                    } ${member.color === 'orange' ? 'text-primary-orange hover:text-white' : 'text-lemon-green hover:text-white'
-                                                    } rounded-full flex items-center justify-center transition`}
+                                                className={`w-8 h-8 ${
+                                                    member.color === 'orange'
+                                                        ? 'bg-primary-orange/10 hover:bg-primary-orange'
+                                                        : 'bg-lemon-green/10 hover:bg-lemon-green'
+                                                } ${
+                                                    member.color === 'orange'
+                                                        ? 'text-primary-orange hover:text-white'
+                                                        : 'text-lemon-green hover:text-white'
+                                                } rounded-full flex items-center justify-center transition`}
                                             >
                                                 <Mail size={12} />
                                             </a>
@@ -400,9 +457,7 @@ const About = () => {
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <p className="mb-6 text-lg text-gray-600">
-                                {t('about.team.joinText')}
-                            </p>
+                            <p className="mb-6 text-lg text-gray-600">{t('about.team.joinText')}</p>
                             <Link
                                 to="/contact"
                                 className="inline-block px-8 py-4 text-lg font-bold text-white rounded-full btn-orange"
@@ -430,15 +485,32 @@ const About = () => {
                                 </h2>
                                 <div className="space-y-4">
                                     {certifications.map((cert, index) => (
-                                        <div key={cert.name} className="flex items-center p-4 bg-light-gray rounded-xl hover-lift">
-                                            <div className={`w-16 h-16 ${cert.color === 'orange' ? 'bg-primary-orange/10' : 'bg-lemon-green/10'
-                                                } rounded-full flex items-center justify-center mr-4`}>
-                                                <Award className={`${cert.color === 'orange' ? 'text-primary-orange' : 'text-lemon-green'
-                                                    } text-2xl`} />
+                                        <div
+                                            key={cert.name}
+                                            className="flex items-center p-4 bg-light-gray rounded-xl hover-lift"
+                                        >
+                                            <div
+                                                className={`w-16 h-16 ${
+                                                    cert.color === 'orange'
+                                                        ? 'bg-primary-orange/10'
+                                                        : 'bg-lemon-green/10'
+                                                } rounded-full flex items-center justify-center mr-4`}
+                                            >
+                                                <Award
+                                                    className={`${
+                                                        cert.color === 'orange'
+                                                            ? 'text-primary-orange'
+                                                            : 'text-lemon-green'
+                                                    } text-2xl`}
+                                                />
                                             </div>
                                             <div>
-                                                <h4 className="font-bold text-dark-blue">{cert.name}</h4>
-                                                <p className="text-sm text-gray-600">{cert.description}</p>
+                                                <h4 className="font-bold text-dark-blue">
+                                                    {cert.name}
+                                                </h4>
+                                                <p className="text-sm text-gray-600">
+                                                    {cert.description}
+                                                </p>
                                             </div>
                                         </div>
                                     ))}
@@ -460,8 +532,13 @@ const About = () => {
                                 </p>
                                 <div className="grid grid-cols-2 gap-6">
                                     {partners.map((partner, index) => (
-                                        <div key={partner} className="flex items-center justify-center p-6 bg-light-gray rounded-xl hover-lift">
-                                            <span className="text-2xl font-bold text-gray-400">{partner}</span>
+                                        <div
+                                            key={partner}
+                                            className="flex items-center justify-center p-6 bg-light-gray rounded-xl hover-lift"
+                                        >
+                                            <span className="text-2xl font-bold text-gray-400">
+                                                {partner}
+                                            </span>
                                         </div>
                                     ))}
                                 </div>
@@ -477,15 +554,15 @@ const About = () => {
                     buttons={[
                         {
                             text: t('common.contactUs'),
-                            to: "/contact",
-                            icon: "Phone",
-                            className: "bg-white text-primary-orange hover:bg-gray-50"
+                            to: '/contact',
+                            icon: 'Phone',
+                            className: 'bg-white text-primary-orange hover:bg-gray-50'
                         },
                         {
                             text: t('common.ourServices'),
-                            to: "/services",
-                            icon: "Factory",
-                            className: "bg-dark-blue text-white hover:bg-blue-900"
+                            to: '/services',
+                            icon: 'Factory',
+                            className: 'bg-dark-blue text-white hover:bg-blue-900'
                         }
                     ]}
                 />

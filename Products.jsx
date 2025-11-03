@@ -2,18 +2,28 @@
 // src/pages/Products.jsx
 // ============================================
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import {
-    Zap, Wind, Shield, Droplet, Truck, Factory,
-    Search, Filter, Phone, ArrowRight, Star, CheckCircle
-} from 'lucide-react';
-import PageHeader from '../components/PageHeader';
+    Zap,
+    Wind,
+    Shield,
+    Droplet,
+    Truck,
+    Factory,
+    Search,
+    Filter,
+    Phone,
+    ArrowRight,
+    Star,
+    CheckCircle
+} from 'lucide-react'
+import PageHeader from '../components/PageHeader'
 
 const Products = () => {
-    const [selectedCategory, setSelectedCategory] = useState('all');
-    const [searchTerm, setSearchTerm] = useState('');
+    const [selectedCategory, setSelectedCategory] = useState('all')
+    const [searchTerm, setSearchTerm] = useState('')
 
     const categories = [
         { id: 'all', name: 'Tous les Produits', icon: Factory },
@@ -21,8 +31,8 @@ const Products = () => {
         { id: 'compressors', name: 'Compresseurs', icon: Wind },
         { id: 'safety', name: 'Équipements Sécurité', icon: Shield },
         { id: 'pumps', name: 'Matériels de Pompage', icon: Droplet },
-        { id: 'handling', name: 'Engins de Manutention', icon: Truck },
-    ];
+        { id: 'handling', name: 'Engins de Manutention', icon: Truck }
+    ]
 
     const products = [
         {
@@ -156,15 +166,16 @@ const Products = () => {
             image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600',
             features: ['Industriel', 'Très haute puissance', 'Support 24/7'],
             inStock: false
-        },
-    ];
+        }
+    ]
 
     const filteredProducts = products.filter(product => {
-        const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
-        const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            product.brand.toLowerCase().includes(searchTerm.toLowerCase());
-        return matchesCategory && matchesSearch;
-    });
+        const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory
+        const matchesSearch =
+            product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            product.brand.toLowerCase().includes(searchTerm.toLowerCase())
+        return matchesCategory && matchesSearch
+    })
 
     return (
         <div>
@@ -180,28 +191,32 @@ const Products = () => {
                     <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
                         {/* Search */}
                         <div className="relative w-full lg:w-96">
-                            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                            <Search
+                                className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"
+                                size={20}
+                            />
                             <input
                                 type="text"
                                 placeholder="Rechercher un produit..."
                                 value={searchTerm}
-                                onChange={(e) => setSearchTerm(e.target.value)}
+                                onChange={e => setSearchTerm(e.target.value)}
                                 className="w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-full focus:border-primary-orange focus:outline-none transition"
                             />
                         </div>
 
                         {/* Category Filter */}
                         <div className="flex flex-wrap gap-3 justify-center">
-                            {categories.map((category) => (
+                            {categories.map(category => (
                                 <motion.button
                                     key={category.id}
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     onClick={() => setSelectedCategory(category.id)}
-                                    className={`flex items-center space-x-2 px-6 py-3 rounded-full font-semibold transition ${selectedCategory === category.id
+                                    className={`flex items-center space-x-2 px-6 py-3 rounded-full font-semibold transition ${
+                                        selectedCategory === category.id
                                             ? 'bg-gradient-to-r from-primary-orange to-lemon-green text-white'
                                             : 'bg-light-gray text-gray-700 hover:bg-gray-200'
-                                        }`}
+                                    }`}
                                 >
                                     <category.icon size={18} />
                                     <span className="hidden md:inline">{category.name}</span>
@@ -217,7 +232,10 @@ const Products = () => {
                 <div className="container mx-auto px-4 lg:px-8">
                     <div className="mb-8">
                         <p className="text-gray-600">
-                            <span className="font-bold text-dark-blue">{filteredProducts.length}</span> produit(s) trouvé(s)
+                            <span className="font-bold text-dark-blue">
+                                {filteredProducts.length}
+                            </span>{' '}
+                            produit(s) trouvé(s)
                         </p>
                     </div>
 
@@ -247,21 +265,33 @@ const Products = () => {
                                         </span>
                                     )}
                                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                                        <span className="text-white font-semibold">{product.brand}</span>
+                                        <span className="text-white font-semibold">
+                                            {product.brand}
+                                        </span>
                                     </div>
                                 </div>
 
                                 <div className="p-6">
-                                    <h3 className="text-xl font-bold text-dark-blue mb-2">{product.name}</h3>
+                                    <h3 className="text-xl font-bold text-dark-blue mb-2">
+                                        {product.name}
+                                    </h3>
                                     <div className="flex items-center justify-between mb-4">
-                                        <span className="text-primary-orange font-bold text-lg">{product.power}</span>
+                                        <span className="text-primary-orange font-bold text-lg">
+                                            {product.power}
+                                        </span>
                                         <span className="text-gray-600">{product.price}</span>
                                     </div>
 
                                     <div className="space-y-2 mb-6">
                                         {product.features.map((feature, idx) => (
-                                            <div key={idx} className="flex items-center space-x-2 text-sm text-gray-600">
-                                                <CheckCircle className="text-lemon-green" size={16} />
+                                            <div
+                                                key={idx}
+                                                className="flex items-center space-x-2 text-sm text-gray-600"
+                                            >
+                                                <CheckCircle
+                                                    className="text-lemon-green"
+                                                    size={16}
+                                                />
                                                 <span>{feature}</span>
                                             </div>
                                         ))}
@@ -289,8 +319,8 @@ const Products = () => {
                             <p className="text-2xl text-gray-600 mb-4">Aucun produit trouvé</p>
                             <button
                                 onClick={() => {
-                                    setSelectedCategory('all');
-                                    setSearchTerm('');
+                                    setSelectedCategory('all')
+                                    setSearchTerm('')
                                 }}
                                 className="bg-gradient-to-r from-primary-orange to-lemon-green text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition"
                             >
@@ -314,7 +344,8 @@ const Products = () => {
                             Besoin d'un Conseil ?
                         </h2>
                         <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                            Notre équipe d'experts est à votre disposition pour vous aider à choisir l'équipement adapté à vos besoins
+                            Notre équipe d'experts est à votre disposition pour vous aider à choisir
+                            l'équipement adapté à vos besoins
                         </p>
                         <Link
                             to="/contact"
@@ -327,7 +358,7 @@ const Products = () => {
                 </div>
             </section>
         </div>
-    );
-};
+    )
+}
 
-export default Products;
+export default Products

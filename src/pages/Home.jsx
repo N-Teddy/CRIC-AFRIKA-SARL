@@ -1,14 +1,14 @@
 // src/pages/Home.jsx
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Star, Phone, Box } from 'lucide-react';
-import Counter from '../components/ui/Counter';
-import { products, services, stats, testimonials } from '../constants/home';
-import CTA from '../components/ui/CTA';
-import { useTranslation } from '../context/TranslationContext';
+import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import { ArrowRight, CheckCircle, Star, Phone, Box } from 'lucide-react'
+import Counter from '../components/ui/Counter'
+import { products, services, stats, testimonials } from '../constants/home'
+import CTA from '../components/ui/CTA'
+import { useTranslation } from '../context/TranslationContext'
 
 const Home = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation()
 
     return (
         <div className="overflow-hidden">
@@ -106,11 +106,7 @@ const Home = () => {
                                     <stat.icon className="text-white" size={32} />
                                 </div>
                                 <h3 className="mb-2 text-4xl font-bold text-dark-blue">
-                                    <Counter
-                                        end={stat.number}
-                                        duration={2}
-                                        suffix={stat.suffix}
-                                    />
+                                    <Counter end={stat.number} duration={2} suffix={stat.suffix} />
                                 </h3>
                                 <p className="text-gray-600">{t(`home.stats.${stat.key}`)}</p>
                             </motion.div>
@@ -149,7 +145,9 @@ const Home = () => {
                                 whileHover={{ y: -10 }}
                                 className="p-8 transition-all bg-white shadow-lg rounded-2xl hover:shadow-2xl"
                             >
-                                <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-full flex items-center justify-center mb-6`}>
+                                <div
+                                    className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-full flex items-center justify-center mb-6`}
+                                >
                                     <service.icon className="text-white" size={28} />
                                 </div>
                                 <h3 className="mb-3 text-2xl font-bold text-dark-blue">
@@ -158,8 +156,12 @@ const Home = () => {
                                 <p className="mb-6 text-gray-600">
                                     {t(`home.services.items.${service.key}.description`)}
                                 </p>
-                                <Link to="/services" className="inline-flex items-center font-semibold transition-all text-primary-orange hover:gap-2">
-                                    {t('home.services.learnMore')} <ArrowRight size={18} className="ml-1" />
+                                <Link
+                                    to="/services"
+                                    className="inline-flex items-center font-semibold transition-all text-primary-orange hover:gap-2"
+                                >
+                                    {t('home.services.learnMore')}{' '}
+                                    <ArrowRight size={18} className="ml-1" />
                                 </Link>
                             </motion.div>
                         ))}
@@ -198,8 +200,17 @@ const Home = () => {
                                 whileHover={{ scale: 1.05 }}
                                 className="p-8 transition-all cursor-pointer bg-light-gray rounded-2xl hover:shadow-xl"
                             >
-                                <div className={`w-16 h-16 ${index % 2 === 0 ? 'bg-primary-orange/10' : 'bg-lemon-green/10'} rounded-full flex items-center justify-center mb-6`}>
-                                    <product.icon className={index % 2 === 0 ? 'text-primary-orange' : 'text-lemon-green'} size={28} />
+                                <div
+                                    className={`w-16 h-16 ${index % 2 === 0 ? 'bg-primary-orange/10' : 'bg-lemon-green/10'} rounded-full flex items-center justify-center mb-6`}
+                                >
+                                    <product.icon
+                                        className={
+                                            index % 2 === 0
+                                                ? 'text-primary-orange'
+                                                : 'text-lemon-green'
+                                        }
+                                        size={28}
+                                    />
                                 </div>
                                 <h3 className="mb-2 text-xl font-bold text-dark-blue">
                                     {t(`home.products.items.${product.key}.name`)}
@@ -207,8 +218,12 @@ const Home = () => {
                                 <p className="mb-4 text-gray-600">
                                     {t(`home.products.items.${product.key}.count`)}
                                 </p>
-                                <Link to="/products" className="inline-flex items-center font-semibold transition-all text-primary-orange hover:gap-2">
-                                    {t('home.products.discover')} <ArrowRight size={16} className="ml-1" />
+                                <Link
+                                    to="/products"
+                                    className="inline-flex items-center font-semibold transition-all text-primary-orange hover:gap-2"
+                                >
+                                    {t('home.products.discover')}{' '}
+                                    <ArrowRight size={16} className="ml-1" />
                                 </Link>
                             </motion.div>
                         ))}
@@ -250,7 +265,9 @@ const Home = () => {
                             </p>
                             <div className="space-y-4">
                                 {(() => {
-                                    const benefits = t('home.whyChooseUs.benefits', { returnObjects: true });
+                                    const benefits = t('home.whyChooseUs.benefits', {
+                                        returnObjects: true
+                                    })
                                     // Check if benefits is an array before mapping
                                     if (Array.isArray(benefits)) {
                                         return benefits.map((item, index) => (
@@ -262,10 +279,13 @@ const Home = () => {
                                                 transition={{ delay: index * 0.1 }}
                                                 className="flex items-center space-x-3"
                                             >
-                                                <CheckCircle className="text-lemon-green" size={24} />
+                                                <CheckCircle
+                                                    className="text-lemon-green"
+                                                    size={24}
+                                                />
                                                 <span className="text-lg text-white">{item}</span>
                                             </motion.div>
-                                        ));
+                                        ))
                                     } else {
                                         // Fallback if benefits is not an array
                                         return (
@@ -275,10 +295,15 @@ const Home = () => {
                                                 viewport={{ once: true }}
                                                 className="flex items-center space-x-3"
                                             >
-                                                <CheckCircle className="text-lemon-green" size={24} />
-                                                <span className="text-lg text-white">{benefits}</span>
+                                                <CheckCircle
+                                                    className="text-lemon-green"
+                                                    size={24}
+                                                />
+                                                <span className="text-lg text-white">
+                                                    {benefits}
+                                                </span>
                                             </motion.div>
-                                        );
+                                        )
                                     }
                                 })()}
                             </div>
@@ -333,7 +358,11 @@ const Home = () => {
                             >
                                 <div className="flex mb-4">
                                     {[...Array(testimonial.rating)].map((_, i) => (
-                                        <Star key={i} className="fill-current text-primary-orange" size={20} />
+                                        <Star
+                                            key={i}
+                                            className="fill-current text-primary-orange"
+                                            size={20}
+                                        />
                                     ))}
                                 </div>
                                 <p className="mb-6 italic leading-relaxed text-gray-600">
@@ -360,20 +389,20 @@ const Home = () => {
                 buttons={[
                     {
                         text: t('common.contactUs'),
-                        to: "/contact",
-                        icon: "Phone",
-                        className: "bg-white text-primary-orange hover:bg-gray-50"
+                        to: '/contact',
+                        icon: 'Phone',
+                        className: 'bg-white text-primary-orange hover:bg-gray-50'
                     },
                     {
                         text: t('common.ourServices'),
-                        to: "/services",
-                        icon: "Wrench",
-                        className: "bg-dark-blue text-white hover:bg-blue-900"
+                        to: '/services',
+                        icon: 'Wrench',
+                        className: 'bg-dark-blue text-white hover:bg-blue-900'
                     }
                 ]}
             />
         </div>
-    );
-};
+    )
+}
 
-export default Home;
+export default Home

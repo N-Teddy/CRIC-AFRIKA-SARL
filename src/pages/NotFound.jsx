@@ -1,14 +1,14 @@
 // src/pages/NotFound.jsx
-import { Link } from 'react-router-dom';
-import { Home, ArrowLeft, Mail, AlertCircle } from 'lucide-react';
-import { popularPages, quickLinks } from '../constants/not-found';
-import CTA from '../components/ui/CTA';
-import { Email, WhatsAppNumber } from '../constants';
-import { motion } from 'framer-motion';
-import { useTranslation } from '../context/TranslationContext';
+import { Link } from 'react-router-dom'
+import { Home, ArrowLeft, Mail, AlertCircle } from 'lucide-react'
+import { popularPages, quickLinks } from '../constants/not-found'
+import CTA from '../components/ui/CTA'
+import { Email, WhatsAppNumber } from '../constants'
+import { motion } from 'framer-motion'
+import { useTranslation } from '../context/TranslationContext'
 
 const NotFound = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation()
 
     return (
         <div className="min-h-screen pt-20 bg-light-gray">
@@ -19,24 +19,24 @@ const NotFound = () => {
                     <motion.div
                         animate={{
                             scale: [1, 1.2, 1],
-                            rotate: [0, 180, 360],
+                            rotate: [0, 180, 360]
                         }}
                         transition={{
                             duration: 20,
                             repeat: Infinity,
-                            ease: "linear"
+                            ease: 'linear'
                         }}
                         className="absolute rounded-full -top-20 -left-20 w-96 h-96 bg-white/5 blur-3xl"
                     />
                     <motion.div
                         animate={{
                             scale: [1.2, 1, 1.2],
-                            rotate: [360, 180, 0],
+                            rotate: [360, 180, 0]
                         }}
                         transition={{
                             duration: 15,
                             repeat: Infinity,
-                            ease: "linear"
+                            ease: 'linear'
                         }}
                         className="absolute rounded-full -bottom-20 -right-20 w-96 h-96 bg-white/5 blur-3xl"
                     />
@@ -49,7 +49,7 @@ const NotFound = () => {
                             initial={{ scale: 0, rotate: -180 }}
                             animate={{ scale: 1, rotate: 0 }}
                             transition={{
-                                type: "spring",
+                                type: 'spring',
                                 stiffness: 260,
                                 damping: 20,
                                 duration: 1
@@ -59,15 +59,19 @@ const NotFound = () => {
                             <div className="inline-flex items-center justify-center">
                                 <motion.div
                                     animate={{
-                                        y: [0, -20, 0],
+                                        y: [0, -20, 0]
                                     }}
                                     transition={{
                                         duration: 2,
                                         repeat: Infinity,
-                                        ease: "easeInOut"
+                                        ease: 'easeInOut'
                                     }}
                                 >
-                                    <AlertCircle className="text-white" size={120} strokeWidth={1.5} />
+                                    <AlertCircle
+                                        className="text-white"
+                                        size={120}
+                                        strokeWidth={1.5}
+                                    />
                                 </motion.div>
                             </div>
                         </motion.div>
@@ -160,7 +164,9 @@ const NotFound = () => {
                                     to={item.link}
                                     className="block h-full p-8 text-center transition-all bg-light-gray rounded-2xl hover:shadow-2xl"
                                 >
-                                    <div className={`w-20 h-20 bg-gradient-to-br ${item.color} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform`}>
+                                    <div
+                                        className={`w-20 h-20 bg-gradient-to-br ${item.color} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform`}
+                                    >
                                         <item.icon className="text-white" size={32} />
                                     </div>
                                     <h3 className="mb-3 text-2xl font-bold transition-colors text-dark-blue group-hover:text-primary-orange">
@@ -170,7 +176,8 @@ const NotFound = () => {
                                         {t(`notFound.quickLinks.items.${item.key}.description`)}
                                     </p>
                                     <span className="inline-flex items-center font-semibold transition-all text-primary-orange group-hover:gap-2">
-                                        {t('notFound.quickLinks.access')} <ArrowLeft className="ml-1 rotate-180" size={18} />
+                                        {t('notFound.quickLinks.access')}{' '}
+                                        <ArrowLeft className="ml-1 rotate-180" size={18} />
                                     </span>
                                 </Link>
                             </motion.div>
@@ -188,19 +195,19 @@ const NotFound = () => {
                     {
                         text: `+237 ${WhatsAppNumber}`,
                         href: `tel:+237 ${WhatsAppNumber}`,
-                        icon: "Phone",
-                        className: "bg-white text-primary-orange hover:bg-gray-50"
+                        icon: 'Phone',
+                        className: 'bg-white text-primary-orange hover:bg-gray-50'
                     },
                     {
                         text: `${Email}`,
                         href: `mailto:${Email}`,
-                        icon: "Mail",
-                        className: "bg-dark-blue text-white hover:bg-blue-900"
+                        icon: 'Mail',
+                        className: 'bg-dark-blue text-white hover:bg-blue-900'
                     }
                 ]}
             />
         </div>
-    );
-};
+    )
+}
 
-export default NotFound;
+export default NotFound

@@ -2,12 +2,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link, useLocation } from 'react-router-dom'
-import {
-    Factory,
-    Phone,
-    Menu,
-    X,
-} from 'lucide-react'
+import { Factory, Phone, Menu, X } from 'lucide-react'
 import { navigation } from '../../constants'
 import LanguageSwitcher from '../ui/LanguageSwitcher'
 import { useTranslation } from '../../context/TranslationContext'
@@ -35,10 +30,11 @@ const Header = () => {
         <motion.header
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled
-                ? 'bg-dark-blue/95 backdrop-blur-md shadow-lg'
-                : 'bg-dark-blue/95 backdrop-blur-md'
-                }`}
+            className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+                isScrolled
+                    ? 'bg-dark-blue/95 backdrop-blur-md shadow-lg'
+                    : 'bg-dark-blue/95 backdrop-blur-md'
+            }`}
         >
             <nav className="container px-4 py-4 mx-auto lg:px-8">
                 <div className="flex items-center justify-between">
@@ -48,14 +44,16 @@ const Header = () => {
                             <img src="/logo.png" alt="logo" />
                         </div>
                         <div>
-                            <h1 className="font-bold text-white  sm:text-xl lg:text-2xl">{t('common.companyName')}</h1>
+                            <h1 className="font-bold text-white  sm:text-xl lg:text-2xl">
+                                {t('common.companyName')}
+                            </h1>
                             <p className="text-xs italic text-gray-300">{t('common.slogan')}</p>
                         </div>
                     </Link>
 
                     {/* Desktop Navigation */}
                     <div className="items-center hidden space-x-8 lg:flex">
-                        {navigation.map((item) => {
+                        {navigation.map(item => {
                             const Icon = item.icon
                             const isActive = location.pathname === item.href
                             const translationKey = `navigation.${item.name.toLowerCase()}`
@@ -64,10 +62,13 @@ const Header = () => {
                                 <Link
                                     key={item.name}
                                     to={item.href}
-                                    className={`flex items-center space-x-1 font-semibold transition-colors ${isActive
-                                        ? item.name === 'Produits' ? 'text-primary-orange' : 'text-lemon-green'
-                                        : 'text-white hover:text-primary-orange'
-                                        }`}
+                                    className={`flex items-center space-x-1 font-semibold transition-colors ${
+                                        isActive
+                                            ? item.name === 'Produits'
+                                                ? 'text-primary-orange'
+                                                : 'text-lemon-green'
+                                            : 'text-white hover:text-primary-orange'
+                                    }`}
                                 >
                                     <Icon size={16} />
                                     <span>{t(translationKey)}</span>
@@ -114,7 +115,7 @@ const Header = () => {
                         >
                             <div className="p-6 rounded-lg bg-dark-blue/50 backdrop-blur-md">
                                 <div className="flex flex-col space-y-4">
-                                    {navigation.map((item) => {
+                                    {navigation.map(item => {
                                         const Icon = item.icon
                                         const isActive = location.pathname === item.href
                                         const translationKey = `navigation.${item.name.toLowerCase()}`
@@ -123,13 +124,16 @@ const Header = () => {
                                             <Link
                                                 key={item.name}
                                                 to={item.href}
-                                                className={`flex items-center space-x-3 p-3 rounded-lg transition-colors ${isActive
-                                                    ? 'bg-lemon-green/20 text-lemon-green'
-                                                    : 'text-white hover:bg-primary-orange/20 hover:text-primary-orange'
-                                                    }`}
+                                                className={`flex items-center space-x-3 p-3 rounded-lg transition-colors ${
+                                                    isActive
+                                                        ? 'bg-lemon-green/20 text-lemon-green'
+                                                        : 'text-white hover:bg-primary-orange/20 hover:text-primary-orange'
+                                                }`}
                                             >
                                                 <Icon size={20} />
-                                                <span className="font-semibold">{t(translationKey)}</span>
+                                                <span className="font-semibold">
+                                                    {t(translationKey)}
+                                                </span>
                                             </Link>
                                         )
                                     })}

@@ -2,25 +2,27 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
+import { ThumbsUp, Calendar, Star, Plus } from 'lucide-react'
 import {
-    ThumbsUp,
-    Calendar,
-    Star,
-    Plus,
-} from 'lucide-react'
-import { filters, industries, processSteps, projects, testimonials } from '../constants/realisations'
+    filters,
+    industries,
+    processSteps,
+    projects,
+    testimonials
+} from '../constants/realisations'
 import PageHeader from '../components/ui/PageHeader'
 import CTA from '../components/ui/CTA'
 import { useTranslation } from '../context/TranslationContext'
 
 const Realisations = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation()
     const [activeFilter, setActiveFilter] = useState('all')
     const [visibleProjects, setVisibleProjects] = useState(6)
 
-    const filteredProjects = activeFilter === 'all'
-        ? projects
-        : projects.filter(project => project.category === activeFilter)
+    const filteredProjects =
+        activeFilter === 'all'
+            ? projects
+            : projects.filter(project => project.category === activeFilter)
 
     const visibleProjectsList = filteredProjects.slice(0, visibleProjects)
 
@@ -53,14 +55,8 @@ const Realisations = () => {
         <>
             <Helmet>
                 <title>{t('realisations.title')} - CRIC Africa SARL</title>
-                <meta
-                    name="description"
-                    content={t('realisations.metaDescription')}
-                />
-                <meta
-                    name="keywords"
-                    content={t('realisations.metaKeywords')}
-                />
+                <meta name="description" content={t('realisations.metaDescription')} />
+                <meta name="keywords" content={t('realisations.metaKeywords')} />
                 <meta property="og:title" content={t('realisations.title')} />
                 <meta property="og:description" content={t('realisations.metaDescription')} />
                 <meta property="og:type" content="website" />
@@ -118,16 +114,17 @@ const Realisations = () => {
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
                         >
-                            {filters.map((filter) => {
+                            {filters.map(filter => {
                                 const Icon = filter.icon
                                 return (
                                     <button
                                         key={filter.key}
                                         onClick={() => setActiveFilter(filter.key)}
-                                        className={`flex items-center px-6 py-3 rounded-full font-semibold transition-all ${activeFilter === filter.key
-                                            ? 'bg-gradient-to-r from-primary-orange to-lemon-green text-white shadow-lg'
-                                            : 'bg-white text-gray-700 hover:shadow-md'
-                                            }`}
+                                        className={`flex items-center px-6 py-3 rounded-full font-semibold transition-all ${
+                                            activeFilter === filter.key
+                                                ? 'bg-gradient-to-r from-primary-orange to-lemon-green text-white shadow-lg'
+                                                : 'bg-white text-gray-700 hover:shadow-md'
+                                        }`}
                                     >
                                         <Icon className="mr-2" size={16} />
                                         {t(`realisations.filters.${filter.key}`)}
@@ -142,11 +139,8 @@ const Realisations = () => {
                 <section className="py-20 bg-light-gray">
                     <div className="container px-4 mx-auto lg:px-8">
                         <AnimatePresence>
-                            <motion.div
-                                className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
-                                layout
-                            >
-                                {visibleProjectsList.map((project) => {
+                            <motion.div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3" layout>
+                                {visibleProjectsList.map(project => {
                                     const Icon = project.icon
                                     return (
                                         <motion.div
@@ -161,22 +155,35 @@ const Realisations = () => {
                                             <div className="relative overflow-hidden">
                                                 <motion.img
                                                     src={project.image}
-                                                    alt={t(`realisations.projects.${project.key}.title`)}
+                                                    alt={t(
+                                                        `realisations.projects.${project.key}.title`
+                                                    )}
                                                     className="object-cover w-full h-80"
                                                     whileHover={{ scale: 1.1 }}
                                                     transition={{ duration: 0.5 }}
                                                 />
                                                 <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-dark-blue/90 to-transparent group-hover:opacity-100" />
                                                 <div className="absolute bottom-0 left-0 right-0 p-6 transition-transform duration-300 transform translate-y-6 group-hover:translate-y-0">
-                                                    <span className={`inline-block ${project.color === 'orange' ? 'bg-primary-orange' : 'bg-lemon-green'
-                                                        } text-white px-3 py-1 rounded-full text-sm mb-3`}>
-                                                        {t(`realisations.filters.${project.category}`)}
+                                                    <span
+                                                        className={`inline-block ${
+                                                            project.color === 'orange'
+                                                                ? 'bg-primary-orange'
+                                                                : 'bg-lemon-green'
+                                                        } text-white px-3 py-1 rounded-full text-sm mb-3`}
+                                                    >
+                                                        {t(
+                                                            `realisations.filters.${project.category}`
+                                                        )}
                                                     </span>
                                                     <h3 className="mb-2 text-2xl font-bold text-white">
-                                                        {t(`realisations.projects.${project.key}.title`)}
+                                                        {t(
+                                                            `realisations.projects.${project.key}.title`
+                                                        )}
                                                     </h3>
                                                     <p className="mb-4 text-gray-300">
-                                                        {t(`realisations.projects.${project.key}.description`)}
+                                                        {t(
+                                                            `realisations.projects.${project.key}.description`
+                                                        )}
                                                     </p>
                                                     <div className="flex items-center text-sm text-gray-300">
                                                         <Calendar className="mr-2" size={16} />
@@ -243,18 +250,25 @@ const Realisations = () => {
                                     variants={itemVariants}
                                 >
                                     <div className="flex items-center mb-6">
-                                        <div className={`w-16 h-16 bg-gradient-to-br ${index % 2 === 0
-                                            ? 'from-primary-orange to-lemon-green'
-                                            : 'from-lemon-green to-primary-orange'
-                                            } rounded-full flex items-center justify-center mr-4`}>
+                                        <div
+                                            className={`w-16 h-16 bg-gradient-to-br ${
+                                                index % 2 === 0
+                                                    ? 'from-primary-orange to-lemon-green'
+                                                    : 'from-lemon-green to-primary-orange'
+                                            } rounded-full flex items-center justify-center mr-4`}
+                                        >
                                             <ThumbsUp className="text-2xl text-white" />
                                         </div>
                                         <div>
                                             <h4 className="font-bold text-dark-blue">
-                                                {t(`realisations.testimonials.items.${testimonial.key}.name`)}
+                                                {t(
+                                                    `realisations.testimonials.items.${testimonial.key}.name`
+                                                )}
                                             </h4>
                                             <p className="text-sm text-gray-600">
-                                                {t(`realisations.testimonials.items.${testimonial.key}.position`)}
+                                                {t(
+                                                    `realisations.testimonials.items.${testimonial.key}.position`
+                                                )}
                                             </p>
                                         </div>
                                     </div>
@@ -268,7 +282,11 @@ const Realisations = () => {
                                         ))}
                                     </div>
                                     <p className="italic leading-relaxed text-gray-600">
-                                        "{t(`realisations.testimonials.items.${testimonial.key}.content`)}"
+                                        "
+                                        {t(
+                                            `realisations.testimonials.items.${testimonial.key}.content`
+                                        )}
+                                        "
                                     </p>
                                 </motion.div>
                             ))}
@@ -304,10 +322,13 @@ const Realisations = () => {
                                     transition={{ duration: 0.8, delay: index * 0.1 }}
                                     viewport={{ once: true }}
                                 >
-                                    <div className={`flex-shrink-0 w-16 h-16 bg-gradient-to-br rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6 ${index % 2 === 0
-                                        ? 'from-primary-orange to-lemon-green'
-                                        : 'from-lemon-green to-primary-orange'
-                                        }`}>
+                                    <div
+                                        className={`flex-shrink-0 w-16 h-16 bg-gradient-to-br rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6 ${
+                                            index % 2 === 0
+                                                ? 'from-primary-orange to-lemon-green'
+                                                : 'from-lemon-green to-primary-orange'
+                                        }`}
+                                    >
                                         {step.number}
                                     </div>
                                     <div className="flex-grow">
@@ -315,7 +336,9 @@ const Realisations = () => {
                                             {t(`realisations.process.steps.${step.key}.title`)}
                                         </h3>
                                         <p className="leading-relaxed text-gray-600">
-                                            {t(`realisations.process.steps.${step.key}.description`)}
+                                            {t(
+                                                `realisations.process.steps.${step.key}.description`
+                                            )}
                                         </p>
                                     </div>
                                 </motion.div>
@@ -357,17 +380,24 @@ const Realisations = () => {
                                         className="text-center hover-lift"
                                         variants={itemVariants}
                                     >
-                                        <div className={`w-24 h-24 bg-gradient-to-br rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg ${index % 2 === 0
-                                            ? 'from-primary-orange to-lemon-green'
-                                            : 'from-lemon-green to-primary-orange'
-                                            }`}>
+                                        <div
+                                            className={`w-24 h-24 bg-gradient-to-br rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg ${
+                                                index % 2 === 0
+                                                    ? 'from-primary-orange to-lemon-green'
+                                                    : 'from-lemon-green to-primary-orange'
+                                            }`}
+                                        >
                                             <Icon className="text-3xl text-white" />
                                         </div>
                                         <h3 className="mb-2 text-xl font-bold text-dark-blue">
-                                            {t(`realisations.industries.items.${industry.key}.name`)}
+                                            {t(
+                                                `realisations.industries.items.${industry.key}.name`
+                                            )}
                                         </h3>
                                         <p className="text-gray-600">
-                                            {t(`realisations.industries.items.${industry.key}.description`)}
+                                            {t(
+                                                `realisations.industries.items.${industry.key}.description`
+                                            )}
                                         </p>
                                     </motion.div>
                                 )
@@ -383,15 +413,15 @@ const Realisations = () => {
                     buttons={[
                         {
                             text: t('realisations.cta.startProject'),
-                            to: "/contact",
-                            icon: "Phone",
-                            className: "bg-white text-primary-orange hover:bg-gray-50"
+                            to: '/contact',
+                            icon: 'Phone',
+                            className: 'bg-white text-primary-orange hover:bg-gray-50'
                         },
                         {
                             text: t('common.ourProducts'),
-                            to: "/products",
-                            icon: "Box",
-                            className: "bg-dark-blue text-white hover:bg-blue-900"
+                            to: '/products',
+                            icon: 'Box',
+                            className: 'bg-dark-blue text-white hover:bg-blue-900'
                         }
                     ]}
                 />

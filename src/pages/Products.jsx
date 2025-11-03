@@ -2,19 +2,14 @@
 import { motion } from 'framer-motion'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
-import {
-    Mail,
-    CheckCircle,
-    Boxes,
-    Download
-} from 'lucide-react'
+import { Mail, CheckCircle, Boxes, Download } from 'lucide-react'
 import { additionalProducts, benefits, products } from '../constants/products'
 import PageHeader from '../components/ui/PageHeader'
 import CTA from '../components/ui/CTA'
 import { useTranslation } from '../context/TranslationContext'
 
 const Products = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation()
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -37,18 +32,18 @@ const Products = () => {
         }
     }
 
+    // Helper function to safely get array from translations
+    const getTranslatedArray = key => {
+        const result = t(key, { returnObjects: true })
+        return Array.isArray(result) ? result : []
+    }
+
     return (
         <>
             <Helmet>
                 <title>{t('products.title')} - CRIC Africa SARL</title>
-                <meta
-                    name="description"
-                    content={t('products.metaDescription')}
-                />
-                <meta
-                    name="keywords"
-                    content={t('products.metaKeywords')}
-                />
+                <meta name="description" content={t('products.metaDescription')} />
+                <meta name="keywords" content={t('products.metaKeywords')} />
                 <meta property="og:title" content={t('products.title')} />
                 <meta property="og:description" content={t('products.metaDescription')} />
                 <meta property="og:type" content="website" />
@@ -69,6 +64,10 @@ const Products = () => {
                         {products.map((product, index) => {
                             const Icon = product.icon
                             const BadgeIcon = product.badge.icon
+                            const features = getTranslatedArray(
+                                `products.items.${product.key}.features`
+                            )
+
                             return (
                                 <motion.div
                                     key={product.id}
@@ -79,11 +78,17 @@ const Products = () => {
                                     transition={{ duration: 0.8, delay: index * 0.1 }}
                                     viewport={{ once: true, margin: '-100px' }}
                                 >
-                                    <div className={`grid lg:grid-cols-2 gap-12 items-center ${product.reverse ? 'lg:flex-row-reverse' : ''
-                                        }`}>
+                                    <div
+                                        className={`grid lg:grid-cols-2 gap-12 items-center ${
+                                            product.reverse ? 'lg:flex-row-reverse' : ''
+                                        }`}
+                                    >
                                         {/* Image Section */}
-                                        <div className={`product-card rounded-2xl overflow-hidden shadow-xl ${product.reverse ? 'lg:order-2' : ''
-                                            }`}>
+                                        <div
+                                            className={`product-card rounded-2xl overflow-hidden shadow-xl ${
+                                                product.reverse ? 'lg:order-2' : ''
+                                            }`}
+                                        >
                                             <motion.img
                                                 src={product.image}
                                                 alt={t(`products.items.${product.key}.title`)}
@@ -95,14 +100,22 @@ const Products = () => {
 
                                         {/* Content Section */}
                                         <div className={product.reverse ? 'lg:order-1' : ''}>
-                                            <div className={`inline-flex items-center ${product.badge.color} text-white px-4 py-2 rounded-full text-sm font-semibold mb-4`}>
+                                            <div
+                                                className={`inline-flex items-center ${product.badge.color} text-white px-4 py-2 rounded-full text-sm font-semibold mb-4`}
+                                            >
                                                 <BadgeIcon className="mr-2" size={16} />
                                                 {t(`products.items.${product.key}.badge`)}
                                             </div>
 
                                             <h2 className="mb-4 text-4xl font-bold text-dark-blue">
-                                                <Icon className={`inline mr-3 ${product.color === 'orange' ? 'text-primary-orange' : 'text-lemon-green'
-                                                    }`} size={32} />
+                                                <Icon
+                                                    className={`inline mr-3 ${
+                                                        product.color === 'orange'
+                                                            ? 'text-primary-orange'
+                                                            : 'text-lemon-green'
+                                                    }`}
+                                                    size={32}
+                                                />
                                                 {t(`products.items.${product.key}.title`)}
                                             </h2>
 
@@ -111,21 +124,32 @@ const Products = () => {
                                             </p>
 
                                             <ul className="mb-8 space-y-3">
-                                                {t(`products.items.${product.key}.features`, { returnObjects: true }).map((feature, featureIndex) => (
-                                                    <li key={feature} className="flex items-start">
-                                                        <CheckCircle className={`${featureIndex % 2 === 0
-                                                            ? 'text-lemon-green'
-                                                            : 'text-primary-orange'
-                                                            } text-xl mr-3 mt-1 flex-shrink-0`} />
-                                                        <span className="text-gray-700">{feature}</span>
+                                                {features.map((feature, featureIndex) => (
+                                                    <li
+                                                        key={featureIndex}
+                                                        className="flex items-start"
+                                                    >
+                                                        <CheckCircle
+                                                            className={`${
+                                                                featureIndex % 2 === 0
+                                                                    ? 'text-lemon-green'
+                                                                    : 'text-primary-orange'
+                                                            } text-xl mr-3 mt-1 flex-shrink-0`}
+                                                        />
+                                                        <span className="text-gray-700">
+                                                            {feature}
+                                                        </span>
                                                     </li>
                                                 ))}
                                             </ul>
 
                                             <Link
                                                 to="/contact"
-                                                className={`inline-flex items-center ${product.color === 'orange' ? 'btn-orange' : 'btn-green'
-                                                    } text-white px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-xl transition-all`}
+                                                className={`inline-flex items-center ${
+                                                    product.color === 'orange'
+                                                        ? 'btn-orange'
+                                                        : 'btn-green'
+                                                } text-white px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-xl transition-all`}
                                             >
                                                 <Mail className="mr-2" size={20} />
                                                 {t('common.getQuote')}
@@ -146,7 +170,9 @@ const Products = () => {
                         >
                             <div className="max-w-4xl mx-auto">
                                 <Boxes className="mx-auto mb-6 text-6xl text-primary-orange" />
-                                <h2 className="mb-6 text-4xl font-bold">{t('products.additional.title')}</h2>
+                                <h2 className="mb-6 text-4xl font-bold">
+                                    {t('products.additional.title')}
+                                </h2>
                                 <p className="mb-8 text-xl leading-relaxed text-gray-300">
                                     {t('products.additional.description')}
                                 </p>
@@ -161,13 +187,22 @@ const Products = () => {
                                                 whileHover={{ scale: 1.05 }}
                                                 transition={{ duration: 0.3 }}
                                             >
-                                                <Icon className={`text-3xl ${index % 2 === 0 ? 'text-lemon-green' : 'text-primary-orange'
-                                                    } mb-3 mx-auto`} />
+                                                <Icon
+                                                    className={`text-3xl ${
+                                                        index % 2 === 0
+                                                            ? 'text-lemon-green'
+                                                            : 'text-primary-orange'
+                                                    } mb-3 mx-auto`}
+                                                />
                                                 <h3 className="mb-2 text-lg font-bold">
-                                                    {t(`products.additional.items.${product.key}.name`)}
+                                                    {t(
+                                                        `products.additional.items.${product.key}.name`
+                                                    )}
                                                 </h3>
                                                 <p className="text-sm text-gray-400">
-                                                    {t(`products.additional.items.${product.key}.description`)}
+                                                    {t(
+                                                        `products.additional.items.${product.key}.description`
+                                                    )}
                                                 </p>
                                             </motion.div>
                                         )
@@ -213,8 +248,13 @@ const Products = () => {
                         >
                             {benefits.map((benefit, index) => {
                                 const Icon = benefit.icon
-                                const benefitKeys = ['quality', 'delivery', 'installation', 'support'];
-                                const currentKey = benefitKeys[index];
+                                const benefitKeys = [
+                                    'quality',
+                                    'delivery',
+                                    'installation',
+                                    'support'
+                                ]
+                                const currentKey = benefitKeys[index]
 
                                 return (
                                     <motion.div
@@ -222,10 +262,13 @@ const Products = () => {
                                         className="p-8 text-center hover-lift bg-light-gray rounded-2xl"
                                         variants={itemVariants}
                                     >
-                                        <div className={`w-20 h-20 bg-gradient-to-br rounded-full flex items-center justify-center mx-auto mb-6 ${benefit.color === 'orange'
-                                            ? 'from-primary-orange to-lemon-green'
-                                            : 'from-lemon-green to-primary-orange'
-                                            }`}>
+                                        <div
+                                            className={`w-20 h-20 bg-gradient-to-br rounded-full flex items-center justify-center mx-auto mb-6 ${
+                                                benefit.color === 'orange'
+                                                    ? 'from-primary-orange to-lemon-green'
+                                                    : 'from-lemon-green to-primary-orange'
+                                            }`}
+                                        >
                                             <Icon className="text-3xl text-white" />
                                         </div>
                                         <h3 className="mb-3 text-xl font-bold text-dark-blue">
@@ -248,15 +291,15 @@ const Products = () => {
                     buttons={[
                         {
                             text: t('products.cta.contactExpert'),
-                            to: "/contact",
-                            icon: "Phone",
-                            className: "bg-white text-primary-orange hover:bg-gray-50"
+                            to: '/contact',
+                            icon: 'Phone',
+                            className: 'bg-white text-primary-orange hover:bg-gray-50'
                         },
                         {
                             text: t('products.cta.downloadCatalog'),
-                            to: "/contact",
-                            icon: "Download",
-                            className: "bg-dark-blue text-white hover:bg-blue-900"
+                            to: '/contact',
+                            icon: 'Download',
+                            className: 'bg-dark-blue text-white hover:bg-blue-900'
                         }
                     ]}
                 />

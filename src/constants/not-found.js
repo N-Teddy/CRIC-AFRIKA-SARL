@@ -1,11 +1,11 @@
 // src/constants/not-found.js
-import { Wrench, Phone, Package, Home } from "lucide-react";
+import { Wrench, Phone, Package, Home } from 'lucide-react'
 
 export const quickLinks = [
     {
         icon: Home,
         title: 'Accueil',
-        description: 'Retour à la page d\'accueil',
+        description: "Retour à la page d'accueil",
         link: '/',
         color: 'from-primary-orange to-lemon-green',
         key: 'home'
@@ -33,8 +33,8 @@ export const quickLinks = [
         link: '/contact',
         color: 'from-lemon-green to-primary-orange',
         key: 'contact'
-    },
-];
+    }
+]
 
 export const popularPages = [
     { name: 'Groupes Électrogènes', link: '/products' },
@@ -42,5 +42,5 @@ export const popularPages = [
     { name: 'Nos Réalisations', link: '/realisations' },
     { name: 'À Propos', link: '/about' },
     { name: 'Maintenance & SAV', link: '/services' },
-    { name: 'Demander un Devis', link: '/contact' },
-];
+    { name: 'Demander un Devis', link: '/contact' }
+]

@@ -1,6 +1,23 @@
 // src/constants/products.js
-import { Headset } from "lucide-react"
-import { Award, Bolt, Circle, Cog, Droplets, FireExtinguisher, Forklift, Gauge, Microchip, Plug, Shield, Ship, Star, ToolCase, Wine, Wrench } from "lucide-react"
+import { Headset } from 'lucide-react'
+import {
+    Award,
+    Bolt,
+    Circle,
+    Cog,
+    Droplets,
+    FireExtinguisher,
+    Forklift,
+    Gauge,
+    Microchip,
+    Plug,
+    Shield,
+    Ship,
+    Star,
+    ToolCase,
+    Wine,
+    Wrench
+} from 'lucide-react'
 
 export const products = [
     {
@@ -8,7 +25,8 @@ export const products = [
         key: 'generators',
         icon: Bolt,
         title: 'Groupes Électrogènes Industriels',
-        description: 'Solutions d\'alimentation électrique fiables et performantes pour vos installations industrielles. Nos groupes électrogènes sont conçus pour fonctionner en continu dans les conditions les plus exigeantes.',
+        description:
+            "Solutions d'alimentation électrique fiables et performantes pour vos installations industrielles. Nos groupes électrogènes sont conçus pour fonctionner en continu dans les conditions les plus exigeantes.",
         features: [
             'Puissances de 10 kVA à 3000 kVA',
             'Moteurs diesel de marques réputées',
@@ -25,7 +43,8 @@ export const products = [
         key: 'compressors',
         icon: Cog,
         title: 'Compresseurs à Vis et à Piston Industriels',
-        description: 'Compresseurs industriels robustes pour applications exigeantes. Solutions d\'air comprimé efficaces et économiques pour tous types d\'industries.',
+        description:
+            "Compresseurs industriels robustes pour applications exigeantes. Solutions d'air comprimé efficaces et économiques pour tous types d'industries.",
         features: [
             'Compresseurs à vis rotatifs',
             'Compresseurs à piston alternatifs',
@@ -42,11 +61,12 @@ export const products = [
         key: 'fireSafety',
         icon: FireExtinguisher,
         title: 'Équipements Sécurité Incendie',
-        description: 'Systèmes complets de protection et sécurité incendie pour vos installations industrielles. Conformes aux normes internationales de sécurité.',
+        description:
+            'Systèmes complets de protection et sécurité incendie pour vos installations industrielles. Conformes aux normes internationales de sécurité.',
         features: [
             'Extincteurs tous types (CO2, poudre, mousse)',
             'Systèmes de détection incendie',
-            'Sprinklers et systèmes d\'extinction automatique',
+            "Sprinklers et systèmes d'extinction automatique",
             'Installation et formation du personnel'
         ],
         image: 'https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?w=800',
@@ -59,7 +79,8 @@ export const products = [
         key: 'ppe',
         icon: Shield,
         title: 'Équipements Protection Individuelle (EPI)',
-        description: 'Gamme complète d\'équipements de protection individuelle pour assurer la sécurité de vos équipes sur tous les sites industriels.',
+        description:
+            "Gamme complète d'équipements de protection individuelle pour assurer la sécurité de vos équipes sur tous les sites industriels.",
         features: [
             'Casques, lunettes et protections auditives',
             'Gants de protection tous types',
@@ -76,7 +97,8 @@ export const products = [
         key: 'pumping',
         icon: Droplets,
         title: 'Matériels de Pompage Industriel',
-        description: 'Pompes industrielles haute performance pour le transfert de liquides, eaux usées, produits chimiques et applications spéciales.',
+        description:
+            'Pompes industrielles haute performance pour le transfert de liquides, eaux usées, produits chimiques et applications spéciales.',
         features: [
             'Pompes centrifuges et volumétriques',
             'Pompes submersibles et de surface',
@@ -93,7 +115,8 @@ export const products = [
         key: 'handling',
         icon: Forklift,
         title: 'Engins de Manutention',
-        description: 'Équipements de manutention et de levage pour optimiser vos opérations logistiques et industrielles.',
+        description:
+            'Équipements de manutention et de levage pour optimiser vos opérations logistiques et industrielles.',
         features: [
             'Chariots élévateurs électriques et thermiques',
             'Transpalettes manuels et électriques',
@@ -110,7 +133,8 @@ export const products = [
         key: 'motors',
         icon: Circle,
         title: 'Moteurs Électriques',
-        description: 'Moteurs électriques industriels haute performance pour toutes applications. Solutions fiables et économes en énergie.',
+        description:
+            'Moteurs électriques industriels haute performance pour toutes applications. Solutions fiables et économes en énergie.',
         features: [
             'Moteurs asynchrones triphasés',
             'Moteurs à courant continu',
@@ -127,7 +151,8 @@ export const products = [
         key: 'gearboxes',
         icon: Cog,
         title: 'Moto-réducteurs',
-        description: 'Moto-réducteurs industriels pour transmission de puissance optimale. Solutions compactes et efficaces pour vos machines.',
+        description:
+            'Moto-réducteurs industriels pour transmission de puissance optimale. Solutions compactes et efficaces pour vos machines.',
         features: [
             'Réducteurs à engrenages hélicoïdaux',
             'Réducteurs à vis sans fin',
@@ -144,7 +169,8 @@ export const products = [
         key: 'fillingMachines',
         icon: Wine,
         title: 'Souffleuses, Boucheuses et Remplisseuses',
-        description: 'Équipements de conditionnement automatisés pour l\'industrie agroalimentaire, pharmaceutique et cosmétique.',
+        description:
+            "Équipements de conditionnement automatisés pour l'industrie agroalimentaire, pharmaceutique et cosmétique.",
         features: [
             'Souffleuses de bouteilles PET',
             'Remplisseuses volumétriques et pondérales',
@@ -161,7 +187,8 @@ export const products = [
         key: 'transformers',
         icon: Plug,
         title: 'Transformateurs',
-        description: 'Transformateurs électriques industriels pour distribution et adaptation de tension. Solutions fiables pour vos réseaux électriques.',
+        description:
+            'Transformateurs électriques industriels pour distribution et adaptation de tension. Solutions fiables pour vos réseaux électriques.',
         features: [
             'Transformateurs de distribution MT/BT',
             'Transformateurs secs et à huile',
@@ -214,7 +241,7 @@ export const benefits = [
     {
         icon: ToolCase,
         title: 'Installation Professionnelle',
-        description: 'Équipe technique qualifiée pour l\'installation et la mise en service',
+        description: "Équipe technique qualifiée pour l'installation et la mise en service",
         color: 'orange',
         key: 'installation'
     },

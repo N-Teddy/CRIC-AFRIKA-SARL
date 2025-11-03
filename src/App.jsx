@@ -10,31 +10,31 @@ import './styles/global.css'
 import { TranslationProvider } from './context/TranslationContext'
 
 function App() {
-  return (
-    <HelmetProvider>
-      <TranslationProvider>
-      <Router>
-        <div className="min-h-screen bg-white">
-          <Header />
-          <main>
-            <Routes>
-              {routes.map((route) => (
-                <Route
-                  key={route.path}
-                  path={route.path}
-                  element={route.element}
-                />
-              ))}
-            </Routes>
-          </main>
-          <Footer />
-          <ScrollToTop />
-          <WhatsAppButton />
-        </div>
-        </Router>
-      </TranslationProvider>
-    </HelmetProvider>
-  )
+    return (
+        <HelmetProvider>
+            <TranslationProvider>
+                <Router>
+                    <div className="min-h-screen bg-white">
+                        <Header />
+                        <main>
+                            <Routes>
+                                {routes.map(route => (
+                                    <Route
+                                        key={route.path}
+                                        path={route.path}
+                                        element={route.element}
+                                    />
+                                ))}
+                            </Routes>
+                        </main>
+                        <Footer />
+                        <ScrollToTop />
+                        <WhatsAppButton />
+                    </div>
+                </Router>
+            </TranslationProvider>
+        </HelmetProvider>
+    )
 }
 
 export default App

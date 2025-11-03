@@ -1,7 +1,19 @@
 // src/constants/realisations.js
-import { Zap } from "lucide-react"
-import { Battery } from "lucide-react"
-import { BatteryCharging, Bolt, Bot, Building, HardHat, Hotel, Ship, Sprout, ThumbsUp, ToolCase, University } from "lucide-react"
+import { Zap } from 'lucide-react'
+import { Battery } from 'lucide-react'
+import {
+    BatteryCharging,
+    Bolt,
+    Bot,
+    Building,
+    HardHat,
+    Hotel,
+    Ship,
+    Sprout,
+    ThumbsUp,
+    ToolCase,
+    University
+} from 'lucide-react'
 
 export const projects = [
     {
@@ -52,7 +64,7 @@ export const projects = [
         id: 5,
         title: 'Centre Commercial - Douala',
         category: 'electrical',
-        description: 'Installation de 8 tableaux électriques et système de gestion d\'énergie',
+        description: "Installation de 8 tableaux électriques et système de gestion d'énergie",
         image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800',
         date: 'Septembre 2023',
         icon: Bolt,
@@ -74,7 +86,7 @@ export const projects = [
         id: 7,
         title: 'Brasserie - Douala',
         category: 'automation',
-        description: 'Automatisation ligne d\'embouteillage avec supervision centralisée',
+        description: "Automatisation ligne d'embouteillage avec supervision centralisée",
         image: 'https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?w=800',
         date: 'Juillet 2023',
         icon: Bot,
@@ -109,21 +121,24 @@ export const testimonials = [
     {
         name: 'Jean-Pierre MBARGA',
         position: 'Directeur Technique, Usine Agroalimentaire',
-        content: 'CRIC Africa a réalisé l\'automatisation complète de notre ligne de production. Professionnalisme et expertise remarquables. Je recommande vivement!',
+        content:
+            "CRIC Africa a réalisé l'automatisation complète de notre ligne de production. Professionnalisme et expertise remarquables. Je recommande vivement!",
         rating: 5,
         key: 'jean'
     },
     {
         name: 'Marie NKOLO',
         position: 'Responsable Maintenance, Hôpital Central',
-        content: 'L\'installation de nos groupes électrogènes a été réalisée dans les délais. Le service après-vente est excellent. Équipe très réactive!',
+        content:
+            "L'installation de nos groupes électrogènes a été réalisée dans les délais. Le service après-vente est excellent. Équipe très réactive!",
         rating: 5,
         key: 'marie'
     },
     {
         name: 'Paul EKANI',
         position: 'Gérant, Complexe Hôtelier',
-        content: 'Installation électrique impeccable pour notre hôtel. Travail soigné, respect des normes et équipe très professionnelle. Merci CRIC Africa!',
+        content:
+            'Installation électrique impeccable pour notre hôtel. Travail soigné, respect des normes et équipe très professionnelle. Merci CRIC Africa!',
         rating: 5,
         key: 'paul'
     }
@@ -133,7 +148,7 @@ export const industries = [
     {
         icon: Building,
         name: 'Industrie Manufacturière',
-        description: 'Usines de production, lignes d\'assemblage',
+        description: "Usines de production, lignes d'assemblage",
         key: 'manufacturing'
     },
     {
@@ -160,31 +175,36 @@ export const processSteps = [
     {
         number: 1,
         title: 'Étude et Analyse',
-        description: 'Visite sur site, analyse des besoins, étude de faisabilité technique et financière. Nous prenons le temps de comprendre vos contraintes et objectifs.',
+        description:
+            'Visite sur site, analyse des besoins, étude de faisabilité technique et financière. Nous prenons le temps de comprendre vos contraintes et objectifs.',
         key: 'analysis'
     },
     {
         number: 2,
         title: 'Conception et Planification',
-        description: 'Élaboration des plans techniques, dimensionnement des équipements, planification détaillée avec jalons et livrables clairement définis.',
+        description:
+            'Élaboration des plans techniques, dimensionnement des équipements, planification détaillée avec jalons et livrables clairement définis.',
         key: 'planning'
     },
     {
         number: 3,
         title: 'Approvisionnement',
-        description: 'Sélection et importation des équipements de qualité auprès de nos partenaires internationaux. Contrôle qualité rigoureux à la réception.',
+        description:
+            'Sélection et importation des équipements de qualité auprès de nos partenaires internationaux. Contrôle qualité rigoureux à la réception.',
         key: 'procurement'
     },
     {
         number: 4,
         title: 'Installation et Mise en Service',
-        description: 'Réalisation des travaux par nos équipes qualifiées, tests et essais complets, mise en service progressive avec accompagnement de vos équipes.',
+        description:
+            'Réalisation des travaux par nos équipes qualifiées, tests et essais complets, mise en service progressive avec accompagnement de vos équipes.',
         key: 'installation'
     },
     {
         number: 5,
         title: 'Suivi et Maintenance',
-        description: 'Formation de vos équipes, documentation complète, service après-vente réactif et contrats de maintenance personnalisés pour assurer la pérennité.',
+        description:
+            'Formation de vos équipes, documentation complète, service après-vente réactif et contrats de maintenance personnalisés pour assurer la pérennité.',
         key: 'maintenance'
     }
 ]

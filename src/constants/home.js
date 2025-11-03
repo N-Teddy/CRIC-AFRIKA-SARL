@@ -1,22 +1,22 @@
 // src/constants/home.js
-import { CheckCircle } from "lucide-react";
-import { Factory } from "lucide-react";
-import { Shield } from "lucide-react";
-import { Wind } from "lucide-react";
-import { Truck } from "lucide-react";
-import { Droplet } from "lucide-react";
-import { Zap } from "lucide-react";
-import { Wrench } from "lucide-react";
-import { Star } from "lucide-react";
-import { Users } from "lucide-react";
-import { Award } from "lucide-react";
+import { CheckCircle } from 'lucide-react'
+import { Factory } from 'lucide-react'
+import { Shield } from 'lucide-react'
+import { Wind } from 'lucide-react'
+import { Truck } from 'lucide-react'
+import { Droplet } from 'lucide-react'
+import { Zap } from 'lucide-react'
+import { Wrench } from 'lucide-react'
+import { Star } from 'lucide-react'
+import { Users } from 'lucide-react'
+import { Award } from 'lucide-react'
 
 export const stats = [
-    { number: 5, label: 'Années d\'Expérience', icon: Award, suffix: '+', key: 'experience' },
+    { number: 5, label: "Années d'Expérience", icon: Award, suffix: '+', key: 'experience' },
     { number: 20, label: 'Clients Satisfaits', icon: Users, suffix: '+', key: 'clients' },
     { number: 25, label: 'Projets Réalisés', icon: CheckCircle, suffix: '+', key: 'projects' },
-    { number: 10, label: 'Experts Qualifiés', icon: Star, suffix: '', key: 'experts' },
-];
+    { number: 10, label: 'Experts Qualifiés', icon: Star, suffix: '', key: 'experts' }
+]
 
 export const services = [
     {
@@ -43,11 +43,11 @@ export const services = [
     {
         icon: Zap,
         title: 'Automatisation',
-        description: 'Solutions d\'automatisation industrielle',
+        description: "Solutions d'automatisation industrielle",
         color: 'from-lemon-green to-primary-orange',
         key: 'automation'
-    },
-];
+    }
+]
 
 export const products = [
     { icon: Zap, name: 'Groupes Électrogènes', count: '50+ Modèles', key: 'generators' },
@@ -55,8 +55,8 @@ export const products = [
     { icon: Shield, name: 'Équipements Sécurité', count: '40+ Produits', key: 'safety' },
     { icon: Droplet, name: 'Matériels de Pompage', count: '25+ Modèles', key: 'pumping' },
     { icon: Truck, name: 'Engins de Manutention', count: '20+ Modèles', key: 'handling' },
-    { icon: Factory, name: 'Transformateurs', count: '15+ Modèles', key: 'transformers' },
-];
+    { icon: Factory, name: 'Transformateurs', count: '15+ Modèles', key: 'transformers' }
+]
 
 export const testimonials = [
     {
@@ -79,5 +79,5 @@ export const testimonials = [
         text: 'Installation électrique impeccable pour notre hôtel. Travail soigné et respect des normes.',
         rating: 5,
         key: 'paul'
-    },
-];
+    }
+]

@@ -1,1005 +1,1300 @@
 <!-- realisations.html - PROJECTS/PORTFOLIO PAGE -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Réalisations - CRIC Africa SARL | Projets Industriels au Cameroun</title>
-    <meta name="description"
-        content="Découvrez nos projets industriels réalisés au Cameroun. Installation électrique, maintenance, automatisation - CRIC Africa SARL.">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nos Réalisations - CRIC Africa SARL | Projets Industriels au Cameroun</title>
+        <meta
+            name="description"
+            content="Découvrez nos projets industriels réalisés au Cameroun. Installation électrique, maintenance, automatisation - CRIC Africa SARL."
+        />
 
         <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- Font Awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap"
-        rel="stylesheet">
+        <!-- Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-        }
+            body {
+                font-family: 'Inter', sans-serif;
+                overflow-x: hidden;
+            }
 
-        :root {
-            --primary-orange: #FF8C42;
-            --lemon-green: #A8D05F;
-            --dark-blue: #1A2B4A;
-            --light-gray: #F5F7FA;
-        }
+            :root {
+                --primary-orange: #ff8c42;
+                --lemon-green: #a8d05f;
+                --dark-blue: #1a2b4a;
+                --light-gray: #f5f7fa;
+            }
 
-        .orange-accent {
-            color: var(--primary-orange);
-        }
+            .orange-accent {
+                color: var(--primary-orange);
+            }
 
-        .green-accent {
-            color: var(--lemon-green);
-        }
+            .green-accent {
+                color: var(--lemon-green);
+            }
 
-        .text-dark-blue {
-            color: var(--dark-blue);
-        }
+            .text-dark-blue {
+                color: var(--dark-blue);
+            }
 
-        .bg-primary-orange {
-            background-color: var(--primary-orange);
-        }
+            .bg-primary-orange {
+                background-color: var(--primary-orange);
+            }
 
-        .bg-lemon-green {
-            background-color: var(--lemon-green);
-        }
+            .bg-lemon-green {
+                background-color: var(--lemon-green);
+            }
 
-        .bg-dark-blue {
-            background-color: var(--dark-blue);
-        }
+            .bg-dark-blue {
+                background-color: var(--dark-blue);
+            }
 
-        .bg-light-gray {
-            background-color: var(--light-gray);
-        }
+            .bg-light-gray {
+                background-color: var(--light-gray);
+            }
 
-        .btn-orange {
-            background: linear-gradient(135deg, var(--primary-orange) 0%, #ff7028 100%);
-            transition: all 0.3s ease;
-        }
+            .btn-orange {
+                background: linear-gradient(135deg, var(--primary-orange) 0%, #ff7028 100%);
+                transition: all 0.3s ease;
+            }
 
-        .btn-orange:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(255, 140, 66, 0.4);
-        }
+            .btn-orange:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 25px rgba(255, 140, 66, 0.4);
+            }
 
-        .btn-green {
-            background: linear-gradient(135deg, var(--lemon-green) 0%, #8fb84d 100%);
-            transition: all 0.3s ease;
-        }
+            .btn-green {
+                background: linear-gradient(135deg, var(--lemon-green) 0%, #8fb84d 100%);
+                transition: all 0.3s ease;
+            }
 
-        .btn-green:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(168, 208, 95, 0.4);
-        }
+            .btn-green:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 25px rgba(168, 208, 95, 0.4);
+            }
 
-        .hover-lift {
-            transition: all 0.3s ease;
-        }
+            .hover-lift {
+                transition: all 0.3s ease;
+            }
 
-        .hover-lift:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
+            .hover-lift:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            }
 
-        .mobile-menu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
+            .mobile-menu {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
 
-        .mobile-menu.active {
-            max-height: 500px;
-        }
+            .mobile-menu.active {
+                max-height: 500px;
+            }
 
-        header {
-            backdrop-filter: blur(10px);
-            background: rgba(26, 43, 74, 0.95);
-        }
+            header {
+                backdrop-filter: blur(10px);
+                background: rgba(26, 43, 74, 0.95);
+            }
 
-        .page-header {
-            background: linear-gradient(135deg, var(--dark-blue) 0%, #2d4a7c 50%, var(--primary-orange) 100%);
-        }
+            .page-header {
+                background: linear-gradient(
+                    135deg,
+                    var(--dark-blue) 0%,
+                    #2d4a7c 50%,
+                    var(--primary-orange) 100%
+                );
+            }
 
-        .project-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 1rem;
-        }
+            .project-card {
+                position: relative;
+                overflow: hidden;
+                border-radius: 1rem;
+            }
 
-        .project-card img {
-            transition: transform 0.5s ease;
-        }
+            .project-card img {
+                transition: transform 0.5s ease;
+            }
 
-        .project-card:hover img {
-            transform: scale(1.1);
-        }
+            .project-card:hover img {
+                transform: scale(1.1);
+            }
 
-        .project-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(26, 43, 74, 0.95), transparent);
-            padding: 2rem;
-            transform: translateY(60%);
-            transition: transform 0.3s ease;
-        }
+            .project-overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(to top, rgba(26, 43, 74, 0.95), transparent);
+                padding: 2rem;
+                transform: translateY(60%);
+                transition: transform 0.3s ease;
+            }
 
-        .project-card:hover .project-overlay {
-            transform: translateY(0);
-        }
+            .project-card:hover .project-overlay {
+                transform: translateY(0);
+            }
 
-        .filter-btn {
-            transition: all 0.3s ease;
-        }
+            .filter-btn {
+                transition: all 0.3s ease;
+            }
 
-        .filter-btn.active {
-            background: linear-gradient(135deg, var(--primary-orange), var(--lemon-green));
-            color: white;
-        }
+            .filter-btn.active {
+                background: linear-gradient(135deg, var(--primary-orange), var(--lemon-green));
+                color: white;
+            }
 
-        .stats-counter {
-            font-size: 3rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--primary-orange), var(--lemon-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-    </style>
-</head>
+            .stats-counter {
+                font-size: 3rem;
+                font-weight: 900;
+                background: linear-gradient(135deg, var(--primary-orange), var(--lemon-green));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+        </style>
+    </head>
 
-<body>
-    <!-- Header -->
-    <header class="fixed w-full top-0 z-50">
-        <nav class="container mx-auto px-4 lg:px-8 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <div
-                        class="w-12 h-12 bg-gradient-to-br from-primary-orange to-lemon-green rounded-lg flex items-center justify-center">
-                        <i class="fas fa-industry text-white text-xl"></i>
-                    </div>
-                    <div>
-                        <h1 class="text-2xl font-bold text-white">CRIC AFRICA</h1>
-                        <p class="text-xs text-gray-300 italic">Ensemble Énergisons L'Afrique</p>
-                    </div>
-                </div>
-
-                <ul class="hidden lg:flex space-x-8 text-white font-semibold">
-                    <li><a href="index.html" class="hover:text-primary-orange transition">Accueil</a></li>
-                    <li><a href="products.html" class="hover:text-lemon-green transition">Produits</a></li>
-                    <li><a href="services.html" class="hover:text-primary-orange transition">Services</a></li>
-                    <li><a href="realisations.html" class="text-primary-orange">Réalisations</a></li>
-                    <li><a href="about.html" class="hover:text-lemon-green transition">À Propos</a></li>
-                    <li><a href="contact.html" class="hover:text-primary-orange transition">Contact</a></li>
-                </ul>
-
-                <a href="contact.html"
-                    class="hidden lg:block btn-orange text-white px-6 py-3 rounded-full font-semibold">
-                    <i class="fas fa-phone mr-2"></i>Contactez-nous
-                </a>
-
-                <button onclick="toggleMobileMenu()" class="lg:hidden text-white text-2xl">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-
-            <div id="mobileMenu" class="mobile-menu lg:hidden mt-4">
-                <ul class="flex flex-col space-y-4 text-white font-semibold bg-dark-blue/50 p-6 rounded-lg">
-                    <li><a href="index.html" class="block hover:text-primary-orange transition">Accueil</a></li>
-                    <li><a href="products.html" class="block hover:text-lemon-green transition">Produits</a></li>
-                    <li><a href="services.html" class="block hover:text-primary-orange transition">Services</a></li>
-                    <li><a href="realisations.html" class="block text-primary-orange">Réalisations</a></li>
-                    <li><a href="about.html" class="block hover:text-lemon-green transition">À Propos</a></li>
-                    <li><a href="contact.html" class="block hover:text-primary-orange transition">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Page Header -->
-    <section class="page-header pt-32 pb-20">
-        <div class="container mx-auto px-4 lg:px-8 text-center">
-            <h1 class="text-5xl lg:text-6xl font-bold text-white mb-6">Nos <span
-                    class="green-accent">Réalisations</span></h1>
-            <p class="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
-                Découvrez nos projets industriels réalisés avec succès au Cameroun et en Afrique Centrale
-            </p>
-            <div class="flex justify-center space-x-2 text-white">
-                <a href="index.html" class="hover:text-primary-orange transition">Accueil</a>
-                <span>/</span>
-                <span class="orange-accent">Réalisations</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="stats-counter mb-2">150+</div>
-                    <p class="text-gray-600 font-semibold">Projets Réalisés</p>
-                </div>
-                <div class="text-center">
-                    <div class="stats-counter mb-2">80+</div>
-                    <p class="text-gray-600 font-semibold">Clients Satisfaits</p>
-                </div>
-                <div class="text-center">
-                    <div class="stats-counter mb-2">15+</div>
-                    <p class="text-gray-600 font-semibold">Années d'Expérience</p>
-                </div>
-                <div class="text-center">
-                    <div class="stats-counter mb-2">98%</div>
-                    <p class="text-gray-600 font-semibold">Taux de Satisfaction</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Filter Buttons -->
-    <section class="py-8 bg-light-gray">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="flex flex-wrap justify-center gap-4">
-                <button class="filter-btn active px-6 py-3 rounded-full bg-white font-semibold" data-filter="all">
-                    <i class="fas fa-th mr-2"></i>Tous les Projets
-                </button>
-                <button class="filter-btn px-6 py-3 rounded-full bg-white font-semibold" data-filter="electrical">
-                    <i class="fas fa-bolt mr-2"></i>Installation Électrique
-                </button>
-                <button class="filter-btn px-6 py-3 rounded-full bg-white font-semibold" data-filter="automation">
-                    <i class="fas fa-robot mr-2"></i>Automatisation
-                </button>
-                <button class="filter-btn px-6 py-3 rounded-full bg-white font-semibold" data-filter="maintenance">
-                    <i class="fas fa-tools mr-2"></i>Maintenance
-                </button>
-                <button class="filter-btn px-6 py-3 rounded-full bg-white font-semibold" data-filter="generators">
-                    <i class="fas fa-charging-station mr-2"></i>Groupes Électrogènes
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Grid -->
-    <section class="py-20 bg-light-gray">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <!-- Project 1 -->
-                <div class="project-card hover-lift" data-category="electrical">
-                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800"
-                        alt="Installation Électrique Usine" class="w-full h-80 object-cover">
-                    <div class="project-overlay">
-                        <span class="inline-block bg-primary-orange text-white px-3 py-1 rounded-full text-sm mb-3">
-                            Installation Électrique
-                        </span>
-                        <h3 class="text-2xl font-bold text-white mb-2">Usine de Production - Douala</h3>
-                        <p class="text-gray-300 mb-4">Installation complète du réseau électrique MT/BT pour une usine de
-                            5000m²</p>
-                        <div class="flex items-center text-gray-300 text-sm">
-                            <i class="fas fa-calendar mr-2"></i>
-                            <span>Janvier 2024</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card hover-lift" data-category="generators">
-                    <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800"
-                        alt="Groupe Électrogène" class="w-full h-80 object-cover">
-                    <div class="project-overlay">
-                        <span class="inline-block bg-lemon-green text-white px-3 py-1 rounded-full text-sm mb-3">
-                            Groupe Électrogène
-                        </span>
-                        <h3 class="text-2xl font-bold text-white mb-2">Hôpital Central - Yaoundé</h3>
-                        <p class="text-gray-300 mb-4">Installation de 2 groupes électrogènes 500 kVA avec système de
-                            couplage</p>
-                        <div class="flex items-center text-gray-300 text-sm">
-                            <i class="fas fa-calendar mr-2"></i>
-                            <span>Décembre 2023</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card hover-lift" data-category="automation">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800"
-                        alt="Automatisation Usine" class="w-full h-80 object-cover">
-                    <div class="project-overlay">
-                        <span class="inline-block bg-primary-orange text-white px-3 py-1 rounded-full text-sm mb-3">
-                            Automatisation
-                        </span>
-                        <h3 class="text-2xl font-bold text-white mb-2">Usine Agroalimentaire - Douala</h3>
-                        <p class="text-gray-300 mb-4">Automatisation complète de la ligne de production avec système
-                            SCADA</p>
-                        <div class="flex items-center text-gray-300 text-sm">
-                            <i class="fas fa-calendar mr-2"></i>
-                            <span>Novembre 2023</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card hover-lift" data-category="maintenance">
-                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800"
-                        alt="Maintenance Industrielle" class="w-full h-80 object-cover">
-                    <div class="project-overlay">
-                        <span class="inline-block bg-lemon-green text-white px-3 py-1 rounded-full text-sm mb-3">
-                            Maintenance
-                        </span>
-                        <h3 class="text-2xl font-bold text-white mb-2">Complexe Industriel - Limbé</h3>
-                        <p class="text-gray-300 mb-4">Contrat de maintenance préventive pour parc de 15 équipements</p>
-                        <div class="flex items-center text-gray-300 text-sm">
-                            <i class="fas fa-calendar mr-2"></i>
-                            <span>Octobre 2023</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="project-card hover-lift" data-category="electrical">
-                    <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800"
-                        alt="Tableau Électrique" class="w-full h-80 object-cover">
-                    <div class="project-overlay">
-                        <span class="inline-block bg-primary-orange text-white px-3 py-1 rounded-full text-sm mb-3">
-                            Installation Électrique
-                        </span>
-                        <h3 class="text-2xl font-bold text-white mb-2">Centre Commercial - Douala</h3>
-                        <p class="text-gray-300 mb-4">Installation de 8 tableaux électriques et système de gestion
-                            d'énergie</p>
-                        <div class="flex items-center text-gray-300 text-sm">
-                            <i class="fas fa-calendar mr-2"></i>
-                            <span>Septembre 2023</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="project-card hover-lift" data-category="generators">
-                    <img src="https://images.unsplash.com/photo-1621905252472-9b6e78c09a0f?w=800"
-                        alt="Groupe Électrogène Industriel" class="w-full h-80 object-cover">
-                    <div class="project-overlay">
-                        <span class="inline-block bg-lemon-green text-white px-3 py-1 rounded-full text-sm mb-3">
-                            Groupe Électrogène
-                        </span>
-                        <h3 class="text-2xl font-bold text-white mb-2">Usine Textile - Garoua</h3>
-                        <p class="text-gray-300 mb-4">Installation groupe électrogène 1000 kVA avec paramétrage complet
-                        </p>
-                        <div class="flex items-center text-gray-300 text-sm">
-                            <i class="fas fa-calendar mr-2"></i>
-                            <span>Août 2023</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 7 -->
-                <div class="project-card hover-lift" data-category="automation">
-                    <img src="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?w=800"
-                        alt="Système Automatisé" class="w-full h-80 object-cover">
-                    <div class="project-overlay">
-                        <span class="inline-block bg-primary-orange text-white px-3 py-1 rounded-full text-sm mb-3">
-                            Automatisation
-                        </span>
-                        <h3 class="text-2xl font-bold text-white mb-2">Brasserie - Douala</h3>
-                        <p class="text-gray-300 mb-4">Automatisation ligne d'embouteillage avec supervision centralisée
-                        </p>
-                        <div class="flex items-center text-gray-300 text-sm">
-                            <i class="fas fa-calendar mr-2"></i>
-                            <span>Juillet 2023</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 8 -->
-                <div class="project-card hover-lift" data-category="electrical">
-                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800"
-                        alt="Installation MT/BT" class="w-full h-80 object-cover">
-                    <div class="project-overlay">
-                        <span class="inline-block bg-lemon-green text-white px-3 py-1 rounded-full text-sm mb-3">
-                            Installation Électrique
-                        </span>
-                        <h3 class="text-2xl font-bold text-white mb-2">Complexe Hôtelier - Kribi</h3>
-                        <p class="text-gray-300 mb-4">Réseau électrique complet avec transformateur 630 kVA</p>
-                        <div class="flex items-center text-gray-300 text-sm">
-                            <i class="fas fa-calendar mr-2"></i>
-                            <span>Juin 2023</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 9 -->
-                <div class="project-card hover-lift" data-category="maintenance">
-                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800"
-                        alt="Maintenance Équipements" class="w-full h-80 object-cover">
-                    <div class="project-overlay">
-                        <span class="inline-block bg-primary-orange text-white px-3 py-1 rounded-full text-sm mb-3">
-                            Maintenance
-                        </span>
-                        <h3 class="text-2xl font-bold text-white mb-2">Port Autonome - Douala</h3>
-                        <p class="text-gray-300 mb-4">Maintenance préventive de 25 engins de manutention portuaire</p>
-                        <div class="flex items-center text-gray-300 text-sm">
-                            <i class="fas fa-calendar mr-2"></i>
-                            <span>Mai 2023</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 10 -->
-                <div class="project-card hover-lift" data-category="generators">
-                    <img src="https://images.unsplash.com/photo-1621905252472-9b6e78c09a0f?w=800"
-                        alt="Installation Groupe" class="w-full h-80 object-cover">
-                    <div class="project-overlay">
-                        <span class="inline-block bg-lemon-green text-white px-3 py-1 rounded-full text-sm mb-3">
-                            Groupe Électrogène
-                        </span>
-                        <h3 class="text-2xl font-bold text-white mb-2">Banque Centrale - Yaoundé</h3>
-                        <p class="text-gray-300 mb-4">Installation de 3 groupes 750 kVA en configuration redondante</p>
-                        <div class="flex items-center text-gray-300 text-sm">
-                            <i class="fas fa-calendar mr-2"></i>
-                            <span>Avril 2023</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 11 -->
-                <div class="project-card hover-lift" data-category="automation">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800"
-                        alt="Contrôle Automatisé" class="w-full h-80 object-cover">
-                    <div class="project-overlay">
-                        <span class="inline-block bg-primary-orange text-white px-3 py-1 rounded-full text-sm mb-3">
-                            Automatisation
-                        </span>
-                        <h3 class="text-2xl font-bold text-white mb-2">Usine Pharmaceutique - Douala</h3>
-                        <p class="text-gray-300 mb-4">Système d'automatisation conforme aux normes GMP</p>
-                        <div class="flex items-center text-gray-300 text-sm">
-                            <i class="fas fa-calendar mr-2"></i>
-                            <span>Mars 2023</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 12 -->
-                <div class="project-card hover-lift" data-category="electrical">
-                    <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800"
-                        alt="Réseau Électrique" class="w-full h-80 object-cover">
-                    <div class="project-overlay">
-                        <span class="inline-block bg-lemon-green text-white px-3 py-1 rounded-full text-sm mb-3">
-                            Installation Électrique
-                        </span>
-                        <h3 class="text-2xl font-bold text-white mb-2">Université - Buea</h3>
-                        <p class="text-gray-300 mb-4">Modernisation du réseau électrique de 3 bâtiments</p>
-                        <div class="flex items-center text-gray-300 text-sm">
-                            <i class="fas fa-calendar mr-2"></i>
-                            <span>Février 2023</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Load More Button -->
-            <div class="text-center mt-12">
-                <button class="btn-orange text-white px-8 py-4 rounded-full font-bold text-lg">
-                    <i class="fas fa-plus mr-2"></i>Charger Plus de Projets
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Client Testimonials -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">Ce Que Disent <span
-                        class="orange-accent">Nos Clients</span></h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Témoignages de satisfaction de nos partenaires</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-light-gray rounded-2xl p-8 hover-lift">
-                    <div class="flex items-center mb-6">
+    <body>
+        <!-- Header -->
+        <header class="fixed w-full top-0 z-50">
+            <nav class="container mx-auto px-4 lg:px-8 py-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center space-x-3">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-user text-white text-2xl"></i>
+                            class="w-12 h-12 bg-gradient-to-br from-primary-orange to-lemon-green rounded-lg flex items-center justify-center"
+                        >
+                            <i class="fas fa-industry text-white text-xl"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-dark-blue">Jean-Pierre MBARGA</h4>
-                            <p class="text-sm text-gray-600">Directeur Technique, Usine Agroalimentaire</p>
+                            <h1 class="text-2xl font-bold text-white">CRIC AFRICA</h1>
+                            <p class="text-xs text-gray-300 italic">
+                                Ensemble Énergisons L'Afrique
+                            </p>
                         </div>
                     </div>
-                    <div class="flex mb-4">
-                        <i class="fas fa-star orange-accent"></i>
-                        <i class="fas fa-star orange-accent"></i>
-                        <i class="fas fa-star orange-accent"></i>
-                        <i class="fas fa-star orange-accent"></i>
-                        <i class="fas fa-star orange-accent"></i>
-                    </div>
-                    <p class="text-gray-600 italic leading-relaxed">
-                        "CRIC Africa a réalisé l'automatisation complète de notre ligne de production. Professionnalisme
-                        et expertise remarquables. Je recommande vivement!"
-                    </p>
-                </div>
 
-                <!-- Testimonial 2 -->
-                <div class="bg-light-gray rounded-2xl p-8 hover-lift">
-                    <div class="flex items-center mb-6">
-                        <div
-                            class="w-16 h-16 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-user text-white text-2xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-dark-blue">Marie NKOLO</h4>
-                            <p class="text-sm text-gray-600">Responsable Maintenance, Hôpital Central</p>
-                        </div>
-                    </div>
-                    <div class="flex mb-4">
-                        <i class="fas fa-star green-accent"></i>
-                        <i class="fas fa-star green-accent"></i>
-                        <i class="fas fa-star green-accent"></i>
-                        <i class="fas fa-star green-accent"></i>
-                        <i class="fas fa-star green-accent"></i>
-                    </div>
-                    <p class="text-gray-600 italic leading-relaxed">
-                        "L'installation de nos groupes électrogènes a été réalisée dans les délais. Le service
-                        après-vente est excellent. Équipe très réactive!"
-                    </p>
-                </div>
+                    <ul class="hidden lg:flex space-x-8 text-white font-semibold">
+                        <li>
+                            <a href="index.html" class="hover:text-primary-orange transition"
+                                >Accueil</a
+                            >
+                        </li>
+                        <li>
+                            <a href="products.html" class="hover:text-lemon-green transition"
+                                >Produits</a
+                            >
+                        </li>
+                        <li>
+                            <a href="services.html" class="hover:text-primary-orange transition"
+                                >Services</a
+                            >
+                        </li>
+                        <li>
+                            <a href="realisations.html" class="text-primary-orange">Réalisations</a>
+                        </li>
+                        <li>
+                            <a href="about.html" class="hover:text-lemon-green transition"
+                                >À Propos</a
+                            >
+                        </li>
+                        <li>
+                            <a href="contact.html" class="hover:text-primary-orange transition"
+                                >Contact</a
+                            >
+                        </li>
+                    </ul>
 
-                <!-- Testimonial 3 -->
-                <div class="bg-light-gray rounded-2xl p-8 hover-lift">
-                    <div class="flex items-center mb-6">
-                        <div
-                            class="w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-user text-white text-2xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-dark-blue">Paul EKANI</h4>
-                            <p class="text-sm text-gray-600">Gérant, Complexe Hôtelier</p>
-                        </div>
-                    </div>
-                    <div class="flex mb-4">
-                        <i class="fas fa-star orange-accent"></i>
-                        <i class="fas fa-star orange-accent"></i>
-                        <i class="fas fa-star orange-accent"></i>
-                        <i class="fas fa-star orange-accent"></i>
-                        <i class="fas fa-star orange-accent"></i>
-                    </div>
-                    <p class="text-gray-600 italic leading-relaxed"> "Installation électrique impeccable pour notre hôtel. Travail soigné,
-                        respect des normes et équipe très professionnelle. Merci CRIC Africa!" </p>
-                    </div>
-                    </div>
-                    </div>
-                    </section>
-                    <!-- Process Timeline -->
-                    <section class="py-20 bg-light-gray">
-                        <div class="container mx-auto px-4 lg:px-8">
-                            <div class="text-center mb-16">
-                                <h2 class="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">Notre <span
-                                        class="green-accent">Méthodologie</span></h2>
-                                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Un processus éprouvé pour garantir le succès de vos
-                                    projets</p>
-                            </div>
-
-                            <div class="max-w-4xl mx-auto">
-                                <!-- Timeline Item 1 -->
-                                <div class="flex items-start mb-12">
-                                    <div
-                                        class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6">
-                                        1
-                                    </div>
-                                    <div class="flex-grow">
-                                        <h3 class="text-2xl font-bold text-dark-blue mb-2">Étude et Analyse</h3>
-                                        <p class="text-gray-600 leading-relaxed">
-                                            Visite sur site, analyse des besoins, étude de faisabilité technique et financière. Nous prenons
-                                            le temps de comprendre vos contraintes et objectifs.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <!-- Timeline Item 2 -->
-                                <div class="flex items-start mb-12">
-                                    <div
-                                        class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6">
-                                        2
-                                    </div>
-                                    <div class="flex-grow">
-                                        <h3 class="text-2xl font-bold text-dark-blue mb-2">Conception et Planification</h3>
-                                        <p class="text-gray-600 leading-relaxed">
-                                            Élaboration des plans techniques, dimensionnement des équipements, planification détaillée avec
-                                            jalons et livrables clairement définis.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <!-- Timeline Item 3 -->
-                                <div class="flex items-start mb-12">
-                                    <div
-                                        class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6">
-                                        3
-                                    </div>
-                                    <div class="flex-grow">
-                                        <h3 class="text-2xl font-bold text-dark-blue mb-2">Approvisionnement</h3>
-                                        <p class="text-gray-600 leading-relaxed">
-                                            Sélection et importation des équipements de qualité auprès de nos partenaires internationaux.
-                                            Contrôle qualité rigoureux à la réception.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <!-- Timeline Item 4 -->
-                                <div class="flex items-start mb-12">
-                                    <div
-                                        class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6">
-                                        4
-                                    </div>
-                                    <div class="flex-grow">
-                                        <h3 class="text-2xl font-bold text-dark-blue mb-2">Installation et Mise en Service</h3>
-                                        <p class="text-gray-600 leading-relaxed">
-                                            Réalisation des travaux par nos équipes qualifiées, tests et essais complets, mise en service
-                                            progressive avec accompagnement de vos équipes.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <!-- Timeline Item 5 -->
-                                <div class="flex items-start">
-                                    <div
-                                        class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6">
-                                        5
-                                    </div>
-                                    <div class="flex-grow">
-                                        <h3 class="text-2xl font-bold text-dark-blue mb-2">Suivi et Maintenance</h3>
-                                        <p class="text-gray-600 leading-relaxed">
-                                            Formation de vos équipes, documentation complète, service après-vente réactif et contrats de
-                                            maintenance personnalisés pour assurer la pérennité.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Industries Served -->
-                    <section class="py-20 bg-white">
-                        <div class="container mx-auto px-4 lg:px-8">
-                            <div class="text-center mb-16">
-                                <h2 class="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">Secteurs <span
-                                        class="orange-accent">d'Activité</span></h2>
-                                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Nous intervenons dans de nombreux secteurs industriels
-                                </p>
-                            </div>
-
-                            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                                <!-- Industry 1 -->
-                                <div class="text-center hover-lift">
-                                    <div
-                                        class="w-24 h-24 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                                        <i class="fas fa-industry text-white text-3xl"></i>
-                                    </div>
-                                    <h3 class="text-xl font-bold text-dark-blue mb-2">Industrie Manufacturière</h3>
-                                    <p class="text-gray-600">Usines de production, lignes d'assemblage</p>
-                                </div>
-
-                                <!-- Industry 2 -->
-                                <div class="text-center hover-lift">
-                                    <div
-                                        class="w-24 h-24 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                                        <i class="fas fa-hospital text-white text-3xl"></i>
-                                    </div>
-                                    <h3 class="text-xl font-bold text-dark-blue mb-2">Santé</h3>
-                                    <p class="text-gray-600">Hôpitaux, cliniques, centres médicaux</p>
-                                </div>
-
-                                <!-- Industry 3 -->
-                                <div class="text-center hover-lift">
-                                    <div
-                                        class="w-24 h-24 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                                        <i class="fas fa-hotel text-white text-3xl"></i>
-                                    </div>
-                                    <h3 class="text-xl font-bold text-dark-blue mb-2">Hôtellerie</h3>
-                                    <p class="text-gray-600">Hôtels, complexes touristiques</p>
-                                </div>
-
-                                <!-- Industry 4 -->
-                                <div class="text-center hover-lift">
-                                    <div
-                                        class="w-24 h-24 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                                        <i class="fas fa-building text-white text-3xl"></i>
-                                    </div>
-                                    <h3 class="text-xl font-bold text-dark-blue mb-2">Tertiaire</h3>
-                                    <p class="text-gray-600">Bureaux, centres commerciaux</p>
-                                </div>
-
-                                <!-- Industry 5 -->
-                                <div class="text-center hover-lift">
-                                    <div
-                                        class="w-24 h-24 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                                        <i class="fas fa-ship text-white text-3xl"></i>
-                                    </div>
-                                    <h3 class="text-xl font-bold text-dark-blue mb-2">Portuaire</h3>
-                                    <p class="text-gray-600">Ports, zones logistiques</p>
-                                </div>
-
-                                <!-- Industry 6 -->
-                                <div class="text-center hover-lift">
-                                    <div
-                                        class="w-24 h-24 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                                        <i class="fas fa-university text-white text-3xl"></i>
-                                    </div>
-                                    <h3 class="text-xl font-bold text-dark-blue mb-2">Éducation</h3>
-                                    <p class="text-gray-600">Universités, écoles, centres de formation</p>
-                                </div>
-
-                                <!-- Industry 7 -->
-                                <div class="text-center hover-lift">
-                                    <div
-                                        class="w-24 h-24 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                                        <i class="fas fa-seedling text-white text-3xl"></i>
-                                    </div>
-                                    <h3 class="text-xl font-bold text-dark-blue mb-2">Agroalimentaire</h3>
-                                    <p class="text-gray-600">Usines de transformation, brasseries</p>
-                                </div>
-
-                                <!-- Industry 8 -->
-                                <div class="text-center hover-lift">
-                                    <div
-                                        class="w-24 h-24 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                                        <i class="fas fa-hard-hat text-white text-3xl"></i>
-                                    </div>
-                                    <h3 class="text-xl font-bold text-dark-blue mb-2">BTP</h3>
-                                    <p class="text-gray-600">Chantiers, infrastructures</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- CTA Section -->
-                    <section class="py-20 bg-gradient-to-r from-primary-orange to-lemon-green">
-                        <div class="container mx-auto px-4 lg:px-8 text-center">
-                            <div class="max-w-4xl mx-auto">
-                                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">Votre Projet Mérite le Meilleur</h2>
-                                <p class="text-xl text-white/90 mb-8 leading-relaxed">
-                                    Faites confiance à CRIC Africa pour la réalisation de vos projets industriels. Notre expertise et notre
-                                    engagement garantissent votre succès.
-                                </p>
-                                <div class="flex flex-wrap justify-center gap-4">
-                                    <a href="contact.html"
-                                        class="bg-white text-primary-orange px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition">
-                                        <i class="fas fa-phone mr-2"></i>Démarrer un Projet
-                                    </a>
-                                    <a href="products.html"
-                                        class="bg-dark-blue text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition">
-                                        <i class="fas fa-box mr-2"></i>Voir Nos Produits
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Footer -->
-                    <footer class="bg-dark-blue text-white pt-16 pb-8">
-                        <div class="container mx-auto px-4 lg:px-8">
-                            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                                <div>
-                                    <div class="flex items-center space-x-3 mb-6">
-                                        <div
-                                            class="w-12 h-12 bg-gradient-to-br from-primary-orange to-lemon-green rounded-lg flex items-center justify-center">
-                                            <i class="fas fa-industry text-white text-xl"></i>
-                                        </div>
-                                        <div>
-                                            <h3 class="text-xl font-bold">CRIC AFRICA</h3>
-                                            <p class="text-xs text-gray-400 italic">Ensemble Énergisons L'Afrique</p>
-                                        </div>
-                                    </div>
-                                    <p class="text-gray-400 leading-relaxed mb-6">
-                                        Votre partenaire de confiance pour l'importation, l'installation et la maintenance d'équipements
-                                        industriels au Cameroun.
-                                    </p>
-                                    <div class="flex space-x-3">
-                                        <a href="#"
-                                            class="w-10 h-10 bg-white/10 hover:bg-primary-orange rounded-full flex items-center justify-center transition">
-                                            <i class="fab fa-facebook-f"></i>
-                                        </a>
-                                        <a href="#"
-                                            class="w-10 h-10 bg-white/10 hover:bg-lemon-green rounded-full flex items-center justify-center transition">
-                                            <i class="fab fa-linkedin-in"></i>
-                                        </a>
-                                        <a href="#"
-                                            class="w-10 h-10 bg-white/10 hover:bg-primary-orange rounded-full flex items-center justify-center transition">
-                                            <i class="fab fa-twitter"></i>
-                                        </a>
-                                        <a href="#"
-                                            class="w-10 h-10 bg-white/10 hover:bg-lemon-green rounded-full flex items-center justify-center transition">
-                                            <i class="fab fa-whatsapp"></i>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <h4 class="text-lg font-bold mb-6 orange-accent">Navigation</h4>
-                                    <ul class="space-y-3">
-                                        <li><a href="index.html"
-                                                class="text-gray-400 hover:text-primary-orange transition flex items-center"><i
-                                                    class="fas fa-chevron-right text-xs mr-2"></i>Accueil</a></li>
-                                        <li><a href="products.html"
-                                                class="text-gray-400 hover:text-lemon-green transition flex items-center"><i
-                                                    class="fas fa-chevron-right text-xs mr-2"></i>Produits</a></li>
-                                        <li><a href="services.html"
-                                                class="text-gray-400 hover:text-primary-orange transition flex items-center"><i
-                                                    class="fas fa-chevron-right text-xs mr-2"></i>Services</a></li>
-                                        <li><a href="realisations.html"
-                                                class="text-gray-400 hover:text-lemon-green transition flex items-center"><i
-                                                    class="fas fa-chevron-right text-xs mr-2"></i>Réalisations</a></li>
-                                        <li><a href="about.html"
-                                                class="text-gray-400 hover:text-primary-orange transition flex items-center"><i
-                                                    class="fas fa-chevron-right text-xs mr-2"></i>À Propos</a></li>
-                                        <li><a href="contact.html"
-                                                class="text-gray-400 hover:text-lemon-green transition flex items-center"><i
-                                                    class="fas fa-chevron-right text-xs mr-2"></i>Contact</a></li>
-                                    </ul>
-                                </div>
-
-                                <div>
-                                    <h4 class="text-lg font-bold mb-6 green-accent">Nos Produits</h4>
-                                    <ul class="space-y-3">
-                                        <li class="text-gray-400 flex items-start"><i
-                                                class="fas fa-check orange-accent text-xs mr-2 mt-1"></i>Groupes Électrogènes</li>
-                                        <li class="text-gray-400 flex items-start"><i
-                                                class="fas fa-check green-accent text-xs mr-2 mt-1"></i>Compresseurs Industriels</li>
-                                        <li class="text-gray-400 flex items-start"><i
-                                                class="fas fa-check orange-accent text-xs mr-2 mt-1"></i>Équipements Sécurité</li>
-                                        <li class="text-gray-400 flex items-start"><i
-                                                class="fas fa-check green-accent text-xs mr-2 mt-1"></i>Matériels de Pompage</li>
-                                        <li class="text-gray-400 flex items-start"><i
-                                                class="fas fa-check orange-accent text-xs mr-2 mt-1"></i>Engins de Manutention</li>
-                                        <li class="text-gray-400 flex items-start"><i
-                                                class="fas fa-check green-accent text-xs mr-2 mt-1"></i>Transformateurs</li>
-                                    </ul>
-                                </div>
-
-                                <div>
-                                    <h4 class="text-lg font-bold mb-6 orange-accent">Contact</h4>
-                                    <ul class="space-y-4">
-                                        <li class="flex items-start space-x-3">
-                                            <i class="fas fa-map-marker-alt orange-accent mt-1"></i>
-                                            <span class="text-gray-400">Douala, Cameroun</span>
-                                        </li>
-                                        <li class="flex items-start space-x-3">
-                                            <i class="fas fa-phone green-accent mt-1"></i>
-                                            <span class="text-gray-400">+237 XXX XXX XXX</span>
-                                        </li>
-                                        <li class="flex items-start space-x-3">
-                                            <i class="fas fa-envelope orange-accent mt-1"></i>
-                                            <span class="text-gray-400">contact@cricafrica.com</span>
-                                        </li>
-                                        <li class="flex items-start space-x-3">
-                                            <i class="fas fa-clock green-accent mt-1"></i>
-                                            <span class="text-gray-400">Lun-Ven: 8h-18h<br>Sam: 9h-13h</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="border-t border-white/10 pt-8">
-                                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                                    <p class="text-gray-400 text-sm text-center md:text-left">
-                                        &copy; 2025 <span class="orange-accent font-semibold">CRIC Africa SARL</span>. Tous droits réservés.
-                                    </p>
-                                    <div class="flex flex-wrap justify-center gap-6 text-sm">
-                                        <a href="#" class="text-gray-400 hover:text-primary-orange transition">Politique de
-                                            Confidentialité</a>
-                                        <a href="#" class="text-gray-400 hover:text-lemon-green transition">Conditions d'Utilisation</a>
-                                        <a href="#" class="text-gray-400 hover:text-primary-orange transition">Mentions Légales</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </footer>
-
-                    <!-- Scroll to Top Button -->
-                    <button id="scrollToTop"
-                        class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-primary-orange to-lemon-green text-white rounded-full shadow-lg hover:shadow-2xl transition opacity-0 pointer-events-none z-50">
-                        <i class="fas fa-arrow-up text-xl"></i>
-                    </button>
-
-                    <!-- WhatsApp Floating Button -->
-                    <a href="https://wa.me/237XXXXXXXXX" target="_blank"
-                        class="fixed bottom-24 right-8 w-14 h-14 bg-green-500 text-white rounded-full shadow-lg hover:shadow-2xl hover:scale-110 transition flex items-center justify-center z-50">
-                        <i class="fab fa-whatsapp text-3xl"></i>
+                    <a
+                        href="contact.html"
+                        class="hidden lg:block btn-orange text-white px-6 py-3 rounded-full font-semibold"
+                    >
+                        <i class="fas fa-phone mr-2"></i>Contactez-nous
                     </a>
 
-                    <script>
-                        function toggleMobileMenu() {
-                            const mobileMenu = document.getElementById('mobileMenu');
-                            mobileMenu.classList.toggle('active');
+                    <button onclick="toggleMobileMenu()" class="lg:hidden text-white text-2xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+
+                <div id="mobileMenu" class="mobile-menu lg:hidden mt-4">
+                    <ul
+                        class="flex flex-col space-y-4 text-white font-semibold bg-dark-blue/50 p-6 rounded-lg"
+                    >
+                        <li>
+                            <a href="index.html" class="block hover:text-primary-orange transition"
+                                >Accueil</a
+                            >
+                        </li>
+                        <li>
+                            <a href="products.html" class="block hover:text-lemon-green transition"
+                                >Produits</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="services.html"
+                                class="block hover:text-primary-orange transition"
+                                >Services</a
+                            >
+                        </li>
+                        <li>
+                            <a href="realisations.html" class="block text-primary-orange"
+                                >Réalisations</a
+                            >
+                        </li>
+                        <li>
+                            <a href="about.html" class="block hover:text-lemon-green transition"
+                                >À Propos</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="contact.html"
+                                class="block hover:text-primary-orange transition"
+                                >Contact</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Page Header -->
+        <section class="page-header pt-32 pb-20">
+            <div class="container mx-auto px-4 lg:px-8 text-center">
+                <h1 class="text-5xl lg:text-6xl font-bold text-white mb-6">
+                    Nos <span class="green-accent">Réalisations</span>
+                </h1>
+                <p class="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
+                    Découvrez nos projets industriels réalisés avec succès au Cameroun et en Afrique
+                    Centrale
+                </p>
+                <div class="flex justify-center space-x-2 text-white">
+                    <a href="index.html" class="hover:text-primary-orange transition">Accueil</a>
+                    <span>/</span>
+                    <span class="orange-accent">Réalisations</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="stats-counter mb-2">150+</div>
+                        <p class="text-gray-600 font-semibold">Projets Réalisés</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="stats-counter mb-2">80+</div>
+                        <p class="text-gray-600 font-semibold">Clients Satisfaits</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="stats-counter mb-2">15+</div>
+                        <p class="text-gray-600 font-semibold">Années d'Expérience</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="stats-counter mb-2">98%</div>
+                        <p class="text-gray-600 font-semibold">Taux de Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Buttons -->
+        <section class="py-8 bg-light-gray">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button
+                        class="filter-btn active px-6 py-3 rounded-full bg-white font-semibold"
+                        data-filter="all"
+                    >
+                        <i class="fas fa-th mr-2"></i>Tous les Projets
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-3 rounded-full bg-white font-semibold"
+                        data-filter="electrical"
+                    >
+                        <i class="fas fa-bolt mr-2"></i>Installation Électrique
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-3 rounded-full bg-white font-semibold"
+                        data-filter="automation"
+                    >
+                        <i class="fas fa-robot mr-2"></i>Automatisation
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-3 rounded-full bg-white font-semibold"
+                        data-filter="maintenance"
+                    >
+                        <i class="fas fa-tools mr-2"></i>Maintenance
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-3 rounded-full bg-white font-semibold"
+                        data-filter="generators"
+                    >
+                        <i class="fas fa-charging-station mr-2"></i>Groupes Électrogènes
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section class="py-20 bg-light-gray">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="project-card hover-lift" data-category="electrical">
+                        <img
+                            src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800"
+                            alt="Installation Électrique Usine"
+                            class="w-full h-80 object-cover"
+                        />
+                        <div class="project-overlay">
+                            <span
+                                class="inline-block bg-primary-orange text-white px-3 py-1 rounded-full text-sm mb-3"
+                            >
+                                Installation Électrique
+                            </span>
+                            <h3 class="text-2xl font-bold text-white mb-2">
+                                Usine de Production - Douala
+                            </h3>
+                            <p class="text-gray-300 mb-4">
+                                Installation complète du réseau électrique MT/BT pour une usine de
+                                5000m²
+                            </p>
+                            <div class="flex items-center text-gray-300 text-sm">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>Janvier 2024</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card hover-lift" data-category="generators">
+                        <img
+                            src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800"
+                            alt="Groupe Électrogène"
+                            class="w-full h-80 object-cover"
+                        />
+                        <div class="project-overlay">
+                            <span
+                                class="inline-block bg-lemon-green text-white px-3 py-1 rounded-full text-sm mb-3"
+                            >
+                                Groupe Électrogène
+                            </span>
+                            <h3 class="text-2xl font-bold text-white mb-2">
+                                Hôpital Central - Yaoundé
+                            </h3>
+                            <p class="text-gray-300 mb-4">
+                                Installation de 2 groupes électrogènes 500 kVA avec système de
+                                couplage
+                            </p>
+                            <div class="flex items-center text-gray-300 text-sm">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>Décembre 2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card hover-lift" data-category="automation">
+                        <img
+                            src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800"
+                            alt="Automatisation Usine"
+                            class="w-full h-80 object-cover"
+                        />
+                        <div class="project-overlay">
+                            <span
+                                class="inline-block bg-primary-orange text-white px-3 py-1 rounded-full text-sm mb-3"
+                            >
+                                Automatisation
+                            </span>
+                            <h3 class="text-2xl font-bold text-white mb-2">
+                                Usine Agroalimentaire - Douala
+                            </h3>
+                            <p class="text-gray-300 mb-4">
+                                Automatisation complète de la ligne de production avec système SCADA
+                            </p>
+                            <div class="flex items-center text-gray-300 text-sm">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>Novembre 2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card hover-lift" data-category="maintenance">
+                        <img
+                            src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800"
+                            alt="Maintenance Industrielle"
+                            class="w-full h-80 object-cover"
+                        />
+                        <div class="project-overlay">
+                            <span
+                                class="inline-block bg-lemon-green text-white px-3 py-1 rounded-full text-sm mb-3"
+                            >
+                                Maintenance
+                            </span>
+                            <h3 class="text-2xl font-bold text-white mb-2">
+                                Complexe Industriel - Limbé
+                            </h3>
+                            <p class="text-gray-300 mb-4">
+                                Contrat de maintenance préventive pour parc de 15 équipements
+                            </p>
+                            <div class="flex items-center text-gray-300 text-sm">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>Octobre 2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card hover-lift" data-category="electrical">
+                        <img
+                            src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800"
+                            alt="Tableau Électrique"
+                            class="w-full h-80 object-cover"
+                        />
+                        <div class="project-overlay">
+                            <span
+                                class="inline-block bg-primary-orange text-white px-3 py-1 rounded-full text-sm mb-3"
+                            >
+                                Installation Électrique
+                            </span>
+                            <h3 class="text-2xl font-bold text-white mb-2">
+                                Centre Commercial - Douala
+                            </h3>
+                            <p class="text-gray-300 mb-4">
+                                Installation de 8 tableaux électriques et système de gestion
+                                d'énergie
+                            </p>
+                            <div class="flex items-center text-gray-300 text-sm">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>Septembre 2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-card hover-lift" data-category="generators">
+                        <img
+                            src="https://images.unsplash.com/photo-1621905252472-9b6e78c09a0f?w=800"
+                            alt="Groupe Électrogène Industriel"
+                            class="w-full h-80 object-cover"
+                        />
+                        <div class="project-overlay">
+                            <span
+                                class="inline-block bg-lemon-green text-white px-3 py-1 rounded-full text-sm mb-3"
+                            >
+                                Groupe Électrogène
+                            </span>
+                            <h3 class="text-2xl font-bold text-white mb-2">
+                                Usine Textile - Garoua
+                            </h3>
+                            <p class="text-gray-300 mb-4">
+                                Installation groupe électrogène 1000 kVA avec paramétrage complet
+                            </p>
+                            <div class="flex items-center text-gray-300 text-sm">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>Août 2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 7 -->
+                    <div class="project-card hover-lift" data-category="automation">
+                        <img
+                            src="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?w=800"
+                            alt="Système Automatisé"
+                            class="w-full h-80 object-cover"
+                        />
+                        <div class="project-overlay">
+                            <span
+                                class="inline-block bg-primary-orange text-white px-3 py-1 rounded-full text-sm mb-3"
+                            >
+                                Automatisation
+                            </span>
+                            <h3 class="text-2xl font-bold text-white mb-2">Brasserie - Douala</h3>
+                            <p class="text-gray-300 mb-4">
+                                Automatisation ligne d'embouteillage avec supervision centralisée
+                            </p>
+                            <div class="flex items-center text-gray-300 text-sm">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>Juillet 2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 8 -->
+                    <div class="project-card hover-lift" data-category="electrical">
+                        <img
+                            src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800"
+                            alt="Installation MT/BT"
+                            class="w-full h-80 object-cover"
+                        />
+                        <div class="project-overlay">
+                            <span
+                                class="inline-block bg-lemon-green text-white px-3 py-1 rounded-full text-sm mb-3"
+                            >
+                                Installation Électrique
+                            </span>
+                            <h3 class="text-2xl font-bold text-white mb-2">
+                                Complexe Hôtelier - Kribi
+                            </h3>
+                            <p class="text-gray-300 mb-4">
+                                Réseau électrique complet avec transformateur 630 kVA
+                            </p>
+                            <div class="flex items-center text-gray-300 text-sm">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>Juin 2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 9 -->
+                    <div class="project-card hover-lift" data-category="maintenance">
+                        <img
+                            src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800"
+                            alt="Maintenance Équipements"
+                            class="w-full h-80 object-cover"
+                        />
+                        <div class="project-overlay">
+                            <span
+                                class="inline-block bg-primary-orange text-white px-3 py-1 rounded-full text-sm mb-3"
+                            >
+                                Maintenance
+                            </span>
+                            <h3 class="text-2xl font-bold text-white mb-2">
+                                Port Autonome - Douala
+                            </h3>
+                            <p class="text-gray-300 mb-4">
+                                Maintenance préventive de 25 engins de manutention portuaire
+                            </p>
+                            <div class="flex items-center text-gray-300 text-sm">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>Mai 2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 10 -->
+                    <div class="project-card hover-lift" data-category="generators">
+                        <img
+                            src="https://images.unsplash.com/photo-1621905252472-9b6e78c09a0f?w=800"
+                            alt="Installation Groupe"
+                            class="w-full h-80 object-cover"
+                        />
+                        <div class="project-overlay">
+                            <span
+                                class="inline-block bg-lemon-green text-white px-3 py-1 rounded-full text-sm mb-3"
+                            >
+                                Groupe Électrogène
+                            </span>
+                            <h3 class="text-2xl font-bold text-white mb-2">
+                                Banque Centrale - Yaoundé
+                            </h3>
+                            <p class="text-gray-300 mb-4">
+                                Installation de 3 groupes 750 kVA en configuration redondante
+                            </p>
+                            <div class="flex items-center text-gray-300 text-sm">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>Avril 2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 11 -->
+                    <div class="project-card hover-lift" data-category="automation">
+                        <img
+                            src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800"
+                            alt="Contrôle Automatisé"
+                            class="w-full h-80 object-cover"
+                        />
+                        <div class="project-overlay">
+                            <span
+                                class="inline-block bg-primary-orange text-white px-3 py-1 rounded-full text-sm mb-3"
+                            >
+                                Automatisation
+                            </span>
+                            <h3 class="text-2xl font-bold text-white mb-2">
+                                Usine Pharmaceutique - Douala
+                            </h3>
+                            <p class="text-gray-300 mb-4">
+                                Système d'automatisation conforme aux normes GMP
+                            </p>
+                            <div class="flex items-center text-gray-300 text-sm">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>Mars 2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 12 -->
+                    <div class="project-card hover-lift" data-category="electrical">
+                        <img
+                            src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800"
+                            alt="Réseau Électrique"
+                            class="w-full h-80 object-cover"
+                        />
+                        <div class="project-overlay">
+                            <span
+                                class="inline-block bg-lemon-green text-white px-3 py-1 rounded-full text-sm mb-3"
+                            >
+                                Installation Électrique
+                            </span>
+                            <h3 class="text-2xl font-bold text-white mb-2">Université - Buea</h3>
+                            <p class="text-gray-300 mb-4">
+                                Modernisation du réseau électrique de 3 bâtiments
+                            </p>
+                            <div class="flex items-center text-gray-300 text-sm">
+                                <i class="fas fa-calendar mr-2"></i>
+                                <span>Février 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="text-center mt-12">
+                    <button class="btn-orange text-white px-8 py-4 rounded-full font-bold text-lg">
+                        <i class="fas fa-plus mr-2"></i>Charger Plus de Projets
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client Testimonials -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">
+                        Ce Que Disent <span class="orange-accent">Nos Clients</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Témoignages de satisfaction de nos partenaires
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-light-gray rounded-2xl p-8 hover-lift">
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mr-4"
+                            >
+                                <i class="fas fa-user text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark-blue">Jean-Pierre MBARGA</h4>
+                                <p class="text-sm text-gray-600">
+                                    Directeur Technique, Usine Agroalimentaire
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex mb-4">
+                            <i class="fas fa-star orange-accent"></i>
+                            <i class="fas fa-star orange-accent"></i>
+                            <i class="fas fa-star orange-accent"></i>
+                            <i class="fas fa-star orange-accent"></i>
+                            <i class="fas fa-star orange-accent"></i>
+                        </div>
+                        <p class="text-gray-600 italic leading-relaxed">
+                            "CRIC Africa a réalisé l'automatisation complète de notre ligne de
+                            production. Professionnalisme et expertise remarquables. Je recommande
+                            vivement!"
+                        </p>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="bg-light-gray rounded-2xl p-8 hover-lift">
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mr-4"
+                            >
+                                <i class="fas fa-user text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark-blue">Marie NKOLO</h4>
+                                <p class="text-sm text-gray-600">
+                                    Responsable Maintenance, Hôpital Central
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex mb-4">
+                            <i class="fas fa-star green-accent"></i>
+                            <i class="fas fa-star green-accent"></i>
+                            <i class="fas fa-star green-accent"></i>
+                            <i class="fas fa-star green-accent"></i>
+                            <i class="fas fa-star green-accent"></i>
+                        </div>
+                        <p class="text-gray-600 italic leading-relaxed">
+                            "L'installation de nos groupes électrogènes a été réalisée dans les
+                            délais. Le service après-vente est excellent. Équipe très réactive!"
+                        </p>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="bg-light-gray rounded-2xl p-8 hover-lift">
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mr-4"
+                            >
+                                <i class="fas fa-user text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark-blue">Paul EKANI</h4>
+                                <p class="text-sm text-gray-600">Gérant, Complexe Hôtelier</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-4">
+                            <i class="fas fa-star orange-accent"></i>
+                            <i class="fas fa-star orange-accent"></i>
+                            <i class="fas fa-star orange-accent"></i>
+                            <i class="fas fa-star orange-accent"></i>
+                            <i class="fas fa-star orange-accent"></i>
+                        </div>
+                        <p class="text-gray-600 italic leading-relaxed">
+                            "Installation électrique impeccable pour notre hôtel. Travail soigné,
+                            respect des normes et équipe très professionnelle. Merci CRIC Africa!"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Process Timeline -->
+        <section class="py-20 bg-light-gray">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">
+                        Notre <span class="green-accent">Méthodologie</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Un processus éprouvé pour garantir le succès de vos projets
+                    </p>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <!-- Timeline Item 1 -->
+                    <div class="flex items-start mb-12">
+                        <div
+                            class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6"
+                        >
+                            1
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold text-dark-blue mb-2">Étude et Analyse</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Visite sur site, analyse des besoins, étude de faisabilité technique
+                                et financière. Nous prenons le temps de comprendre vos contraintes
+                                et objectifs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="flex items-start mb-12">
+                        <div
+                            class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6"
+                        >
+                            2
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold text-dark-blue mb-2">
+                                Conception et Planification
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Élaboration des plans techniques, dimensionnement des équipements,
+                                planification détaillée avec jalons et livrables clairement définis.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="flex items-start mb-12">
+                        <div
+                            class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6"
+                        >
+                            3
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold text-dark-blue mb-2">
+                                Approvisionnement
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Sélection et importation des équipements de qualité auprès de nos
+                                partenaires internationaux. Contrôle qualité rigoureux à la
+                                réception.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 4 -->
+                    <div class="flex items-start mb-12">
+                        <div
+                            class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6"
+                        >
+                            4
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold text-dark-blue mb-2">
+                                Installation et Mise en Service
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Réalisation des travaux par nos équipes qualifiées, tests et essais
+                                complets, mise en service progressive avec accompagnement de vos
+                                équipes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 5 -->
+                    <div class="flex items-start">
+                        <div
+                            class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center text-white font-bold text-2xl mr-6"
+                        >
+                            5
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold text-dark-blue mb-2">
+                                Suivi et Maintenance
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Formation de vos équipes, documentation complète, service
+                                après-vente réactif et contrats de maintenance personnalisés pour
+                                assurer la pérennité.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industries Served -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">
+                        Secteurs <span class="orange-accent">d'Activité</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Nous intervenons dans de nombreux secteurs industriels
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Industry 1 -->
+                    <div class="text-center hover-lift">
+                        <div
+                            class="w-24 h-24 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg"
+                        >
+                            <i class="fas fa-industry text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-blue mb-2">
+                            Industrie Manufacturière
+                        </h3>
+                        <p class="text-gray-600">Usines de production, lignes d'assemblage</p>
+                    </div>
+
+                    <!-- Industry 2 -->
+                    <div class="text-center hover-lift">
+                        <div
+                            class="w-24 h-24 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg"
+                        >
+                            <i class="fas fa-hospital text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-blue mb-2">Santé</h3>
+                        <p class="text-gray-600">Hôpitaux, cliniques, centres médicaux</p>
+                    </div>
+
+                    <!-- Industry 3 -->
+                    <div class="text-center hover-lift">
+                        <div
+                            class="w-24 h-24 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg"
+                        >
+                            <i class="fas fa-hotel text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-blue mb-2">Hôtellerie</h3>
+                        <p class="text-gray-600">Hôtels, complexes touristiques</p>
+                    </div>
+
+                    <!-- Industry 4 -->
+                    <div class="text-center hover-lift">
+                        <div
+                            class="w-24 h-24 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg"
+                        >
+                            <i class="fas fa-building text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-blue mb-2">Tertiaire</h3>
+                        <p class="text-gray-600">Bureaux, centres commerciaux</p>
+                    </div>
+
+                    <!-- Industry 5 -->
+                    <div class="text-center hover-lift">
+                        <div
+                            class="w-24 h-24 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg"
+                        >
+                            <i class="fas fa-ship text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-blue mb-2">Portuaire</h3>
+                        <p class="text-gray-600">Ports, zones logistiques</p>
+                    </div>
+
+                    <!-- Industry 6 -->
+                    <div class="text-center hover-lift">
+                        <div
+                            class="w-24 h-24 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg"
+                        >
+                            <i class="fas fa-university text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-blue mb-2">Éducation</h3>
+                        <p class="text-gray-600">Universités, écoles, centres de formation</p>
+                    </div>
+
+                    <!-- Industry 7 -->
+                    <div class="text-center hover-lift">
+                        <div
+                            class="w-24 h-24 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg"
+                        >
+                            <i class="fas fa-seedling text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-blue mb-2">Agroalimentaire</h3>
+                        <p class="text-gray-600">Usines de transformation, brasseries</p>
+                    </div>
+
+                    <!-- Industry 8 -->
+                    <div class="text-center hover-lift">
+                        <div
+                            class="w-24 h-24 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg"
+                        >
+                            <i class="fas fa-hard-hat text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-blue mb-2">BTP</h3>
+                        <p class="text-gray-600">Chantiers, infrastructures</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gradient-to-r from-primary-orange to-lemon-green">
+            <div class="container mx-auto px-4 lg:px-8 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                        Votre Projet Mérite le Meilleur
+                    </h2>
+                    <p class="text-xl text-white/90 mb-8 leading-relaxed">
+                        Faites confiance à CRIC Africa pour la réalisation de vos projets
+                        industriels. Notre expertise et notre engagement garantissent votre succès.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a
+                            href="contact.html"
+                            class="bg-white text-primary-orange px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition"
+                        >
+                            <i class="fas fa-phone mr-2"></i>Démarrer un Projet
+                        </a>
+                        <a
+                            href="products.html"
+                            class="bg-dark-blue text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition"
+                        >
+                            <i class="fas fa-box mr-2"></i>Voir Nos Produits
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-dark-blue text-white pt-16 pb-8">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-primary-orange to-lemon-green rounded-lg flex items-center justify-center"
+                            >
+                                <i class="fas fa-industry text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">CRIC AFRICA</h3>
+                                <p class="text-xs text-gray-400 italic">
+                                    Ensemble Énergisons L'Afrique
+                                </p>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Votre partenaire de confiance pour l'importation, l'installation et la
+                            maintenance d'équipements industriels au Cameroun.
+                        </p>
+                        <div class="flex space-x-3">
+                            <a
+                                href="#"
+                                class="w-10 h-10 bg-white/10 hover:bg-primary-orange rounded-full flex items-center justify-center transition"
+                            >
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 bg-white/10 hover:bg-lemon-green rounded-full flex items-center justify-center transition"
+                            >
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 bg-white/10 hover:bg-primary-orange rounded-full flex items-center justify-center transition"
+                            >
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 bg-white/10 hover:bg-lemon-green rounded-full flex items-center justify-center transition"
+                            >
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-bold mb-6 orange-accent">Navigation</h4>
+                        <ul class="space-y-3">
+                            <li>
+                                <a
+                                    href="index.html"
+                                    class="text-gray-400 hover:text-primary-orange transition flex items-center"
+                                    ><i class="fas fa-chevron-right text-xs mr-2"></i>Accueil</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="products.html"
+                                    class="text-gray-400 hover:text-lemon-green transition flex items-center"
+                                    ><i class="fas fa-chevron-right text-xs mr-2"></i>Produits</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="services.html"
+                                    class="text-gray-400 hover:text-primary-orange transition flex items-center"
+                                    ><i class="fas fa-chevron-right text-xs mr-2"></i>Services</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="realisations.html"
+                                    class="text-gray-400 hover:text-lemon-green transition flex items-center"
+                                    ><i class="fas fa-chevron-right text-xs mr-2"></i
+                                    >Réalisations</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="about.html"
+                                    class="text-gray-400 hover:text-primary-orange transition flex items-center"
+                                    ><i class="fas fa-chevron-right text-xs mr-2"></i>À Propos</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="contact.html"
+                                    class="text-gray-400 hover:text-lemon-green transition flex items-center"
+                                    ><i class="fas fa-chevron-right text-xs mr-2"></i>Contact</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-bold mb-6 green-accent">Nos Produits</h4>
+                        <ul class="space-y-3">
+                            <li class="text-gray-400 flex items-start">
+                                <i class="fas fa-check orange-accent text-xs mr-2 mt-1"></i>Groupes
+                                Électrogènes
+                            </li>
+                            <li class="text-gray-400 flex items-start">
+                                <i class="fas fa-check green-accent text-xs mr-2 mt-1"></i
+                                >Compresseurs Industriels
+                            </li>
+                            <li class="text-gray-400 flex items-start">
+                                <i class="fas fa-check orange-accent text-xs mr-2 mt-1"></i
+                                >Équipements Sécurité
+                            </li>
+                            <li class="text-gray-400 flex items-start">
+                                <i class="fas fa-check green-accent text-xs mr-2 mt-1"></i>Matériels
+                                de Pompage
+                            </li>
+                            <li class="text-gray-400 flex items-start">
+                                <i class="fas fa-check orange-accent text-xs mr-2 mt-1"></i>Engins
+                                de Manutention
+                            </li>
+                            <li class="text-gray-400 flex items-start">
+                                <i class="fas fa-check green-accent text-xs mr-2 mt-1"></i
+                                >Transformateurs
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-bold mb-6 orange-accent">Contact</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-map-marker-alt orange-accent mt-1"></i>
+                                <span class="text-gray-400">Douala, Cameroun</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-phone green-accent mt-1"></i>
+                                <span class="text-gray-400">+237 XXX XXX XXX</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-envelope orange-accent mt-1"></i>
+                                <span class="text-gray-400">contact@cricafrica.com</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-clock green-accent mt-1"></i>
+                                <span class="text-gray-400">Lun-Ven: 8h-18h<br />Sam: 9h-13h</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-white/10 pt-8">
+                    <div
+                        class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
+                    >
+                        <p class="text-gray-400 text-sm text-center md:text-left">
+                            &copy; 2025
+                            <span class="orange-accent font-semibold">CRIC Africa SARL</span>. Tous
+                            droits réservés.
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-6 text-sm">
+                            <a href="#" class="text-gray-400 hover:text-primary-orange transition"
+                                >Politique de Confidentialité</a
+                            >
+                            <a href="#" class="text-gray-400 hover:text-lemon-green transition"
+                                >Conditions d'Utilisation</a
+                            >
+                            <a href="#" class="text-gray-400 hover:text-primary-orange transition"
+                                >Mentions Légales</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scroll to Top Button -->
+        <button
+            id="scrollToTop"
+            class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-primary-orange to-lemon-green text-white rounded-full shadow-lg hover:shadow-2xl transition opacity-0 pointer-events-none z-50"
+        >
+            <i class="fas fa-arrow-up text-xl"></i>
+        </button>
+
+        <!-- WhatsApp Floating Button -->
+        <a
+            href="https://wa.me/237XXXXXXXXX"
+            target="_blank"
+            class="fixed bottom-24 right-8 w-14 h-14 bg-green-500 text-white rounded-full shadow-lg hover:shadow-2xl hover:scale-110 transition flex items-center justify-center z-50"
+        >
+            <i class="fab fa-whatsapp text-3xl"></i>
+        </a>
+
+        <script>
+            function toggleMobileMenu() {
+                const mobileMenu = document.getElementById('mobileMenu')
+                mobileMenu.classList.toggle('active')
+            }
+
+            // Scroll to Top
+            const scrollToTopBtn = document.getElementById('scrollToTop')
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none')
+                    scrollToTopBtn.classList.add('opacity-100')
+                } else {
+                    scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none')
+                    scrollToTopBtn.classList.remove('opacity-100')
+                }
+            })
+
+            scrollToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                })
+            })
+
+            // Header Hide on Scroll
+            let lastScroll = 0
+            const header = document.querySelector('header')
+
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset
+
+                if (currentScroll <= 0) {
+                    header.classList.remove('shadow-lg')
+                    return
+                }
+
+                if (currentScroll > lastScroll && currentScroll > 100) {
+                    header.style.transform = 'translateY(-100%)'
+                } else {
+                    header.style.transform = 'translateY(0)'
+                    header.classList.add('shadow-lg')
+                }
+
+                lastScroll = currentScroll
+            })
+
+            header.style.transition = 'transform 0.3s ease-in-out, box-shadow 0.3s ease'
+
+            // Filter Functionality
+            const filterButtons = document.querySelectorAll('.filter-btn')
+            const projectCards = document.querySelectorAll('.project-card')
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'))
+                    // Add active class to clicked button
+                    button.classList.add('active')
+
+                    const filterValue = button.getAttribute('data-filter')
+
+                    projectCards.forEach(card => {
+                        if (filterValue === 'all') {
+                            card.style.display = 'block'
+                        } else {
+                            if (card.getAttribute('data-category') === filterValue) {
+                                card.style.display = 'block'
+                            } else {
+                                card.style.display = 'none'
+                            }
                         }
-
-                        // Scroll to Top
-                        const scrollToTopBtn = document.getElementById('scrollToTop');
-
-                        window.addEventListener('scroll', () => {
-                            if (window.pageYOffset > 300) {
-                                scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
-                                scrollToTopBtn.classList.add('opacity-100');
-                            } else {
-                                scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
-                                scrollToTopBtn.classList.remove('opacity-100');
-                            }
-                        });
-
-                        scrollToTopBtn.addEventListener('click', () => {
-                            window.scrollTo({
-                                top: 0,
-                                behavior: 'smooth'
-                            });
-                        });
-
-                        // Header Hide on Scroll
-                        let lastScroll = 0;
-                        const header = document.querySelector('header');
-
-                        window.addEventListener('scroll', () => {
-                            const currentScroll = window.pageYOffset;
-
-                            if (currentScroll <= 0) {
-                                header.classList.remove('shadow-lg');
-                                return;
-                            }
-
-                            if (currentScroll > lastScroll && currentScroll > 100) {
-                                header.style.transform = 'translateY(-100%)';
-                            } else {
-                                header.style.transform = 'translateY(0)';
-                                header.classList.add('shadow-lg');
-                            }
-
-                            lastScroll = currentScroll;
-                        });
-
-                        header.style.transition = 'transform 0.3s ease-in-out, box-shadow 0.3s ease';
-
-                        // Filter Functionality
-                        const filterButtons = document.querySelectorAll('.filter-btn');
-                        const projectCards = document.querySelectorAll('.project-card');
-
-                        filterButtons.forEach(button => {
-                            button.addEventListener('click', () => {
-                                // Remove active class from all buttons
-                                filterButtons.forEach(btn => btn.classList.remove('active'));
-                                // Add active class to clicked button
-                                button.classList.add('active');
-
-                                const filterValue = button.getAttribute('data-filter');
-
-                                projectCards.forEach(card => {
-                                    if (filterValue === 'all') {
-                                        card.style.display = 'block';
-                                    } else {
-                                        if (card.getAttribute('data-category') === filterValue) {
-                                            card.style.display = 'block';
-                                        } else {
-                                            card.style.display = 'none';
-                                        }
-                                    }
-                                });
-                            });
-                        });
-                    </script>
-                    </body>
-
-                    </html>
+                    })
+                })
+            })
+        </script>
+    </body>
+</html>

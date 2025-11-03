@@ -1,782 +1,1026 @@
 <!-- contact.html - CONTACT PAGE -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contact - CRIC Africa SARL | Contactez-nous pour vos Projets Industriels</title>
+        <meta
+            name="description"
+            content="Contactez CRIC Africa SARL pour vos projets industriels au Cameroun. Devis gratuit, conseil personnalisé."
+        />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - CRIC Africa SARL | Contactez-nous pour vos Projets Industriels</title>
-    <meta name="description"
-        content="Contactez CRIC Africa SARL pour vos projets industriels au Cameroun. Devis gratuit, conseil personnalisé.">
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Font Awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap"
-        rel="stylesheet">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+            body {
+                font-family: 'Inter', sans-serif;
+                overflow-x: hidden;
+            }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-        }
+            :root {
+                --primary-orange: #ff8c42;
+                --lemon-green: #a8d05f;
+                --dark-blue: #1a2b4a;
+                --light-gray: #f5f7fa;
+            }
 
-        :root {
-            --primary-orange: #FF8C42;
-            --lemon-green: #A8D05F;
-            --dark-blue: #1A2B4A;
-            --light-gray: #F5F7FA;
-        }
+            .orange-accent {
+                color: var(--primary-orange);
+            }
 
-        .orange-accent {
-            color: var(--primary-orange);
-        }
+            .green-accent {
+                color: var(--lemon-green);
+            }
 
-        .green-accent {
-            color: var(--lemon-green);
-        }
+            .text-dark-blue {
+                color: var(--dark-blue);
+            }
 
-        .text-dark-blue {
-            color: var(--dark-blue);
-        }
+            .bg-primary-orange {
+                background-color: var(--primary-orange);
+            }
 
-        .bg-primary-orange {
-            background-color: var(--primary-orange);
-        }
+            .bg-lemon-green {
+                background-color: var(--lemon-green);
+            }
 
-        .bg-lemon-green {
-            background-color: var(--lemon-green);
-        }
+            .bg-dark-blue {
+                background-color: var(--dark-blue);
+            }
 
-        .bg-dark-blue {
-            background-color: var(--dark-blue);
-        }
+            .bg-light-gray {
+                background-color: var(--light-gray);
+            }
 
-        .bg-light-gray {
-            background-color: var(--light-gray);
-        }
+            .btn-orange {
+                background: linear-gradient(135deg, var(--primary-orange) 0%, #ff7028 100%);
+                transition: all 0.3s ease;
+            }
 
-        .btn-orange {
-            background: linear-gradient(135deg, var(--primary-orange) 0%, #ff7028 100%);
-            transition: all 0.3s ease;
-        }
+            .btn-orange:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 25px rgba(255, 140, 66, 0.4);
+            }
 
-        .btn-orange:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(255, 140, 66, 0.4);
-        }
+            .btn-green {
+                background: linear-gradient(135deg, var(--lemon-green) 0%, #8fb84d 100%);
+                transition: all 0.3s ease;
+            }
 
-        .btn-green {
-            background: linear-gradient(135deg, var(--lemon-green) 0%, #8fb84d 100%);
-            transition: all 0.3s ease;
-        }
+            .btn-green:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 25px rgba(168, 208, 95, 0.4);
+            }
 
-        .btn-green:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(168, 208, 95, 0.4);
-        }
+            .hover-lift {
+                transition: all 0.3s ease;
+            }
 
-        .hover-lift {
-            transition: all 0.3s ease;
-        }
+            .hover-lift:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            }
 
-        .hover-lift:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
+            .mobile-menu {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
 
-        .mobile-menu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
+            .mobile-menu.active {
+                max-height: 500px;
+            }
 
-        .mobile-menu.active {
-            max-height: 500px;
-        }
+            header {
+                backdrop-filter: blur(10px);
+                background: rgba(26, 43, 74, 0.95);
+            }
 
-        header {
-            backdrop-filter: blur(10px);
-            background: rgba(26, 43, 74, 0.95);
-        }
+            .page-header {
+                background: linear-gradient(
+                    135deg,
+                    var(--dark-blue) 0%,
+                    #2d4a7c 50%,
+                    var(--primary-orange) 100%
+                );
+            }
 
-        .page-header {
-            background: linear-gradient(135deg, var(--dark-blue) 0%, #2d4a7c 50%, var(--primary-orange) 100%);
-        }
+            .form-input,
+            .form-textarea,
+            .form-select {
+                width: 100%;
+                padding: 1rem;
+                border: 2px solid #e5e7eb;
+                border-radius: 0.75rem;
+                font-size: 1rem;
+                transition: all 0.3s ease;
+            }
 
-        .form-input,
-        .form-textarea,
-        .form-select {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 0.75rem;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
+            .form-input:focus,
+            .form-textarea:focus,
+            .form-select:focus {
+                outline: none;
+                border-color: var(--primary-orange);
+                box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.1);
+            }
 
-        .form-input:focus,
-        .form-textarea:focus,
-        .form-select:focus {
-            outline: none;
-            border-color: var(--primary-orange);
-            box-shadow: 0 0 0 3px rgba(255, 140, 66, 0.1);
-        }
+            .contact-card {
+                position: relative;
+                overflow: hidden;
+            }
 
-        .contact-card {
-            position: relative;
-            overflow: hidden;
-        }
+            .contact-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 5px;
+                background: linear-gradient(90deg, var(--primary-orange), var(--lemon-green));
+            }
 
-        .contact-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary-orange), var(--lemon-green));
-        }
+            .map-container {
+                border-radius: 1rem;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    </head>
 
-        .map-container {
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-</head>
-
-<body>
-    <!-- Header -->
-    <header class="fixed w-full top-0 z-50">
-        <nav class="container mx-auto px-4 lg:px-8 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <div
-                        class="w-12 h-12 bg-gradient-to-br from-primary-orange to-lemon-green rounded-lg flex items-center justify-center">
-                        <i class="fas fa-industry text-white text-xl"></i>
-                    </div>
-                    <div>
-                        <h1 class="text-2xl font-bold text-white">CRIC AFRICA</h1>
-                        <p class="text-xs text-gray-300 italic">Ensemble Énergisons L'Afrique</p>
-                    </div>
-                </div>
-
-                <ul class="hidden lg:flex space-x-8 text-white font-semibold">
-                    <li><a href="index.html" class="hover:text-primary-orange transition">Accueil</a></li>
-                    <li><a href="products.html" class="hover:text-lemon-green transition">Produits</a></li>
-                    <li><a href="services.html" class="hover:text-primary-orange transition">Services</a></li>
-                    <li><a href="realisations.html" class="hover:text-lemon-green transition">Réalisations</a></li>
-                    <li><a href="about.html" class="hover:text-primary-orange transition">À Propos</a></li>
-                    <li><a href="contact.html" class="text-primary-orange">Contact</a></li>
-                </ul>
-
-                <a href="contact.html"
-                    class="hidden lg:block btn-orange text-white px-6 py-3 rounded-full font-semibold">
-                    <i class="fas fa-phone mr-2"></i>Contactez-nous
-                </a>
-
-                <button onclick="toggleMobileMenu()" class="lg:hidden text-white text-2xl">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-
-            <div id="mobileMenu" class="mobile-menu lg:hidden mt-4">
-                <ul class="flex flex-col space-y-4 text-white font-semibold bg-dark-blue/50 p-6 rounded-lg">
-                    <li><a href="index.html" class="block hover:text-primary-orange transition">Accueil</a></li>
-                    <li><a href="products.html" class="block hover:text-lemon-green transition">Produits</a></li>
-                    <li><a href="services.html" class="block hover:text-primary-orange transition">Services</a></li>
-                    <li><a href="realisations.html" class="block hover:text-lemon-green transition">Réalisations</a>
-                    </li>
-                    <li><a href="about.html" class="block hover:text-primary-orange transition">À Propos</a></li>
-                    <li><a href="contact.html" class="block text-primary-orange">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Page Header -->
-    <section class="page-header pt-32 pb-20">
-        <div class="container mx-auto px-4 lg:px-8 text-center">
-            <h1 class="text-5xl lg:text-6xl font-bold text-white mb-6">Contactez <span class="green-accent">CRIC
-                    Africa</span></h1>
-            <p class="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
-                Notre équipe est à votre écoute pour répondre à toutes vos questions et vous accompagner dans vos
-                projets
-            </p>
-            <div class="flex justify-center space-x-2 text-white">
-                <a href="index.html" class="hover:text-primary-orange transition">Accueil</a>
-                <span>/</span>
-                <span class="orange-accent">Contact</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Info Cards -->
-    <section class="py-20 bg-light-gray">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                <!-- Phone -->
-                <div class="contact-card bg-white rounded-2xl p-8 text-center hover-lift">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-phone text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark-blue mb-2">Téléphone</h3>
-                    <p class="text-gray-600 mb-2">+237 XXX XXX XXX</p>
-                    <p class="text-gray-600">+237 XXX XXX XXX</p>
-                    <a href="tel:+237XXXXXXXXX"
-                        class="inline-block mt-4 text-primary-orange font-semibold hover:underline">
-                        Appelez-nous
-                    </a>
-                </div>
-
-                <!-- Email -->
-                <div class="contact-card bg-white rounded-2xl p-8 text-center hover-lift">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-envelope text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark-blue mb-2">Email</h3>
-                    <p class="text-gray-600 mb-2">contact@cricafrica.com</p>
-                    <p class="text-gray-600">info@cricafrica.com</p>
-                    <a href="mailto:contact@cricafrica.com"
-                        class="inline-block mt-4 text-lemon-green font-semibold hover:underline">
-                        Envoyez un email
-                    </a>
-                </div>
-
-                <!-- Address -->
-                <div class="contact-card bg-white rounded-2xl p-8 text-center hover-lift">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-map-marker-alt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark-blue mb-2">Adresse</h3>
-                    <p class="text-gray-600 mb-2">Douala, Cameroun</p>
-                    <p class="text-gray-600 text-sm">Zone Industrielle Bassa</p>
-                    <a href="#map" class="inline-block mt-4 text-primary-orange font-semibold hover:underline">
-                        Voir sur la carte
-                    </a>
-                </div>
-
-                <!-- Hours -->
-                <div class="contact-card bg-white rounded-2xl p-8 text-center hover-lift">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-clock text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-dark-blue mb-2">Horaires</h3>
-                    <p class="text-gray-600 mb-1"><strong>Lun-Ven:</strong> 8h-18h</p>
-                    <p class="text-gray-600 mb-1"><strong>Samedi:</strong> 9h-13h</p>
-                    <p class="text-gray-600"><strong>Dimanche:</strong> Fermé</p>
-                </div>
-            </div>
-
-            <!-- Contact Form & Info -->
-            <div class="grid lg:grid-cols-2 gap-12">
-                <!-- Contact Form -->
-                <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
-                    <h2 class="text-3xl font-bold text-dark-blue mb-2">Envoyez-nous un <span
-                            class="orange-accent">Message</span></h2>
-                    <p class="text-gray-600 mb-8">Remplissez le formulaire ci-dessous et nous vous répondrons dans les
-                        plus brefs délais</p>
-
-                    <form id="contactForm" class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2">Nom Complet *</label>
-                                <input type="text" name="name" required class="form-input" placeholder="Votre nom">
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2">Entreprise</label>
-                                <input type="text" name="company" class="form-input"
-                                    placeholder="Nom de votre entreprise">
-                            </div>
-                        </div>
-
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2">Email *</label>
-                                <input type="email" name="email" required class="form-input"
-                                    placeholder="votre@email.com">
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2">Téléphone *</label>
-                                <input type="tel" name="phone" required class="form-input"
-                                    placeholder="+237 XXX XXX XXX">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">Sujet *</label>
-                            <select name="subject" required class="form-select">
-                                <option value="">Sélectionnez un sujet</option>
-                                <option value="devis">Demande de Devis</option>
-                                <option value="info-produit">Information sur un Produit</option>
-                                <option value="info-service">Information sur un Service</option>
-                                <option value="sav">Service Après-Vente</option>
-                                <option value="partenariat">Opportunité de Partenariat</option>
-                                <option value="recrutement">Candidature Spontanée</option>
-                                <option value="autre">Autre</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">Message *</label>
-                            <textarea name="message" required rows="6" class="form-textarea"
-                                placeholder="Décrivez votre projet ou votre demande..."></textarea>
-                        </div>
-
-                        <div class="flex items-start">
-                            <input type="checkbox" id="consent" required class="mt-1 mr-3">
-                            <label for="consent" class="text-sm text-gray-600">
-                                J'accepte que mes données soient utilisées pour me recontacter concernant ma demande. *
-                            </label>
-                        </div>
-
-                        <button type="submit" class="w-full btn-orange text-white py-4 rounded-full font-bold text-lg">
-                            <i class="fas fa-paper-plane mr-2"></i>Envoyer le Message
-                        </button>
-
-                        <p class="text-sm text-gray-500 text-center">* Champs obligatoires</p>
-                    </form>
-                </div>
-
-                <!-- Additional Info -->
-                <div class="space-y-8">
-                    <!-- Quick Contact -->
-                    <div class="bg-gradient-to-br from-primary-orange to-lemon-green rounded-2xl p-8 text-white">
-                        <h3 class="text-2xl font-bold mb-4">Besoin d'une Réponse Rapide ?</h3>
-                        <p class="mb-6 text-white/90">Notre équipe commerciale est disponible pour répondre à vos
-                            questions par téléphone ou WhatsApp</p>
-                        <div class="space-y-4">
-                            <a href="tel:+237XXXXXXXXX"
-                                class="flex items-center space-x-3 bg-white/20 hover:bg-white/30 rounded-xl p-4 transition">
-                                <i class="fas fa-phone text-2xl"></i>
-                                <div>
-                                    <p class="font-semibold">Appelez-nous</p>
-                                    <p class="text-sm text-white/90">+237 XXX XXX XXX</p>
-                                </div>
-                            </a>
-                            <a href="https://wa.me/237XXXXXXXXX" target="_blank"
-                                class="flex items-center space-x-3 bg-white/20 hover:bg-white/30 rounded-xl p-4 transition">
-                                <i class="fab fa-whatsapp text-2xl"></i>
-                                <div>
-                                    <p class="font-semibold">WhatsApp</p>
-                                    <p class="text-sm text-white/90">Discutez avec nous</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Quick Links -->
-                    <div class="bg-white rounded-2xl p-8 shadow-lg">
-                        <h3 class="text-2xl font-bold text-dark-blue mb-4">Questions <span
-                                class="green-accent">Fréquentes</span></h3>
-                        <div class="space-y-4">
-                            <div class="border-l-4 border-primary-orange pl-4">
-                                <h4 class="font-bold text-dark-blue mb-1">Quel est le délai de livraison ?</h4>
-                                <p class="text-gray-600 text-sm">Généralement 2-4 semaines selon le produit et la
-                                    disponibilité</p>
-                            </div>
-                            <div class="border-l-4 border-lemon-green pl-4">
-                                <h4 class="font-bold text-dark-blue mb-1">Proposez-vous des financements ?</h4>
-                                <p class="text-gray-600 text-sm">Oui, nous travaillons avec plusieurs partenaires
-                                    financiers</p>
-                            </div>
-                            <div class="border-l-4 border-primary-orange pl-4">
-                                <h4 class="font-bold text-dark-blue mb-1">Intervenez-vous hors de Douala ?</h4>
-                                    <p class="text-gray-600 text-sm">Oui, nous intervenons sur tout le territoire
-                                        camerounais</p>
-                            </div>
-                            <div class="border-l-4 border-lemon-green pl-4">
-                                <h4 class="font-bold text-dark-blue mb-1">Quelle est la garantie ?</h4>
-                                <p class="text-gray-600 text-sm">Garantie constructeur de 12 à 24 mois selon les
-                                    équipements</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Social Media -->
-                    <div class="bg-light-gray rounded-2xl p-8">
-                        <h3 class="text-2xl font-bold text-dark-blue mb-4">Suivez-nous</h3>
-                        <p class="text-gray-600 mb-6">Restez informés de nos actualités et nouveautés</p>
-                        <div class="flex space-x-4">
-                            <a href="#"
-                                class="w-12 h-12 bg-white hover:bg-primary-orange text-primary-orange hover:text-white rounded-full flex items-center justify-center transition shadow-md">
-                                <i class="fab fa-facebook-f text-xl"></i>
-                            </a>
-                            <a href="#"
-                                class="w-12 h-12 bg-white hover:bg-lemon-green text-lemon-green hover:text-white rounded-full flex items-center justify-center transition shadow-md">
-                                <i class="fab fa-linkedin-in text-xl"></i>
-                            </a>
-                            <a href="#"
-                                class="w-12 h-12 bg-white hover:bg-primary-orange text-primary-orange hover:text-white rounded-full flex items-center justify-center transition shadow-md">
-                                <i class="fab fa-twitter text-xl"></i>
-                            </a>
-                            <a href="#"
-                                class="w-12 h-12 bg-white hover:bg-green-500 text-green-500 hover:text-white rounded-full flex items-center justify-center transition shadow-md">
-                                <i class="fab fa-whatsapp text-xl"></i>
-                            </a>
-                            <a href="#"
-                                class="w-12 h-12 bg-white hover:bg-pink-500 text-pink-500 hover:text-white rounded-full flex items-center justify-center transition shadow-md">
-                                <i class="fab fa-instagram text-xl"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map Section -->
-    <section id="map" class="py-20 bg-white">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">Notre <span
-                        class="orange-accent">Localisation</span></h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Trouvez-nous facilement à Douala</p>
-            </div>
-
-            <div class="map-container">
-                <!-- Google Maps Embed - Replace with actual coordinates -->
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127118.09103633!2d9.738499!3d4.0510563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10610d0d3b6be0cb%3A0x8b6b6b6b6b6b6b6b!2sDouala%2C%20Cameroon!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
-                    width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- Other Locations -->
-    <section class="py-20 bg-light-gray">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">Nos <span
-                        class="green-accent">Agences</span>
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Nous sommes présents dans plusieurs villes</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Douala Office -->
-                <div class="bg-white rounded-2xl p-8 hover-lift">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-building text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-dark-blue mb-2">Siège Social - Douala</h3>
-                    <div class="space-y-3 text-gray-600">
-                        <p class="flex items-start">
-                            <i class="fas fa-map-marker-alt orange-accent mr-3 mt-1"></i>
-                            Zone Industrielle Bassa, Douala
-                        </p>
-                        <p class="flex items-start">
-                            <i class="fas fa-phone green-accent mr-3 mt-1"></i>
-                            +237 XXX XXX XXX
-                        </p>
-                        <p class="flex items-start">
-                            <i class="fas fa-envelope orange-accent mr-3 mt-1"></i>
-                            douala@cricafrica.com
-                        </p>
-                    </div>
-                    <a href="#" class="inline-block mt-6 text-primary-orange font-semibold hover:underline">
-                        <i class="fas fa-directions mr-2"></i>Obtenir l'itinéraire
-                    </a>
-                </div>
-
-                <!-- Yaoundé Office -->
-                <div class="bg-white rounded-2xl p-8 hover-lift">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-building text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-dark-blue mb-2">Agence Yaoundé</h3>
-                    <div class="space-y-3 text-gray-600">
-                        <p class="flex items-start">
-                            <i class="fas fa-map-marker-alt green-accent mr-3 mt-1"></i>
-                            Bastos, Yaoundé
-                        </p>
-                        <p class="flex items-start">
-                            <i class="fas fa-phone orange-accent mr-3 mt-1"></i>
-                            +237 XXX XXX XXX
-                        </p>
-                        <p class="flex items-start">
-                            <i class="fas fa-envelope green-accent mr-3 mt-1"></i>
-                            yaounde@cricafrica.com
-                        </p>
-                    </div>
-                    <a href="#" class="inline-block mt-6 text-lemon-green font-semibold hover:underline">
-                        <i class="fas fa-directions mr-2"></i>Obtenir l'itinéraire
-                    </a>
-                </div>
-
-                <!-- Service Center -->
-                <div class="bg-white rounded-2xl p-8 hover-lift">
-                    <div
-                        class="w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mb-4">
-                        <i class="fas fa-tools text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-dark-blue mb-2">Centre Technique</h3>
-                    <div class="space-y-3 text-gray-600">
-                        <p class="flex items-start">
-                            <i class="fas fa-map-marker-alt orange-accent mr-3 mt-1"></i>
-                            Zone Industrielle Bonabéri, Douala
-                        </p>
-                        <p class="flex items-start">
-                            <i class="fas fa-phone green-accent mr-3 mt-1"></i>
-                            +237 XXX XXX XXX
-                        </p>
-                        <p class="flex items-start">
-                            <i class="fas fa-envelope orange-accent mr-3 mt-1"></i>
-                            technique@cricafrica.com
-                        </p>
-                    </div>
-                    <a href="#" class="inline-block mt-6 text-primary-orange font-semibold hover:underline">
-                        <i class="fas fa-directions mr-2"></i>Obtenir l'itinéraire
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-primary-orange to-lemon-green">
-        <div class="container mx-auto px-4 lg:px-8 text-center">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">Prêt à Démarrer Votre Projet ?</h2>
-                <p class="text-xl text-white/90 mb-8 leading-relaxed">
-                    Notre équipe d'experts est prête à vous accompagner. Contactez-nous dès aujourd'hui pour un devis
-                    gratuit et personnalisé.
-                </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="tel:+237XXXXXXXXX"
-                        class="bg-white text-primary-orange px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition">
-                        <i class="fas fa-phone mr-2"></i>Appelez Maintenant
-                    </a>
-                    <a href="products.html"
-                        class="bg-dark-blue text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition">
-                        <i class="fas fa-box mr-2"></i>Voir Nos Produits
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark-blue text-white pt-16 pb-8">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                <div>
-                    <div class="flex items-center space-x-3 mb-6">
+    <body>
+        <!-- Header -->
+        <header class="fixed w-full top-0 z-50">
+            <nav class="container mx-auto px-4 lg:px-8 py-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center space-x-3">
                         <div
-                            class="w-12 h-12 bg-gradient-to-br from-primary-orange to-lemon-green rounded-lg flex items-center justify-center">
+                            class="w-12 h-12 bg-gradient-to-br from-primary-orange to-lemon-green rounded-lg flex items-center justify-center"
+                        >
                             <i class="fas fa-industry text-white text-xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold">CRIC AFRICA</h3>
-                            <p class="text-xs text-gray-400 italic">Ensemble Énergisons L'Afrique</p>
+                            <h1 class="text-2xl font-bold text-white">CRIC AFRICA</h1>
+                            <p class="text-xs text-gray-300 italic">
+                                Ensemble Énergisons L'Afrique
+                            </p>
                         </div>
                     </div>
-                    <p class="text-gray-400 leading-relaxed mb-6">
-                        Votre partenaire de confiance pour l'importation, l'installation et la maintenance d'équipements
-                        industriels au Cameroun.
-                    </p>
-                    <div class="flex space-x-3">
-                        <a href="#"
-                            class="w-10 h-10 bg-white/10 hover:bg-primary-orange rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-facebook-f"></i>
+
+                    <ul class="hidden lg:flex space-x-8 text-white font-semibold">
+                        <li>
+                            <a href="index.html" class="hover:text-primary-orange transition"
+                                >Accueil</a
+                            >
+                        </li>
+                        <li>
+                            <a href="products.html" class="hover:text-lemon-green transition"
+                                >Produits</a
+                            >
+                        </li>
+                        <li>
+                            <a href="services.html" class="hover:text-primary-orange transition"
+                                >Services</a
+                            >
+                        </li>
+                        <li>
+                            <a href="realisations.html" class="hover:text-lemon-green transition"
+                                >Réalisations</a
+                            >
+                        </li>
+                        <li>
+                            <a href="about.html" class="hover:text-primary-orange transition"
+                                >À Propos</a
+                            >
+                        </li>
+                        <li><a href="contact.html" class="text-primary-orange">Contact</a></li>
+                    </ul>
+
+                    <a
+                        href="contact.html"
+                        class="hidden lg:block btn-orange text-white px-6 py-3 rounded-full font-semibold"
+                    >
+                        <i class="fas fa-phone mr-2"></i>Contactez-nous
+                    </a>
+
+                    <button onclick="toggleMobileMenu()" class="lg:hidden text-white text-2xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+
+                <div id="mobileMenu" class="mobile-menu lg:hidden mt-4">
+                    <ul
+                        class="flex flex-col space-y-4 text-white font-semibold bg-dark-blue/50 p-6 rounded-lg"
+                    >
+                        <li>
+                            <a href="index.html" class="block hover:text-primary-orange transition"
+                                >Accueil</a
+                            >
+                        </li>
+                        <li>
+                            <a href="products.html" class="block hover:text-lemon-green transition"
+                                >Produits</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="services.html"
+                                class="block hover:text-primary-orange transition"
+                                >Services</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="realisations.html"
+                                class="block hover:text-lemon-green transition"
+                                >Réalisations</a
+                            >
+                        </li>
+                        <li>
+                            <a href="about.html" class="block hover:text-primary-orange transition"
+                                >À Propos</a
+                            >
+                        </li>
+                        <li>
+                            <a href="contact.html" class="block text-primary-orange">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Page Header -->
+        <section class="page-header pt-32 pb-20">
+            <div class="container mx-auto px-4 lg:px-8 text-center">
+                <h1 class="text-5xl lg:text-6xl font-bold text-white mb-6">
+                    Contactez <span class="green-accent">CRIC Africa</span>
+                </h1>
+                <p class="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
+                    Notre équipe est à votre écoute pour répondre à toutes vos questions et vous
+                    accompagner dans vos projets
+                </p>
+                <div class="flex justify-center space-x-2 text-white">
+                    <a href="index.html" class="hover:text-primary-orange transition">Accueil</a>
+                    <span>/</span>
+                    <span class="orange-accent">Contact</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Info Cards -->
+        <section class="py-20 bg-light-gray">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                    <!-- Phone -->
+                    <div class="contact-card bg-white rounded-2xl p-8 text-center hover-lift">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mx-auto mb-4"
+                        >
+                            <i class="fas fa-phone text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-blue mb-2">Téléphone</h3>
+                        <p class="text-gray-600 mb-2">+237 XXX XXX XXX</p>
+                        <p class="text-gray-600">+237 XXX XXX XXX</p>
+                        <a
+                            href="tel:+237XXXXXXXXX"
+                            class="inline-block mt-4 text-primary-orange font-semibold hover:underline"
+                        >
+                            Appelez-nous
                         </a>
-                        <a href="#"
-                            class="w-10 h-10 bg-white/10 hover:bg-lemon-green rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-linkedin-in"></i>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="contact-card bg-white rounded-2xl p-8 text-center hover-lift">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mx-auto mb-4"
+                        >
+                            <i class="fas fa-envelope text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-blue mb-2">Email</h3>
+                        <p class="text-gray-600 mb-2">contact@cricafrica.com</p>
+                        <p class="text-gray-600">info@cricafrica.com</p>
+                        <a
+                            href="mailto:contact@cricafrica.com"
+                            class="inline-block mt-4 text-lemon-green font-semibold hover:underline"
+                        >
+                            Envoyez un email
                         </a>
-                        <a href="#"
-                            class="w-10 h-10 bg-white/10 hover:bg-primary-orange rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-twitter"></i>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="contact-card bg-white rounded-2xl p-8 text-center hover-lift">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mx-auto mb-4"
+                        >
+                            <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-blue mb-2">Adresse</h3>
+                        <p class="text-gray-600 mb-2">Douala, Cameroun</p>
+                        <p class="text-gray-600 text-sm">Zone Industrielle Bassa</p>
+                        <a
+                            href="#map"
+                            class="inline-block mt-4 text-primary-orange font-semibold hover:underline"
+                        >
+                            Voir sur la carte
                         </a>
-                        <a href="#"
-                            class="w-10 h-10 bg-white/10 hover:bg-lemon-green rounded-full flex items-center justify-center transition">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
+                    </div>
+
+                    <!-- Hours -->
+                    <div class="contact-card bg-white rounded-2xl p-8 text-center hover-lift">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mx-auto mb-4"
+                        >
+                            <i class="fas fa-clock text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-blue mb-2">Horaires</h3>
+                        <p class="text-gray-600 mb-1"><strong>Lun-Ven:</strong> 8h-18h</p>
+                        <p class="text-gray-600 mb-1"><strong>Samedi:</strong> 9h-13h</p>
+                        <p class="text-gray-600"><strong>Dimanche:</strong> Fermé</p>
                     </div>
                 </div>
 
-                <div>
-                    <h4 class="text-lg font-bold mb-6 orange-accent">Navigation</h4>
-                    <ul class="space-y-3">
-                        <li><a href="index.html"
-                                class="text-gray-400 hover:text-primary-orange transition flex items-center"><i
-                                    class="fas fa-chevron-right text-xs mr-2"></i>Accueil</a></li>
-                        <li><a href="products.html"
-                                class="text-gray-400 hover:text-lemon-green transition flex items-center"><i
-                                    class="fas fa-chevron-right text-xs mr-2"></i>Produits</a></li>
-                        <li><a href="services.html"
-                                class="text-gray-400 hover:text-primary-orange transition flex items-center"><i
-                                    class="fas fa-chevron-right text-xs mr-2"></i>Services</a></li>
-                        <li><a href="realisations.html"
-                                class="text-gray-400 hover:text-lemon-green transition flex items-center"><i
-                                    class="fas fa-chevron-right text-xs mr-2"></i>Réalisations</a></li>
-                        <li><a href="about.html"
-                                class="text-gray-400 hover:text-primary-orange transition flex items-center"><i
-                                    class="fas fa-chevron-right text-xs mr-2"></i>À Propos</a></li>
-                        <li><a href="contact.html"
-                                class="text-gray-400 hover:text-lemon-green transition flex items-center"><i
-                                    class="fas fa-chevron-right text-xs mr-2"></i>Contact</a></li>
-                    </ul>
-                </div>
+                <!-- Contact Form & Info -->
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
+                        <h2 class="text-3xl font-bold text-dark-blue mb-2">
+                            Envoyez-nous un <span class="orange-accent">Message</span>
+                        </h2>
+                        <p class="text-gray-600 mb-8">
+                            Remplissez le formulaire ci-dessous et nous vous répondrons dans les
+                            plus brefs délais
+                        </p>
 
-                <div>
-                    <h4 class="text-lg font-bold mb-6 green-accent">Nos Produits</h4>
-                    <ul class="space-y-3">
-                        <li class="text-gray-400 flex items-start"><i
-                                class="fas fa-check orange-accent text-xs mr-2 mt-1"></i>Groupes Électrogènes</li>
-                        <li class="text-gray-400 flex items-start"><i
-                                class="fas fa-check green-accent text-xs mr-2 mt-1"></i>Compresseurs Industriels</li>
-                        <li class="text-gray-400 flex items-start"><i
-                                class="fas fa-check orange-accent text-xs mr-2 mt-1"></i>Équipements Sécurité</li>
-                        <li class="text-gray-400 flex items-start"><i
-                                class="fas fa-check green-accent text-xs mr-2 mt-1"></i>Matériels de Pompage</li>
-                        <li class="text-gray-400 flex items-start"><i
-                                class="fas fa-check orange-accent text-xs mr-2 mt-1"></i>Engins de Manutention</li>
-                        <li class="text-gray-400 flex items-start"><i
-                                class="fas fa-check green-accent text-xs mr-2 mt-1"></i>Transformateurs</li>
-                    </ul>
-                </div>
+                        <form id="contactForm" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-700 font-semibold mb-2"
+                                        >Nom Complet *</label
+                                    >
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        required
+                                        class="form-input"
+                                        placeholder="Votre nom"
+                                    />
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-semibold mb-2"
+                                        >Entreprise</label
+                                    >
+                                    <input
+                                        type="text"
+                                        name="company"
+                                        class="form-input"
+                                        placeholder="Nom de votre entreprise"
+                                    />
+                                </div>
+                            </div>
 
-                <div>
-                    <h4 class="text-lg font-bold mb-6 orange-accent">Contact</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-start space-x-3">
-                            <i class="fas fa-map-marker-alt orange-accent mt-1"></i>
-                            <span class="text-gray-400">Douala, Cameroun</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <i class="fas fa-phone green-accent mt-1"></i>
-                            <span class="text-gray-400">+237 XXX XXX XXX</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <i class="fas fa-envelope orange-accent mt-1"></i>
-                            <span class="text-gray-400">contact@cricafrica.com</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <i class="fas fa-clock green-accent mt-1"></i>
-                            <span class="text-gray-400">Lun-Ven: 8h-18h<br>Sam: 9h-13h</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-700 font-semibold mb-2"
+                                        >Email *</label
+                                    >
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        required
+                                        class="form-input"
+                                        placeholder="votre@email.com"
+                                    />
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-semibold mb-2"
+                                        >Téléphone *</label
+                                    >
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        required
+                                        class="form-input"
+                                        placeholder="+237 XXX XXX XXX"
+                                    />
+                                </div>
+                            </div>
 
-            <div class="border-t border-white/10 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                    <p class="text-gray-400 text-sm text-center md:text-left">
-                        &copy; 2025 <span class="orange-accent font-semibold">CRIC Africa SARL</span>. Tous droits
-                        réservés.
-                    </p>
-                    <div class="flex flex-wrap justify-center gap-6 text-sm">
-                        <a href="#" class="text-gray-400 hover:text-primary-orange transition">Politique de
-                            Confidentialité</a>
-                        <a href="#" class="text-gray-400 hover:text-lemon-green transition">Conditions d'Utilisation</a>
-                        <a href="#" class="text-gray-400 hover:text-primary-orange transition">Mentions Légales</a>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2"
+                                    >Sujet *</label
+                                >
+                                <select name="subject" required class="form-select">
+                                    <option value="">Sélectionnez un sujet</option>
+                                    <option value="devis">Demande de Devis</option>
+                                    <option value="info-produit">Information sur un Produit</option>
+                                    <option value="info-service">Information sur un Service</option>
+                                    <option value="sav">Service Après-Vente</option>
+                                    <option value="partenariat">Opportunité de Partenariat</option>
+                                    <option value="recrutement">Candidature Spontanée</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2"
+                                    >Message *</label
+                                >
+                                <textarea
+                                    name="message"
+                                    required
+                                    rows="6"
+                                    class="form-textarea"
+                                    placeholder="Décrivez votre projet ou votre demande..."
+                                ></textarea>
+                            </div>
+
+                            <div class="flex items-start">
+                                <input type="checkbox" id="consent" required class="mt-1 mr-3" />
+                                <label for="consent" class="text-sm text-gray-600">
+                                    J'accepte que mes données soient utilisées pour me recontacter
+                                    concernant ma demande. *
+                                </label>
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="w-full btn-orange text-white py-4 rounded-full font-bold text-lg"
+                            >
+                                <i class="fas fa-paper-plane mr-2"></i>Envoyer le Message
+                            </button>
+
+                            <p class="text-sm text-gray-500 text-center">* Champs obligatoires</p>
+                        </form>
+                    </div>
+
+                    <!-- Additional Info -->
+                    <div class="space-y-8">
+                        <!-- Quick Contact -->
+                        <div
+                            class="bg-gradient-to-br from-primary-orange to-lemon-green rounded-2xl p-8 text-white"
+                        >
+                            <h3 class="text-2xl font-bold mb-4">Besoin d'une Réponse Rapide ?</h3>
+                            <p class="mb-6 text-white/90">
+                                Notre équipe commerciale est disponible pour répondre à vos
+                                questions par téléphone ou WhatsApp
+                            </p>
+                            <div class="space-y-4">
+                                <a
+                                    href="tel:+237XXXXXXXXX"
+                                    class="flex items-center space-x-3 bg-white/20 hover:bg-white/30 rounded-xl p-4 transition"
+                                >
+                                    <i class="fas fa-phone text-2xl"></i>
+                                    <div>
+                                        <p class="font-semibold">Appelez-nous</p>
+                                        <p class="text-sm text-white/90">+237 XXX XXX XXX</p>
+                                    </div>
+                                </a>
+                                <a
+                                    href="https://wa.me/237XXXXXXXXX"
+                                    target="_blank"
+                                    class="flex items-center space-x-3 bg-white/20 hover:bg-white/30 rounded-xl p-4 transition"
+                                >
+                                    <i class="fab fa-whatsapp text-2xl"></i>
+                                    <div>
+                                        <p class="font-semibold">WhatsApp</p>
+                                        <p class="text-sm text-white/90">Discutez avec nous</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Quick Links -->
+                        <div class="bg-white rounded-2xl p-8 shadow-lg">
+                            <h3 class="text-2xl font-bold text-dark-blue mb-4">
+                                Questions <span class="green-accent">Fréquentes</span>
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="border-l-4 border-primary-orange pl-4">
+                                    <h4 class="font-bold text-dark-blue mb-1">
+                                        Quel est le délai de livraison ?
+                                    </h4>
+                                    <p class="text-gray-600 text-sm">
+                                        Généralement 2-4 semaines selon le produit et la
+                                        disponibilité
+                                    </p>
+                                </div>
+                                <div class="border-l-4 border-lemon-green pl-4">
+                                    <h4 class="font-bold text-dark-blue mb-1">
+                                        Proposez-vous des financements ?
+                                    </h4>
+                                    <p class="text-gray-600 text-sm">
+                                        Oui, nous travaillons avec plusieurs partenaires financiers
+                                    </p>
+                                </div>
+                                <div class="border-l-4 border-primary-orange pl-4">
+                                    <h4 class="font-bold text-dark-blue mb-1">
+                                        Intervenez-vous hors de Douala ?
+                                    </h4>
+                                    <p class="text-gray-600 text-sm">
+                                        Oui, nous intervenons sur tout le territoire camerounais
+                                    </p>
+                                </div>
+                                <div class="border-l-4 border-lemon-green pl-4">
+                                    <h4 class="font-bold text-dark-blue mb-1">
+                                        Quelle est la garantie ?
+                                    </h4>
+                                    <p class="text-gray-600 text-sm">
+                                        Garantie constructeur de 12 à 24 mois selon les équipements
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Social Media -->
+                        <div class="bg-light-gray rounded-2xl p-8">
+                            <h3 class="text-2xl font-bold text-dark-blue mb-4">Suivez-nous</h3>
+                            <p class="text-gray-600 mb-6">
+                                Restez informés de nos actualités et nouveautés
+                            </p>
+                            <div class="flex space-x-4">
+                                <a
+                                    href="#"
+                                    class="w-12 h-12 bg-white hover:bg-primary-orange text-primary-orange hover:text-white rounded-full flex items-center justify-center transition shadow-md"
+                                >
+                                    <i class="fab fa-facebook-f text-xl"></i>
+                                </a>
+                                <a
+                                    href="#"
+                                    class="w-12 h-12 bg-white hover:bg-lemon-green text-lemon-green hover:text-white rounded-full flex items-center justify-center transition shadow-md"
+                                >
+                                    <i class="fab fa-linkedin-in text-xl"></i>
+                                </a>
+                                <a
+                                    href="#"
+                                    class="w-12 h-12 bg-white hover:bg-primary-orange text-primary-orange hover:text-white rounded-full flex items-center justify-center transition shadow-md"
+                                >
+                                    <i class="fab fa-twitter text-xl"></i>
+                                </a>
+                                <a
+                                    href="#"
+                                    class="w-12 h-12 bg-white hover:bg-green-500 text-green-500 hover:text-white rounded-full flex items-center justify-center transition shadow-md"
+                                >
+                                    <i class="fab fa-whatsapp text-xl"></i>
+                                </a>
+                                <a
+                                    href="#"
+                                    class="w-12 h-12 bg-white hover:bg-pink-500 text-pink-500 hover:text-white rounded-full flex items-center justify-center transition shadow-md"
+                                >
+                                    <i class="fab fa-instagram text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </section>
 
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTop"
-        class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-primary-orange to-lemon-green text-white rounded-full shadow-lg hover:shadow-2xl transition opacity-0 pointer-events-none z-50">
-        <i class="fas fa-arrow-up text-xl"></i>
-    </button>
+        <!-- Map Section -->
+        <section id="map" class="py-20 bg-white">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">
+                        Notre <span class="orange-accent">Localisation</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Trouvez-nous facilement à Douala
+                    </p>
+                </div>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/237XXXXXXXXX" target="_blank"
-        class="fixed bottom-24 right-8 w-14 h-14 bg-green-500 text-white rounded-full shadow-lg hover:shadow-2xl hover:scale-110 transition flex items-center justify-center z-50">
-        <i class="fab fa-whatsapp text-3xl"></i>
-    </a>
+                <div class="map-container">
+                    <!-- Google Maps Embed - Replace with actual coordinates -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127118.09103633!2d9.738499!3d4.0510563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10610d0d3b6be0cb%3A0x8b6b6b6b6b6b6b6b!2sDouala%2C%20Cameroon!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
+                        width="100%"
+                        height="500"
+                        style="border: 0"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                    >
+                    </iframe>
+                </div>
+            </div>
+        </section>
 
-    <script>
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('active');
-        }
+        <!-- Other Locations -->
+        <section class="py-20 bg-light-gray">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-dark-blue mb-4">
+                        Nos <span class="green-accent">Agences</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Nous sommes présents dans plusieurs villes
+                    </p>
+                </div>
 
-        // Scroll to Top
-        const scrollToTopBtn = document.getElementById('scrollToTop');
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Douala Office -->
+                    <div class="bg-white rounded-2xl p-8 hover-lift">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mb-4"
+                        >
+                            <i class="fas fa-building text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark-blue mb-2">
+                            Siège Social - Douala
+                        </h3>
+                        <div class="space-y-3 text-gray-600">
+                            <p class="flex items-start">
+                                <i class="fas fa-map-marker-alt orange-accent mr-3 mt-1"></i>
+                                Zone Industrielle Bassa, Douala
+                            </p>
+                            <p class="flex items-start">
+                                <i class="fas fa-phone green-accent mr-3 mt-1"></i>
+                                +237 XXX XXX XXX
+                            </p>
+                            <p class="flex items-start">
+                                <i class="fas fa-envelope orange-accent mr-3 mt-1"></i>
+                                douala@cricafrica.com
+                            </p>
+                        </div>
+                        <a
+                            href="#"
+                            class="inline-block mt-6 text-primary-orange font-semibold hover:underline"
+                        >
+                            <i class="fas fa-directions mr-2"></i>Obtenir l'itinéraire
+                        </a>
+                    </div>
 
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
-                scrollToTopBtn.classList.add('opacity-100');
-            } else {
-                scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
-                scrollToTopBtn.classList.remove('opacity-100');
+                    <!-- Yaoundé Office -->
+                    <div class="bg-white rounded-2xl p-8 hover-lift">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-lemon-green to-primary-orange rounded-full flex items-center justify-center mb-4"
+                        >
+                            <i class="fas fa-building text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark-blue mb-2">Agence Yaoundé</h3>
+                        <div class="space-y-3 text-gray-600">
+                            <p class="flex items-start">
+                                <i class="fas fa-map-marker-alt green-accent mr-3 mt-1"></i>
+                                Bastos, Yaoundé
+                            </p>
+                            <p class="flex items-start">
+                                <i class="fas fa-phone orange-accent mr-3 mt-1"></i>
+                                +237 XXX XXX XXX
+                            </p>
+                            <p class="flex items-start">
+                                <i class="fas fa-envelope green-accent mr-3 mt-1"></i>
+                                yaounde@cricafrica.com
+                            </p>
+                        </div>
+                        <a
+                            href="#"
+                            class="inline-block mt-6 text-lemon-green font-semibold hover:underline"
+                        >
+                            <i class="fas fa-directions mr-2"></i>Obtenir l'itinéraire
+                        </a>
+                    </div>
+
+                    <!-- Service Center -->
+                    <div class="bg-white rounded-2xl p-8 hover-lift">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-primary-orange to-lemon-green rounded-full flex items-center justify-center mb-4"
+                        >
+                            <i class="fas fa-tools text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark-blue mb-2">Centre Technique</h3>
+                        <div class="space-y-3 text-gray-600">
+                            <p class="flex items-start">
+                                <i class="fas fa-map-marker-alt orange-accent mr-3 mt-1"></i>
+                                Zone Industrielle Bonabéri, Douala
+                            </p>
+                            <p class="flex items-start">
+                                <i class="fas fa-phone green-accent mr-3 mt-1"></i>
+                                +237 XXX XXX XXX
+                            </p>
+                            <p class="flex items-start">
+                                <i class="fas fa-envelope orange-accent mr-3 mt-1"></i>
+                                technique@cricafrica.com
+                            </p>
+                        </div>
+                        <a
+                            href="#"
+                            class="inline-block mt-6 text-primary-orange font-semibold hover:underline"
+                        >
+                            <i class="fas fa-directions mr-2"></i>Obtenir l'itinéraire
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gradient-to-r from-primary-orange to-lemon-green">
+            <div class="container mx-auto px-4 lg:px-8 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                        Prêt à Démarrer Votre Projet ?
+                    </h2>
+                    <p class="text-xl text-white/90 mb-8 leading-relaxed">
+                        Notre équipe d'experts est prête à vous accompagner. Contactez-nous dès
+                        aujourd'hui pour un devis gratuit et personnalisé.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a
+                            href="tel:+237XXXXXXXXX"
+                            class="bg-white text-primary-orange px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition"
+                        >
+                            <i class="fas fa-phone mr-2"></i>Appelez Maintenant
+                        </a>
+                        <a
+                            href="products.html"
+                            class="bg-dark-blue text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition"
+                        >
+                            <i class="fas fa-box mr-2"></i>Voir Nos Produits
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-dark-blue text-white pt-16 pb-8">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-primary-orange to-lemon-green rounded-lg flex items-center justify-center"
+                            >
+                                <i class="fas fa-industry text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">CRIC AFRICA</h3>
+                                <p class="text-xs text-gray-400 italic">
+                                    Ensemble Énergisons L'Afrique
+                                </p>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            Votre partenaire de confiance pour l'importation, l'installation et la
+                            maintenance d'équipements industriels au Cameroun.
+                        </p>
+                        <div class="flex space-x-3">
+                            <a
+                                href="#"
+                                class="w-10 h-10 bg-white/10 hover:bg-primary-orange rounded-full flex items-center justify-center transition"
+                            >
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 bg-white/10 hover:bg-lemon-green rounded-full flex items-center justify-center transition"
+                            >
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 bg-white/10 hover:bg-primary-orange rounded-full flex items-center justify-center transition"
+                            >
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a
+                                href="#"
+                                class="w-10 h-10 bg-white/10 hover:bg-lemon-green rounded-full flex items-center justify-center transition"
+                            >
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-bold mb-6 orange-accent">Navigation</h4>
+                        <ul class="space-y-3">
+                            <li>
+                                <a
+                                    href="index.html"
+                                    class="text-gray-400 hover:text-primary-orange transition flex items-center"
+                                    ><i class="fas fa-chevron-right text-xs mr-2"></i>Accueil</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="products.html"
+                                    class="text-gray-400 hover:text-lemon-green transition flex items-center"
+                                    ><i class="fas fa-chevron-right text-xs mr-2"></i>Produits</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="services.html"
+                                    class="text-gray-400 hover:text-primary-orange transition flex items-center"
+                                    ><i class="fas fa-chevron-right text-xs mr-2"></i>Services</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="realisations.html"
+                                    class="text-gray-400 hover:text-lemon-green transition flex items-center"
+                                    ><i class="fas fa-chevron-right text-xs mr-2"></i
+                                    >Réalisations</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="about.html"
+                                    class="text-gray-400 hover:text-primary-orange transition flex items-center"
+                                    ><i class="fas fa-chevron-right text-xs mr-2"></i>À Propos</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="contact.html"
+                                    class="text-gray-400 hover:text-lemon-green transition flex items-center"
+                                    ><i class="fas fa-chevron-right text-xs mr-2"></i>Contact</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-bold mb-6 green-accent">Nos Produits</h4>
+                        <ul class="space-y-3">
+                            <li class="text-gray-400 flex items-start">
+                                <i class="fas fa-check orange-accent text-xs mr-2 mt-1"></i>Groupes
+                                Électrogènes
+                            </li>
+                            <li class="text-gray-400 flex items-start">
+                                <i class="fas fa-check green-accent text-xs mr-2 mt-1"></i
+                                >Compresseurs Industriels
+                            </li>
+                            <li class="text-gray-400 flex items-start">
+                                <i class="fas fa-check orange-accent text-xs mr-2 mt-1"></i
+                                >Équipements Sécurité
+                            </li>
+                            <li class="text-gray-400 flex items-start">
+                                <i class="fas fa-check green-accent text-xs mr-2 mt-1"></i>Matériels
+                                de Pompage
+                            </li>
+                            <li class="text-gray-400 flex items-start">
+                                <i class="fas fa-check orange-accent text-xs mr-2 mt-1"></i>Engins
+                                de Manutention
+                            </li>
+                            <li class="text-gray-400 flex items-start">
+                                <i class="fas fa-check green-accent text-xs mr-2 mt-1"></i
+                                >Transformateurs
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-bold mb-6 orange-accent">Contact</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-map-marker-alt orange-accent mt-1"></i>
+                                <span class="text-gray-400">Douala, Cameroun</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-phone green-accent mt-1"></i>
+                                <span class="text-gray-400">+237 XXX XXX XXX</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-envelope orange-accent mt-1"></i>
+                                <span class="text-gray-400">contact@cricafrica.com</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <i class="fas fa-clock green-accent mt-1"></i>
+                                <span class="text-gray-400">Lun-Ven: 8h-18h<br />Sam: 9h-13h</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-white/10 pt-8">
+                    <div
+                        class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
+                    >
+                        <p class="text-gray-400 text-sm text-center md:text-left">
+                            &copy; 2025
+                            <span class="orange-accent font-semibold">CRIC Africa SARL</span>. Tous
+                            droits réservés.
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-6 text-sm">
+                            <a href="#" class="text-gray-400 hover:text-primary-orange transition"
+                                >Politique de Confidentialité</a
+                            >
+                            <a href="#" class="text-gray-400 hover:text-lemon-green transition"
+                                >Conditions d'Utilisation</a
+                            >
+                            <a href="#" class="text-gray-400 hover:text-primary-orange transition"
+                                >Mentions Légales</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scroll to Top Button -->
+        <button
+            id="scrollToTop"
+            class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-primary-orange to-lemon-green text-white rounded-full shadow-lg hover:shadow-2xl transition opacity-0 pointer-events-none z-50"
+        >
+            <i class="fas fa-arrow-up text-xl"></i>
+        </button>
+
+        <!-- WhatsApp Floating Button -->
+        <a
+            href="https://wa.me/237XXXXXXXXX"
+            target="_blank"
+            class="fixed bottom-24 right-8 w-14 h-14 bg-green-500 text-white rounded-full shadow-lg hover:shadow-2xl hover:scale-110 transition flex items-center justify-center z-50"
+        >
+            <i class="fab fa-whatsapp text-3xl"></i>
+        </a>
+
+        <script>
+            function toggleMobileMenu() {
+                const mobileMenu = document.getElementById('mobileMenu')
+                mobileMenu.classList.toggle('active')
             }
-        });
 
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+            // Scroll to Top
+            const scrollToTopBtn = document.getElementById('scrollToTop')
 
-        // Header Hide on Scroll
-        let lastScroll = 0;
-        const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none')
+                    scrollToTopBtn.classList.add('opacity-100')
+                } else {
+                    scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none')
+                    scrollToTopBtn.classList.remove('opacity-100')
+                }
+            })
 
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
+            scrollToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                })
+            })
 
-            if (currentScroll <= 0) {
-                header.classList.remove('shadow-lg');
-                return;
-            }
+            // Header Hide on Scroll
+            let lastScroll = 0
+            const header = document.querySelector('header')
 
-            if (currentScroll > lastScroll && currentScroll > 100) {
-                header.style.transform = 'translateY(-100%)';
-            } else {
-                header.style.transform = 'translateY(0)';
-                header.classList.add('shadow-lg');
-            }
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset
 
-            lastScroll = currentScroll;
-        });
+                if (currentScroll <= 0) {
+                    header.classList.remove('shadow-lg')
+                    return
+                }
 
-        header.style.transition = 'transform 0.3s ease-in-out, box-shadow 0.3s ease';
+                if (currentScroll > lastScroll && currentScroll > 100) {
+                    header.style.transform = 'translateY(-100%)'
+                } else {
+                    header.style.transform = 'translateY(0)'
+                    header.classList.add('shadow-lg')
+                }
 
-        // Form Submission
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
+                lastScroll = currentScroll
+            })
 
-            // Show success message
-            alert('Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.');
+            header.style.transition = 'transform 0.3s ease-in-out, box-shadow 0.3s ease'
 
-            // Reset form
-            this.reset();
+            // Form Submission
+            document.getElementById('contactForm').addEventListener('submit', function (e) {
+                e.preventDefault()
 
-            // In production, you would send the form data to your backend
-            // Example:
-            // const formData = new FormData(this);
-            // fetch('/api/contact', {
-            //     method: 'POST',
-            //     body: formData
-            // }).then(response => response.json())
-            //   .then(data => console.log(data));
-        });
-    </script>
-</body>
+                // Show success message
+                alert('Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.')
 
+                // Reset form
+                this.reset()
+
+                // In production, you would send the form data to your backend
+                // Example:
+                // const formData = new FormData(this);
+                // fetch('/api/contact', {
+                //     method: 'POST',
+                //     body: formData
+                // }).then(response => response.json())
+                //   .then(data => console.log(data));
+            })
+        </script>
+    </body>
 </html>

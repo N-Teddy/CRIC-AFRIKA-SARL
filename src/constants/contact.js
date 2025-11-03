@@ -1,6 +1,16 @@
 // src/constants/contact.js
-import { Clock, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter, MessageCircle, } from "lucide-react"
-import { Email, phone, WhatsAppNumber } from "."
+import {
+    Clock,
+    Facebook,
+    Instagram,
+    Linkedin,
+    Mail,
+    MapPin,
+    Phone,
+    Twitter,
+    MessageCircle
+} from 'lucide-react'
+import { Email, phone, WhatsAppNumber } from '.'
 
 export const contactInfo = [
     {
@@ -60,9 +70,19 @@ export const faqs = [
 ]
 
 export const socialMedia = [
-    { icon: Facebook, href: '#', color: 'hover:bg-primary-orange', textColor: 'text-primary-orange' },
+    {
+        icon: Facebook,
+        href: '#',
+        color: 'hover:bg-primary-orange',
+        textColor: 'text-primary-orange'
+    },
     { icon: Linkedin, href: '#', color: 'hover:bg-lemon-green', textColor: 'text-lemon-green' },
-    { icon: Twitter, href: '#', color: 'hover:bg-primary-orange', textColor: 'text-primary-orange' },
+    {
+        icon: Twitter,
+        href: '#',
+        color: 'hover:bg-primary-orange',
+        textColor: 'text-primary-orange'
+    },
     { icon: MessageCircle, href: '#', color: 'hover:bg-green-500', textColor: 'text-green-500' },
     { icon: Instagram, href: '#', color: 'hover:bg-pink-500', textColor: 'text-pink-500' }
 ]

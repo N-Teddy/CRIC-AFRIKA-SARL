@@ -1,12 +1,12 @@
 /* src/styles/tailwind.css */
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
     /* Your custom theme configuration goes here */
-    --color-primary-orange: #FF8C42;
-    --color-lemon-green: #A8D05F;
-    --color-dark-blue: #1A2B4A;
-    --color-light-gray: #F5F7FA;
+    --color-primary-orange: #ff8c42;
+    --color-lemon-green: #a8d05f;
+    --color-dark-blue: #1a2b4a;
+    --color-light-gray: #f5f7fa;
 
     --font-family-inter: 'Inter', sans-serif;
 

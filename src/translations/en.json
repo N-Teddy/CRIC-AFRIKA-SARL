@@ -1,778 +1,780 @@
 {
-    "common": {
-        "companyName": "CRIC AFRIKA SARL",
-        "slogan": "Together Powering Africa",
-        "learnMore": "Learn More",
-        "contactUs": "Contact Us",
-        "getQuote": "Get a Quote",
-        "seeMore": "See More",
-        "ourProducts": "Our Products",
-        "ourServices": "Our Services",
-        "ourProjects": "Our Projects",
-        "aboutUs": "About Us",
-        "home": "Home"
+  "common": {
+    "companyName": "CRIC AFRIKA SARL",
+    "slogan": "Together Powering Africa",
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us",
+    "getQuote": "Get a Quote",
+    "seeMore": "See More",
+    "ourProducts": "Our Products",
+    "ourServices": "Our Services",
+    "ourProjects": "Our Projects",
+    "aboutUs": "About Us",
+    "home": "Home"
+  },
+  "navigation": {
+    "home": "Home",
+    "products": "Products",
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "footer": {
+    "companyDescription": "Your trusted partner for the import, installation, and maintenance of industrial equipment in Cameroon.",
+    "navigation": "Navigation",
+    "products": "Our Products",
+    "productList": [
+      "Generators",
+      "Industrial Compressors",
+      "Safety Equipment",
+      "Pumping Equipment",
+      "Handling Machinery",
+      "Transformers"
+    ]
+  },
+  "home": {
+    "hero": {
+      "badge": "Leader in Industrial Equipment in Cameroon",
+      "title": "Together Powering Africa",
+      "subtitle": "Import, installation and maintenance of superior quality industrial equipment. Your trusted partner for over 15 years.",
+      "ctaQuote": "Get a Quote",
+      "ctaProducts": "Our Products",
+      "images": {
+        "equipment": "Industrial Equipment",
+        "generator": "Generator",
+        "site": "Industrial Site",
+        "maintenance": "Maintenance"
+      }
     },
-    "navigation": {
-        "home": "Home",
-        "products": "Products",
-        "services": "Services",
-        "projects": "Projects",
-        "about": "About",
-        "contact": "Contact"
-    },
-    "footer": {
-        "companyDescription": "Your trusted partner for the import, installation, and maintenance of industrial equipment in Cameroon.",
-        "navigation": "Navigation",
-        "products": "Our Products",
-        "productList": [
-            "Generators",
-            "Industrial Compressors",
-            "Safety Equipment",
-            "Pumping Equipment",
-            "Handling Machinery",
-            "Transformers"
-        ]
-    },
-    "home": {
-        "hero": {
-            "badge": "Leader in Industrial Equipment in Cameroon",
-            "title": "Together Powering Africa",
-            "subtitle": "Import, installation and maintenance of superior quality industrial equipment. Your trusted partner for over 15 years.",
-            "ctaQuote": "Get a Quote",
-            "ctaProducts": "Our Products",
-            "images": {
-                "equipment": "Industrial Equipment",
-                "generator": "Generator",
-                "site": "Industrial Site",
-                "maintenance": "Maintenance"
-            }
-        },
-        "stats": {
-            "experience": "Years of Experience",
-            "clients": "Satisfied Clients",
-            "projects": "Projects Completed",
-            "experts": "Qualified Experts"
-        },
-        "services": {
-            "badge": "OUR SERVICES",
-            "title": "Complete Solutions",
-            "subtitle": "From import to maintenance, we support you at every step",
-            "learnMore": "Learn More",
-            "items": {
-                "import": {
-                    "title": "Import",
-                    "description": "Superior quality industrial equipment"
-                },
-                "installation": {
-                    "title": "Installation",
-                    "description": "Professional setup by our experts"
-                },
-                "maintenance": {
-                    "title": "Maintenance",
-                    "description": "Reactive and efficient after-sales service"
-                },
-                "automation": {
-                    "title": "Automation",
-                    "description": "Industrial automation solutions"
-                }
-            }
-        },
-        "products": {
-            "badge": "OUR PRODUCTS",
-            "title": "Wide Range of Equipment",
-            "subtitle": "Quality industrial equipment for all your needs",
-            "discover": "Discover",
-            "cta": "See All Products",
-            "items": {
-                "generators": {
-                    "name": "Generators",
-                    "count": "50+ Models"
-                },
-                "compressors": {
-                    "name": "Compressors",
-                    "count": "30+ Models"
-                },
-                "safety": {
-                    "name": "Safety Equipment",
-                    "count": "40+ Products"
-                },
-                "pumping": {
-                    "name": "Pumping Equipment",
-                    "count": "25+ Models"
-                },
-                "handling": {
-                    "name": "Handling Equipment",
-                    "count": "20+ Models"
-                },
-                "transformers": {
-                    "name": "Transformers",
-                    "count": "15+ Models"
-                }
-            }
-        },
-        "whyChooseUs": {
-            "badge": "WHY CHOOSE US",
-            "title": "Your Trusted Partner",
-            "subtitle": "CRIC Africa is committed to providing superior quality equipment and exceptional customer service.",
-            "imageAlt": "Industrial Equipment",
-            "benefits": [
-                "Certified and guaranteed equipment",
-                "Installation by qualified experts",
-                "24/7 reactive after-sales service",
-                "Partnerships with the best brands",
-                "Training and support",
-                "Competitive prices and financing solutions"
-            ]
-        },
-        "testimonials": {
-            "badge": "TESTIMONIALS",
-            "title": "What Our Clients Say",
-            "subtitle": "Our clients' satisfaction is our priority",
-            "items": {
-                "jean": {
-                    "name": "Jean MBARGA",
-                    "company": "Technical Director, SABC",
-                    "text": "CRIC Africa installed our generators with remarkable professionalism. Impeccable service!"
-                },
-                "marie": {
-                    "name": "Marie NKOTTO",
-                    "company": "Production Manager, SOCAVER",
-                    "text": "Quality equipment and very responsive team. We highly recommend their services."
-                },
-                "paul": {
-                    "name": "Paul ATANGANA",
-                    "company": "Manager, Le Meridien Hotel",
-                    "text": "Impeccable electrical installation for our hotel. Careful work and respect for standards."
-                }
-            }
-        },
-        "cta": {
-            "title": "Ready to Start Your Project?",
-            "description": "Contact us today for a free and personalized quote"
-        }
-    },
-    "about": {
-        "title": "About CRIC AFRIKA SARL",
-        "subtitle": "Leader in industrial equipment in Cameroon for over 15 years",
-        "metaDescription": "Discover CRIC Africa SARL, leader in industrial equipment in Cameroon. Our story, our values, our team.",
-        "ourStory": "OUR STORY",
-        "storyTitle": "A Cameroonian Company Serving Industry",
-        "storyContent": [
-            "Founded in 2008, CRIC Africa SARL was born from the vision of creating a Cameroonian company capable of meeting the growing needs of the industrial sector for quality equipment and professional technical services.",
-            "Since our beginnings, we have supported more than 80 companies in their installation, maintenance and equipment optimization projects.",
-            "Today, CRIC Africa is a team of 45 qualified professionals, partnerships with major international brands, and a presence throughout Cameroon."
-        ],
-        "identity": {
-            "title": "Our Identity",
-            "subtitle": "The principles that guide our daily actions"
-        },
-        "mission": {
-            "title": "Our Mission",
-            "description": "Provide Cameroonian and Central African companies with superior quality industrial equipment and excellent technical services, thus contributing to the industrial development of the continent."
-        },
-        "vision": {
-            "title": "Our Vision",
-            "description": "Become the undisputed leader in industrial equipment in Central Africa, recognized for our technical expertise, innovation and commitment to our customers."
-        },
-        "motto": {
-            "title": "Our Motto",
-            "text": "\"Together Powering Africa\"",
-            "description": "A collective commitment to the industrial and energy development of the African continent."
-        },
-        "values": {
-            "title": "Our Values",
-            "excellence": "Excellence",
-            "excellenceDesc": "We aim for excellence in everything we do",
-            "integrity": "Integrity",
-            "integrityDesc": "Honesty and transparency in all our relationships",
-            "innovation": "Innovation",
-            "innovationDesc": "Constant search for innovative solutions",
-            "collaboration": "Collaboration",
-            "collaborationDesc": "Teamwork and sustainable partnerships"
-        },
-        "journey": {
-            "title": "Our Journey",
-            "subtitle": "The major stages of our development"
-        },
-        "team": {
-            "title": "Our Team",
-            "subtitle": "Passionate and qualified professionals at your service",
-            "joinText": "Join a dynamic and passionate team"
-        },
-        "certifications": {
-            "title": "Our Certifications"
-        },
-        "partners": {
-            "title": "Our Partners",
-            "description": "We work with the biggest international brands to guarantee you superior quality equipment."
-        },
-        "cta": {
-            "title": "Let's Work Together",
-            "description": "Join the dozens of companies that trust us for their industrial projects. Contact us to discuss your needs."
-        }
-    },
-    "products": {
-        "title": "Our Products",
-        "subtitle": "A complete range of high-quality industrial equipment to meet all your needs",
-        "metaDescription": "Discover our complete range of industrial equipment: generators, compressors, safety equipment, transformers and more.",
-        "metaKeywords": "generators, industrial compressors, safety equipment, transformers, industrial equipment Cameroon",
-        "whyChooseUs": {
-            "title": "Why Choose CRIC Africa?",
-            "subtitle": "Benefits that make the difference"
-        },
-        "benefits": {
-            "quality": {
-                "title": "Guaranteed Quality",
-                "description": "Certified equipment from internationally recognized brands"
-            },
-            "delivery": {
-                "title": "Fast Delivery",
-                "description": "Optimized logistics for short delivery times"
-            },
-            "installation": {
-                "title": "Professional Installation",
-                "description": "Qualified technical team for installation and commissioning"
-            },
-            "support": {
-                "title": "24/7 After-Sales Service",
-                "description": "Technical support available 24 hours a day, 7 days a week"
-            }
-        },
-        "additional": {
-            "title": "And Much More...",
-            "description": "Our catalog includes many other industrial equipment to meet all your specific needs. Contact us to discover our complete range.",
-            "cta": "Request Full Catalog",
-            "items": {
-                "tools": {
-                    "name": "Industrial Tools",
-                    "description": "Professional quality tools"
-                },
-                "valves": {
-                    "name": "Valves",
-                    "description": "Industrial valves and accessories"
-                },
-                "automation": {
-                    "name": "Automation",
-                    "description": "Control and regulation systems"
-                }
-            }
-        },
-        "cta": {
-            "title": "Need Specific Equipment?",
-            "description": "Our team of experts is available to advise you and propose the best solutions adapted to your needs.",
-            "contactExpert": "Contact an Expert",
-            "downloadCatalog": "Download Catalog"
-        },
-        "items": {
-            "generators": {
-                "title": "Industrial Generators",
-                "description": "Reliable and high-performance power supply solutions for your industrial installations. Our generators are designed to operate continuously in the most demanding conditions.",
-                "badge": "Featured Product",
-                "features": [
-                    "Power from 10 kVA to 3000 kVA",
-                    "Diesel engines from reputable brands",
-                    "Automatic starting systems",
-                    "Installation and commissioning included"
-                ]
-            },
-            "compressors": {
-                "title": "Screw and Piston Industrial Compressors",
-                "description": "Robust industrial compressors for demanding applications. Efficient and economical compressed air solutions for all types of industries.",
-                "badge": "High Performance",
-                "features": [
-                    "Rotary screw compressors",
-                    "Reciprocating piston compressors",
-                    "Flow rates from 0.5 to 100 m³/min",
-                    "Preventive maintenance available"
-                ]
-            },
-            "fireSafety": {
-                "title": "Fire Safety Equipment",
-                "description": "Complete fire protection and safety systems for your industrial installations. Compliant with international safety standards.",
-                "badge": "Essential Safety",
-                "features": [
-                    "All types of fire extinguishers (CO2, powder, foam)",
-                    "Fire detection systems",
-                    "Sprinklers and automatic extinguishing systems",
-                    "Installation and staff training"
-                ]
-            },
-            "ppe": {
-                "title": "Personal Protective Equipment (PPE)",
-                "description": "Complete range of personal protective equipment to ensure the safety of your teams on all industrial sites.",
-                "badge": "Personal Protection",
-                "features": [
-                    "Helmets, glasses and hearing protection",
-                    "All types of protective gloves",
-                    "Safety shoes and boots",
-                    "Work clothes and harnesses"
-                ]
-            },
-            "pumping": {
-                "title": "Industrial Pumping Equipment",
-                "description": "High-performance industrial pumps for liquid transfer, wastewater, chemicals and special applications.",
-                "badge": "Hydraulic Solutions",
-                "features": [
-                    "Centrifugal and positive displacement pumps",
-                    "Submersible and surface pumps",
-                    "Complete pumping stations",
-                    "Accessories and spare parts"
-                ]
-            },
-            "handling": {
-                "title": "Handling Equipment",
-                "description": "Handling and lifting equipment to optimize your logistics and industrial operations.",
-                "badge": "Handling",
-                "features": [
-                    "Electric and thermal forklifts",
-                    "Manual and electric pallet trucks",
-                    "Overhead cranes and hoists",
-                    "Stackers and lifting platforms"
-                ]
-            },
-            "motors": {
-                "title": "Electric Motors",
-                "description": "High-performance industrial electric motors for all applications. Reliable and energy-efficient solutions.",
-                "badge": "Motorization",
-                "features": [
-                    "Three-phase asynchronous motors",
-                    "Direct current motors",
-                    "Power from 0.5 kW to 500 kW",
-                    "IE2, IE3, IE4 standards (high efficiency)"
-                ]
-            },
-            "gearboxes": {
-                "title": "Gearmotors",
-                "description": "Industrial gearmotors for optimal power transmission. Compact and efficient solutions for your machines.",
-                "badge": "Transmission",
-                "features": [
-                    "Helical gear reducers",
-                    "Worm gear reducers",
-                    "Torque from 10 Nm to 50,000 Nm",
-                    "Custom configurations available"
-                ]
-            },
-            "fillingMachines": {
-                "title": "Blowers, Cappers and Fillers",
-                "description": "Automated packaging equipment for the food, pharmaceutical and cosmetic industries.",
-                "badge": "Packaging",
-                "features": [
-                    "PET bottle blowers",
-                    "Volumetric and weighing fillers",
-                    "Automatic and semi-automatic cappers",
-                    "Complete packaging lines"
-                ]
-            },
-            "transformers": {
-                "title": "Transformers",
-                "description": "Industrial electrical transformers for distribution and voltage adaptation. Reliable solutions for your electrical networks.",
-                "badge": "High Voltage",
-                "features": [
-                    "MV/LV distribution transformers",
-                    "Dry-type and oil-filled transformers",
-                    "Power from 50 kVA to 2500 kVA",
-                    "Complete installation and commissioning"
-                ]
-            }
-        }
+    "stats": {
+      "experience": "Years of Experience",
+      "clients": "Satisfied Clients",
+      "projects": "Projects Completed",
+      "experts": "Qualified Experts"
     },
     "services": {
-        "title": "Our Services",
-        "subtitle": "Complete installation, maintenance and automation solutions for industry",
-        "metaDescription": "Complete industrial installation, maintenance and automation services. CRIC Africa SARL, your technical partner in Cameroon.",
-        "metaKeywords": "electrical installation, industrial maintenance, automation, after-sales service, Cameroon",
-        "process": {
-            "title": "Our Process",
-            "subtitle": "A proven methodology to guarantee your satisfaction",
-            "steps": {
-                "analysis": {
-                    "title": "Needs Analysis",
-                    "description": "In-depth study of your specific needs and constraints"
-                },
-                "proposal": {
-                    "title": "Technical Proposal",
-                    "description": "Development of an adapted and costed technical solution"
-                },
-                "execution": {
-                    "title": "Execution",
-                    "description": "Execution of works by our qualified teams"
-                },
-                "support": {
-                    "title": "Follow-up & Support",
-                    "description": "Continuous support and after-sales service"
-                }
-            }
+      "badge": "OUR SERVICES",
+      "title": "Complete Solutions",
+      "subtitle": "From import to maintenance, we support you at every step",
+      "learnMore": "Learn More",
+      "items": {
+        "import": {
+          "title": "Import",
+          "description": "Superior quality industrial equipment"
         },
-        "guarantees": {
-            "title": "Our Guarantees",
-            "subtitle": "Your satisfaction is our priority",
-            "items": {
-                "quality": {
-                    "title": "Quality Guarantee",
-                    "description": "All our services are guaranteed and carried out according to international standards. We use only certified parts and equipment."
-                },
-                "timeliness": {
-                    "title": "Respect of Deadlines",
-                    "description": "We commit to respecting agreed deadlines. Our rigorous organization guarantees the delivery of your projects on time."
-                },
-                "team": {
-                    "title": "Qualified Team",
-                    "description": "Our technicians and engineers are trained and certified. They have the necessary expertise for all types of interventions."
-                },
-                "support247": {
-                    "title": "24/7 Support",
-                    "description": "Our technical assistance service is available permanently to respond to your emergencies and questions."
-                },
-                "transparency": {
-                    "title": "Price Transparency",
-                    "description": "Detailed and transparent quotes without hidden costs. You know exactly what you're paying before committing."
-                },
-                "satisfaction": {
-                    "title": "Customer Satisfaction",
-                    "description": "We consider a project completed only when you are completely satisfied. Your opinion matters to us."
-                }
-            }
+        "installation": {
+          "title": "Installation",
+          "description": "Professional setup by our experts"
         },
-        "cta": {
-            "title": "Ready to Optimize Your Installations?",
-            "description": "Contact our experts to discuss your industrial service needs. We will propose the most suitable solution for you."
+        "maintenance": {
+          "title": "Maintenance",
+          "description": "Reactive and efficient after-sales service"
         },
-        "items": {
-            "electrical": {
-                "category": "Installation",
-                "title": "Electrical Network Installation",
-                "description": "Design, installation and commissioning of complete industrial electrical networks. From low voltage to medium voltage, we ensure installations compliant with current standards.",
-                "features": [
-                    "Electrical studies and sizing",
-                    "Electrical panel installation",
-                    "Wiring and connection",
-                    "Grounding and protection"
-                ]
-            },
-            "support": {
-                "category": "Support",
-                "title": "After-Sales Service Assistance",
-                "description": "Professional technical support available 24/7 to ensure the continuity of your operations. Our team of experts intervenes quickly to solve all your problems.",
-                "features": [
-                    "24/7 technical hotline",
-                    "Rapid on-site intervention",
-                    "Diagnosis and troubleshooting",
-                    "Supply of spare parts"
-                ]
-            },
-            "automation": {
-                "category": "Automation",
-                "title": "Factory Automation",
-                "description": "Industrial automation solutions to optimize your production, reduce costs and improve quality. Modern control and supervision systems.",
-                "features": [
-                    "PLC programming",
-                    "SCADA and supervision systems",
-                    "Industrial robotics",
-                    "Industry 4.0 integration"
-                ]
-            },
-            "generatorConfig": {
-                "category": "Configuration",
-                "title": "Generator Parameter Setting",
-                "description": "Configuration and optimization of your generators for maximum performance. Precise settings and complete functional tests.",
-                "features": [
-                    "Regulator parameter setting",
-                    "Synchronization and coupling",
-                    "Load and performance tests",
-                    "Operator training"
-                ]
-            },
-            "equipmentMaintenance": {
-                "category": "Maintenance",
-                "title": "Heavy and Light Equipment Maintenance",
-                "description": "Preventive and curative maintenance of your construction and handling equipment fleet. Extend the lifespan of your equipment and optimize their availability.",
-                "features": [
-                    "Planned preventive maintenance",
-                    "Complete repairs and overhauls",
-                    "Electronic diagnostics",
-                    "Fleet management and tracking"
-                ]
-            },
-            "predictiveMaintenance": {
-                "category": "Maintenance",
-                "title": "Preventive and Predictive Maintenance",
-                "description": "Advanced maintenance programs to anticipate breakdowns and optimize equipment availability. Reduce your operating costs and avoid unexpected downtime.",
-                "features": [
-                    "Customized maintenance plans",
-                    "Vibration analysis and thermography",
-                    "Real-time monitoring",
-                    "Reports and recommendations"
-                ]
-            }
+        "automation": {
+          "title": "Automation",
+          "description": "Industrial automation solutions"
         }
+      }
     },
-    "realisations": {
-        "title": "Our Projects",
-        "subtitle": "Discover our industrial projects successfully completed in Cameroon and Central Africa",
-        "metaDescription": "Discover our industrial projects completed in Cameroon. Electrical installation, maintenance, automation - CRIC Africa SARL.",
-        "metaKeywords": "industrial projects, achievements, electrical installation, maintenance, automation, Cameroon",
-        "stats": {
-            "projects": "Projects Completed",
-            "clients": "Satisfied Clients",
-            "experience": "Years of Experience",
-            "satisfaction": "Satisfaction Rate"
+    "products": {
+      "badge": "OUR PRODUCTS",
+      "title": "Wide Range of Equipment",
+      "subtitle": "Quality industrial equipment for all your needs",
+      "discover": "Discover",
+      "cta": "See All Products",
+      "items": {
+        "generators": {
+          "name": "Generators",
+          "count": "50+ Models"
         },
-        "filters": {
-            "all": "All Projects",
-            "electrical": "Electrical Installation",
-            "automation": "Automation",
-            "maintenance": "Maintenance",
-            "generators": "Generators"
+        "compressors": {
+          "name": "Compressors",
+          "count": "30+ Models"
         },
-        "loadMore": "Load More Projects",
-        "testimonials": {
-            "title": "What Our Clients Say",
-            "subtitle": "Satisfaction testimonials from our partners",
-            "items": {
-                "jean": {
-                    "name": "Jean-Pierre MBARGA",
-                    "position": "Technical Director, Food Processing Plant",
-                    "content": "CRIC Africa completed the full automation of our production line. Remarkable professionalism and expertise. I highly recommend!"
-                },
-                "marie": {
-                    "name": "Marie NKOLO",
-                    "position": "Maintenance Manager, Central Hospital",
-                    "content": "Our generator installation was completed on time. The after-sales service is excellent. Very responsive team!"
-                },
-                "paul": {
-                    "name": "Paul EKANI",
-                    "position": "Manager, Hotel Complex",
-                    "content": "Impeccable electrical installation for our hotel. Careful work, respect for standards and very professional team. Thank you CRIC Africa!"
-                }
-            }
+        "safety": {
+          "name": "Safety Equipment",
+          "count": "40+ Products"
         },
-        "process": {
-            "title": "Our Methodology",
-            "subtitle": "A proven process to guarantee the success of your projects",
-            "steps": {
-                "analysis": {
-                    "title": "Study and Analysis",
-                    "description": "Site visit, needs analysis, technical and financial feasibility study. We take the time to understand your constraints and objectives."
-                },
-                "planning": {
-                    "title": "Design and Planning",
-                    "description": "Development of technical plans, equipment sizing, detailed planning with clearly defined milestones and deliverables."
-                },
-                "procurement": {
-                    "title": "Procurement",
-                    "description": "Selection and import of quality equipment from our international partners. Rigorous quality control upon receipt."
-                },
-                "installation": {
-                    "title": "Installation and Commissioning",
-                    "description": "Execution of works by our qualified teams, complete tests and trials, progressive commissioning with support for your teams."
-                },
-                "maintenance": {
-                    "title": "Follow-up and Maintenance",
-                    "description": "Training of your teams, complete documentation, reactive after-sales service and personalized maintenance contracts to ensure sustainability."
-                }
-            }
+        "pumping": {
+          "name": "Pumping Equipment",
+          "count": "25+ Models"
         },
-        "industries": {
-            "title": "Business Sectors",
-            "subtitle": "We operate in many industrial sectors",
-            "items": {
-                "manufacturing": {
-                    "name": "Manufacturing Industry",
-                    "description": "Production plants, assembly lines"
-                },
-                "port": {
-                    "name": "Port",
-                    "description": "Ports, logistics zones"
-                },
-                "construction": {
-                    "name": "Construction",
-                    "description": "Construction sites, infrastructure"
-                },
-                "energy": {
-                    "name": "Energy",
-                    "description": "Storage, energy systems"
-                }
-            }
+        "handling": {
+          "name": "Handling Equipment",
+          "count": "20+ Models"
         },
-        "projects": {
-            "factoryDouala": {
-                "title": "Production Plant - Douala",
-                "description": "Complete MV/LV electrical network installation for a 5000m² factory"
-            },
-            "hospitalYaounde": {
-                "title": "Central Hospital - Yaoundé",
-                "description": "Installation of 2 x 500 kVA generators with coupling system"
-            },
-            "foodFactory": {
-                "title": "Food Processing Plant - Douala",
-                "description": "Complete automation of production line with SCADA system"
-            },
-            "industrialComplex": {
-                "title": "Industrial Complex - Limbé",
-                "description": "Preventive maintenance contract for 15 equipment fleet"
-            },
-            "shoppingCenter": {
-                "title": "Shopping Center - Douala",
-                "description": "Installation of 8 electrical panels and energy management system"
-            },
-            "textileFactory": {
-                "title": "Textile Factory - Garoua",
-                "description": "1000 kVA generator installation with complete parameter setting"
-            },
-            "brewery": {
-                "title": "Brewery - Douala",
-                "description": "Bottling line automation with centralized supervision"
-            },
-            "hotelComplex": {
-                "title": "Hotel Complex - Kribi",
-                "description": "Complete electrical network with 630 kVA transformer"
-            },
-            "port": {
-                "title": "Autonomous Port - Douala",
-                "description": "Preventive maintenance of 25 port handling equipment"
-            }
-        },
-        "cta": {
-            "title": "Your Project Deserves the Best",
-            "description": "Trust CRIC Africa for the realization of your industrial projects. Our expertise and commitment guarantee your success.",
-            "startProject": "Start a Project"
+        "transformers": {
+          "name": "Transformers",
+          "count": "15+ Models"
         }
+      }
     },
-    "contact": {
-        "title": "Contact Us",
-        "subtitle": "Our team is available to answer all your questions and support you in your projects",
-        "metaDescription": "Contact CRIC Africa SARL for your industrial projects in Cameroon. Free quote, personalized advice.",
-        "metaKeywords": "contact CRIC Africa, industrial equipment quote, installation maintenance Cameroon",
-        "info": {
-            "phone": {
-                "title": "Phone",
-                "action": "Call Us"
-            },
-            "email": {
-                "title": "Email",
-                "action": "Send Email"
-            },
-            "address": {
-                "title": "Address",
-                "action": "View on Map"
-            },
-            "hours": {
-                "title": "Opening Hours"
-            }
-        },
-        "form": {
-            "title": "Send Us a Message",
-            "subtitle": "Fill out the form below and we will get back to you as soon as possible",
-            "successMessage": "Thank you for your message! We will get back to you as soon as possible.",
-            "fields": {
-                "name": "Full Name",
-                "company": "Company",
-                "email": "Email",
-                "phone": "Phone",
-                "subject": "Subject",
-                "message": "Message"
-            },
-            "placeholders": {
-                "name": "Your name",
-                "company": "Your company name",
-                "email": "your@email.com",
-                "phone": "+237 XXX XXX XXX",
-                "subject": "Select a subject",
-                "message": "Describe your project or request..."
-            },
-            "subjects": {
-                "quote": "Quote Request",
-                "productInfo": "Product Information",
-                "serviceInfo": "Service Information",
-                "afterSales": "After-Sales Service",
-                "partnership": "Partnership Opportunity",
-                "recruitment": "Spontaneous Application",
-                "other": "Other"
-            },
-            "consent": "I accept that my data will be used to contact me regarding my request.",
-            "submit": "Send Message",
-            "requiredFields": "* Required fields"
-        },
-        "quickContact": {
-            "title": "Need a Quick Response?",
-            "description": "Our sales team is available to answer your questions by phone or WhatsApp",
-            "call": "Call Us",
-            "whatsapp": "WhatsApp",
-            "chat": "Chat with us"
-        },
-        "faq": {
-            "title": "Frequently Asked Questions",
-            "items": {
-                "delivery": {
-                    "question": "What is the delivery time?",
-                    "answer": "Generally 2-4 weeks depending on the product and availability"
-                },
-                "financing": {
-                    "question": "Do you offer financing?",
-                    "answer": "Yes, we work with several financial partners"
-                },
-                "coverage": {
-                    "question": "Do you operate outside Douala?",
-                    "answer": "Yes, we operate throughout Cameroon"
-                },
-                "warranty": {
-                    "question": "What is the warranty?",
-                    "answer": "Manufacturer warranty from 12 to 24 months depending on equipment"
-                }
-            }
-        },
-        "social": {
-            "title": "Follow Us",
-            "description": "Stay informed about our news and updates"
-        },
-        "location": {
-            "title": "Our Location",
-            "subtitle": "Find us easily in Douala",
-            "mapTitle": "CRIC Africa Location"
-        },
-        "cta": {
-            "title": "Ready to Start Your Project?",
-            "description": "Our team of experts is ready to support you. Contact us today for a free and personalized quote.",
-            "callNow": "Call Now"
-        }
+    "whyChooseUs": {
+      "badge": "WHY CHOOSE US",
+      "title": "Your Trusted Partner",
+      "subtitle": "CRIC Africa is committed to providing superior quality equipment and exceptional customer service.",
+      "imageAlt": "Industrial Equipment",
+      "benefits": [
+        "Certified and guaranteed equipment",
+        "Installation by qualified experts",
+        "24/7 reactive after-sales service",
+        "Partnerships with the best brands",
+        "Training and support",
+        "Competitive prices and financing solutions"
+      ]
     },
-    "notFound": {
-        "title": "Page Not Found",
-        "hero": {
-            "title": "Oops! Page Not Found",
-            "description": "The page you're looking for doesn't exist or has been moved. Don't worry, we're here to help!",
-            "buttons": {
-                "home": "Back to Home",
-                "contact": "Contact Us"
-            }
+    "testimonials": {
+      "badge": "TESTIMONIALS",
+      "title": "What Our Clients Say",
+      "subtitle": "Our clients' satisfaction is our priority",
+      "items": {
+        "jean": {
+          "name": "Jean MBARGA",
+          "company": "Technical Director, SABC",
+          "text": "CRIC Africa installed our generators with remarkable professionalism. Impeccable service!"
         },
-        "quickLinks": {
-            "badge": "QUICK LINKS",
-            "title": "Where Do You Want to Go?",
-            "subtitle": "Explore our main sections",
-            "items": {
-                "home": {
-                    "title": "Home",
-                    "description": "Back to home page"
-                },
-                "products": {
-                    "title": "Products",
-                    "description": "View our equipment"
-                },
-                "services": {
-                    "title": "Services",
-                    "description": "Discover our services"
-                },
-                "contact": {
-                    "title": "Contact",
-                    "description": "Contact us"
-                }
-            },
-            "access": "Access"
+        "marie": {
+          "name": "Marie NKOTTO",
+          "company": "Production Manager, SOCAVER",
+          "text": "Quality equipment and very responsive team. We highly recommend their services."
         },
-        "help": {
-            "title": "Need Help?",
-            "description": "Our team is available to help you find what you're looking for"
+        "paul": {
+          "name": "Paul ATANGANA",
+          "company": "Manager, Le Meridien Hotel",
+          "text": "Impeccable electrical installation for our hotel. Careful work and respect for standards."
         }
+      }
+    },
+    "cta": {
+      "title": "Ready to Start Your Project?",
+      "description": "Contact us today for a free and personalized quote"
     }
+  },
+  "about": {
+    "title": "About CRIC AFRIKA SARL",
+    "subtitle": "Leader in industrial equipment in Cameroon for over 15 years",
+    "metaDescription": "Discover CRIC Africa SARL, leader in industrial equipment in Cameroon. Our story, our values, our team.",
+    "ourStory": "OUR STORY",
+    "storyTitle": "A Cameroonian Company Serving Industry",
+    "storyContent": [
+      "Founded in 2008, CRIC Africa SARL was born from the vision of creating a Cameroonian company capable of meeting the growing needs of the industrial sector for quality equipment and professional technical services.",
+      "Since our beginnings, we have supported more than 80 companies in their installation, maintenance and equipment optimization projects.",
+      "Today, CRIC Africa is a team of 45 qualified professionals, partnerships with major international brands, and a presence throughout Cameroon."
+    ],
+    "identity": {
+      "title": "Our Identity",
+      "subtitle": "The principles that guide our daily actions"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "Provide Cameroonian and Central African companies with superior quality industrial equipment and excellent technical services, thus contributing to the industrial development of the continent."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "Become the undisputed leader in industrial equipment in Central Africa, recognized for our technical expertise, innovation and commitment to our customers."
+    },
+    "motto": {
+      "title": "Our Motto",
+      "text": "\"Together Powering Africa\"",
+      "description": "A collective commitment to the industrial and energy development of the African continent."
+    },
+    "values": {
+      "title": "Our Values",
+      "excellence": "Excellence",
+      "excellenceDesc": "We aim for excellence in everything we do",
+      "integrity": "Integrity",
+      "integrityDesc": "Honesty and transparency in all our relationships",
+      "innovation": "Innovation",
+      "innovationDesc": "Constant search for innovative solutions",
+      "collaboration": "Collaboration",
+      "collaborationDesc": "Teamwork and sustainable partnerships"
+    },
+    "journey": {
+      "title": "Our Journey",
+      "subtitle": "The major stages of our development"
+    },
+    "team": {
+      "title": "Our Team",
+      "subtitle": "Passionate and qualified professionals at your service",
+      "joinText": "Join a dynamic and passionate team"
+    },
+    "certifications": {
+      "title": "Our Certifications"
+    },
+    "partners": {
+      "title": "Our Partners",
+      "description": "We work with the biggest international brands to guarantee you superior quality equipment."
+    },
+    "cta": {
+      "title": "Let's Work Together",
+      "description": "Join the dozens of companies that trust us for their industrial projects. Contact us to discuss your needs."
+    }
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "A complete range of high-quality industrial equipment to meet all your needs",
+    "metaDescription": "Discover our complete range of industrial equipment: generators, compressors, safety equipment, transformers and more.",
+    "metaKeywords": "generators, industrial compressors, safety equipment, transformers, industrial equipment Cameroon",
+    "whyChooseUs": {
+      "title": "Why Choose CRIC Africa?",
+      "subtitle": "Benefits that make the difference"
+    },
+    "benefits": {
+      "quality": {
+        "title": "Guaranteed Quality",
+        "description": "Certified equipment from internationally recognized brands"
+      },
+      "delivery": {
+        "title": "Fast Delivery",
+        "description": "Optimized logistics for short delivery times"
+      },
+      "installation": {
+        "title": "Professional Installation",
+        "description": "Qualified technical team for installation and commissioning"
+      },
+      "support": {
+        "title": "24/7 After-Sales Service",
+        "description": "Technical support available 24 hours a day, 7 days a week"
+      }
+    },
+    "additional": {
+      "title": "And Much More...",
+      "description": "Our catalog includes many other industrial equipment to meet all your specific needs. Contact us to discover our complete range.",
+      "cta": "Request Full Catalog",
+      "items": {
+        "tools": {
+          "name": "Industrial Tools",
+          "description": "Professional quality tools"
+        },
+        "valves": {
+          "name": "Valves",
+          "description": "Industrial valves and accessories"
+        },
+        "automation": {
+          "name": "Automation",
+          "description": "Control and regulation systems"
+        }
+      }
+    },
+    "cta": {
+      "title": "Need Specific Equipment?",
+      "description": "Our team of experts is available to advise you and propose the best solutions adapted to your needs.",
+      "contactExpert": "Contact an Expert",
+      "downloadCatalog": "Download Catalog"
+    },
+    "items": {
+      "generators": {
+        "title": "Industrial Generators",
+        "description": "Reliable and high-performance power supply solutions for your industrial installations. Our generators are designed to operate continuously in the most demanding conditions.",
+        "badge": "Featured Product",
+        "features": [
+          "Power from 10 kVA to 3000 kVA",
+          "Diesel engines from reputable brands",
+          "Automatic starting systems",
+          "Installation and commissioning included"
+        ]
+      },
+      "compressors": {
+        "title": "Screw and Piston Industrial Compressors",
+        "description": "Robust industrial compressors for demanding applications. Efficient and economical compressed air solutions for all types of industries.",
+        "badge": "High Performance",
+        "features": [
+          "Rotary screw compressors",
+          "Reciprocating piston compressors",
+          "Flow rates from 0.5 to 100 m³/min",
+          "Preventive maintenance available"
+        ]
+      },
+      "fireSafety": {
+        "title": "Fire Safety Equipment",
+        "description": "Complete fire protection and safety systems for your industrial installations. Compliant with international safety standards.",
+        "badge": "Essential Safety",
+        "features": [
+          "All types of fire extinguishers (CO2, powder, foam)",
+          "Fire detection systems",
+          "Sprinklers and automatic extinguishing systems",
+          "Installation and staff training"
+        ]
+      },
+      "ppe": {
+        "title": "Personal Protective Equipment (PPE)",
+        "description": "Complete range of personal protective equipment to ensure the safety of your teams on all industrial sites.",
+        "badge": "Personal Protection",
+        "features": [
+          "Helmets, glasses and hearing protection",
+          "All types of protective gloves",
+          "Safety shoes and boots",
+          "Work clothes and harnesses"
+        ]
+      },
+      "pumping": {
+        "title": "Industrial Pumping Equipment",
+        "description": "High-performance industrial pumps for liquid transfer, wastewater, chemicals and special applications.",
+        "badge": "Hydraulic Solutions",
+        "features": [
+          "Centrifugal and positive displacement pumps",
+          "Submersible and surface pumps",
+          "Complete pumping stations",
+          "Accessories and spare parts"
+        ]
+      },
+      "handling": {
+        "title": "Handling Equipment",
+        "description": "Handling and lifting equipment to optimize your logistics and industrial operations.",
+        "badge": "Handling",
+        "features": [
+          "Electric and thermal forklifts",
+          "Manual and electric pallet trucks",
+          "Overhead cranes and hoists",
+          "Stackers and lifting platforms"
+        ]
+      },
+      "motors": {
+        "title": "Electric Motors",
+        "description": "High-performance industrial electric motors for all applications. Reliable and energy-efficient solutions.",
+        "badge": "Motorization",
+        "features": [
+          "Three-phase asynchronous motors",
+          "Direct current motors",
+          "Power from 0.5 kW to 500 kW",
+          "IE2, IE3, IE4 standards (high efficiency)"
+        ]
+      },
+      "gearboxes": {
+        "title": "Gearmotors",
+        "description": "Industrial gearmotors for optimal power transmission. Compact and efficient solutions for your machines.",
+        "badge": "Transmission",
+        "features": [
+          "Helical gear reducers",
+          "Worm gear reducers",
+          "Torque from 10 Nm to 50,000 Nm",
+          "Custom configurations available"
+        ]
+      },
+      "fillingMachines": {
+        "title": "Blowers, Cappers and Fillers",
+        "description": "Automated packaging equipment for the food, pharmaceutical and cosmetic industries.",
+        "badge": "Packaging",
+        "features": [
+          "PET bottle blowers",
+          "Volumetric and weighing fillers",
+          "Automatic and semi-automatic cappers",
+          "Complete packaging lines"
+        ]
+      },
+      "transformers": {
+        "title": "Transformers",
+        "description": "Industrial electrical transformers for distribution and voltage adaptation. Reliable solutions for your electrical networks.",
+        "badge": "High Voltage",
+        "features": [
+          "MV/LV distribution transformers",
+          "Dry-type and oil-filled transformers",
+          "Power from 50 kVA to 2500 kVA",
+          "Complete installation and commissioning"
+        ]
+      }
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Complete installation, maintenance and automation solutions for industry",
+    "metaDescription": "Complete industrial installation, maintenance and automation services. CRIC Africa SARL, your technical partner in Cameroon.",
+    "metaKeywords": "electrical installation, industrial maintenance, automation, after-sales service, Cameroon",
+    "process": {
+      "title": "Our Process",
+      "subtitle": "A proven methodology to guarantee your satisfaction",
+      "steps": {
+        "analysis": {
+          "title": "Needs Analysis",
+          "description": "In-depth study of your specific needs and constraints"
+        },
+        "proposal": {
+          "title": "Technical Proposal",
+          "description": "Development of an adapted and costed technical solution"
+        },
+        "execution": {
+          "title": "Execution",
+          "description": "Execution of works by our qualified teams"
+        },
+        "support": {
+          "title": "Follow-up & Support",
+          "description": "Continuous support and after-sales service"
+        }
+      }
+    },
+    "guarantees": {
+      "title": "Our Guarantees",
+      "subtitle": "Your satisfaction is our priority",
+      "items": {
+        "quality": {
+          "title": "Quality Guarantee",
+          "description": "All our services are guaranteed and carried out according to international standards. We use only certified parts and equipment."
+        },
+        "timeliness": {
+          "title": "Respect of Deadlines",
+          "description": "We commit to respecting agreed deadlines. Our rigorous organization guarantees the delivery of your projects on time."
+        },
+        "team": {
+          "title": "Qualified Team",
+          "description": "Our technicians and engineers are trained and certified. They have the necessary expertise for all types of interventions."
+        },
+        "support247": {
+          "title": "24/7 Support",
+          "description": "Our technical assistance service is available permanently to respond to your emergencies and questions."
+        },
+        "transparency": {
+          "title": "Price Transparency",
+          "description": "Detailed and transparent quotes without hidden costs. You know exactly what you're paying before committing."
+        },
+        "satisfaction": {
+          "title": "Customer Satisfaction",
+          "description": "We consider a project completed only when you are completely satisfied. Your opinion matters to us."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Optimize Your Installations?",
+      "description": "Contact our experts to discuss your industrial service needs. We will propose the most suitable solution for you."
+    },
+    "items": {
+      "electrical": {
+        "category": "Installation",
+        "title": "Electrical Network Installation",
+        "description": "Design, installation and commissioning of complete industrial electrical networks. From low voltage to medium voltage, we ensure installations compliant with current standards.",
+        "features": [
+          "Electrical studies and sizing",
+          "Electrical panel installation",
+          "Wiring and connection",
+          "Grounding and protection"
+        ]
+      },
+      "support": {
+        "category": "Support",
+        "title": "After-Sales Service Assistance",
+        "description": "Professional technical support available 24/7 to ensure the continuity of your operations. Our team of experts intervenes quickly to solve all your problems.",
+        "features": [
+          "24/7 technical hotline",
+          "Rapid on-site intervention",
+          "Diagnosis and troubleshooting",
+          "Supply of spare parts"
+        ]
+      },
+      "automation": {
+        "category": "Automation",
+        "title": "Factory Automation",
+        "description": "Industrial automation solutions to optimize your production, reduce costs and improve quality. Modern control and supervision systems.",
+        "features": [
+          "PLC programming",
+          "SCADA and supervision systems",
+          "Industrial robotics",
+          "Industry 4.0 integration"
+        ]
+      },
+      "generatorConfig": {
+        "category": "Configuration",
+        "title": "Generator Parameter Setting",
+        "description": "Configuration and optimization of your generators for maximum performance. Precise settings and complete functional tests.",
+        "features": [
+          "Regulator parameter setting",
+          "Synchronization and coupling",
+          "Load and performance tests",
+          "Operator training"
+        ]
+      },
+      "equipmentMaintenance": {
+        "category": "Maintenance",
+        "title": "Heavy and Light Equipment Maintenance",
+        "description": "Preventive and curative maintenance of your construction and handling equipment fleet. Extend the lifespan of your equipment and optimize their availability.",
+        "features": [
+          "Planned preventive maintenance",
+          "Complete repairs and overhauls",
+          "Electronic diagnostics",
+          "Fleet management and tracking"
+        ]
+      },
+      "predictiveMaintenance": {
+        "category": "Maintenance",
+        "title": "Preventive and Predictive Maintenance",
+        "description": "Advanced maintenance programs to anticipate breakdowns and optimize equipment availability. Reduce your operating costs and avoid unexpected downtime.",
+        "features": [
+          "Customized maintenance plans",
+          "Vibration analysis and thermography",
+          "Real-time monitoring",
+          "Reports and recommendations"
+        ]
+      }
+    }
+  },
+  "realisations": {
+    "title": "Our Projects",
+    "subtitle": "Discover our industrial projects successfully completed in Cameroon and Central Africa",
+    "metaDescription": "Discover our industrial projects completed in Cameroon. Electrical installation, maintenance, automation - CRIC Africa SARL.",
+    "metaKeywords": "industrial projects, achievements, electrical installation, maintenance, automation, Cameroon",
+    "stats": {
+      "projects": "Projects Completed",
+      "clients": "Satisfied Clients",
+      "experience": "Years of Experience",
+      "satisfaction": "Satisfaction Rate"
+    },
+    "filters": {
+      "all": "All Projects",
+      "electrical": "Electrical Installation",
+      "automation": "Automation",
+      "maintenance": "Maintenance",
+      "generators": "Generators"
+    },
+    "loadMore": "Load More Projects",
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "subtitle": "Satisfaction testimonials from our partners",
+      "items": {
+        "jean": {
+          "name": "Jean-Pierre MBARGA",
+          "position": "Technical Director, Food Processing Plant",
+          "content": "CRIC Africa completed the full automation of our production line. Remarkable professionalism and expertise. I highly recommend!"
+        },
+        "marie": {
+          "name": "Marie NKOLO",
+          "position": "Maintenance Manager, Central Hospital",
+          "content": "Our generator installation was completed on time. The after-sales service is excellent. Very responsive team!"
+        },
+        "paul": {
+          "name": "Paul EKANI",
+          "position": "Manager, Hotel Complex",
+          "content": "Impeccable electrical installation for our hotel. Careful work, respect for standards and very professional team. Thank you CRIC Africa!"
+        }
+      }
+    },
+    "process": {
+      "title": "Our Methodology",
+      "subtitle": "A proven process to guarantee the success of your projects",
+      "steps": {
+        "analysis": {
+          "title": "Study and Analysis",
+          "description": "Site visit, needs analysis, technical and financial feasibility study. We take the time to understand your constraints and objectives."
+        },
+        "planning": {
+          "title": "Design and Planning",
+          "description": "Development of technical plans, equipment sizing, detailed planning with clearly defined milestones and deliverables."
+        },
+        "procurement": {
+          "title": "Procurement",
+          "description": "Selection and import of quality equipment from our international partners. Rigorous quality control upon receipt."
+        },
+        "installation": {
+          "title": "Installation and Commissioning",
+          "description": "Execution of works by our qualified teams, complete tests and trials, progressive commissioning with support for your teams."
+        },
+        "maintenance": {
+          "title": "Follow-up and Maintenance",
+          "description": "Training of your teams, complete documentation, reactive after-sales service and personalized maintenance contracts to ensure sustainability."
+        }
+      }
+    },
+    "industries": {
+      "title": "Business Sectors",
+      "subtitle": "We operate in many industrial sectors",
+      "items": {
+        "manufacturing": {
+          "name": "Manufacturing Industry",
+          "description": "Production plants, assembly lines"
+        },
+        "port": {
+          "name": "Port",
+          "description": "Ports, logistics zones"
+        },
+        "construction": {
+          "name": "Construction",
+          "description": "Construction sites, infrastructure"
+        },
+        "energy": {
+          "name": "Energy",
+          "description": "Storage, energy systems"
+        }
+      }
+    },
+    "projects": {
+      "factoryDouala": {
+        "title": "Production Plant - Douala",
+        "description": "Complete MV/LV electrical network installation for a 5000m² factory"
+      },
+      "hospitalYaounde": {
+        "title": "Central Hospital - Yaoundé",
+        "description": "Installation of 2 x 500 kVA generators with coupling system"
+      },
+      "foodFactory": {
+        "title": "Food Processing Plant - Douala",
+        "description": "Complete automation of production line with SCADA system"
+      },
+      "industrialComplex": {
+        "title": "Industrial Complex - Limbé",
+        "description": "Preventive maintenance contract for 15 equipment fleet"
+      },
+      "shoppingCenter": {
+        "title": "Shopping Center - Douala",
+        "description": "Installation of 8 electrical panels and energy management system"
+      },
+      "textileFactory": {
+        "title": "Textile Factory - Garoua",
+        "description": "1000 kVA generator installation with complete parameter setting"
+      },
+      "brewery": {
+        "title": "Brewery - Douala",
+        "description": "Bottling line automation with centralized supervision"
+      },
+      "hotelComplex": {
+        "title": "Hotel Complex - Kribi",
+        "description": "Complete electrical network with 630 kVA transformer"
+      },
+      "port": {
+        "title": "Autonomous Port - Douala",
+        "description": "Preventive maintenance of 25 port handling equipment"
+      }
+    },
+    "cta": {
+      "title": "Your Project Deserves the Best",
+      "description": "Trust CRIC Africa for the realization of your industrial projects. Our expertise and commitment guarantee your success.",
+      "startProject": "Start a Project"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Our team is available to answer all your questions and support you in your projects",
+    "metaDescription": "Contact CRIC Africa SARL for your industrial projects in Cameroon. Free quote, personalized advice.",
+    "metaKeywords": "contact CRIC Africa, industrial equipment quote, installation maintenance Cameroon",
+    "info": {
+      "phone": {
+        "title": "Phone",
+        "action": "Call Us"
+      },
+      "email": {
+        "title": "Email",
+        "action": "Send Email"
+      },
+      "address": {
+        "title": "Address",
+        "action": "View on Map"
+      },
+      "hours": {
+        "title": "Opening Hours"
+      }
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "subtitle": "Fill out the form below and we will get back to you as soon as possible",
+      "successMessage": "Thank you for your message! We will get back to you as soon as possible.",
+      "errorMessage": "Error while sending the message. Please try again.",
+      "sending": "Sending...",
+      "fields": {
+        "name": "Full Name",
+        "company": "Company",
+        "email": "Email",
+        "phone": "Phone",
+        "subject": "Subject",
+        "message": "Message"
+      },
+      "placeholders": {
+        "name": "Your name",
+        "company": "Your company name",
+        "email": "your@email.com",
+        "phone": "+237 XXX XXX XXX",
+        "subject": "Select a subject",
+        "message": "Describe your project or request..."
+      },
+      "subjects": {
+        "quote": "Quote Request",
+        "productInfo": "Product Information",
+        "serviceInfo": "Service Information",
+        "afterSales": "After-Sales Service",
+        "partnership": "Partnership Opportunity",
+        "recruitment": "Spontaneous Application",
+        "other": "Other"
+      },
+      "consent": "I accept that my data will be used to contact me regarding my request.",
+      "submit": "Send Message",
+      "requiredFields": "* Required fields"
+    },
+    "quickContact": {
+      "title": "Need a Quick Response?",
+      "description": "Our sales team is available to answer your questions by phone or WhatsApp",
+      "call": "Call Us",
+      "whatsapp": "WhatsApp",
+      "chat": "Chat with us"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "delivery": {
+          "question": "What is the delivery time?",
+          "answer": "Generally 2-4 weeks depending on the product and availability"
+        },
+        "financing": {
+          "question": "Do you offer financing?",
+          "answer": "Yes, we work with several financial partners"
+        },
+        "coverage": {
+          "question": "Do you operate outside Douala?",
+          "answer": "Yes, we operate throughout Cameroon"
+        },
+        "warranty": {
+          "question": "What is the warranty?",
+          "answer": "Manufacturer warranty from 12 to 24 months depending on equipment"
+        }
+      }
+    },
+    "social": {
+      "title": "Follow Us",
+      "description": "Stay informed about our news and updates"
+    },
+    "location": {
+      "title": "Our Location",
+      "subtitle": "Find us easily in Douala",
+      "mapTitle": "CRIC Africa Location"
+    },
+    "cta": {
+      "title": "Ready to Start Your Project?",
+      "description": "Our team of experts is ready to support you. Contact us today for a free and personalized quote.",
+      "callNow": "Call Now"
+    }
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "hero": {
+      "title": "Oops! Page Not Found",
+      "description": "The page you're looking for doesn't exist or has been moved. Don't worry, we're here to help!",
+      "buttons": {
+        "home": "Back to Home",
+        "contact": "Contact Us"
+      }
+    },
+    "quickLinks": {
+      "badge": "QUICK LINKS",
+      "title": "Where Do You Want to Go?",
+      "subtitle": "Explore our main sections",
+      "items": {
+        "home": {
+          "title": "Home",
+          "description": "Back to home page"
+        },
+        "products": {
+          "title": "Products",
+          "description": "View our equipment"
+        },
+        "services": {
+          "title": "Services",
+          "description": "Discover our services"
+        },
+        "contact": {
+          "title": "Contact",
+          "description": "Contact us"
+        }
+      },
+      "access": "Access"
+    },
+    "help": {
+      "title": "Need Help?",
+      "description": "Our team is available to help you find what you're looking for"
+    }
+  }
 }

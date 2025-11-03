@@ -1,12 +1,25 @@
 // src/constants/services.js
-import { Bot, CalendarCheck, Clock, FileText, Headset, Plug, Shield, Sliders, ThumbsUp, Truck, Users } from "lucide-react"
+import {
+    Bot,
+    CalendarCheck,
+    Clock,
+    FileText,
+    Headset,
+    Plug,
+    Shield,
+    Sliders,
+    ThumbsUp,
+    Truck,
+    Users
+} from 'lucide-react'
 
 export const services = [
     {
         icon: Plug,
         category: 'Installation',
         title: 'Installation Réseau Électrique',
-        description: 'Conception, installation et mise en service de réseaux électriques industriels complets. De la basse tension à la moyenne tension, nous assurons des installations conformes aux normes en vigueur.',
+        description:
+            'Conception, installation et mise en service de réseaux électriques industriels complets. De la basse tension à la moyenne tension, nous assurons des installations conformes aux normes en vigueur.',
         features: [
             'Études et dimensionnement électrique',
             'Installation de tableaux électriques',
@@ -21,7 +34,8 @@ export const services = [
         icon: Headset,
         category: 'Support',
         title: 'Assistance Service Après-Vente',
-        description: 'Support technique professionnel disponible 24/7 pour assurer la continuité de vos opérations. Notre équipe d\'experts intervient rapidement pour résoudre tous vos problèmes.',
+        description:
+            "Support technique professionnel disponible 24/7 pour assurer la continuité de vos opérations. Notre équipe d'experts intervient rapidement pour résoudre tous vos problèmes.",
         features: [
             'Hotline technique 24/7',
             'Intervention rapide sur site',
@@ -37,9 +51,10 @@ export const services = [
         icon: Bot,
         category: 'Automatisation',
         title: 'Automatisation des Usines',
-        description: 'Solutions d\'automatisation industrielle pour optimiser votre production, réduire les coûts et améliorer la qualité. Systèmes de contrôle et supervision modernes.',
+        description:
+            "Solutions d'automatisation industrielle pour optimiser votre production, réduire les coûts et améliorer la qualité. Systèmes de contrôle et supervision modernes.",
         features: [
-            'Programmation d\'automates (PLC)',
+            "Programmation d'automates (PLC)",
             'Systèmes SCADA et supervision',
             'Robotique industrielle',
             'Intégration Industrie 4.0'
@@ -52,7 +67,8 @@ export const services = [
         icon: Sliders,
         category: 'Configuration',
         title: 'Paramétrage des Groupes Électrogènes',
-        description: 'Configuration et optimisation de vos groupes électrogènes pour des performances maximales. Réglages précis et tests de fonctionnement complets.',
+        description:
+            'Configuration et optimisation de vos groupes électrogènes pour des performances maximales. Réglages précis et tests de fonctionnement complets.',
         features: [
             'Paramétrage des régulateurs',
             'Synchronisation et couplage',
@@ -68,7 +84,8 @@ export const services = [
         icon: Truck,
         category: 'Maintenance',
         title: 'Maintenance Parc Engins Lourds et Légers',
-        description: 'Maintenance préventive et curative de votre parc d\'engins de chantier et de manutention. Prolongez la durée de vie de vos équipements et optimisez leur disponibilité.',
+        description:
+            "Maintenance préventive et curative de votre parc d'engins de chantier et de manutention. Prolongez la durée de vie de vos équipements et optimisez leur disponibilité.",
         features: [
             'Maintenance préventive planifiée',
             'Réparations et révisions complètes',
@@ -83,7 +100,8 @@ export const services = [
         icon: CalendarCheck,
         category: 'Maintenance',
         title: 'Maintenance Préventive et Prédictive',
-        description: 'Programmes de maintenance avancés pour anticiper les pannes et optimiser la disponibilité de vos équipements. Réduisez vos coûts d\'exploitation et évitez les arrêts imprévus.',
+        description:
+            "Programmes de maintenance avancés pour anticiper les pannes et optimiser la disponibilité de vos équipements. Réduisez vos coûts d'exploitation et évitez les arrêts imprévus.",
         features: [
             'Plans de maintenance personnalisés',
             'Analyse vibratoire et thermographie',
@@ -107,7 +125,7 @@ export const processSteps = [
     {
         number: 2,
         title: 'Proposition Technique',
-        description: 'Élaboration d\'une solution technique adaptée et chiffrée',
+        description: "Élaboration d'une solution technique adaptée et chiffrée",
         key: 'proposal'
     },
     {
@@ -128,42 +146,48 @@ export const guarantees = [
     {
         icon: Shield,
         title: 'Garantie Qualité',
-        description: 'Tous nos services sont garantis et réalisés selon les normes internationales. Nous utilisons uniquement des pièces et équipements certifiés.',
+        description:
+            'Tous nos services sont garantis et réalisés selon les normes internationales. Nous utilisons uniquement des pièces et équipements certifiés.',
         color: 'orange',
         key: 'quality'
     },
     {
         icon: Clock,
         title: 'Respect des Délais',
-        description: 'Nous nous engageons à respecter les délais convenus. Notre organisation rigoureuse garantit la livraison de vos projets dans les temps.',
+        description:
+            'Nous nous engageons à respecter les délais convenus. Notre organisation rigoureuse garantit la livraison de vos projets dans les temps.',
         color: 'green',
         key: 'timeliness'
     },
     {
         icon: Users,
         title: 'Équipe Qualifiée',
-        description: 'Nos techniciens et ingénieurs sont formés et certifiés. Ils disposent de l\'expertise nécessaire pour tous types d\'interventions.',
+        description:
+            "Nos techniciens et ingénieurs sont formés et certifiés. Ils disposent de l'expertise nécessaire pour tous types d'interventions.",
         color: 'orange',
         key: 'team'
     },
     {
         icon: Headset,
         title: 'Support 24/7',
-        description: 'Notre service d\'assistance technique est disponible en permanence pour répondre à vos urgences et questions.',
+        description:
+            "Notre service d'assistance technique est disponible en permanence pour répondre à vos urgences et questions.",
         color: 'green',
         key: 'support247'
     },
     {
         icon: FileText,
         title: 'Transparence Tarifaire',
-        description: 'Devis détaillés et transparents sans frais cachés. Vous savez exactement ce que vous payez avant de vous engager.',
+        description:
+            'Devis détaillés et transparents sans frais cachés. Vous savez exactement ce que vous payez avant de vous engager.',
         color: 'orange',
         key: 'transparency'
     },
     {
         icon: ThumbsUp,
         title: 'Satisfaction Client',
-        description: 'Nous ne considérons un projet terminé que lorsque vous êtes entièrement satisfait. Votre avis compte pour nous.',
+        description:
+            'Nous ne considérons un projet terminé que lorsque vous êtes entièrement satisfait. Votre avis compte pour nous.',
         color: 'green',
         key: 'satisfaction'
     }

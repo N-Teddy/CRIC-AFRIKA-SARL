@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://yourwebsite.com/sitemap.xml
+Sitemap: https://cric-afrika-sarl.vercel.app/sitemap.xml
 

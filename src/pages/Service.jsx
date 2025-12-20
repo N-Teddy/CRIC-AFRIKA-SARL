@@ -54,7 +54,7 @@ const Services = () => {
                 />
 
                 {/* Services Grid */}
-                <section className="py-16 bg-[#f5f5f0]">
+                <section className="py-16 bg-warm-gradient">
                     <div className="container px-4 mx-auto lg:px-8">
                         {services.map((service, index) => (
                             <motion.div
@@ -135,7 +135,7 @@ const Services = () => {
                 </section>
 
                 {/* Service Process */}
-                <section className="py-16 bg-white">
+                <section className="py-16 bg-[#fefcf8]">
                     <div className="container px-4 mx-auto lg:px-8">
                         <motion.div
                             className="mb-16 text-center"
@@ -190,7 +190,7 @@ const Services = () => {
                 </section>
 
                 {/* Service Guarantees */}
-                <section className="py-16 bg-[#f5f5f0]">
+                <section className="py-16 bg-lemon-blend">
                     <div className="container px-4 mx-auto lg:px-8">
                         <motion.div
                             className="mb-16 text-center"
@@ -246,8 +246,9 @@ const Services = () => {
                 <CTA
                     title={t('services.cta.title')}
                     description={t('services.cta.description')}
-                    backgroundClass="bg-[#111111]"
+                    backgroundClass="bg-gradient-to-r from-[#2b2f33] via-[#1f2125] to-[#2b2f33]"
                     textColor="text-white"
+                    className="relative overflow-hidden"
                     buttons={[
                         {
                             text: t('common.contactUs'),

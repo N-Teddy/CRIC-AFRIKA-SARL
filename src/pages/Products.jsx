@@ -60,7 +60,7 @@ const Products = () => {
                 />
 
                 {/* Products Grid */}
-                <section className="py-20 bg-light-gray">
+                <section className="py-20 bg-gradient-to-b from-[#f9faf4] via-white to-[#fff3e5]">
                     <div className="container px-4 mx-auto lg:px-8">
                         {products.map((product, index) => {
                             const Icon = product.icon
@@ -86,14 +86,15 @@ const Products = () => {
                                     >
                                         {/* Image Section */}
                                         <div
-                                            className={`overflow-hidden rounded-3xl border border-[#e1e1e1] bg-white ${
+                                            className={`relative overflow-hidden rounded-[32px] border border-[#e2e4da] bg-white shadow-[0_30px_60px_rgba(43,47,51,0.1)] ${
                                                 product.reverse ? 'lg:order-2' : ''
                                             }`}
                                         >
+                                            <div className="mesh-overlay opacity-60" />
                                             <motion.img
                                                 src={product.image}
                                                 alt={t(`products.items.${product.key}.title`)}
-                                                className="object-cover w-full h-[420px]"
+                                                className="relative z-10 object-cover w-full h-[420px] rounded-[28px]"
                                                 loading="lazy"
                                                 onError={handleImageError}
                                                 whileHover={{ scale: 1.02 }}
@@ -103,9 +104,7 @@ const Products = () => {
 
                                         {/* Content Section */}
                                         <div className={product.reverse ? 'lg:order-1' : ''}>
-                                            <div
-                                                className={`inline-flex items-center ${product.badge.color} text-white px-4 py-2 rounded-full text-sm font-semibold mb-4`}
-                                            >
+                                            <div className="inline-flex items-center px-4 py-2 mb-4 text-sm font-semibold tracking-wide text-[#386fd5] uppercase rounded-full border border-[#386fd5]/30 bg-[#e7edff]">
                                                 <BadgeIcon className="mr-2" size={16} />
                                                 {t(`products.items.${product.key}.badge`)}
                                             </div>
@@ -114,8 +113,8 @@ const Products = () => {
                                                 <Icon
                                                     className={`inline mr-3 ${
                                                         product.color === 'orange'
-                                                            ? 'text-primary-orange'
-                                                            : 'text-lemon-green'
+                                                            ? 'text-[#ff8c42]'
+                                                            : 'text-[#386fd5]'
                                                     }`}
                                                     size={32}
                                                 />
@@ -148,11 +147,11 @@ const Products = () => {
 
                                             <Link
                                                 to="/contact"
-                                                className={`${
+                                                className={`mt-6 inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-full transition-colors duration-150 ${
                                                     product.color === 'orange'
-                                                        ? 'btn-orange'
-                                                        : 'btn-green'
-                                                } mt-6`}
+                                                        ? 'bg-[#ff8c42] text-white hover:bg-[#f7792a]'
+                                                        : 'bg-[#386fd5] text-white hover:bg-[#2f5cc0]'
+                                                }`}
                                             >
                                                 <Mail className="mr-2" size={20} />
                                                 {t('common.getQuote')}
@@ -165,7 +164,7 @@ const Products = () => {
 
                         {/* Additional Products Section */}
                         <motion.div
-                            className="p-10 text-center bg-white border rounded-3xl border-[#e1e1e1]"
+                            className="p-10 text-center bg-white/90 backdrop-blur border rounded-3xl border-white/60 shadow-[0_30px_70px_rgba(43,47,51,0.12)]"
                             initial={{ opacity: 0, y: 24 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.25 }}
@@ -186,9 +185,9 @@ const Products = () => {
                                         return (
                                             <div
                                                 key={product.name}
-                                                className="p-5 text-left border rounded-2xl border-[#e1e1e1]"
+                                                className="p-5 text-left border rounded-2xl border-white/60 bg-white/85 backdrop-blur"
                                             >
-                                                <Icon className="text-[#a8d05f]" size={20} />
+                                                <Icon className="text-[#386fd5]" size={20} />
                                                 <h3 className="mt-4 text-base font-semibold text-[#222222]">
                                                     {t(
                                                         `products.additional.items.${product.key}.name`
@@ -214,7 +213,7 @@ const Products = () => {
                 </section>
 
                 {/* Why Choose Us */}
-                <section className="py-20 bg-white">
+                <section className="py-20 bg-lemon-blend">
                     <div className="container px-4 mx-auto lg:px-8">
                         <motion.div
                             className="mb-16 text-center"
@@ -251,17 +250,16 @@ const Products = () => {
                                 return (
                                     <motion.div
                                         key={benefit.title}
-                                        className="p-8 text-center hover-lift bg-light-gray rounded-2xl"
+                                        className="p-8 text-center hover-lift bg-white/85 backdrop-blur border border-white/60 rounded-[26px] shadow-[0_20px_45px_rgba(43,47,51,0.1)]"
                                         variants={itemVariants}
                                     >
-                                        <div
-                                            className={`w-20 h-20 bg-gradient-to-br rounded-full flex items-center justify-center mx-auto mb-6 ${
-                                                benefit.color === 'orange'
-                                                    ? 'from-primary-orange to-lemon-green'
-                                                    : 'from-lemon-green to-primary-orange'
-                                            }`}
-                                        >
-                                            <Icon className="text-3xl text-white" />
+                                        <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-2xl bg-white shadow-inner border border-white/70">
+                                            <Icon
+                                                className={
+                                                    index % 2 === 0 ? 'text-[#ff8c42]' : 'text-[#386fd5]'
+                                                }
+                                                size={26}
+                                            />
                                         </div>
                                         <h3 className="mb-3 text-xl font-semibold text-[#222222]">
                                             {t(`products.benefits.${currentKey}.title`)}
@@ -280,6 +278,9 @@ const Products = () => {
                 <CTA
                     title={t('products.cta.title')}
                     description={t('products.cta.description')}
+                    backgroundClass="bg-gradient-to-r from-[#ff8c42] via-[#a8d05f] to-[#3c9c9c]"
+                    textColor="text-white"
+                    className="relative overflow-hidden"
                     buttons={[
                         {
                             text: t('products.cta.contactExpert'),
@@ -291,7 +292,7 @@ const Products = () => {
                             text: t('products.cta.downloadCatalog'),
                             to: '/contact',
                             icon: 'Download',
-                            className: 'bg-[#111111] text-white hover:bg-[#1f1f1f]'
+                            className: 'bg-[#2b2f33] text-white hover:bg-[#1f2226]'
                         }
                     ]}
                 />

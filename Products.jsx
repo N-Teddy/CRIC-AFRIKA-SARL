@@ -214,7 +214,7 @@ const Products = () => {
                                     onClick={() => setSelectedCategory(category.id)}
                                     className={`flex items-center space-x-2 px-6 py-2 rounded-full text-sm font-semibold transition ${
                                         selectedCategory === category.id
-                                            ? 'bg-[#222222] text-white border border-[#222222]'
+                                            ? 'bg-[#386fd5] text-white border border-[#386fd5]'
                                             : 'bg-white text-[#6f6f6f] border border-[#e1e1e1] hover:text-[#222222]'
                                     }`}
                                 >
@@ -264,7 +264,7 @@ const Products = () => {
                                             Sur Commande
                                         </span>
                                     )}
-                                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-[#111111]/65">
+                                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-[#2b2f33]/70">
                                         <span className="text-white text-sm font-semibold">
                                             {product.brand}
                                         </span>
@@ -332,7 +332,7 @@ const Products = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-16 bg-[#111111]">
+            <section className="py-16 bg-gradient-to-r from-[#2b2f33] via-[#1f2125] to-[#2b2f33]">
                 <div className="container mx-auto px-4 lg:px-8 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}

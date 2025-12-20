@@ -13,7 +13,7 @@ const Footer = () => {
     const safeProductList = Array.isArray(productList) ? productList : []
 
     return (
-        <footer className="pt-16 pb-8 text-white bg-[#111111]">
+        <footer className="pt-16 pb-8 text-white bg-gradient-to-b from-[#2b2f33] to-[#1f2125]">
             <div className="container px-4 mx-auto lg:px-8">
                 <div className="grid gap-12 mb-12 md:grid-cols-2 lg:grid-cols-4">
                     {/* Company Info */}

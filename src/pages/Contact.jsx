@@ -54,8 +54,12 @@ const Contact = () => {
                 />
 
                 {/* Contact Info Cards */}
-                <section className="py-16 bg-[#f5f5f0]">
-                    <div className="container px-4 mx-auto lg:px-8">
+                <section className="relative py-16 overflow-hidden bg-warm-gradient">
+                    <div className="absolute inset-0 pointer-events-none">
+                        <div className="absolute -top-16 left-0 w-48 h-48 rounded-full bg-[#ff8c42]/20 blur-3xl" aria-hidden="true" />
+                        <div className="absolute bottom-0 right-4 w-56 h-56 rounded-full bg-[#a8d05f]/25 blur-3xl" aria-hidden="true" />
+                    </div>
+                    <div className="container relative px-4 mx-auto lg:px-8">
                         <motion.div
                             className="grid gap-8 mb-16 md:grid-cols-2 lg:grid-cols-4"
                             variants={containerVariants}
@@ -68,7 +72,7 @@ const Contact = () => {
                                 return (
                                     <motion.div
                                         key={info.title}
-                                        className="p-6 text-center bg-white border rounded-2xl border-[#e1e1e1]"
+                                        className="p-6 text-center bg-white/85 backdrop-blur border border-white/60 rounded-2xl shadow-[0_20px_45px_rgba(43,47,51,0.12)]"
                                         variants={itemVariants}
                                     >
                                         <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-[#f9faf3]">
@@ -122,7 +126,11 @@ const Contact = () => {
                             {/* Additional Info */}
                             <div className="space-y-8">
                                 {/* Quick Contact */}
-                                <div className="p-8 text-white rounded-2xl bg-[#111111]">
+                                <div className="relative p-8 text-white rounded-2xl bg-gradient-to-br from-[#2b2f33] via-[#1f2125] to-[#2b2f33] overflow-hidden">
+                                    <div className="absolute inset-0 pointer-events-none">
+                                        <div className="mesh-overlay opacity-60" />
+                                    </div>
+                                    <div className="relative z-10">
                                     <h3 className="mb-4 text-2xl font-semibold">
                                         {t('contact.quickContact.title')}
                                     </h3>
@@ -161,6 +169,7 @@ const Contact = () => {
                                             </div>
                                         </a>
                                     </div>
+                                    </div>
                                 </div>
 
                                 {/* FAQ Quick Links */}
@@ -196,7 +205,7 @@ const Contact = () => {
                 </section>
 
                 {/* Map Section */}
-                <section id="map" className="py-16 bg-white">
+                <section id="map" className="py-16 bg-gradient-to-b from-[#f9faf4] via-white to-[#fff2e8]">
                     <div className="container px-4 mx-auto lg:px-8">
                         <motion.div
                             className="mb-12 text-center"
@@ -214,7 +223,7 @@ const Contact = () => {
                         </motion.div>
 
                         <motion.div
-                            className="overflow-hidden border rounded-3xl border-[#e1e1e1]"
+                            className="overflow-hidden border rounded-3xl border-white/60 shadow-[0_25px_60px_rgba(43,47,51,0.1)] bg-white"
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.25 }}
@@ -238,8 +247,9 @@ const Contact = () => {
                 <CTA
                     title={t('contact.cta.title')}
                     description={t('contact.cta.description')}
-                    backgroundClass="bg-[#111111]"
+                    backgroundClass="bg-gradient-to-r from-[#2b2f33] via-[#1f2125] to-[#2b2f33]"
                     textColor="text-white"
+                    className="relative overflow-hidden"
                     buttons={[
                         {
                             text: t('contact.cta.callNow'),

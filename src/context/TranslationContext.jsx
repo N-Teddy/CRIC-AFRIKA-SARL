@@ -27,12 +27,27 @@ export const TranslationProvider = ({ children }) => {
     const initialLanguage = useMemo(() => getStoredLanguage(), [])
     const [language, setLanguage] = useState(initialLanguage)
     const [translations, setTranslations] = useState(() => translationsMap[initialLanguage] || {})
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        if (typeof window !== 'undefined') {
-            localStorage.setItem('language', language)
+        let isMounted = true
+        const loadTranslations = async () => {
+            if (typeof window !== 'undefined') {
+                localStorage.setItem('language', language)
+            }
+            setIsLoading(true)
+            const nextTranslations = translationsMap[language] || {}
+            await Promise.resolve()
+            if (isMounted) {
+                setTranslations(nextTranslations)
+                setIsLoading(false)
+            }
         }
-        setTranslations(translationsMap[language] || {})
+
+        loadTranslations()
+        return () => {
+            isMounted = false
+        }
     }, [language])
 
     const changeLanguage = newLang => {
@@ -41,6 +56,9 @@ export const TranslationProvider = ({ children }) => {
     }
 
     const t = (key, options = {}) => {
+        if (isLoading) {
+            return options.loadingPlaceholder ?? ''
+        }
         let translation = translations
         const keys = key.split('.')
 
@@ -71,7 +89,7 @@ export const TranslationProvider = ({ children }) => {
         t,
         isFrench: language === 'fr',
         isEnglish: language === 'en',
-        isLoading: false
+        isLoading
     }
 
     return <TranslationContext.Provider value={value}>{children}</TranslationContext.Provider>

@@ -7,11 +7,16 @@ const PageHeader = ({
     title,
     subtitle,
     breadcrumbs,
-    background = 'bg-[#f5f5f0]'
+    background = 'bg-hero-gradient'
 }) => {
     return (
-        <section className={`pt-28 pb-16 border-b border-[#e1e1e1] ${background}`}>
-            <div className="container px-4 mx-auto text-center lg:px-8">
+        <section className={`relative overflow-hidden pt-28 pb-16 border-b border-[#e1e1e1] ${background}`}>
+            <div className="absolute inset-0 pointer-events-none">
+                <div className="mesh-overlay opacity-50" />
+                <div className="absolute -top-12 right-12 w-48 h-48 rounded-full bg-[#ff8c42]/15 blur-3xl" />
+                <div className="absolute -bottom-12 left-10 w-56 h-56 rounded-full bg-[#a8d05f]/12 blur-3xl" />
+            </div>
+            <div className="container relative px-4 mx-auto text-center lg:px-8">
                 <motion.h1
                     className="mb-4 text-4xl font-semibold text-[#222222] lg:text-5xl"
                     initial={{ opacity: 0, y: 12 }}

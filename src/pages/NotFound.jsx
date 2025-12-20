@@ -11,10 +11,14 @@ const NotFound = () => {
     const { t } = useTranslation()
 
     return (
-        <div className="min-h-screen pt-20 bg-[#f5f5f0]">
+        <div className="min-h-screen pt-20 bg-gradient-to-b from-[#f4f5f0] via-white to-[#fff2e8]">
             {/* Hero Section */}
-            <section className="py-20 bg-white border-b border-[#e1e1e1]">
-                <div className="container px-4 mx-auto lg:px-8">
+            <section className="relative py-20 overflow-hidden bg-warm-gradient border-b border-white/50">
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute -top-32 right-10 w-72 h-72 rounded-full bg-[#386fd5]/15 blur-3xl" aria-hidden="true" />
+                    <div className="absolute bottom-0 left-0 w-60 h-60 rounded-full bg-[#ff8c42]/15 blur-3xl" aria-hidden="true" />
+                </div>
+                <div className="container relative px-4 mx-auto lg:px-8">
                     <div className="text-center">
                         <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }}>
                             <AlertCircle className="w-16 h-16 mx-auto mb-6 text-[#ff8c42]" />
@@ -52,7 +56,7 @@ const NotFound = () => {
                             </Link>
                             <Link
                                 to="/contact"
-                                className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-[#222222] transition-colors duration-150 border rounded-full border-[#222222]/20 bg-white hover:border-[#222222]/50"
+                                className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-[#2b2f33] transition-all duration-150 border rounded-full border-white/60 bg-white/90 hover:border-[#2b2f33]/40 shadow-[0_12px_30px_rgba(43,47,51,0.15)]"
                             >
                                 <Mail className="mr-2" size={20} />
                                 {t('notFound.hero.buttons.contact')}
@@ -63,7 +67,7 @@ const NotFound = () => {
             </section>
 
             {/* Quick Links Section */}
-            <section className="py-16 bg-white">
+            <section className="py-16 bg-lemon-blend">
                 <div className="container px-4 mx-auto lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -95,7 +99,7 @@ const NotFound = () => {
                             >
                                 <Link
                                     to={item.link}
-                                    className="block h-full p-6 text-center transition-all border rounded-2xl border-[#e1e1e1] bg-[#f9faf3]"
+                                    className="block h-full p-6 text-center transition-all border rounded-2xl border-white/60 bg-white/85 backdrop-blur hover:-translate-y-1 shadow-[0_20px_45px_rgba(43,47,51,0.1)]"
                                 >
                                     <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-white">
                                         <item.icon
@@ -125,8 +129,9 @@ const NotFound = () => {
                 title={t('notFound.help.title')}
                 description={t('notFound.help.description')}
                 icon="FileText"
-                backgroundClass="bg-[#111111]"
+                backgroundClass="bg-gradient-to-r from-[#2b2f33] via-[#1f2125] to-[#2b2f33]"
                 textColor="text-white"
+                className="relative overflow-hidden"
                 buttons={[
                     {
                         text: `+237 ${WhatsAppNumber}`,

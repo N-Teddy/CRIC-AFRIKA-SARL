@@ -71,7 +71,7 @@ const About = () => {
                 />
 
                 {/* Company Story */}
-                <section className="py-16 bg-white">
+                <section className="py-16 bg-warm-gradient">
                     <div className="container px-4 mx-auto lg:px-8">
                         <div className="grid items-center gap-12 lg:grid-cols-2">
                             <motion.div
@@ -145,7 +145,7 @@ const About = () => {
                 </section>
 
                 {/* Mission, Vision, Values */}
-                <section className="py-16 bg-[#f5f5f0]">
+                <section className="py-16 bg-lemon-blend">
                     <div className="container px-4 mx-auto lg:px-8">
                         <motion.div
                             className="mb-16 text-center"
@@ -203,19 +203,22 @@ const About = () => {
 
                             {/* Slogan */}
                             <motion.div
-                                className="p-6 text-white rounded-2xl bg-[#111111]"
+                                className="relative p-6 text-white rounded-2xl overflow-hidden bg-gradient-to-br from-[#2b2f33] via-[#1f2125] to-[#2b2f33]"
                                 variants={itemVariants}
                             >
-                                <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-white/10">
+                                <div className="absolute inset-0 pointer-events-none">
+                                    <div className="mesh-overlay opacity-50" />
+                                </div>
+                                <div className="relative z-10 flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-white/10">
                                     <Zap size={20} />
                                 </div>
-                                <h3 className="mb-4 text-2xl font-semibold text-center">
+                                <h3 className="relative z-10 mb-4 text-2xl font-semibold text-center">
                                     {t('about.motto.title')}
                                 </h3>
-                                <p className="text-lg italic font-semibold leading-relaxed text-center">
+                                <p className="relative z-10 text-lg italic font-semibold leading-relaxed text-center">
                                     {t('about.motto.text')}
                                 </p>
-                                <p className="mt-4 text-sm leading-relaxed text-center text-white/80">
+                                <p className="relative z-10 mt-4 text-sm leading-relaxed text-center text-white/80">
                                     {t('about.motto.description')}
                                 </p>
                             </motion.div>
@@ -275,7 +278,7 @@ const About = () => {
                 </section>
 
                 {/* Timeline */}
-                <section className="py-16 bg-white">
+                <section className="py-16 bg-[#fefcf8]">
                     <div className="container px-4 mx-auto lg:px-8">
                         <motion.div
                             className="mb-16 text-center"
@@ -321,7 +324,7 @@ const About = () => {
                 </section>
 
                 {/* Team Section */}
-                <section className="py-16 bg-[#f5f5f0]">
+                <section className="py-16 bg-warm-gradient">
                     <div className="container px-4 mx-auto lg:px-8">
                         <motion.div
                             className="mb-16 text-center"
@@ -427,7 +430,7 @@ const About = () => {
                 </section>
 
                 {/* Certifications & Partners */}
-                <section className="py-16 bg-white">
+                <section className="py-16 bg-lemon-blend">
                     <div className="container px-4 mx-auto lg:px-8">
                         <div className="grid gap-16 lg:grid-cols-2">
                             {/* Certifications */}
@@ -512,8 +515,9 @@ const About = () => {
                 <CTA
                     title={t('about.cta.title')}
                     description={t('about.cta.description')}
-                    backgroundClass="bg-[#111111]"
+                    backgroundClass="bg-gradient-to-r from-[#2b2f33] via-[#1f2125] to-[#2b2f33]"
                     textColor="text-white"
+                    className="relative overflow-hidden"
                     buttons={[
                         {
                             text: t('common.contactUs'),

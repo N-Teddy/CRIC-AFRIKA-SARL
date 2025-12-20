@@ -73,8 +73,12 @@ const Realisations = () => {
                 />
 
                 {/* Stats Section */}
-                <section className="py-16 bg-white">
-                    <div className="container px-4 mx-auto lg:px-8">
+                <section className="relative py-16 overflow-hidden bg-warm-gradient">
+                    <div className="absolute inset-0 pointer-events-none">
+                        <div className="absolute -top-20 left-4 w-48 h-48 rounded-full bg-[#ff8c42]/20 blur-3xl" aria-hidden="true" />
+                        <div className="absolute bottom-0 right-10 w-60 h-60 rounded-full bg-[#a8d05f]/25 blur-3xl" aria-hidden="true" />
+                    </div>
+                    <div className="container relative px-4 mx-auto lg:px-8">
                         <div className="grid gap-6 md:grid-cols-4">
                             {[
                                 { number: '150+', key: 'projects' },
@@ -84,7 +88,7 @@ const Realisations = () => {
                             ].map(stat => (
                                 <div
                                     key={stat.key}
-                                    className="p-6 text-center border rounded-2xl border-[#e1e1e1] bg-[#f9faf3]"
+                                    className="p-6 text-center rounded-2xl border border-white/40 bg-white/80 backdrop-blur shadow-[0_20px_45px_rgba(43,47,51,0.12)]"
                                 >
                                     <div className="text-3xl font-semibold text-[#222222]">
                                         {stat.number}
@@ -99,7 +103,7 @@ const Realisations = () => {
                 </section>
 
                 {/* Filter Buttons */}
-                <section className="py-8 bg-[#f5f5f0]">
+                <section className="py-8 bg-white/70 backdrop-blur border-y border-white/60">
                     <div className="container px-4 mx-auto lg:px-8">
                         <motion.div
                             className="flex flex-wrap justify-center gap-4"
@@ -114,10 +118,10 @@ const Realisations = () => {
                                     <button
                                         key={filter.key}
                                         onClick={() => setActiveFilter(filter.key)}
-                                        className={`flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold border transition-colors ${
+                                        className={`flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold border transition-all shadow-sm ${
                                             activeFilter === filter.key
-                                                ? 'bg-[#222222] text-white border-[#222222]'
-                                                : 'bg-white text-[#6f6f6f] border-[#e1e1e1] hover:text-[#222222]'
+                                                ? 'bg-[#2b2f33] text-white border-transparent shadow-[0_15px_35px_rgba(43,47,51,0.25)]'
+                                                : 'bg-white/90 text-[#2b2f33] border-[#e2e4da] hover:border-[#a8d05f]/50 hover:text-[#2b2f33]'
                                         }`}
                                     >
                                         <Icon className="mr-2" size={16} />
@@ -130,7 +134,7 @@ const Realisations = () => {
                 </section>
 
                 {/* Projects Grid */}
-                <section className="py-16 bg-white">
+                <section className="py-16 bg-gradient-to-b from-[#f9faf4] via-white to-[#fff3e5]">
                     <div className="container px-4 mx-auto lg:px-8">
                         <AnimatePresence>
                             <motion.div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3" layout>
@@ -143,8 +147,12 @@ const Realisations = () => {
                                             animate={{ opacity: 1, scale: 1 }}
                                             exit={{ opacity: 0, scale: 0.9 }}
                                             transition={{ duration: 0.5 }}
-                                            className="overflow-hidden border rounded-3xl border-[#e1e1e1] bg-[#f9faf3]"
+                                            className="relative overflow-hidden border rounded-3xl border-white/60 bg-white shadow-[0_25px_60px_rgba(43,47,51,0.08)]"
                                         >
+                                            <div
+                                                className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#a8d05f] via-[#ff8c42] to-[#386fd5]"
+                                                aria-hidden="true"
+                                            />
                                             <div className="relative overflow-hidden">
                                                 <motion.img
                                                     src={project.image}
@@ -158,8 +166,8 @@ const Realisations = () => {
                                                     transition={{ duration: 0.2 }}
                                                 />
                                             </div>
-                                            <div className="p-6">
-                                                <span className="inline-flex px-3 py-1 mb-3 text-xs font-semibold tracking-wide uppercase rounded-full bg-white border border-[#e1e1e1] text-[#6f6f6f]">
+                                            <div className="relative z-10 p-6">
+                                                <span className="inline-flex px-3 py-1 mb-3 text-xs font-semibold tracking-wide uppercase rounded-full bg-[#f9faf4] border border-[#e2e4da] text-[#6f6f6f]">
                                                     {t(`realisations.filters.${project.category}`)}
                                                 </span>
                                                 <h3 className="text-xl font-semibold text-[#222222]">
@@ -200,7 +208,7 @@ const Realisations = () => {
                 </section>
 
                 {/* Client Testimonials */}
-                <section className="py-16 bg-[#f5f5f0]">
+                <section className="py-16 bg-lemon-blend">
                     <div className="container px-4 mx-auto lg:px-8">
                         <motion.div
                             className="mb-16 text-center"
@@ -227,11 +235,11 @@ const Realisations = () => {
                             {testimonials.map((testimonial, index) => (
                                 <motion.div
                                     key={testimonial.name}
-                                    className="p-6 bg-white border rounded-2xl border-[#e1e1e1]"
+                                    className="p-6 bg-white/80 backdrop-blur border border-white/60 rounded-2xl shadow-[0_20px_40px_rgba(43,47,51,0.12)]"
                                     variants={itemVariants}
                                 >
                                     <div className="flex items-center mb-4">
-                                        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#f9faf3] mr-3">
+                                        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#f4f5f0] mr-3">
                                             <ThumbsUp className="text-[#a8d05f]" size={18} />
                                         </div>
                                         <div>
@@ -266,7 +274,7 @@ const Realisations = () => {
                 </section>
 
                 {/* Process Timeline */}
-                <section className="py-16 bg-white">
+                <section className="py-16 bg-[#fffdf6]">
                     <div className="container px-4 mx-auto lg:px-8">
                         <motion.div
                             className="mb-16 text-center"
@@ -313,7 +321,7 @@ const Realisations = () => {
                 </section>
 
                 {/* Industries Served */}
-                <section className="py-16 bg-[#f5f5f0]">
+                <section className="py-16 bg-warm-gradient">
                     <div className="container px-4 mx-auto lg:px-8">
                         <motion.div
                             className="mb-16 text-center"
@@ -342,7 +350,7 @@ const Realisations = () => {
                                 return (
                                     <motion.div
                                         key={industry.name}
-                                        className="p-6 text-center bg-white border rounded-2xl border-[#e1e1e1]"
+                                        className="p-6 text-center bg-white/85 backdrop-blur border border-white/60 rounded-2xl shadow-[0_20px_45px_rgba(43,47,51,0.08)]"
                                         variants={itemVariants}
                                     >
                                         <div className="flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-[#f9faf3]">
@@ -369,8 +377,9 @@ const Realisations = () => {
                 <CTA
                     title={t('realisations.cta.title')}
                     description={t('realisations.cta.description')}
-                    backgroundClass="bg-[#111111]"
+                    backgroundClass="bg-gradient-to-r from-[#2b2f33] via-[#1f2125] to-[#2b2f33]"
                     textColor="text-white"
+                    className="relative overflow-hidden"
                     buttons={[
                         {
                             text: t('realisations.cta.startProject'),

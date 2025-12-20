@@ -19,7 +19,7 @@ import {
     Star,
     CheckCircle
 } from 'lucide-react'
-import PageHeader from '../components/PageHeader'
+import PageHeader from './src/components/ui/PageHeader'
 
 const Products = () => {
     const [selectedCategory, setSelectedCategory] = useState('all')
@@ -186,13 +186,13 @@ const Products = () => {
             />
 
             {/* Filter Section */}
-            <section className="py-12 bg-white sticky top-20 z-40 shadow-md">
+            <section className="py-12 bg-white sticky top-20 z-20 border-b border-[#e1e1e1]">
                 <div className="container mx-auto px-4 lg:px-8">
                     <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
                         {/* Search */}
                         <div className="relative w-full lg:w-96">
                             <Search
-                                className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"
+                                className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#b5b5b5]"
                                 size={20}
                             />
                             <input
@@ -200,7 +200,7 @@ const Products = () => {
                                 placeholder="Rechercher un produit..."
                                 value={searchTerm}
                                 onChange={e => setSearchTerm(e.target.value)}
-                                className="w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-full focus:border-primary-orange focus:outline-none transition"
+                                className="w-full pl-12 pr-4 py-3 border border-[#e1e1e1] rounded-full focus:border-[#a8d05f] focus:outline-none transition"
                             />
                         </div>
 
@@ -212,10 +212,10 @@ const Products = () => {
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     onClick={() => setSelectedCategory(category.id)}
-                                    className={`flex items-center space-x-2 px-6 py-3 rounded-full font-semibold transition ${
+                                    className={`flex items-center space-x-2 px-6 py-2 rounded-full text-sm font-semibold transition ${
                                         selectedCategory === category.id
-                                            ? 'bg-gradient-to-r from-primary-orange to-lemon-green text-white'
-                                            : 'bg-light-gray text-gray-700 hover:bg-gray-200'
+                                            ? 'bg-[#222222] text-white border border-[#222222]'
+                                            : 'bg-white text-[#6f6f6f] border border-[#e1e1e1] hover:text-[#222222]'
                                     }`}
                                 >
                                     <category.icon size={18} />
@@ -228,7 +228,7 @@ const Products = () => {
             </section>
 
             {/* Products Grid */}
-            <section className="py-20 bg-light-gray">
+            <section className="py-16 bg-[#f5f5f0]">
                 <div className="container mx-auto px-4 lg:px-8">
                     <div className="mb-8">
                         <p className="text-gray-600">
@@ -247,25 +247,25 @@ const Products = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
                                 whileHover={{ y: -10 }}
-                                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
+                                className="bg-white rounded-2xl overflow-hidden border border-[#e1e1e1] transition-all hover:-translate-y-1 hover:shadow-lg"
                             >
                                 <div className="relative h-64 overflow-hidden">
                                     <img
                                         src={product.image}
                                         alt={product.name}
-                                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                                     />
                                     {product.inStock ? (
-                                        <span className="absolute top-4 right-4 bg-lemon-green text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                        <span className="absolute top-4 right-4 bg-[#a8d05f] text-white px-3 py-1 rounded-full text-xs font-semibold">
                                             En Stock
                                         </span>
                                     ) : (
-                                        <span className="absolute top-4 right-4 bg-gray-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                        <span className="absolute top-4 right-4 bg-[#b5b5b5] text-white px-3 py-1 rounded-full text-xs font-semibold">
                                             Sur Commande
                                         </span>
                                     )}
-                                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                                        <span className="text-white font-semibold">
+                                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-[#111111]/65">
+                                        <span className="text-white text-sm font-semibold">
                                             {product.brand}
                                         </span>
                                     </div>
@@ -276,7 +276,7 @@ const Products = () => {
                                         {product.name}
                                     </h3>
                                     <div className="flex items-center justify-between mb-4">
-                                        <span className="text-primary-orange font-bold text-lg">
+                                        <span className="text-[#ff8c42] font-semibold text-lg">
                                             {product.power}
                                         </span>
                                         <span className="text-gray-600">{product.price}</span>
@@ -300,12 +300,12 @@ const Products = () => {
                                     <div className="flex gap-3">
                                         <Link
                                             to="/contact"
-                                            className="flex-1 bg-gradient-to-r from-primary-orange to-lemon-green text-white px-4 py-3 rounded-full font-semibold text-center hover:shadow-lg transition"
+                                            className="flex-1 btn-orange justify-center"
                                         >
                                             <Phone className="inline mr-2" size={16} />
                                             Devis
                                         </Link>
-                                        <button className="px-4 py-3 border-2 border-primary-orange text-primary-orange rounded-full font-semibold hover:bg-primary-orange hover:text-white transition">
+                                        <button className="px-4 py-3 border border-[#e1e1e1] text-[#222222] rounded-full font-semibold hover:border-[#222222] transition">
                                             <ArrowRight size={20} />
                                         </button>
                                     </div>
@@ -322,7 +322,7 @@ const Products = () => {
                                     setSelectedCategory('all')
                                     setSearchTerm('')
                                 }}
-                                className="bg-gradient-to-r from-primary-orange to-lemon-green text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition"
+                                className="btn-orange"
                             >
                                 Réinitialiser les filtres
                             </button>
@@ -332,7 +332,7 @@ const Products = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-20 bg-gradient-to-r from-primary-orange to-lemon-green">
+            <section className="py-16 bg-[#111111]">
                 <div className="container mx-auto px-4 lg:px-8 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -340,16 +340,16 @@ const Products = () => {
                         viewport={{ once: true }}
                         className="max-w-4xl mx-auto"
                     >
-                        <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                        <h2 className="text-4xl lg:text-5xl font-semibold text-white mb-4">
                             Besoin d'un Conseil ?
                         </h2>
-                        <p className="text-xl text-white/90 mb-8 leading-relaxed">
+                        <p className="text-base text-white/80 mb-8 leading-relaxed">
                             Notre équipe d'experts est à votre disposition pour vous aider à choisir
                             l'équipement adapté à vos besoins
                         </p>
                         <Link
                             to="/contact"
-                            className="bg-white text-primary-orange px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition inline-flex items-center"
+                            className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-[#222222] rounded-full bg-white hover:bg-[#f5f5f0]"
                         >
                             <Phone className="mr-2" size={20} />
                             Contactez un Expert

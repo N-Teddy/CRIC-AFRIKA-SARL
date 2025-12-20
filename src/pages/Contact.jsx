@@ -54,7 +54,7 @@ const Contact = () => {
                 />
 
                 {/* Contact Info Cards */}
-                <section className="py-20 bg-light-gray">
+                <section className="py-16 bg-[#f5f5f0]">
                     <div className="container px-4 mx-auto lg:px-8">
                         <motion.div
                             className="grid gap-8 mb-16 md:grid-cols-2 lg:grid-cols-4"
@@ -68,31 +68,25 @@ const Contact = () => {
                                 return (
                                     <motion.div
                                         key={info.title}
-                                        className="relative p-8 overflow-hidden text-center bg-white contact-card rounded-2xl hover-lift"
+                                        className="p-6 text-center bg-white border rounded-2xl border-[#e1e1e1]"
                                         variants={itemVariants}
                                     >
-                                        <div
-                                            className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${
-                                                info.color === 'orange'
-                                                    ? 'from-primary-orange to-lemon-green'
-                                                    : 'from-lemon-green to-primary-orange'
-                                            }`}
-                                        />
-                                        <div
-                                            className={`w-16 h-16 bg-gradient-to-br rounded-full flex items-center justify-center mx-auto mb-4 ${
-                                                info.color === 'orange'
-                                                    ? 'from-primary-orange to-lemon-green'
-                                                    : 'from-lemon-green to-primary-orange'
-                                            }`}
-                                        >
-                                            <Icon className="text-2xl text-white" />
+                                        <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-[#f9faf3]">
+                                            <Icon
+                                                className={
+                                                    info.color === 'orange'
+                                                        ? 'text-[#ff8c42]'
+                                                        : 'text-[#a8d05f]'
+                                                }
+                                                size={20}
+                                            />
                                         </div>
-                                        <h3 className="mb-2 text-xl font-bold text-dark-blue">
+                                        <h3 className="mb-2 text-lg font-semibold text-[#222222]">
                                             {t(`contact.info.${info.key}.title`)}
                                         </h3>
                                         <div className="mb-4 space-y-1">
                                             {info.details.map((detail, i) => (
-                                                <p key={i} className="text-gray-600">
+                                                <p key={i} className="text-sm text-[#6f6f6f]">
                                                     {detail}
                                                 </p>
                                             ))}
@@ -100,10 +94,10 @@ const Contact = () => {
                                         {info.action && (
                                             <a
                                                 href={info.action.href}
-                                                className={`inline-block mt-2 font-semibold hover:underline ${
+                                                className={`inline-flex items-center justify-center px-4 py-2 mt-2 text-sm font-semibold rounded-full border ${
                                                     info.color === 'orange'
-                                                        ? 'text-primary-orange'
-                                                        : 'text-lemon-green'
+                                                        ? 'text-[#ff8c42] border-[#ff8c42]'
+                                                        : 'text-[#a8d05f] border-[#a8d05f]'
                                                 }`}
                                             >
                                                 {t(`contact.info.${info.key}.action`)}
@@ -117,9 +111,9 @@ const Contact = () => {
                         {/* Contact Form & Info */}
                         <motion.div
                             className="grid gap-12 lg:grid-cols-2"
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
+                            transition={{ duration: 0.25 }}
                             viewport={{ once: true }}
                         >
                             {/* Contact Form Component */}
@@ -128,8 +122,8 @@ const Contact = () => {
                             {/* Additional Info */}
                             <div className="space-y-8">
                                 {/* Quick Contact */}
-                                <div className="p-8 text-white bg-gradient-to-br from-primary-orange to-lemon-green rounded-2xl">
-                                    <h3 className="mb-4 text-2xl font-bold">
+                                <div className="p-8 text-white rounded-2xl bg-[#111111]">
+                                    <h3 className="mb-4 text-2xl font-semibold">
                                         {t('contact.quickContact.title')}
                                     </h3>
                                     <p className="mb-6 text-white/90">
@@ -138,7 +132,7 @@ const Contact = () => {
                                     <div className="space-y-4">
                                         <a
                                             href={`tel:+237${WhatsAppNumber}`}
-                                            className="flex items-center p-4 space-x-3 transition bg-white/20 hover:bg-white/30 rounded-xl"
+                                            className="flex items-center p-4 space-x-3 transition rounded-xl bg-white/10 hover:bg-white/20"
                                         >
                                             <Phone className="text-2xl" />
                                             <div>
@@ -154,7 +148,7 @@ const Contact = () => {
                                             href={`https://wa.me/237${WhatsAppNumber}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex items-center p-4 space-x-3 transition bg-white/20 hover:bg-white/30 rounded-xl"
+                                            className="flex items-center p-4 space-x-3 transition rounded-xl bg-white/10 hover:bg-white/20"
                                         >
                                             <MessageCircle className="text-2xl" />
                                             <div>
@@ -170,8 +164,8 @@ const Contact = () => {
                                 </div>
 
                                 {/* FAQ Quick Links */}
-                                <div className="p-8 bg-white shadow-lg rounded-2xl">
-                                    <h3 className="mb-4 text-2xl font-bold text-dark-blue">
+                                <div className="p-8 bg-white border rounded-2xl border-[#e1e1e1]">
+                                    <h3 className="mb-4 text-2xl font-semibold text-[#222222]">
                                         {t('contact.faq.title')}
                                     </h3>
                                     <div className="space-y-4">
@@ -184,10 +178,10 @@ const Contact = () => {
                                                         : 'border-lemon-green'
                                                 }`}
                                             >
-                                                <h4 className="mb-1 font-bold text-dark-blue">
+                                                <h4 className="mb-1 text-base font-semibold text-[#222222]">
                                                     {t(`contact.faq.items.${faq.key}.question`)}
                                                 </h4>
-                                                <p className="text-sm text-gray-600">
+                                                <p className="text-sm text-[#6f6f6f]">
                                                     {t(`contact.faq.items.${faq.key}.answer`)}
                                                 </p>
                                             </div>
@@ -195,57 +189,35 @@ const Contact = () => {
                                     </div>
                                 </div>
 
-                                {/* Social Media */}
-                                {/* <div className="p-8 bg-light-gray rounded-2xl">
-                                    <h3 className="mb-4 text-2xl font-bold text-dark-blue">
-                                        {t('contact.social.title')}
-                                    </h3>
-                                    <p className="mb-6 text-gray-600">
-                                        {t('contact.social.description')}
-                                    </p>
-                                    <div className="flex space-x-4">
-                                        {socialMedia.map((social, index) => {
-                                            const Icon = social.icon
-                                            return (
-                                                <a
-                                                    key={index}
-                                                    href={social.href}
-                                                    className={`w-12 h-12 bg-white ${social.color} ${social.textColor} hover:text-white rounded-full flex items-center justify-center transition shadow-md`}
-                                                >
-                                                    <Icon className="text-xl" />
-                                                </a>
-                                            )
-                                        })}
-                                    </div>
-                                </div> */}
+                                {/* Placeholder for future social media section */}
                             </div>
                         </motion.div>
                     </div>
                 </section>
 
                 {/* Map Section */}
-                <section id="map" className="py-20 bg-white">
+                <section id="map" className="py-16 bg-white">
                     <div className="container px-4 mx-auto lg:px-8">
                         <motion.div
                             className="mb-12 text-center"
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
+                            transition={{ duration: 0.25 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
+                            <h2 className="mb-4 text-4xl font-semibold lg:text-5xl text-[#222222]">
                                 {t('contact.location.title')}
                             </h2>
-                            <p className="max-w-3xl mx-auto text-xl text-gray-600">
+                            <p className="max-w-3xl mx-auto text-base text-[#6f6f6f]">
                                 {t('contact.location.subtitle')}
                             </p>
                         </motion.div>
 
                         <motion.div
-                            className="overflow-hidden shadow-xl rounded-2xl"
+                            className="overflow-hidden border rounded-3xl border-[#e1e1e1]"
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.8 }}
+                            transition={{ duration: 0.25 }}
                             viewport={{ once: true }}
                         >
                             <iframe
@@ -266,18 +238,20 @@ const Contact = () => {
                 <CTA
                     title={t('contact.cta.title')}
                     description={t('contact.cta.description')}
+                    backgroundClass="bg-[#111111]"
+                    textColor="text-white"
                     buttons={[
                         {
                             text: t('contact.cta.callNow'),
                             href: `tel:+237 ${WhatsAppNumber}`,
                             icon: 'Phone',
-                            className: 'bg-white text-primary-orange hover:bg-gray-50'
+                            className: 'bg-white text-[#222222] hover:bg-[#f5f5f0]'
                         },
                         {
                             text: t('common.ourProducts'),
                             to: '/products',
                             icon: 'Box',
-                            className: 'bg-dark-blue text-white hover:bg-blue-900'
+                            className: 'bg-[#ff8c42] text-white hover:bg-[#f7792a]'
                         }
                     ]}
                 />

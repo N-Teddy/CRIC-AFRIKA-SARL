@@ -1,403 +1,326 @@
 // src/pages/Home.jsx
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, CheckCircle, Star, Phone, Box } from 'lucide-react'
+import { ArrowRight, Phone, Box, LineChart, Shield } from 'lucide-react'
 import Counter from '../components/ui/Counter'
 import { products, services, stats, testimonials } from '../constants/home'
 import CTA from '../components/ui/CTA'
 import { useTranslation } from '../context/TranslationContext'
+import { clientLogos, heroImages, handleImageError } from '../utils/media'
 
 const Home = () => {
     const { t } = useTranslation()
+    const benefits = t('home.whyChooseUs.benefits', { returnObjects: true })
+    const safeBenefits = Array.isArray(benefits) ? benefits : []
+
+    const processKeys = ['import', 'installation', 'maintenance']
+    const heroImageAlts = ['equipment', 'generator', 'site', 'maintenance']
 
     return (
         <div className="overflow-hidden">
-            {/* Hero Section */}
-            <section className="relative flex items-center min-h-screen pt-20 bg-gradient-to-br from-dark-blue via-dark-blue to-primary-orange">
-                <div className="container px-4 py-20 mx-auto lg:px-8">
+            {/* Hero */}
+            <section className="pt-28 pb-16 bg-[#f5f5f0]">
+                <div className="container px-4 mx-auto lg:px-8">
                     <div className="grid items-center gap-12 lg:grid-cols-2">
                         <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8 }}
+                            initial={{ opacity: 0, y: 24 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.2 }}
                         >
-                            <motion.span
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                className="inline-block px-4 py-2 mb-6 text-sm font-semibold rounded-full bg-primary-orange/20 text-primary-orange"
-                            >
+                            <span className="inline-flex items-center px-4 py-1 text-xs font-semibold tracking-wide text-[#ff8c42] uppercase rounded-full border border-[#ff8c42]/30 bg-white">
                                 {t('home.hero.badge')}
-                            </motion.span>
-                            <h1 className="mb-6 text-5xl font-bold leading-tight text-white lg:text-7xl">
+                            </span>
+                            <h1 className="mt-6 mb-4 text-4xl font-semibold leading-tight text-[#222222] lg:text-6xl">
                                 {t('home.hero.title')}
                             </h1>
-                            <p className="mb-8 text-xl leading-relaxed text-gray-200">
+                            <p className="max-w-2xl text-lg text-[#4b4b4b]">
                                 {t('home.hero.subtitle')}
                             </p>
-                            <div className="flex flex-wrap gap-4">
-                                <Link
-                                    to="/contact"
-                                    className="inline-flex items-center px-8 py-4 text-lg font-bold text-white transition rounded-full shadow-lg bg-gradient-to-r from-primary-orange to-lemon-green hover:shadow-2xl hover:scale-105"
-                                >
-                                    <Phone className="mr-2" size={20} />
+                            <div className="flex flex-wrap gap-4 mt-8">
+                                <Link to="/contact" className="btn-green">
+                                    <Phone className="mr-2" size={18} />
                                     {t('home.hero.ctaQuote')}
                                 </Link>
                                 <Link
                                     to="/products"
-                                    className="inline-flex items-center px-8 py-4 text-lg font-bold transition bg-white rounded-full shadow-lg text-dark-blue hover:shadow-2xl hover:scale-105"
+                                    className="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-[#222222] transition-colors duration-150 rounded-full border border-[#222222]/10 bg-white hover:border-[#222222]/40"
                                 >
-                                    <Box className="mr-2" size={20} />
+                                    <Box className="mr-2" size={18} />
                                     {t('home.hero.ctaProducts')}
                                 </Link>
                             </div>
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, x: 50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            className="relative"
-                        >
-                            <div className="grid grid-cols-2 gap-4">
-                                <motion.img
-                                    whileHover={{ scale: 1.05 }}
-                                    src="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?w=600"
-                                    alt={t('home.hero.images.equipment')}
-                                    className="object-cover w-full h-64 shadow-2xl rounded-2xl"
-                                />
-                                <motion.img
-                                    whileHover={{ scale: 1.05 }}
-                                    src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600"
-                                    alt={t('home.hero.images.generator')}
-                                    className="object-cover w-full h-64 mt-8 shadow-2xl rounded-2xl"
-                                />
-                                <motion.img
-                                    whileHover={{ scale: 1.05 }}
-                                    src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600"
-                                    alt={t('home.hero.images.site')}
-                                    className="object-cover w-full h-64 shadow-2xl rounded-2xl"
-                                />
-                                <motion.img
-                                    whileHover={{ scale: 1.05 }}
-                                    src="https://images.unsplash.com/photo-1621905252472-9b6e78c09a0f?w=600"
-                                    alt={t('home.hero.images.maintenance')}
-                                    className="object-cover w-full h-64 mt-8 shadow-2xl rounded-2xl"
-                                />
+                            <div className="grid grid-cols-2 gap-6 pt-10 mt-10 border-t border-[#e1e1e1]">
+                                {stats.map(stat => (
+                                    <div key={stat.key}>
+                                        <div className="text-3xl font-semibold text-[#222222]">
+                                            <Counter
+                                                end={stat.number}
+                                                duration={1.2}
+                                                suffix={stat.suffix || '+'}
+                                            />
+                                        </div>
+                                        <p className="mt-1 text-sm text-[#6f6f6f]">
+                                            {t(`home.stats.${stat.key}`)}
+                                        </p>
+                                    </div>
+                                ))}
                             </div>
                         </motion.div>
+
+                        <div className="grid grid-cols-2 gap-4">
+                            {heroImages.map((image, index) => (
+                                <motion.div
+                                    key={image}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.25, delay: index * 0.05 }}
+                                    className={`overflow-hidden rounded-3xl border border-[#e1e1e1] ${
+                                        index % 2 !== 0 ? 'mt-8 hidden sm:block' : ''
+                                    }`}
+                                >
+                                    <img
+                                        src={image}
+                                        alt={t(
+                                            `home.hero.images.${heroImageAlts[index] || 'equipment'}`
+                                        )}
+                                        className="object-cover w-full h-64"
+                                        loading="lazy"
+                                        onError={handleImageError}
+                                    />
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Stats Section */}
-            <section className="py-20 bg-white">
+            {/* Logos */}
+            <section className="py-10 bg-white border-b border-[#e1e1e1]">
                 <div className="container px-4 mx-auto lg:px-8">
-                    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-                        {stats.map((stat, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="text-center"
+                    <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-10">
+                        {clientLogos.map(logo => (
+                            <div
+                                key={logo.name}
+                                className="flex items-center justify-center w-32 h-16 px-4 py-2 bg-white border rounded-xl border-[#e1e1e1]"
                             >
-                                <div className="flex items-center justify-center w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary-orange to-lemon-green">
-                                    <stat.icon className="text-white" size={32} />
-                                </div>
-                                <h3 className="mb-2 text-4xl font-bold text-dark-blue">
-                                    <Counter end={stat.number} duration={2} suffix={stat.suffix} />
-                                </h3>
-                                <p className="text-gray-600">{t(`home.stats.${stat.key}`)}</p>
-                            </motion.div>
+                                <img
+                                    src={logo.src}
+                                    alt={`${logo.name} logo`}
+                                    className="object-contain h-8"
+                                    loading="lazy"
+                                    onError={handleImageError}
+                                />
+                            </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Services Section */}
-            <section className="py-20 bg-light-gray">
+            {/* Services */}
+            <section className="py-16 bg-white">
                 <div className="container px-4 mx-auto lg:px-8">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="mb-16 text-center"
-                    >
-                        <span className="inline-block px-4 py-2 mb-4 text-sm font-semibold rounded-full bg-primary-orange/10 text-primary-orange">
+                    <div className="text-center">
+                        <span className="inline-flex items-center justify-center px-4 py-1 text-xs font-semibold tracking-wide text-[#ff8c42] uppercase rounded-full border border-[#ff8c42]/30 bg-[#fff8f3]">
                             {t('home.services.badge')}
                         </span>
-                        <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
+                        <h2 className="mt-4 text-3xl font-semibold text-[#222222] lg:text-4xl">
                             {t('home.services.title')}
                         </h2>
-                        <p className="max-w-3xl mx-auto text-xl text-gray-600">
+                        <p className="max-w-2xl mx-auto mt-3 text-base text-[#6f6f6f]">
                             {t('home.services.subtitle')}
                         </p>
-                    </motion.div>
-                    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-                        {services.map((service, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                whileHover={{ y: -10 }}
-                                className="p-8 transition-all bg-white shadow-lg rounded-2xl hover:shadow-2xl"
+                    </div>
+                    <div className="grid gap-6 mt-12 md:grid-cols-2 lg:grid-cols-4">
+                        {services.map(service => (
+                            <div
+                                key={service.key}
+                                className="p-6 rounded-2xl border border-[#e1e1e1] bg-white shadow-[0_10px_30px_rgba(0,0,0,0.04)]"
                             >
-                                <div
-                                    className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-full flex items-center justify-center mb-6`}
-                                >
-                                    <service.icon className="text-white" size={28} />
+                                <div className="w-12 h-12 mb-4 rounded-full bg-[#e7efd5] flex items-center justify-center">
+                                    <service.icon className="text-[#a8d05f]" size={22} />
                                 </div>
-                                <h3 className="mb-3 text-2xl font-bold text-dark-blue">
+                                <h3 className="text-xl font-semibold text-[#222222]">
                                     {t(`home.services.items.${service.key}.title`)}
                                 </h3>
-                                <p className="mb-6 text-gray-600">
+                                <p className="mt-2 text-sm text-[#6f6f6f]">
                                     {t(`home.services.items.${service.key}.description`)}
                                 </p>
                                 <Link
                                     to="/services"
-                                    className="inline-flex items-center font-semibold transition-all text-primary-orange hover:gap-2"
+                                    className="inline-flex items-center mt-6 text-sm font-semibold text-[#222222]"
                                 >
-                                    {t('home.services.learnMore')}{' '}
-                                    <ArrowRight size={18} className="ml-1" />
-                                </Link>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Products Section */}
-            <section className="py-20 bg-white">
-                <div className="container px-4 mx-auto lg:px-8">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="mb-16 text-center"
-                    >
-                        <span className="inline-block px-4 py-2 mb-4 text-sm font-semibold rounded-full bg-lemon-green/10 text-lemon-green">
-                            {t('home.products.badge')}
-                        </span>
-                        <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
-                            {t('home.products.title')}
-                        </h2>
-                        <p className="max-w-3xl mx-auto text-xl text-gray-600">
-                            {t('home.products.subtitle')}
-                        </p>
-                    </motion.div>
-
-                    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                        {products.map((product, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                whileHover={{ scale: 1.05 }}
-                                className="p-8 transition-all cursor-pointer bg-light-gray rounded-2xl hover:shadow-xl"
-                            >
-                                <div
-                                    className={`w-16 h-16 ${index % 2 === 0 ? 'bg-primary-orange/10' : 'bg-lemon-green/10'} rounded-full flex items-center justify-center mb-6`}
-                                >
-                                    <product.icon
-                                        className={
-                                            index % 2 === 0
-                                                ? 'text-primary-orange'
-                                                : 'text-lemon-green'
-                                        }
-                                        size={28}
-                                    />
-                                </div>
-                                <h3 className="mb-2 text-xl font-bold text-dark-blue">
-                                    {t(`home.products.items.${product.key}.name`)}
-                                </h3>
-                                <p className="mb-4 text-gray-600">
-                                    {t(`home.products.items.${product.key}.count`)}
-                                </p>
-                                <Link
-                                    to="/products"
-                                    className="inline-flex items-center font-semibold transition-all text-primary-orange hover:gap-2"
-                                >
-                                    {t('home.products.discover')}{' '}
+                                    {t('home.services.learnMore')}
                                     <ArrowRight size={16} className="ml-1" />
                                 </Link>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="mt-12 text-center"
-                    >
-                        <Link
-                            to="/products"
-                            className="inline-flex items-center px-8 py-4 text-lg font-bold text-white transition rounded-full shadow-lg bg-gradient-to-r from-primary-orange to-lemon-green hover:shadow-2xl hover:scale-105"
-                        >
-                            {t('home.products.cta')} <ArrowRight className="ml-2" size={20} />
-                        </Link>
-                    </motion.div>
                 </div>
             </section>
 
-            {/* Why Choose Us Section */}
-            <section className="py-20 bg-gradient-to-br from-dark-blue to-primary-orange">
+            {/* Product Categories */}
+            <section className="py-16 bg-[#f5f5f0]">
                 <div className="container px-4 mx-auto lg:px-8">
-                    <div className="grid items-center gap-12 lg:grid-cols-2">
-                        <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                        >
-                            <span className="inline-block px-4 py-2 mb-4 text-sm font-semibold text-white rounded-full bg-white/20">
-                                {t('home.whyChooseUs.badge')}
-                            </span>
-                            <h2 className="mb-6 text-4xl font-bold text-white lg:text-5xl">
-                                {t('home.whyChooseUs.title')}
-                            </h2>
-                            <p className="mb-8 text-xl leading-relaxed text-white/90">
-                                {t('home.whyChooseUs.subtitle')}
-                            </p>
-                            <div className="space-y-4">
-                                {(() => {
-                                    const benefits = t('home.whyChooseUs.benefits', {
-                                        returnObjects: true
-                                    })
-                                    // Check if benefits is an array before mapping
-                                    if (Array.isArray(benefits)) {
-                                        return benefits.map((item, index) => (
-                                            <motion.div
-                                                key={index}
-                                                initial={{ opacity: 0, x: -20 }}
-                                                whileInView={{ opacity: 1, x: 0 }}
-                                                viewport={{ once: true }}
-                                                transition={{ delay: index * 0.1 }}
-                                                className="flex items-center space-x-3"
-                                            >
-                                                <CheckCircle
-                                                    className="text-lemon-green"
-                                                    size={24}
-                                                />
-                                                <span className="text-lg text-white">{item}</span>
-                                            </motion.div>
-                                        ))
-                                    } else {
-                                        // Fallback if benefits is not an array
-                                        return (
-                                            <motion.div
-                                                initial={{ opacity: 0, x: -20 }}
-                                                whileInView={{ opacity: 1, x: 0 }}
-                                                viewport={{ once: true }}
-                                                className="flex items-center space-x-3"
-                                            >
-                                                <CheckCircle
-                                                    className="text-lemon-green"
-                                                    size={24}
-                                                />
-                                                <span className="text-lg text-white">
-                                                    {benefits}
-                                                </span>
-                                            </motion.div>
-                                        )
-                                    }
-                                })()}
+                    <div className="flex flex-col gap-4 text-center">
+                        <span className="inline-flex items-center justify-center self-center px-4 py-1 text-xs font-semibold tracking-wide text-[#a8d05f] uppercase rounded-full border border-[#a8d05f]/30 bg-white">
+                            {t('home.products.badge')}
+                        </span>
+                        <h2 className="text-3xl font-semibold text-[#222222] lg:text-4xl">
+                            {t('home.products.title')}
+                        </h2>
+                        <p className="max-w-2xl mx-auto text-base text-[#6f6f6f]">
+                            {t('home.products.subtitle')}
+                        </p>
+                    </div>
+                    <div className="grid gap-6 mt-12 md:grid-cols-2 lg:grid-cols-3">
+                        {products.map((product, index) => (
+                            <div
+                                key={product.key}
+                                className="p-6 text-left bg-white border rounded-2xl border-[#e1e1e1]"
+                            >
+                                <div className="flex items-center justify-between">
+                                    <div className="w-12 h-12 rounded-full bg-[#f9faf3] flex items-center justify-center">
+                                        <product.icon
+                                            className={index % 2 === 0 ? 'text-[#ff8c42]' : 'text-[#a8d05f]'}
+                                            size={22}
+                                        />
+                                    </div>
+                                    <span className="text-sm text-[#6f6f6f]">
+                                        {t(`home.products.items.${product.key}.count`)}
+                                    </span>
+                                </div>
+                                <h3 className="mt-4 text-xl font-semibold text-[#222222]">
+                                    {t(`home.products.items.${product.key}.name`)}
+                                </h3>
+                                <Link
+                                    to="/products"
+                                    className="inline-flex items-center mt-4 text-sm font-semibold text-[#222222]"
+                                >
+                                    {t('home.products.discover')}
+                                    <ArrowRight size={16} className="ml-1" />
+                                </Link>
                             </div>
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ opacity: 0, x: 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            className="relative"
-                        >
-                            <img
-                                src="https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?w=800"
-                                alt={t('home.whyChooseUs.imageAlt')}
-                                className="shadow-2xl rounded-2xl"
-                            />
-                        </motion.div>
+                        ))}
+                    </div>
+                    <div className="mt-10 text-center">
+                        <Link to="/products" className="btn-orange">
+                            {t('home.products.cta')}
+                            <ArrowRight size={18} className="ml-2" />
+                        </Link>
                     </div>
                 </div>
             </section>
 
-            {/* Testimonials Section */}
-            <section className="py-20 bg-light-gray">
+            {/* Capabilities */}
+            <section className="py-16 bg-white">
                 <div className="container px-4 mx-auto lg:px-8">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="mb-16 text-center"
-                    >
-                        <span className="inline-block px-4 py-2 mb-4 text-sm font-semibold rounded-full bg-primary-orange/10 text-primary-orange">
+                    <div className="grid gap-12 lg:grid-cols-2">
+                        <div>
+                            <span className="inline-flex items-center px-4 py-1 text-xs font-semibold tracking-wide text-[#a8d05f] uppercase rounded-full border border-[#a8d05f]/30 bg-[#f9faf3]">
+                                {t('home.whyChooseUs.badge')}
+                            </span>
+                            <h2 className="mt-4 text-3xl font-semibold text-[#222222] lg:text-4xl">
+                                {t('home.whyChooseUs.title')}
+                            </h2>
+                            <p className="mt-3 text-base text-[#6f6f6f]">
+                                {t('home.whyChooseUs.subtitle')}
+                            </p>
+                            <div className="flex flex-col gap-5 mt-8">
+                                {processKeys.map(key => (
+                                    <div key={key} className="flex items-start gap-3">
+                                        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#e7efd5]">
+                                            <LineChart className="text-[#ff8c42]" size={18} />
+                                        </div>
+                                        <div>
+                                            <p className="font-semibold text-[#222222]">
+                                                {t(`home.services.items.${key}.title`)}
+                                            </p>
+                                            <p className="text-sm text-[#6f6f6f]">
+                                                {t(`home.services.items.${key}.description`)}
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="grid gap-4 sm:grid-cols-2">
+                            {safeBenefits.slice(0, 4).map((benefit, index) => (
+                                <div
+                                    key={benefit}
+                                    className="p-5 border rounded-2xl border-[#e1e1e1] bg-[#f9faf3]"
+                                >
+                                    <Shield className="text-[#a8d05f]" size={18} />
+                                    <p className="mt-4 text-sm text-[#222222]">{benefit}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Testimonials */}
+            <section className="py-16 bg-[#f5f5f0]">
+                <div className="container px-4 mx-auto lg:px-8">
+                    <div className="text-center">
+                        <span className="inline-flex items-center justify-center px-4 py-1 text-xs font-semibold tracking-wide text-[#ff8c42] uppercase rounded-full border border-[#ff8c42]/30 bg-white">
                             {t('home.testimonials.badge')}
                         </span>
-                        <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
+                        <h2 className="mt-4 text-3xl font-semibold text-[#222222] lg:text-4xl">
                             {t('home.testimonials.title')}
                         </h2>
-                        <p className="max-w-3xl mx-auto text-xl text-gray-600">
+                        <p className="max-w-2xl mx-auto mt-3 text-base text-[#6f6f6f]">
                             {t('home.testimonials.subtitle')}
                         </p>
-                    </motion.div>
-
-                    <div className="grid gap-8 md:grid-cols-3">
-                        {testimonials.map((testimonial, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                whileHover={{ y: -10 }}
-                                className="p-8 transition-all bg-white shadow-lg rounded-2xl hover:shadow-2xl"
+                    </div>
+                    <div className="grid gap-6 mt-12 md:grid-cols-3">
+                        {testimonials.map(testimonial => (
+                            <div
+                                key={testimonial.key}
+                                className="h-full p-6 border rounded-2xl border-[#e1e1e1] bg-white"
                             >
-                                <div className="flex mb-4">
-                                    {[...Array(testimonial.rating)].map((_, i) => (
-                                        <Star
-                                            key={i}
-                                            className="fill-current text-primary-orange"
-                                            size={20}
-                                        />
+                                <div className="flex mb-4 text-[#ff8c42]">
+                                    {[...Array(testimonial.rating)].map((_, index) => (
+                                        <span key={index} aria-hidden="true">
+                                            ★
+                                        </span>
                                     ))}
                                 </div>
-                                <p className="mb-6 italic leading-relaxed text-gray-600">
-                                    "{t(`home.testimonials.items.${testimonial.key}.text`)}"
+                                <p className="text-sm text-[#4b4b4b]">
+                                    “{t(`home.testimonials.items.${testimonial.key}.text`)}”
                                 </p>
-                                <div>
-                                    <h4 className="font-bold text-dark-blue">
+                                <div className="mt-6">
+                                    <p className="text-sm font-semibold text-[#222222]">
                                         {t(`home.testimonials.items.${testimonial.key}.name`)}
-                                    </h4>
-                                    <p className="text-sm text-gray-500">
+                                    </p>
+                                    <p className="text-xs text-[#6f6f6f]">
                                         {t(`home.testimonials.items.${testimonial.key}.company`)}
                                     </p>
                                 </div>
-                            </motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* CTA Section */}
             <CTA
                 title={t('home.cta.title')}
                 description={t('home.cta.description')}
+                backgroundClass="bg-[#111111]"
+                textColor="text-white"
                 buttons={[
                     {
                         text: t('common.contactUs'),
                         to: '/contact',
                         icon: 'Phone',
-                        className: 'bg-white text-primary-orange hover:bg-gray-50'
+                        className: 'bg-white text-[#222222] hover:bg-[#f5f5f0]'
                     },
                     {
                         text: t('common.ourServices'),
                         to: '/services',
                         icon: 'Wrench',
-                        className: 'bg-dark-blue text-white hover:bg-blue-900'
+                        className: 'bg-[#ff8c42] text-white hover:bg-[#f7792a]'
                     }
                 ]}
             />

@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 
-const Counter = ({ end, duration = 2, className = '' }) => {
+const Counter = ({ end, duration = 2, suffix = '+', className = '' }) => {
     const [count, setCount] = useState(0)
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: '-100px' })
@@ -34,7 +34,8 @@ const Counter = ({ end, duration = 2, className = '' }) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
         >
-            {count}+
+            {count}
+            {suffix}
         </motion.span>
     )
 }

@@ -7,6 +7,7 @@ import { additionalProducts, benefits, products } from '../constants/products'
 import PageHeader from '../components/ui/PageHeader'
 import CTA from '../components/ui/CTA'
 import { useTranslation } from '../context/TranslationContext'
+import { handleImageError } from '../utils/media'
 
 const Products = () => {
     const { t } = useTranslation()
@@ -72,11 +73,11 @@ const Products = () => {
                                 <motion.div
                                     key={product.id}
                                     id={product.id}
-                                    className="mb-20 scroll-mt-20"
-                                    initial={{ opacity: 0, y: 50 }}
+                                    className="mb-16 scroll-mt-24"
+                                    initial={{ opacity: 0, y: 24 }}
                                     whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.8, delay: index * 0.1 }}
-                                    viewport={{ once: true, margin: '-100px' }}
+                                    transition={{ duration: 0.25, delay: index * 0.05 }}
+                                    viewport={{ once: true, margin: '-80px' }}
                                 >
                                     <div
                                         className={`grid lg:grid-cols-2 gap-12 items-center ${
@@ -85,16 +86,18 @@ const Products = () => {
                                     >
                                         {/* Image Section */}
                                         <div
-                                            className={`product-card rounded-2xl overflow-hidden shadow-xl ${
+                                            className={`overflow-hidden rounded-3xl border border-[#e1e1e1] bg-white ${
                                                 product.reverse ? 'lg:order-2' : ''
                                             }`}
                                         >
                                             <motion.img
                                                 src={product.image}
                                                 alt={t(`products.items.${product.key}.title`)}
-                                                className="object-cover w-full h-96"
-                                                whileHover={{ scale: 1.05 }}
-                                                transition={{ duration: 0.5 }}
+                                                className="object-cover w-full h-[420px]"
+                                                loading="lazy"
+                                                onError={handleImageError}
+                                                whileHover={{ scale: 1.02 }}
+                                                transition={{ duration: 0.3 }}
                                             />
                                         </div>
 
@@ -107,7 +110,7 @@ const Products = () => {
                                                 {t(`products.items.${product.key}.badge`)}
                                             </div>
 
-                                            <h2 className="mb-4 text-4xl font-bold text-dark-blue">
+                                            <h2 className="mb-4 text-3xl font-semibold text-[#222222]">
                                                 <Icon
                                                     className={`inline mr-3 ${
                                                         product.color === 'orange'
@@ -119,7 +122,7 @@ const Products = () => {
                                                 {t(`products.items.${product.key}.title`)}
                                             </h2>
 
-                                            <p className="mb-6 text-lg leading-relaxed text-gray-600">
+                                            <p className="mb-6 text-base leading-relaxed text-[#4b4b4b]">
                                                 {t(`products.items.${product.key}.description`)}
                                             </p>
 
@@ -136,7 +139,7 @@ const Products = () => {
                                                                     : 'text-primary-orange'
                                                             } text-xl mr-3 mt-1 flex-shrink-0`}
                                                         />
-                                                        <span className="text-gray-700">
+                                                        <span className="text-[#4b4b4b]">
                                                             {feature}
                                                         </span>
                                                     </li>
@@ -145,11 +148,11 @@ const Products = () => {
 
                                             <Link
                                                 to="/contact"
-                                                className={`inline-flex items-center ${
+                                                className={`${
                                                     product.color === 'orange'
                                                         ? 'btn-orange'
                                                         : 'btn-green'
-                                                } text-white px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-xl transition-all`}
+                                                } mt-6`}
                                             >
                                                 <Mail className="mr-2" size={20} />
                                                 {t('common.getQuote')}
@@ -162,58 +165,47 @@ const Products = () => {
 
                         {/* Additional Products Section */}
                         <motion.div
-                            className="p-8 text-center text-white bg-gradient-to-br from-dark-blue to-gray-900 rounded-3xl lg:p-12"
-                            initial={{ opacity: 0, y: 50 }}
+                            className="p-10 text-center bg-white border rounded-3xl border-[#e1e1e1]"
+                            initial={{ opacity: 0, y: 24 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
+                            transition={{ duration: 0.25 }}
                             viewport={{ once: true }}
                         >
                             <div className="max-w-4xl mx-auto">
-                                <Boxes className="mx-auto mb-6 text-6xl text-primary-orange" />
-                                <h2 className="mb-6 text-4xl font-bold">
+                                <Boxes className="mx-auto mb-6 text-5xl text-[#ff8c42]" />
+                                <h2 className="mb-4 text-3xl font-semibold text-[#222222]">
                                     {t('products.additional.title')}
                                 </h2>
-                                <p className="mb-8 text-xl leading-relaxed text-gray-300">
+                                <p className="mb-8 text-base text-[#6f6f6f]">
                                     {t('products.additional.description')}
                                 </p>
 
-                                <div className="grid gap-6 mb-8 md:grid-cols-3">
-                                    {additionalProducts.map((product, index) => {
+                                <div className="grid gap-4 mb-8 md:grid-cols-3">
+                                    {additionalProducts.map(product => {
                                         const Icon = product.icon
                                         return (
-                                            <motion.div
+                                            <div
                                                 key={product.name}
-                                                className="p-6 transition-colors bg-white/10 rounded-xl hover:bg-white/20"
-                                                whileHover={{ scale: 1.05 }}
-                                                transition={{ duration: 0.3 }}
+                                                className="p-5 text-left border rounded-2xl border-[#e1e1e1]"
                                             >
-                                                <Icon
-                                                    className={`text-3xl ${
-                                                        index % 2 === 0
-                                                            ? 'text-lemon-green'
-                                                            : 'text-primary-orange'
-                                                    } mb-3 mx-auto`}
-                                                />
-                                                <h3 className="mb-2 text-lg font-bold">
+                                                <Icon className="text-[#a8d05f]" size={20} />
+                                                <h3 className="mt-4 text-base font-semibold text-[#222222]">
                                                     {t(
                                                         `products.additional.items.${product.key}.name`
                                                     )}
                                                 </h3>
-                                                <p className="text-sm text-gray-400">
+                                                <p className="text-sm text-[#6f6f6f]">
                                                     {t(
                                                         `products.additional.items.${product.key}.description`
                                                     )}
                                                 </p>
-                                            </motion.div>
+                                            </div>
                                         )
                                     })}
                                 </div>
 
-                                <Link
-                                    to="/contact"
-                                    className="inline-block px-10 py-5 text-lg font-bold text-white transition-all rounded-full shadow-2xl btn-orange hover:shadow-3xl"
-                                >
-                                    <Download className="inline mr-2" size={20} />
+                                <Link to="/contact" className="btn-orange">
+                                    <Download className="inline mr-2" size={18} />
                                     {t('products.additional.cta')}
                                 </Link>
                             </div>
@@ -231,7 +223,7 @@ const Products = () => {
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="mb-4 text-4xl font-bold lg:text-5xl text-dark-blue">
+                            <h2 className="mb-4 text-4xl font-semibold lg:text-5xl text-[#222222]">
                                 {t('products.whyChooseUs.title')}
                             </h2>
                             <p className="max-w-3xl mx-auto text-xl text-gray-600">
@@ -271,7 +263,7 @@ const Products = () => {
                                         >
                                             <Icon className="text-3xl text-white" />
                                         </div>
-                                        <h3 className="mb-3 text-xl font-bold text-dark-blue">
+                                        <h3 className="mb-3 text-xl font-semibold text-[#222222]">
                                             {t(`products.benefits.${currentKey}.title`)}
                                         </h3>
                                         <p className="text-gray-600">
@@ -299,7 +291,7 @@ const Products = () => {
                             text: t('products.cta.downloadCatalog'),
                             to: '/contact',
                             icon: 'Download',
-                            className: 'bg-dark-blue text-white hover:bg-blue-900'
+                            className: 'bg-[#111111] text-white hover:bg-[#1f1f1f]'
                         }
                     ]}
                 />

@@ -232,7 +232,7 @@ const Products = () => {
                 <div className="container mx-auto px-4 lg:px-8">
                     <div className="mb-8">
                         <p className="text-gray-600">
-                            <span className="font-bold text-dark-blue">
+                            <span className="font-bold text-[#222222]">
                                 {filteredProducts.length}
                             </span>{' '}
                             produit(s) trouvé(s)
@@ -272,7 +272,7 @@ const Products = () => {
                                 </div>
 
                                 <div className="p-6">
-                                    <h3 className="text-xl font-bold text-dark-blue mb-2">
+                                    <h3 className="text-xl font-bold text-[#222222] mb-2">
                                         {product.name}
                                     </h3>
                                     <div className="flex items-center justify-between mb-4">

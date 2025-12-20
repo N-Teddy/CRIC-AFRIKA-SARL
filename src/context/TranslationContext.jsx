@@ -1,24 +1,18 @@
 // src/context/TranslationContext.jsx
-import React, { createContext, useContext, useState, useEffect } from 'react'
+import React, { createContext, useContext, useMemo, useState, useEffect } from 'react'
 
 const TranslationContext = createContext()
 
-// Preload common languages
-const preloadedTranslations = {}
+const translationModules = import.meta.glob('../translations/*.json', { eager: true })
+const translationsMap = Object.entries(translationModules).reduce((acc, [path, module]) => {
+    const lang = path.split('/').pop().replace('.json', '')
+    acc[lang] = module.default
+    return acc
+}, {})
 
-const loadTranslationFile = async lang => {
-    if (preloadedTranslations[lang]) {
-        return preloadedTranslations[lang]
-    }
-
-    try {
-        const translationModule = await import(`../translations/${lang}.json`)
-        preloadedTranslations[lang] = translationModule.default
-        return translationModule.default
-    } catch (error) {
-        console.error('Error loading translations:', error)
-        return {}
-    }
+const getStoredLanguage = () => {
+    if (typeof window === 'undefined') return 'fr'
+    return localStorage.getItem('language') || 'fr'
 }
 
 export const useTranslation = () => {
@@ -30,52 +24,31 @@ export const useTranslation = () => {
 }
 
 export const TranslationProvider = ({ children }) => {
-    const [language, setLanguage] = useState('fr')
-    const [translations, setTranslations] = useState({})
-    const [isLoading, setIsLoading] = useState(true)
+    const initialLanguage = useMemo(() => getStoredLanguage(), [])
+    const [language, setLanguage] = useState(initialLanguage)
+    const [translations, setTranslations] = useState(() => translationsMap[initialLanguage] || {})
 
     useEffect(() => {
-        const initializeTranslations = async () => {
-            const savedLanguage = localStorage.getItem('language') || 'fr'
-            setLanguage(savedLanguage)
-
-            // Preload both languages for faster switching
-            const [currentTranslations] = await Promise.all([
-                loadTranslationFile(savedLanguage),
-                loadTranslationFile(savedLanguage === 'fr' ? 'en' : 'fr')
-            ])
-
-            setTranslations(currentTranslations)
-            setIsLoading(false)
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('language', language)
         }
+        setTranslations(translationsMap[language] || {})
+    }, [language])
 
-        initializeTranslations()
-    }, [])
-
-    const changeLanguage = async newLang => {
-        setIsLoading(true)
+    const changeLanguage = newLang => {
+        if (!translationsMap[newLang]) return
         setLanguage(newLang)
-        localStorage.setItem('language', newLang)
-
-        const newTranslations = await loadTranslationFile(newLang)
-        setTranslations(newTranslations)
-        setIsLoading(false)
     }
 
     const t = (key, options = {}) => {
-        // Show loading indicator or empty string while loading
-        if (isLoading) {
-            return options.loadingPlaceholder || ''
-        }
-
         let translation = translations
         const keys = key.split('.')
 
-        for (const k of keys) {
-            translation = translation?.[k]
+        for (const currentKey of keys) {
+            translation = translation?.[currentKey]
             if (translation === undefined) {
                 if (options.returnObjects) return []
-                return key // Only return key when translations are loaded but key not found
+                return key
             }
         }
 
@@ -98,7 +71,7 @@ export const TranslationProvider = ({ children }) => {
         t,
         isFrench: language === 'fr',
         isEnglish: language === 'en',
-        isLoading
+        isLoading: false
     }
 
     return <TranslationContext.Provider value={value}>{children}</TranslationContext.Provider>

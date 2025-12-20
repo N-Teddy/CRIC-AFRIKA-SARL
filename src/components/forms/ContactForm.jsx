@@ -72,9 +72,11 @@ const ContactForm = () => {
     }
 
     return (
-        <div className="p-8 bg-white shadow-lg rounded-2xl lg:p-12">
-            <h2 className="mb-2 text-3xl font-bold text-dark-blue">{t('contact.form.title')}</h2>
-            <p className="mb-8 text-gray-600">{t('contact.form.subtitle')}</p>
+        <div className="p-8 bg-white border rounded-2xl border-[#e1e1e1] lg:p-12">
+            <h2 className="mb-2 text-3xl font-semibold text-[#222222]">
+                {t('contact.form.title')}
+            </h2>
+            <p className="mb-8 text-sm text-[#6f6f6f]">{t('contact.form.subtitle')}</p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid gap-6 md:grid-cols-2">

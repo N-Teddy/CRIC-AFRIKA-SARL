@@ -17,11 +17,12 @@ const CTA = ({
     title,
     description,
     buttons,
-    gradient = 'from-primary-orange to-lemon-green',
-    textColor = 'text-white',
+    gradient,
+    backgroundClass = 'bg-[#f5f5f0]',
+    textColor = 'text-[#222222]',
     className = '',
-    icon = null, // New prop for animated icon
-    iconAnimation = null // New prop for icon animation
+    icon = null,
+    iconAnimation = null
 }) => {
     const iconMap = {
         Phone,
@@ -37,8 +38,13 @@ const CTA = ({
 
     const IconComponent = icon ? iconMap[icon] : null
 
+    const sectionBackground = gradient
+        ? `bg-gradient-to-r ${gradient}`
+        : backgroundClass
+    const descriptionColor = textColor === 'text-white' ? 'text-white/80' : 'text-[#6f6f6f]'
+
     return (
-        <section className={`py-20 bg-gradient-to-r ${gradient} ${className}`}>
+        <section className={`py-20 ${sectionBackground} ${className}`}>
             <div className="container px-4 mx-auto text-center lg:px-8">
                 <motion.div
                     className="max-w-4xl mx-auto"
@@ -72,9 +78,13 @@ const CTA = ({
                         </div>
                     )}
 
-                    <h2 className={`mb-6 text-4xl font-bold ${textColor} lg:text-5xl`}>{title}</h2>
-                    <p className={`mb-8 text-xl leading-relaxed ${textColor}/90`}>{description}</p>
-                    <div className="flex flex-wrap justify-center gap-4">
+                    <h2 className={`mb-4 text-3xl font-semibold ${textColor} lg:text-4xl`}>
+                        {title}
+                    </h2>
+                    <p className={`mb-8 text-base leading-relaxed ${descriptionColor}`}>
+                        {description}
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-3">
                         {buttons.map((button, index) => {
                             const ButtonIconComponent = iconMap[button.icon]
                             const isExternal =
@@ -93,7 +103,7 @@ const CTA = ({
 
                             // Common props WITHOUT the key
                             const commonProps = {
-                                className: `px-8 py-4 text-lg font-bold transition rounded-full shadow-lg hover:shadow-2xl hover:scale-105 ${button.className}`
+                                className: `inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-full transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${button.className}`
                             }
 
                             if (isExternal) {

@@ -18,6 +18,7 @@ import {
     Wine,
     Wrench
 } from 'lucide-react'
+import { getProductImage } from '../utils/media'
 
 export const products = [
     {
@@ -33,7 +34,7 @@ export const products = [
             'Systèmes de démarrage automatique',
             'Installation et mise en service incluses'
         ],
-        image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800',
+        image: getProductImage('generators'),
         badge: { text: 'Produit Phare', color: 'bg-primary-orange', icon: Star },
         color: 'orange',
         reverse: false
@@ -51,7 +52,7 @@ export const products = [
             'Débits de 0,5 à 100 m³/min',
             'Maintenance préventive disponible'
         ],
-        image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800',
+        image: getProductImage('compressors'),
         badge: { text: 'Haute Performance', color: 'bg-lemon-green', icon: FireExtinguisher },
         color: 'green',
         reverse: true
@@ -69,7 +70,7 @@ export const products = [
             "Sprinklers et systèmes d'extinction automatique",
             'Installation et formation du personnel'
         ],
-        image: 'https://images.unsplash.com/photo-1582719471137-c3967ffb1c42?w=800',
+        image: getProductImage('fireSafety'),
         badge: { text: 'Sécurité Essentielle', color: 'bg-red-500', icon: Shield },
         color: 'orange',
         reverse: false
@@ -87,7 +88,7 @@ export const products = [
             'Chaussures et bottes de sécurité',
             'Vêtements de travail et harnais'
         ],
-        image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800',
+        image: getProductImage('safety'),
         badge: { text: 'Protection Personnel', color: 'bg-yellow-500', icon: Shield },
         color: 'green',
         reverse: true
@@ -105,7 +106,7 @@ export const products = [
             'Stations de pompage complètes',
             'Accessoires et pièces de rechange'
         ],
-        image: 'https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?w=800',
+        image: getProductImage('pumping'),
         badge: { text: 'Solutions Hydrauliques', color: 'bg-blue-500', icon: Droplets },
         color: 'orange',
         reverse: false
@@ -123,7 +124,7 @@ export const products = [
             'Ponts roulants et palans',
             'Gerbeurs et nacelles élévatrices'
         ],
-        image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800',
+        image: getProductImage('handling'),
         badge: { text: 'Manutention', color: 'bg-orange-500', icon: Forklift },
         color: 'green',
         reverse: true
@@ -141,7 +142,7 @@ export const products = [
             'Puissances de 0,5 kW à 500 kW',
             'Normes IE2, IE3, IE4 (haute efficacité)'
         ],
-        image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800',
+        image: getProductImage('motors'),
         badge: { text: 'Motorisation', color: 'bg-purple-500', icon: Circle },
         color: 'orange',
         reverse: false
@@ -159,7 +160,7 @@ export const products = [
             'Couples de 10 Nm à 50 000 Nm',
             'Configurations sur mesure disponibles'
         ],
-        image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800',
+        image: getProductImage('gearboxes'),
         badge: { text: 'Transmission', color: 'bg-indigo-500', icon: Cog },
         color: 'green',
         reverse: true
@@ -177,7 +178,7 @@ export const products = [
             'Boucheuses automatiques et semi-automatiques',
             'Lignes complètes de conditionnement'
         ],
-        image: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800',
+        image: getProductImage('fillingMachines'),
         badge: { text: 'Conditionnement', color: 'bg-teal-500', icon: Wine },
         color: 'orange',
         reverse: false
@@ -195,7 +196,7 @@ export const products = [
             'Puissances de 50 kVA à 2500 kVA',
             'Installation et mise en service complète'
         ],
-        image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800',
+        image: getProductImage('transformers'),
         badge: { text: 'Haute Tension', color: 'bg-red-500', icon: Bolt },
         color: 'green',
         reverse: true

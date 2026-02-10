@@ -20,16 +20,16 @@ const LanguageSwitcher = () => {
             {/* Desktop Button */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="items-center hidden px-3 py-2 space-x-2 text-white transition-colors rounded-lg md:flex bg-white/10 hover:bg-white/20"
+                className="items-center hidden px-3 py-2 space-x-2 text-ink transition-colors rounded-button md:flex bg-surface-muted border border-border hover:bg-white hover:border-primary/30 shadow-sm"
             >
-                <Globe size={16} />
-                <span className="text-sm font-medium">{currentLanguage?.flag}</span>
+                <Globe size={16} className="text-primary" />
+                <span className="text-sm font-bold">{currentLanguage?.shortCode}</span>
             </button>
 
             {/* Mobile Button - Shows Code Only */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center justify-center w-10 h-10 text-white transition-colors rounded-lg md:hidden bg-white/10 hover:bg-white/20"
+                className="flex items-center justify-center w-10 h-10 text-ink transition-colors rounded-button md:hidden bg-surface-muted border border-border"
             >
                 <span className="text-sm font-bold">{currentLanguage?.shortCode}</span>
             </button>
@@ -42,10 +42,10 @@ const LanguageSwitcher = () => {
 
                         {/* Dropdown */}
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.95, y: -10 }}
+                            initial={{ opacity: 0, scale: 0.95, y: -4 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: -10 }}
-                            className="absolute right-0 z-50 w-48 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg top-full"
+                            exit={{ opacity: 0, scale: 0.95, y: -4 }}
+                            className="absolute right-0 z-50 w-48 mt-2 bg-white border border-border rounded-corporate shadow-xl top-full"
                         >
                             <div className="p-2">
                                 {languages.map(lang => (
@@ -55,22 +55,17 @@ const LanguageSwitcher = () => {
                                             changeLanguage(lang.code)
                                             setIsOpen(false)
                                         }}
-                                        className={`flex items-center justify-between w-full px-3 py-2 rounded-md text-sm transition-colors ${
-                                            language === lang.code
-                                                ? 'bg-primary-orange/10 text-primary-orange'
-                                                : 'text-gray-700 hover:bg-gray-100'
-                                        }`}
+                                        className={`flex items-center justify-between w-full px-4 py-3 rounded-button text-sm font-semibold transition-all ${language === lang.code
+                                                ? 'bg-primary/10 text-primary'
+                                                : 'text-ink-muted hover:bg-surface-muted hover:text-ink'
+                                            }`}
                                     >
-                                        <div className="flex items-center space-x-2">
-                                            {/* Show flag and full name on desktop, code only on mobile in dropdown */}
-                                            <span className="text-base">{lang.flag}</span>
-                                            <span className="hidden md:inline">{lang.name}</span>
-                                            <span className="font-bold md:hidden">
-                                                {lang.shortCode}
-                                            </span>
+                                        <div className="flex items-center space-x-3">
+                                            <span className="text-lg">{lang.flag}</span>
+                                            <span>{lang.name}</span>
                                         </div>
                                         {language === lang.code && (
-                                            <Check size={16} className="text-primary-orange" />
+                                            <Check size={16} className="text-primary" />
                                         )}
                                     </button>
                                 ))}

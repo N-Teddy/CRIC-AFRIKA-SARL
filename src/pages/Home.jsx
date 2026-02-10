@@ -8,6 +8,8 @@ import { products, services, stats, testimonials } from '../constants/home'
 import CTA from '../components/ui/CTA'
 import { useTranslation } from '../context/TranslationContext'
 import { clientLogos, heroImages, handleImageError, fallbackImage } from '../utils/media'
+import { Star } from 'lucide-react'
+import { CheckCircle } from 'lucide-react'
 
 const Home = () => {
     const { t, isLoading } = useTranslation()
@@ -16,219 +18,138 @@ const Home = () => {
 
     const processKeys = ['import', 'installation', 'maintenance']
     const heroFeatureImage = heroImages[0] || fallbackImage
-    const heroSecondaryImages = heroImages.slice(1, 3)
-    const accentDots = ['#386FD5', '#FF8C42', '#A8D05F', '#3C9C9C']
 
     return (
-        <div className="overflow-hidden">
-            {/* Hero */}
-            <section className="relative overflow-hidden pt-28 pb-20 bg-hero-gradient">
-                <div className="absolute inset-0 pointer-events-none">
-                    <div className="mesh-overlay opacity-70" />
-                    <div className="absolute -top-24 left-10 w-72 h-72 rounded-full bg-[#386fd5]/20 blur-3xl" />
-                    <div className="absolute -bottom-32 right-8 w-80 h-80 rounded-full bg-[#ff8c42]/15 blur-3xl" />
-                </div>
-                <div className="container relative px-4 mx-auto lg:px-8">
-                    <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="overflow-hidden bg-white">
+            {/* Hero Section */}
+            <section className="relative min-h-[90vh] flex items-center pt-28 pb-20 bg-surface-muted overflow-hidden">
+                <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                    style={{ backgroundImage: 'radial-gradient(#1b365d 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+
+                <div className="container mx-auto relative z-10">
+                    <div className="grid items-center gap-16 lg:grid-cols-2">
                         <motion.div
-                            initial={{ opacity: 0, y: 24 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.2 }}
+                            transition={{ duration: 0.6 }}
                         >
-                            {isLoading ? (
-                                <Skeleton className="w-32 h-4 mb-3" />
-                            ) : (
-                                <span className="inline-flex items-center px-4 py-1 text-xs font-semibold tracking-[0.3em] text-[#386fd5] uppercase rounded-full border border-[#386fd5]/30 bg-white/80">
-                                    {t('home.hero.badge')}
-                                </span>
-                            )}
-                            {isLoading ? (
-                                <Skeleton className="w-2/3 h-10 mb-4" />
-                            ) : (
-                                <h1 className="mt-6 mb-4 text-4xl font-semibold leading-tight text-[#2b2f33] lg:text-6xl">
-                                    {t('home.hero.title')}
-                                </h1>
-                            )}
-                            {isLoading ? (
-                                <Skeleton className="w-full h-4 mb-2" />
-                            ) : (
-                                <p className="max-w-2xl text-lg text-[#6c7075]">
-                                    {t('home.hero.subtitle')}
-                                </p>
-                            )}
-                            <div className="flex flex-wrap gap-4 mt-8">
-                                <Link to="/contact" className="btn-green">
-                                    <Phone className="mr-2" size={18} />
+                            <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 text-[10px] font-bold tracking-[0.2em] text-primary uppercase bg-white border border-border rounded-full shadow-sm">
+                                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                                {t('home.hero.badge')}
+                            </div>
+
+                            <h1 className="text-4xl font-extrabold leading-[1.1] text-ink lg:text-7xl mb-6">
+                                {t('home.hero.title').split(' ').map((word, i) => (
+                                    <span key={i} className={i === 0 ? 'text-primary' : ''}>{word} </span>
+                                ))}
+                            </h1>
+
+                            <p className="max-w-xl text-lg text-ink-muted leading-relaxed mb-10">
+                                {t('home.hero.subtitle')}
+                            </p>
+
+                            <div className="flex flex-wrap gap-4 mb-16">
+                                <Link to="/contact" className="btn-primary px-8 py-4 shadow-lg shadow-primary/20">
+                                    <Phone className="mr-3" size={20} />
                                     {t('home.hero.ctaQuote')}
                                 </Link>
-                                <Link to="/products" className="btn-outline-accent">
-                                    <Box className="mr-2" size={18} />
+                                <Link to="/products" className="btn-outline px-8 py-4 bg-white">
+                                    <Box className="mr-3" size={20} />
                                     {t('home.hero.ctaProducts')}
                                 </Link>
                             </div>
-                            <div className="grid grid-cols-2 gap-6 pt-12 mt-12">
-                                <div className="col-span-2 bg-gradient-to-r from-[#ff8c42]/20 via-white to-[#a8d05f]/20 border border-white/60 rounded-[32px] p-6 lg:col-span-3">
-                                    <div className="grid grid-cols-2 gap-6 lg:grid-cols-3">
+
+                            <div className="grid grid-cols-3 gap-8 pt-10 border-t border-border">
                                 {stats.map((stat, index) => (
-                                    <div key={stat.key} className="space-y-2">
-                                        <div className="flex items-center gap-3">
-                                            <span
-                                                className="inline-flex w-2 h-2 rounded-full"
-                                                style={{ backgroundColor: accentDots[index % accentDots.length] }}
-                                            />
-                                            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#6c7075]">
-                                                {t(`home.stats.${stat.key}`)}
-                                            </p>
+                                    <div key={stat.key} className="space-y-1">
+                                        <div className="text-3xl font-bold text-ink flex items-baseline">
+                                            <Counter end={stat.number} duration={2} />
+                                            <span className="text-secondary ml-0.5">{stat.suffix || '+'}</span>
                                         </div>
-                                        <div className="text-3xl font-semibold text-[#2b2f33]">
-                                            <Counter
-                                                end={stat.number}
-                                                duration={1.2}
-                                                suffix={stat.suffix || '+'}
-                                            />
-                                        </div>
+                                        <p className="text-[10px] font-bold uppercase tracking-widest text-ink-muted">
+                                            {t(`home.stats.${stat.key}`)}
+                                        </p>
                                     </div>
                                 ))}
-                                    </div>
-                                </div>
                             </div>
                         </motion.div>
 
-                        <div className="relative space-y-6">
-                            <div className="relative p-8 text-white rounded-[32px] shadow-[0_35px_80px_rgba(43,47,51,.3)] bg-[#2b2f33] overflow-hidden mesh-overlay">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                            className="relative"
+                        >
+                            <div className="relative z-10 rounded-corporate overflow-hidden shadow-2xl border-4 border-white">
                                 <img
                                     src={heroFeatureImage}
-                                    alt={t('home.hero.images.equipment')}
-                                    className="relative z-10 object-cover w-full h-72 rounded-[24px] border border-white/15"
-                                    loading="lazy"
+                                    alt="CRIC Africa Industrial"
+                                    className="w-full h-[500px] object-cover"
                                     onError={handleImageError}
                                 />
-                                <div className="relative z-20 grid grid-cols-2 gap-4 mt-8">
-                                    {stats.slice(0, 2).map(metric => (
-                                        <div
-                                            key={metric.key}
-                                            className="p-4 border border-white/15 rounded-2xl bg-white/5 backdrop-blur"
-                                        >
-                                            <p className="text-3xl font-semibold">
-                                                {metric.number}
-                                                {metric.suffix}
-                                            </p>
-                                            <p className="text-xs tracking-[0.2em] uppercase text-white/70">
-                                                {t(`home.stats.${metric.key}`)}
-                                            </p>
+                                <div className="absolute inset-0 bg-gradient-to-t from-corporate-blue/60 to-transparent" />
+                                <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/10 backdrop-blur-md rounded-corporate border border-white/20">
+                                    <div className="flex items-center gap-4">
+                                        <div className="p-3 bg-secondary rounded-button text-white shadow-lg">
+                                            <Shield size={24} />
                                         </div>
-                                    ))}
+                                        <div>
+                                            <p className="text-white font-bold">{t('home.whyChooseUs.title')}</p>
+                                            <p className="text-white/70 text-sm">Industrial Excellence & Safety First</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="grid gap-4 sm:grid-cols-2">
-                                {heroSecondaryImages.map((image, index) => (
-                                    <motion.div
-                                        key={image}
-                                        whileHover={{ rotate: 1.5, y: -4 }}
-                                        className="p-4 border border-[#e2e4da] rounded-[24px] bg-white shadow-[0_20px_45px_rgba(43,47,51,0.08)]"
-                                    >
-                                        <div className="flex items-center justify-between">
-                                            <p className="text-xs font-semibold tracking-[0.3em] text-[#6c7075] uppercase">
-                                                {t('home.products.badge')}
-                                            </p>
-                                            <span
-                                                className="inline-flex w-2 h-2 rounded-full"
-                                                style={{ backgroundColor: accentDots[(index + 1) % accentDots.length] }}
-                                            />
-                                        </div>
-                                        <img
-                                            src={image}
-                                            alt={t('home.products.title')}
-                                            className="object-cover w-full h-28 mt-3 rounded-2xl"
-                                            loading="lazy"
-                                            onError={handleImageError}
-                                        />
-                                    </motion.div>
-                                ))}
-                            </div>
+
+                            {/* Decorative elements */}
+                            <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
+                            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary/10 rounded-full blur-3xl" />
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Services Grid */}
+            <section className="py-24 bg-white">
+                <div className="container mx-auto">
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                        <div className="max-w-2xl">
+                            <span className="text-xs font-bold uppercase tracking-[0.3em] text-secondary mb-4 block">
+                                {t('home.services.badge')}
+                            </span>
+                            <h2 className="text-3xl md:text-5xl font-bold text-ink">
+                                {t('home.services.title')}
+                            </h2>
                         </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Logos */}
-            <section className="py-10 bg-[#f4f5f0] border-y border-[#e2e4da]">
-                <div className="container px-4 mx-auto lg:px-8">
-                    <div className="flex flex-wrap items-center justify-center gap-6 lg:gap-10">
-                        {clientLogos.map(logo => (
-                            <div
-                                key={logo.name}
-                                className="flex items-center justify-center w-32 h-16 px-4 py-2 bg-white border rounded-2xl border-white/60 shadow-[0_15px_35px_rgba(43,47,51,0.08)]"
-                            >
-                                <img
-                                    src={logo.src}
-                                    alt={`${logo.name} logo`}
-                                    className="object-contain h-8"
-                                    loading="lazy"
-                                    onError={handleImageError}
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Services */}
-            <section className="py-16 bg-warm-gradient">
-                <div className="container px-4 mx-auto lg:px-8">
-                    <div className="text-center">
-                        <span className="inline-flex items-center justify-center px-4 py-1 text-xs font-semibold tracking-wide text-[#ff8c42] uppercase rounded-full border border-[#ff8c42]/30 bg-[#fff8f3]">
-                            {t('home.services.badge')}
-                        </span>
-                        <h2 className="mt-4 text-3xl font-semibold text-[#2b2f33] lg:text-4xl">
-                            {t('home.services.title')}
-                        </h2>
-                        <p className="max-w-2xl mx-auto mt-3 text-base text-[#6c7075]">
+                        <p className="text-ink-muted text-lg max-w-md">
                             {t('home.services.subtitle')}
                         </p>
                     </div>
-                    <div className="grid gap-6 mt-12 md:grid-cols-2 lg:grid-cols-4">
+
+                    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                         {services.map((service, index) => (
                             <motion.div
                                 key={service.key}
-                                whileHover={{ y: -6 }}
-                                className={`relative overflow-hidden rounded-[28px] border border-[#e2e4da] p-6 ${
-                                    index % 2 === 0 ? 'bg-white' : 'bg-[#f9faf4]'
-                                }`}
+                                whileHover={{ y: -8 }}
+                                className="group p-8 rounded-corporate border border-border bg-white transition-all hover:shadow-xl hover:border-primary/20"
                             >
-                                <div
-                                    className={`absolute top-0 right-0 w-16 h-16 rounded-bl-[32px] opacity-70 ${
-                                        index % 2 === 0
-                                            ? 'bg-gradient-to-br from-[#ff8c42] to-[#a8d05f]'
-                                            : 'bg-gradient-to-br from-[#386fd5] to-[#a8d05f]'
-                                    }`}
-                                />
-                                <div
-                                    className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${
-                                        index % 2 === 0
-                                            ? 'from-[#ff8c42] via-transparent to-[#a8d05f]'
-                                            : 'from-[#a8d05f] via-transparent to-[#ff8c42]'
-                                    }`}
-                                />
-                                <div className="relative w-12 h-12 mb-4 rounded-[18px] bg-[#f4f5f0] border border-white shadow-inner flex items-center justify-center">
-                                    <service.icon
-                                        className={index % 2 === 0 ? 'text-[#ff8c42]' : 'text-[#386fd5]'}
-                                        size={22}
-                                    />
+                                <div className="w-14 h-14 mb-8 rounded-button bg-surface-muted border border-border flex items-center justify-center transition-colors group-hover:bg-primary group-hover:text-white">
+                                    <service.icon size={28} />
                                 </div>
-                                <h3 className="relative text-xl font-semibold text-[#2b2f33]">
+                                <h3 className="text-xl font-bold text-ink mb-4">
                                     {t(`home.services.items.${service.key}.title`)}
                                 </h3>
-                                <p className="relative mt-2 text-sm text-[#6c7075]">
+                                <p className="text-ink-muted text-sm leading-relaxed mb-8">
                                     {t(`home.services.items.${service.key}.description`)}
                                 </p>
                                 <Link
                                     to="/services"
-                                    className="relative inline-flex items-center mt-6 text-sm font-semibold text-[#2b2f33]"
+                                    className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-primary hover:text-primary/80"
                                 >
                                     {t('home.services.learnMore')}
-                                    <ArrowRight size={16} className="ml-1 text-[#386fd5]" />
+                                    <ArrowRight size={14} className="ml-2 transition-transform group-hover:translate-x-1" />
                                 </Link>
                             </motion.div>
                         ))}
@@ -236,184 +157,142 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Product Categories */}
-            <section className="py-16 bg-[#f4f5f0]">
-                <div className="container px-4 mx-auto lg:px-8">
-                    <div className="flex flex-col gap-4 text-center">
-                        <span className="inline-flex items-center justify-center self-center px-4 py-1 text-xs font-semibold tracking-wide text-[#a8d05f] uppercase rounded-full border border-[#a8d05f]/30 bg-white">
+            {/* Featured Products */}
+            <section className="py-24 bg-corporate-blue text-white overflow-hidden relative">
+                <div className="absolute top-0 right-0 w-1/3 h-full bg-white/[0.02] -skew-x-12 translate-x-1/2" />
+
+                <div className="container mx-auto relative z-10">
+                    <div className="text-center max-w-3xl mx-auto mb-20">
+                        <span className="text-xs font-bold uppercase tracking-[0.3em] text-primary mb-4 block">
                             {t('home.products.badge')}
                         </span>
-                        <h2 className="text-3xl font-semibold text-[#222222] lg:text-4xl">
+                        <h2 className="text-3xl md:text-5xl font-bold mb-6">
                             {t('home.products.title')}
                         </h2>
-                        <p className="max-w-2xl mx-auto text-base text-[#6f6f6f]">
+                        <div className="w-20 h-1 bg-secondary mx-auto mb-8 rounded-full" />
+                        <p className="text-white/60 text-lg">
                             {t('home.products.subtitle')}
                         </p>
                     </div>
-                    <div className="grid gap-6 mt-12 md:grid-cols-2 lg:grid-cols-3">
+
+                    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                         {products.map((product, index) => (
                             <motion.div
                                 key={product.key}
-                                whileHover={{ y: -4 }}
-                                className="p-6 text-left bg-white border border-[#e2e4da] rounded-[28px] shadow-[0_15px_40px_rgba(43,47,51,0.08)]"
+                                whileHover={{ scale: 1.02 }}
+                                className="p-8 rounded-corporate bg-white/5 border border-white/10 backdrop-blur-sm transition-all hover:bg-white/10"
                             >
-                                <div
-                                    className={`h-1 w-16 rounded-full ${
-                                        index % 2 === 0 ? 'bg-[#ff8c42]' : 'bg-[#a8d05f]'
-                                    }`}
-                                />
-                                <div className="flex items-center justify-between">
-                                    <div
-                                        className={`w-12 h-12 rounded-2xl flex items-center justify-center border border-white ${
-                                            index % 2 === 0
-                                                ? 'bg-gradient-to-br from-[#ffe1ce] to-[#fff4ef]'
-                                                : 'bg-gradient-to-br from-[#e1ebff] to-[#f6f9ff]'
-                                        }`}
-                                    >
-                                        <product.icon
-                                            className={index % 2 === 0 ? 'text-[#ff8c42]' : 'text-[#386fd5]'}
-                                            size={22}
-                                        />
+                                <div className="flex justify-between items-start mb-10">
+                                    <div className="w-12 h-12 rounded-button bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
+                                        <product.icon size={24} className="text-white" />
                                     </div>
-                                    <span className="text-xs font-semibold tracking-[0.3em] uppercase text-[#6c7075]">
+                                    <span className="text-[10px] font-bold uppercase tracking-widest text-secondary bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">
                                         {t(`home.products.items.${product.key}.count`)}
                                     </span>
                                 </div>
-                                <h3 className="mt-4 text-xl font-semibold text-[#2b2f33]">
-                                    {t(`home.products.items.${product.key}.name`)}
-                                </h3>
-                                <div className="mt-4 flex items-center justify-between text-sm text-[#6c7075]">
-                                    <span>{t('home.products.discover')}</span>
-                                    <ArrowRight size={16} className="text-[#386fd5]" />
-                                </div>
+                                <h3 className="text-xl font-bold mb-4">{t(`home.products.items.${product.key}.name`)}</h3>
+                                <Link to="/products" className="flex items-center text-sm font-semibold text-white/40 hover:text-white transition-colors group">
+                                    {t('home.products.discover')}
+                                    <ArrowRight size={14} className="ml-2 transition-transform group-hover:translate-x-1" />
+                                </Link>
                             </motion.div>
                         ))}
                     </div>
-                    <div className="mt-10 text-center">
-                        <Link to="/products" className="btn-orange">
+
+                    <div className="mt-16 text-center">
+                        <Link to="/products" className="btn-primary px-10 py-4">
                             {t('home.products.cta')}
-                            <ArrowRight size={18} className="ml-2" />
+                            <ArrowRight size={20} className="ml-3" />
                         </Link>
                     </div>
                 </div>
             </section>
 
-            {/* Capabilities */}
-            <section className="py-16 bg-lemon-blend">
-                <div className="container px-4 mx-auto lg:px-8">
-                    <div className="grid gap-12 lg:grid-cols-2">
-                        <div>
-                            <span className="inline-flex items-center px-4 py-1 text-xs font-semibold tracking-wide text-[#a8d05f] uppercase rounded-full border border-[#a8d05f]/30 bg-[#f9faf3]">
-                                {t('home.whyChooseUs.badge')}
-                            </span>
-                            <h2 className="mt-4 text-3xl font-semibold text-[#2b2f33] lg:text-4xl">
-                                {t('home.whyChooseUs.title')}
-                            </h2>
-                            <p className="mt-3 text-base text-[#6c7075]">
-                                {t('home.whyChooseUs.subtitle')}
-                            </p>
-                            <div className="flex flex-col gap-5 mt-8">
-                                {processKeys.map((key, index) => (
-                                    <div key={key} className="flex items-start gap-4 p-4 border border-[#e2e4da] rounded-2xl bg-[#f9faf3]">
-                                        <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-white shadow-inner">
-                                            <LineChart
-                                                className={index % 2 === 0 ? 'text-[#386fd5]' : 'text-[#ff8c42]'}
-                                                size={20}
-                                            />
+            {/* Why Choose Us */}
+            <section className="py-24 bg-surface-muted">
+                <div className="container mx-auto">
+                    <div className="grid lg:grid-cols-2 gap-20 items-center">
+                        <div className="order-2 lg:order-1">
+                            <div className="grid sm:grid-cols-2 gap-4">
+                                {safeBenefits.map((benefit, index) => (
+                                    <div key={index} className="p-6 bg-white rounded-corporate border border-border shadow-sm flex items-start gap-4">
+                                        <div className={`p-2 rounded-button ${index % 2 === 0 ? 'bg-primary/10 text-primary' : 'bg-secondary/10 text-secondary'}`}>
+                                            <CheckCircle size={20} />
                                         </div>
-                                        <div>
-                                            <p className="font-semibold text-[#2b2f33]">
-                                                {t(`home.services.items.${key}.title`)}
-                                            </p>
-                                            <p className="text-sm text-[#6c7075]">
-                                                {t(`home.services.items.${key}.description`)}
-                                            </p>
-                                        </div>
+                                        <p className="font-bold text-ink text-sm leading-tight">{benefit}</p>
                                     </div>
                                 ))}
                             </div>
                         </div>
-                        <div className="grid gap-4 sm:grid-cols-2">
-                            {safeBenefits.slice(0, 4).map((benefit, index) => (
-                                <div
-                                    key={benefit}
-                                    className="p-5 border-l-4 rounded-2xl border-[#e2e4da] bg-white shadow-[0_15px_35px_rgba(43,47,51,0.06)]"
-                                >
-                                    <div className="flex items-center gap-3">
-                                        <Shield
-                                            className={index % 2 === 0 ? 'text-[#386fd5]' : 'text-[#a8d05f]'}
-                                            size={18}
-                                        />
-                                        <p className="text-sm font-semibold text-[#2b2f33]">{benefit}</p>
+                        <div className="order-1 lg:order-2">
+                            <span className="text-xs font-bold uppercase tracking-[0.3em] text-primary mb-4 block">
+                                {t('home.whyChooseUs.badge')}
+                            </span>
+                            <h2 className="text-3xl md:text-5xl font-bold text-ink mb-8">
+                                {t('home.whyChooseUs.title')}
+                            </h2>
+                            <p className="text-ink-muted text-lg mb-10 leading-relaxed">
+                                {t('home.whyChooseUs.subtitle')}
+                            </p>
+
+                            <div className="space-y-4">
+                                {processKeys.map((key, index) => (
+                                    <div key={key} className="flex items-center gap-6 p-4 bg-white rounded-corporate border-l-4 border-l-secondary shadow-sm">
+                                        <div className="w-10 h-10 rounded-full bg-secondary/10 text-secondary flex items-center justify-center font-bold">
+                                            0{index + 1}
+                                        </div>
+                                        <h4 className="font-bold text-ink">{t(`home.services.items.${key}.title`)}</h4>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Testimonials */}
-            <section className="py-16 bg-warm-gradient">
-                <div className="container px-4 mx-auto lg:px-8">
-                    <div className="text-center">
-                        <span className="inline-flex items-center justify-center px-4 py-1 text-xs font-semibold tracking-wide text-[#ff8c42] uppercase rounded-full border border-[#ff8c42]/30 bg-white">
+            <section className="py-24 bg-white">
+                <div className="container mx-auto">
+                    <div className="text-center max-w-3xl mx-auto mb-20">
+                        <span className="text-xs font-bold uppercase tracking-[0.3em] text-secondary mb-4 block">
                             {t('home.testimonials.badge')}
                         </span>
-                        <h2 className="mt-4 text-3xl font-semibold text-[#2b2f33] lg:text-4xl">
+                        <h2 className="text-3xl md:text-5xl font-bold text-ink mb-6">
                             {t('home.testimonials.title')}
                         </h2>
-                        <p className="max-w-2xl mx-auto mt-3 text-base text-[#6c7075]">
+                        <p className="text-ink-muted text-lg">
                             {t('home.testimonials.subtitle')}
                         </p>
                     </div>
-                    <div className="grid gap-6 mt-12 md:grid-cols-3">
+
+                    <div className="grid gap-8 md:grid-cols-3">
                         {testimonials.map((testimonial, index) => (
                             <motion.div
                                 key={testimonial.key}
-                                whileHover={{ y: -6 }}
-                                className="h-full p-6 bg-white border border-[#e2e4da] rounded-[28px] shadow-[0_20px_45px_rgba(43,47,51,0.08)]"
+                                whileHover={{ y: -10 }}
+                                className="relative p-10 rounded-corporate bg-surface-muted border border-border group"
                             >
-                                <div
-                                    className={`h-1 w-20 rounded-full mb-4 ${
-                                        index % 2 === 0 ? 'bg-[#ff8c42]' : 'bg-[#a8d05f]'
-                                    }`}
-                                />
-                                <div className="flex items-center justify-between mb-4">
-                                    <div className="flex gap-1 text-[#ff8c42]" aria-hidden="true">
-                                        {[...Array(testimonial.rating)].map((_, starIndex) => (
-                                            <span key={starIndex}>★</span>
-                                        ))}
-                                    </div>
-                                    <span
-                                        className="inline-flex px-3 py-1 text-xs font-semibold tracking-[0.3em] uppercase rounded-full text-[#386fd5] bg-[#e7edff]"
-                                        style={{ borderColor: '#386fd5' }}
-                                    >
-                                        {index + 1}
-                                    </span>
+                                <div className="absolute -top-4 left-10 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white shadow-lg">
+                                    <span className="text-xl font-serif">“</span>
                                 </div>
-                                <p className="text-sm leading-relaxed text-[#4b4b4b]">
+                                <div className="flex gap-1 mb-8">
+                                    {[...Array(5)].map((_, i) => (
+                                        <Star key={i} size={14} className={i < testimonial.rating ? 'fill-primary text-primary' : 'text-border'} />
+                                    ))}
+                                </div>
+                                <p className="text-ink leading-relaxed mb-10 italic">
                                     “{t(`home.testimonials.items.${testimonial.key}.text`)}”
                                 </p>
-                                <div className="pt-6 mt-6 border-t border-[#f0f1ea]">
-                                    <p className="text-sm font-semibold text-[#2b2f33]">
-                                        {t(`home.testimonials.items.${testimonial.key}.name`)}
-                                    </p>
-                                    <p className="text-xs uppercase tracking-[0.2em] text-[#6c7075]">
-                                        {t(`home.testimonials.items.${testimonial.key}.company`)}
-                                    </p>
+                                <div className="flex items-center gap-4 pt-8 border-t border-border">
+                                    <div className="w-12 h-12 rounded-full bg-white border border-border flex items-center justify-center text-primary font-bold">
+                                        {testimonial.name.charAt(0)}
+                                    </div>
+                                    <div>
+                                        <p className="font-bold text-ink leading-none mb-1">{t(`home.testimonials.items.${testimonial.key}.name`)}</p>
+                                        <p className="text-[10px] font-bold uppercase tracking-widest text-ink-muted">{t(`home.testimonials.items.${testimonial.key}.company`)}</p>
+                                    </div>
                                 </div>
                             </motion.div>
-                        ))}
-                    </div>
-                    <div className="flex justify-center gap-3 mt-10">
-                        {testimonials.map((_, index) => (
-                            <span
-                                key={index}
-                                className={`w-2 h-2 rounded-full ${
-                                    index === 0 ? 'bg-[#386fd5]' : 'bg-[#c5c8bc]'
-                                }`}
-                            />
                         ))}
                     </div>
                 </div>
@@ -422,21 +301,21 @@ const Home = () => {
             <CTA
                 title={t('home.cta.title')}
                 description={t('home.cta.description')}
-                backgroundClass="bg-gradient-to-r from-[#2b2f33] via-[#1f2125] to-[#2b2f33]"
+                backgroundClass="bg-primary overflow-hidden relative"
                 textColor="text-white"
-                className="relative overflow-hidden"
+                className="py-20"
                 buttons={[
                     {
                         text: t('common.contactUs'),
                         to: '/contact',
                         icon: 'Phone',
-                        className: 'bg-white text-[#222222] hover:bg-[#f5f5f0]'
+                        className: 'bg-corporate-blue text-white hover:bg-corporate-blue/90 border-none'
                     },
                     {
                         text: t('common.ourServices'),
                         to: '/services',
                         icon: 'Wrench',
-                        className: 'bg-[#ff8c42] text-white hover:bg-[#f7792a]'
+                        className: 'bg-white text-primary hover:bg-surface-muted border-none'
                     }
                 ]}
             />

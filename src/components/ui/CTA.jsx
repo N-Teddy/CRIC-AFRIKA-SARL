@@ -18,8 +18,8 @@ const CTA = ({
     description,
     buttons,
     gradient,
-    backgroundClass = 'bg-[#f5f5f0]',
-    textColor = 'text-[#222222]',
+    backgroundClass = 'bg-surface-muted',
+    textColor = 'text-ink',
     className = '',
     icon = null,
     iconAnimation = null
@@ -41,50 +41,47 @@ const CTA = ({
     const sectionBackground = gradient
         ? `bg-gradient-to-r ${gradient}`
         : backgroundClass
-    const descriptionColor = textColor === 'text-white' ? 'text-white/80' : 'text-[#6f6f6f]'
+    const descriptionColor = textColor.includes('white') ? 'text-white/70' : 'text-ink-muted'
 
     return (
-        <section className={`py-20 ${sectionBackground} ${className}`}>
-            <div className="container px-4 mx-auto text-center lg:px-8">
+        <section className={`py-24 ${sectionBackground} ${className}`}>
+            <div className="container mx-auto text-center">
                 <motion.div
-                    className="max-w-4xl mx-auto"
-                    initial={{ opacity: 0, y: 30 }}
+                    className="max-w-3xl mx-auto"
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
                 >
                     {/* Animated Icon Section */}
                     {IconComponent && (
-                        <div className="mb-8">
-                            <motion.div
-                                animate={
-                                    iconAnimation || {
-                                        rotate: [0, 5, -5, 5, 0]
+                        <div className="mb-10">
+                            <div className="inline-flex items-center justify-center w-24 h-24 bg-white/10 backdrop-blur-sm rounded-corporate border border-white/20">
+                                <motion.div
+                                    animate={
+                                        iconAnimation || {
+                                            y: [0, -10, 0]
+                                        }
                                     }
-                                }
-                                transition={
-                                    iconAnimation
-                                        ? undefined
-                                        : {
-                                              duration: 2,
-                                              repeat: Infinity,
-                                              repeatDelay: 3
-                                          }
-                                }
-                                className="inline-block"
-                            >
-                                <IconComponent className={textColor} size={80} />
-                            </motion.div>
+                                    transition={{
+                                        duration: 4,
+                                        repeat: Infinity,
+                                        ease: "easeInOut"
+                                    }}
+                                >
+                                    <IconComponent className={textColor} size={48} />
+                                </motion.div>
+                            </div>
                         </div>
                     )}
 
-                    <h2 className={`mb-4 text-3xl font-semibold ${textColor} lg:text-4xl`}>
+                    <h2 className={`mb-6 text-4xl font-extrabold tracking-tight ${textColor} lg:text-5xl`}>
                         {title}
                     </h2>
-                    <p className={`mb-8 text-base leading-relaxed ${descriptionColor}`}>
+                    <p className={`mb-12 text-lg leading-relaxed ${descriptionColor}`}>
                         {description}
                     </p>
-                    <div className="flex flex-wrap justify-center gap-3">
+                    <div className="flex flex-wrap justify-center gap-4">
                         {buttons.map((button, index) => {
                             const ButtonIconComponent = iconMap[button.icon]
                             const isExternal =
@@ -95,24 +92,19 @@ const CTA = ({
                             const buttonContent = (
                                 <>
                                     {ButtonIconComponent && (
-                                        <ButtonIconComponent className="inline mr-2" size={20} />
+                                        <ButtonIconComponent className="mr-3" size={20} />
                                     )}
-                                    {button.text}
+                                    <span className="font-bold uppercase tracking-widest text-xs">{button.text}</span>
                                 </>
                             )
 
-                            // Common props WITHOUT the key
                             const commonProps = {
-                                className: `inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-full transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${button.className}`
+                                className: `inline-flex items-center justify-center px-10 py-5 rounded-button transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-xl ${button.className}`
                             }
 
                             if (isExternal) {
                                 return (
-                                    <a
-                                        key={index} // Key passed directly here
-                                        href={button.href}
-                                        {...commonProps}
-                                    >
+                                    <a key={index} href={button.href} {...commonProps}>
                                         {buttonContent}
                                     </a>
                                 )
@@ -120,22 +112,14 @@ const CTA = ({
 
                             if (button.to) {
                                 return (
-                                    <Link
-                                        key={index} // Key passed directly here
-                                        to={button.to}
-                                        {...commonProps}
-                                    >
+                                    <Link key={index} to={button.to} {...commonProps}>
                                         {buttonContent}
                                     </Link>
                                 )
                             }
 
                             return (
-                                <button
-                                    key={index} // Key passed directly here
-                                    onClick={button.onClick}
-                                    {...commonProps}
-                                >
+                                <button key={index} onClick={button.onClick} {...commonProps}>
                                     {buttonContent}
                                 </button>
                             )

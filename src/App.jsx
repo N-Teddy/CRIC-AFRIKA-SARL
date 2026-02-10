@@ -4,6 +4,7 @@ import { HelmetProvider } from 'react-helmet-async'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import ScrollToTop from './components/ui/ScrollToTop'
+import ScrollToTopOnRoute from './components/ui/ScrollToTopOnRoute'
 import WhatsAppButton from './components/ui/WhatsAppButton'
 import { routes } from './constants/routes'
 import './styles/global.css'
@@ -14,6 +15,7 @@ function App() {
         <HelmetProvider>
             <TranslationProvider>
                 <Router>
+                    <ScrollToTopOnRoute />
                     <div className="min-h-screen bg-white">
                         <Header />
                         <main>

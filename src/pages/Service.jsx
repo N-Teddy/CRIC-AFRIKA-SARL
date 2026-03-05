@@ -54,12 +54,12 @@ const Services = () => {
                 />
 
                 {/* Services Grid */}
-                <section className="py-16 bg-warm-gradient">
+                <section className="py-16 bg-surface-warm">
                     <div className="container px-4 mx-auto lg:px-8">
                         {services.map((service, index) => (
                             <motion.div
                                 key={service.title}
-                                className="p-8 mb-8 bg-white border rounded-3xl border-[#e1e1e1]"
+                                className="p-8 mb-8 bg-white border rounded-[var(--radius-md)] border-border"
                                 initial={{ opacity: 0, y: 24 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.25, delay: index * 0.05 }}
@@ -68,25 +68,24 @@ const Services = () => {
                                 <div className="grid items-center gap-8 lg:grid-cols-2">
                                     <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                                         <div className="flex items-center gap-4 mb-6">
-                                            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#e7efd5]">
-                                                <service.icon className="text-[#a8d05f]" size={22} />
+                                            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-secondary/10">
+                                                <service.icon className="text-secondary" size={22} />
                                             </div>
                                             <div>
                                                 <span
-                                                    className={`text-sm font-semibold ${
-                                                        service.color === 'orange'
-                                                            ? 'text-primary-orange'
-                                                            : 'text-lemon-green'
-                                                    } uppercase tracking-wide`}
+                                                    className={`text-sm font-semibold ${service.color === 'orange'
+                                                        ? 'text-primary-orange'
+                                                        : 'text-lemon-green'
+                                                        } uppercase tracking-wide`}
                                                 >
                                                     {t(`services.items.${service.key}.category`)}
                                                 </span>
-                                                <h2 className="text-3xl font-semibold text-[#222222]">
+                                                <h2 className="text-3xl font-bold text-ink">
                                                     {t(`services.items.${service.key}.title`)}
                                                 </h2>
                                             </div>
                                         </div>
-                                        <p className="mb-6 text-base leading-relaxed text-[#4b4b4b]">
+                                        <p className="mb-6 text-base leading-relaxed text-ink-muted">
                                             {t(`services.items.${service.key}.description`)}
                                         </p>
                                         <ul className="mb-6 space-y-3">
@@ -95,28 +94,26 @@ const Services = () => {
                                             }).map((feature, featureIndex) => (
                                                 <li key={featureIndex} className="flex items-start">
                                                     <CheckCircle
-                                                        className={`${
-                                                            featureIndex % 2 === 0
-                                                                ? 'text-lemon-green'
-                                                                : 'text-primary-orange'
-                                                        } text-xl mr-3 mt-1 flex-shrink-0`}
+                                                        className={`${featureIndex % 2 === 0
+                                                            ? 'text-lemon-green'
+                                                            : 'text-primary-orange'
+                                                            } text-xl mr-3 mt-1 flex-shrink-0`}
                                                     />
-                                                    <span className="text-[#4b4b4b]">{feature}</span>
+                                                    <span className="text-ink-muted">{feature}</span>
                                                 </li>
                                             ))}
                                         </ul>
                                         <Link
                                             to="/contact"
-                                            className={service.color === 'orange' ? 'btn-orange' : 'btn-green'}
+                                            className="btn-primary"
                                         >
                                             <Phone className="mr-2" size={16} />
                                             {t('common.getQuote')}
                                         </Link>
                                     </div>
                                     <div
-                                        className={`overflow-hidden rounded-2xl border border-[#e1e1e1] ${
-                                            index % 2 === 1 ? 'lg:order-1' : ''
-                                        }`}
+                                        className={`overflow-hidden rounded-[var(--radius-md)] border border-border ${index % 2 === 1 ? 'lg:order-1' : ''
+                                            }`}
                                     >
                                         <motion.img
                                             src={service.image}
@@ -135,7 +132,7 @@ const Services = () => {
                 </section>
 
                 {/* Service Process */}
-                <section className="py-16 bg-[#fefcf8]">
+                <section className="py-16 bg-surface-warm">
                     <div className="container px-4 mx-auto lg:px-8">
                         <motion.div
                             className="mb-16 text-center"
@@ -144,10 +141,10 @@ const Services = () => {
                             transition={{ duration: 0.25 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="mb-4 text-4xl font-semibold lg:text-5xl text-[#222222]">
+                            <h2 className="mb-4 text-h2 font-bold text-ink">
                                 {t('services.process.title')}
                             </h2>
-                            <p className="max-w-3xl mx-auto text-base text-[#6f6f6f]">
+                            <p className="max-w-3xl mx-auto text-base text-ink-muted">
                                 {t('services.process.subtitle')}
                             </p>
                         </motion.div>
@@ -166,7 +163,7 @@ const Services = () => {
                                     variants={itemVariants}
                                 >
                                     <div className="relative mb-6">
-                                        <div className="flex items-center justify-center w-20 h-20 mx-auto text-2xl font-semibold text-[#222222] border rounded-full border-[#e1e1e1] bg-[#f9faf3]">
+                                        <div className="flex items-center justify-center w-20 h-20 mx-auto text-2xl font-bold text-ink border rounded-full border-border bg-surface-warm">
                                             <span>
                                                 {step.number}
                                             </span>
@@ -177,10 +174,10 @@ const Services = () => {
                                             </div>
                                         )}
                                     </div>
-                                    <h3 className="mb-3 text-xl font-semibold text-[#222222]">
+                                    <h3 className="mb-3 text-xl font-bold text-ink">
                                         {t(`services.process.steps.${step.key}.title`)}
                                     </h3>
-                                    <p className="text-[#6f6f6f]">
+                                    <p className="text-ink-muted">
                                         {t(`services.process.steps.${step.key}.description`)}
                                     </p>
                                 </motion.div>
@@ -190,7 +187,7 @@ const Services = () => {
                 </section>
 
                 {/* Service Guarantees */}
-                <section className="py-16 bg-lemon-blend">
+                <section className="py-16 bg-surface-warm">
                     <div className="container px-4 mx-auto lg:px-8">
                         <motion.div
                             className="mb-16 text-center"
@@ -199,10 +196,10 @@ const Services = () => {
                             transition={{ duration: 0.25 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="mb-4 text-4xl font-semibold lg:text-5xl text-[#222222]">
+                            <h2 className="mb-4 text-h2 font-bold text-ink">
                                 {t('services.guarantees.title')}
                             </h2>
-                            <p className="max-w-3xl mx-auto text-base text-[#6f6f6f]">
+                            <p className="max-w-3xl mx-auto text-base text-ink-muted">
                                 {t('services.guarantees.subtitle')}
                             </p>
                         </motion.div>
@@ -217,23 +214,23 @@ const Services = () => {
                             {guarantees.map((guarantee, index) => (
                                 <motion.div
                                     key={guarantee.title}
-                                    className="p-6 bg-white border rounded-2xl border-[#e1e1e1]"
+                                    className="p-6 bg-white border rounded-[var(--radius-md)] border-border"
                                     variants={itemVariants}
                                 >
-                                    <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-[#f9faf3]">
+                                    <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-surface-warm">
                                         <guarantee.icon
                                             className={
                                                 guarantee.color === 'orange'
-                                                    ? 'text-[#ff8c42]'
-                                                    : 'text-[#a8d05f]'
+                                                    ? 'text-primary'
+                                                    : 'text-secondary'
                                             }
                                             size={20}
                                         />
                                     </div>
-                                    <h3 className="mb-2 text-xl font-semibold text-[#222222]">
+                                    <h3 className="mb-2 text-xl font-bold text-ink">
                                         {t(`services.guarantees.items.${guarantee.key}.title`)}
                                     </h3>
-                                    <p className="text-sm text-[#6f6f6f] leading-relaxed">
+                                    <p className="text-sm text-ink-muted leading-relaxed">
                                         {t(`services.guarantees.items.${guarantee.key}.description`)}
                                     </p>
                                 </motion.div>
@@ -246,7 +243,7 @@ const Services = () => {
                 <CTA
                     title={t('services.cta.title')}
                     description={t('services.cta.description')}
-                    backgroundClass="bg-gradient-to-r from-[#2b2f33] via-[#1f2125] to-[#2b2f33]"
+                    backgroundClass="bg-dark"
                     textColor="text-white"
                     className="relative overflow-hidden"
                     buttons={[
@@ -254,13 +251,13 @@ const Services = () => {
                             text: t('common.contactUs'),
                             to: '/contact',
                             icon: 'Phone',
-                            className: 'bg-white text-[#222222] hover:bg-[#f5f5f0]'
+                            className: 'bg-white text-ink hover:bg-surface-muted'
                         },
                         {
                             text: t('common.ourProjects'),
                             to: '/realisations',
                             icon: 'FolderOpen',
-                            className: 'bg-[#ff8c42] text-white hover:bg-[#f7792a]'
+                            className: 'bg-primary text-white hover:bg-primary/90'
                         }
                     ]}
                 />

@@ -54,11 +54,7 @@ const Contact = () => {
                 />
 
                 {/* Contact Info Cards */}
-                <section className="relative py-16 overflow-hidden bg-warm-gradient">
-                    <div className="absolute inset-0 pointer-events-none">
-                        <div className="absolute -top-16 left-0 w-48 h-48 rounded-full bg-[#ff8c42]/20 blur-3xl" aria-hidden="true" />
-                        <div className="absolute bottom-0 right-4 w-56 h-56 rounded-full bg-[#a8d05f]/25 blur-3xl" aria-hidden="true" />
-                    </div>
+                <section className="relative py-16 overflow-hidden bg-surface-warm">
                     <div className="container relative px-4 mx-auto lg:px-8">
                         <motion.div
                             className="grid gap-8 mb-16 md:grid-cols-2 lg:grid-cols-4"
@@ -72,25 +68,25 @@ const Contact = () => {
                                 return (
                                     <motion.div
                                         key={info.title}
-                                        className="p-6 text-center bg-white/85 backdrop-blur border border-white/60 rounded-2xl shadow-[0_20px_45px_rgba(43,47,51,0.12)]"
+                                        className="p-6 text-center bg-white border border-border rounded-[var(--radius-md)] shadow-sm"
                                         variants={itemVariants}
                                     >
-                                        <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-[#f9faf3]">
+                                        <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-surface-warm">
                                             <Icon
                                                 className={
                                                     info.color === 'orange'
-                                                        ? 'text-[#ff8c42]'
-                                                        : 'text-[#a8d05f]'
+                                                        ? 'text-primary'
+                                                        : 'text-secondary'
                                                 }
                                                 size={20}
                                             />
                                         </div>
-                                        <h3 className="mb-2 text-lg font-semibold text-[#222222]">
+                                        <h3 className="mb-2 text-lg font-semibold text-ink">
                                             {t(`contact.info.${info.key}.title`)}
                                         </h3>
                                         <div className="mb-4 space-y-1">
                                             {info.details.map((detail, i) => (
-                                                <p key={i} className="text-sm text-[#6f6f6f]">
+                                                <p key={i} className="text-sm text-ink-muted">
                                                     {detail}
                                                 </p>
                                             ))}
@@ -98,11 +94,10 @@ const Contact = () => {
                                         {info.action && (
                                             <a
                                                 href={info.action.href}
-                                                className={`inline-flex items-center justify-center px-4 py-2 mt-2 text-sm font-semibold rounded-full border ${
-                                                    info.color === 'orange'
-                                                        ? 'text-[#ff8c42] border-[#ff8c42]'
-                                                        : 'text-[#a8d05f] border-[#a8d05f]'
-                                                }`}
+                                                className={`inline-flex items-center justify-center px-4 py-2 mt-2 text-sm font-semibold rounded-[var(--radius-sm)] border ${info.color === 'orange'
+                                                        ? 'text-primary border-primary'
+                                                        : 'text-secondary border-secondary'
+                                                    }`}
                                             >
                                                 {t(`contact.info.${info.key}.action`)}
                                             </a>
@@ -126,71 +121,67 @@ const Contact = () => {
                             {/* Additional Info */}
                             <div className="space-y-8">
                                 {/* Quick Contact */}
-                                <div className="relative p-8 text-white rounded-2xl bg-gradient-to-br from-[#2b2f33] via-[#1f2125] to-[#2b2f33] overflow-hidden">
-                                    <div className="absolute inset-0 pointer-events-none">
-                                        <div className="mesh-overlay opacity-60" />
-                                    </div>
+                                <div className="relative p-8 text-white rounded-[var(--radius-md)] bg-dark overflow-hidden">
                                     <div className="relative z-10">
-                                    <h3 className="mb-4 text-2xl font-semibold">
-                                        {t('contact.quickContact.title')}
-                                    </h3>
-                                    <p className="mb-6 text-white/90">
-                                        {t('contact.quickContact.description')}
-                                    </p>
-                                    <div className="space-y-4">
-                                        <a
-                                            href={`tel:+237${WhatsAppNumber}`}
-                                            className="flex items-center p-4 space-x-3 transition rounded-xl bg-white/10 hover:bg-white/20"
-                                        >
-                                            <Phone className="text-2xl" />
-                                            <div>
-                                                <p className="font-semibold">
-                                                    {t('contact.quickContact.call')}
-                                                </p>
-                                                <p className="text-sm text-white/90">
-                                                    +237{WhatsAppNumber}
-                                                </p>
-                                            </div>
-                                        </a>
-                                        <a
-                                            href={`https://wa.me/237${WhatsAppNumber}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center p-4 space-x-3 transition rounded-xl bg-white/10 hover:bg-white/20"
-                                        >
-                                            <MessageCircle className="text-2xl" />
-                                            <div>
-                                                <p className="font-semibold">
-                                                    {t('contact.quickContact.whatsapp')}
-                                                </p>
-                                                <p className="text-sm text-white/90">
-                                                    {t('contact.quickContact.chat')}
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </div>
+                                        <h3 className="mb-4 text-xl font-bold">
+                                            {t('contact.quickContact.title')}
+                                        </h3>
+                                        <p className="mb-6 text-white/90">
+                                            {t('contact.quickContact.description')}
+                                        </p>
+                                        <div className="space-y-4">
+                                            <a
+                                                href={`tel:+237${WhatsAppNumber}`}
+                                                className="flex items-center p-4 space-x-3 transition rounded-xl bg-white/10 hover:bg-white/20"
+                                            >
+                                                <Phone className="text-2xl" />
+                                                <div>
+                                                    <p className="font-semibold">
+                                                        {t('contact.quickContact.call')}
+                                                    </p>
+                                                    <p className="text-sm text-white/90">
+                                                        +237{WhatsAppNumber}
+                                                    </p>
+                                                </div>
+                                            </a>
+                                            <a
+                                                href={`https://wa.me/237${WhatsAppNumber}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex items-center p-4 space-x-3 transition rounded-xl bg-white/10 hover:bg-white/20"
+                                            >
+                                                <MessageCircle className="text-2xl" />
+                                                <div>
+                                                    <p className="font-semibold">
+                                                        {t('contact.quickContact.whatsapp')}
+                                                    </p>
+                                                    <p className="text-sm text-white/90">
+                                                        {t('contact.quickContact.chat')}
+                                                    </p>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
 
                                 {/* FAQ Quick Links */}
-                                <div className="p-8 bg-white border rounded-2xl border-[#e1e1e1]">
-                                    <h3 className="mb-4 text-2xl font-semibold text-[#222222]">
+                                <div className="p-8 bg-white border rounded-[var(--radius-md)] border-border">
+                                    <h3 className="mb-4 text-xl font-bold text-ink">
                                         {t('contact.faq.title')}
                                     </h3>
                                     <div className="space-y-4">
                                         {faqs.map((faq, index) => (
                                             <div
                                                 key={faq.question}
-                                                className={`border-l-4 pl-4 ${
-                                                    index % 2 === 0
-                                                        ? 'border-primary-orange'
-                                                        : 'border-lemon-green'
-                                                }`}
+                                                className={`border-l-4 pl-4 ${index % 2 === 0
+                                                        ? 'border-primary'
+                                                        : 'border-secondary'
+                                                    }`}
                                             >
-                                                <h4 className="mb-1 text-base font-semibold text-[#222222]">
+                                                <h4 className="mb-1 text-base font-semibold text-ink">
                                                     {t(`contact.faq.items.${faq.key}.question`)}
                                                 </h4>
-                                                <p className="text-sm text-[#6f6f6f]">
+                                                <p className="text-sm text-ink-muted">
                                                     {t(`contact.faq.items.${faq.key}.answer`)}
                                                 </p>
                                             </div>
@@ -205,7 +196,7 @@ const Contact = () => {
                 </section>
 
                 {/* Map Section */}
-                <section id="map" className="py-16 bg-gradient-to-b from-[#f9faf4] via-white to-[#fff2e8]">
+                <section id="map" className="py-16 bg-surface">
                     <div className="container px-4 mx-auto lg:px-8">
                         <motion.div
                             className="mb-12 text-center"
@@ -214,16 +205,16 @@ const Contact = () => {
                             transition={{ duration: 0.25 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="mb-4 text-4xl font-semibold lg:text-5xl text-[#222222]">
+                            <h2 className="mb-4 text-h2 font-bold text-ink">
                                 {t('contact.location.title')}
                             </h2>
-                            <p className="max-w-3xl mx-auto text-base text-[#6f6f6f]">
+                            <p className="max-w-3xl mx-auto text-base text-ink-muted">
                                 {t('contact.location.subtitle')}
                             </p>
                         </motion.div>
 
                         <motion.div
-                            className="overflow-hidden border rounded-3xl border-white/60 shadow-[0_25px_60px_rgba(43,47,51,0.1)] bg-white"
+                            className="overflow-hidden border rounded-[var(--radius-lg)] border-border shadow-sm bg-white"
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.25 }}
@@ -247,7 +238,7 @@ const Contact = () => {
                 <CTA
                     title={t('contact.cta.title')}
                     description={t('contact.cta.description')}
-                    backgroundClass="bg-gradient-to-r from-[#2b2f33] via-[#1f2125] to-[#2b2f33]"
+                    backgroundClass="bg-dark"
                     textColor="text-white"
                     className="relative overflow-hidden"
                     buttons={[
@@ -255,13 +246,13 @@ const Contact = () => {
                             text: t('contact.cta.callNow'),
                             href: `tel:+237 ${WhatsAppNumber}`,
                             icon: 'Phone',
-                            className: 'bg-white text-[#222222] hover:bg-[#f5f5f0]'
+                            className: 'bg-white text-ink hover:bg-surface-muted'
                         },
                         {
                             text: t('common.ourProducts'),
                             to: '/products',
                             icon: 'Box',
-                            className: 'bg-[#ff8c42] text-white hover:bg-[#f7792a]'
+                            className: 'bg-primary text-white hover:bg-primary/90'
                         }
                     ]}
                 />

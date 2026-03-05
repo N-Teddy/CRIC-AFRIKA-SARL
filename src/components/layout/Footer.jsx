@@ -13,13 +13,13 @@ const Footer = () => {
     const safeProductList = Array.isArray(productList) ? productList : []
 
     return (
-        <footer className="pt-20 pb-10 text-white bg-corporate-blue">
+        <footer className="pt-20 pb-10 text-white bg-dark border-t-[3px] border-primary" aria-label="Pied de page">
             <div className="container mx-auto">
                 <div className="grid gap-16 mb-16 md:grid-cols-2 lg:grid-cols-4">
                     {/* Company Info */}
                     <div className="space-y-6">
                         <Link to="/" className="flex items-center space-x-4">
-                            <div className="flex items-center justify-center w-12 h-12 bg-white rounded-corporate">
+                            <div className="flex items-center justify-center w-12 h-12 bg-white rounded-[var(--radius-md)]">
                                 <img src="/logo.png" alt="logo" className="w-8 h-8" />
                             </div>
                             <div>
@@ -79,25 +79,25 @@ const Footer = () => {
                         </h4>
                         <ul className="space-y-5 text-sm">
                             <li className="flex items-start space-x-4">
-                                <div className="p-2 bg-white/5 rounded-button text-secondary">
+                                <div className="p-2 bg-white/5 rounded-[var(--radius-md)] text-secondary">
                                     <MapPin size={16} />
                                 </div>
                                 <span className="text-white/60 mt-1">Douala, Cameroun</span>
                             </li>
                             <li className="flex items-start space-x-4">
-                                <div className="p-2 bg-white/5 rounded-button text-primary">
+                                <div className="p-2 bg-white/5 rounded-[var(--radius-md)] text-primary">
                                     <Phone size={16} />
                                 </div>
                                 <span className="text-white/60 mt-1">+237 {WhatsAppNumber}</span>
                             </li>
                             <li className="flex items-start space-x-4">
-                                <div className="p-2 bg-white/5 rounded-button text-secondary">
+                                <div className="p-2 bg-white/5 rounded-[var(--radius-md)] text-secondary">
                                     <Mail size={16} />
                                 </div>
                                 <span className="text-white/60 mt-1">{Email}</span>
                             </li>
                             <li className="flex items-start space-x-4">
-                                <div className="p-2 bg-white/5 rounded-button text-primary">
+                                <div className="p-2 bg-white/5 rounded-[var(--radius-md)] text-primary">
                                     <Clock size={16} />
                                 </div>
                                 <div className="text-white/60 mt-1">

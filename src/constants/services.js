@@ -26,7 +26,7 @@ export const services = [
             'Câblage et raccordement',
             'Mise à la terre et protection'
         ],
-        image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800',
+        image: 'https://images.unsplash.com/photo-1454165833767-027ffea9e77b?w=1200',
         color: 'orange',
         key: 'electrical'
     },
@@ -42,7 +42,7 @@ export const services = [
             'Diagnostic et dépannage',
             'Fourniture de pièces détachées'
         ],
-        image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800',
+        image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200',
         color: 'green',
         reverse: true,
         key: 'support'
@@ -59,7 +59,7 @@ export const services = [
             'Robotique industrielle',
             'Intégration Industrie 4.0'
         ],
-        image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800',
+        image: 'https://images.unsplash.com/photo-1565439380845-cac04f762635?w=1200',
         color: 'orange',
         key: 'automation'
     },
@@ -75,7 +75,7 @@ export const services = [
             'Tests de charge et performance',
             'Formation des opérateurs'
         ],
-        image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800',
+        image: 'https://images.unsplash.com/photo-1590496733658-953b1b623999?w=1200',
         color: 'green',
         reverse: true,
         key: 'generatorConfig'
@@ -85,14 +85,14 @@ export const services = [
         category: 'Maintenance',
         title: 'Maintenance Parc Engins Lourds et Légers',
         description:
-            "Maintenance préventive et curative de votre parc d'engins de chantier et de manutention. Prolongez la durée de vie de vos équipements et optimisez leur disponibilité.",
+            "Maintenance préventive et curative de votre parc d'engins de chantier and de manutention. Prolongez la durée de vie de vos équipements et optimisez leur disponibilité.",
         features: [
             'Maintenance préventive planifiée',
             'Réparations et révisions complètes',
             'Diagnostic électronique',
             'Gestion de flotte et suivi'
         ],
-        image: 'https://images.unsplash.com/photo-1581092918484-8313e1f7e8d6?w=800',
+        image: 'https://images.unsplash.com/photo-1586528116311-ad86d525974c?w=1200',
         color: 'orange',
         key: 'equipmentMaintenance'
     },
@@ -108,7 +108,7 @@ export const services = [
             'Surveillance en temps réel',
             'Rapports et recommandations'
         ],
-        image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800',
+        image: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=1200',
         color: 'green',
         reverse: true,
         key: 'predictiveMaintenance'

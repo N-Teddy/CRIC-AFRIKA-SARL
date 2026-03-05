@@ -62,9 +62,13 @@ const ContactForm = () => {
             }
         } catch (error) {
             console.error('Error sending message:', error)
+            const errorMsg = error.message.includes('NetworkError') || error.message.includes('failed to fetch')
+                ? 'Impossible de se connecter au serveur. Vérifiez qu\'il est bien lancé.'
+                : t('contact.form.errorMessage')
+
             setSubmitStatus({
                 type: 'error',
-                message: t('contact.form.errorMessage')
+                message: errorMsg
             })
         } finally {
             setIsSubmitting(false)
@@ -72,11 +76,11 @@ const ContactForm = () => {
     }
 
     return (
-        <div className="p-8 bg-white border rounded-2xl border-[#e1e1e1] lg:p-12">
-            <h2 className="mb-2 text-3xl font-semibold text-[#222222]">
+        <div className="p-8 bg-white border rounded-[var(--radius-md)] border-border lg:p-12">
+            <h2 className="mb-2 text-3xl font-bold text-ink">
                 {t('contact.form.title')}
             </h2>
-            <p className="mb-8 text-sm text-[#6f6f6f]">{t('contact.form.subtitle')}</p>
+            <p className="mb-8 text-sm text-ink-muted">{t('contact.form.subtitle')}</p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid gap-6 md:grid-cols-2">
@@ -207,11 +211,10 @@ const ContactForm = () => {
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className={`p-4 rounded-lg ${
-                            submitStatus.type === 'success'
-                                ? 'bg-green-50 border border-green-200 text-green-800'
-                                : 'bg-red-50 border border-red-200 text-red-800'
-                        }`}
+                        className={`p-4 rounded-lg ${submitStatus.type === 'success'
+                            ? 'bg-green-50 border border-green-200 text-green-800'
+                            : 'bg-red-50 border border-red-200 text-red-800'
+                            }`}
                     >
                         <div className="flex items-center">
                             {submitStatus.type === 'success' ? (
@@ -227,7 +230,7 @@ const ContactForm = () => {
                 <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 text-lg font-bold text-white rounded-full btn-orange disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full py-4 text-lg font-bold text-white btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     {isSubmitting ? (
                         <>

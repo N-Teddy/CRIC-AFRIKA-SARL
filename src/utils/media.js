@@ -1,23 +1,23 @@
-export const fallbackImage = '/assets/products/groupe-electrogenes.webp'
+export const fallbackImage = 'https://images.unsplash.com/photo-1541888941259-7b9d9ef9bc3a?w=1200'
 
 export const productImages = {
-    generators: '/assets/products/groupe-electrogenes.webp',
-    compressors: '/assets/products/chariotelevateur_electrique.jpg',
-    safety: '/assets/products/pompage.jpg',
-    fireSafety: '/assets/products/pompage.jpg',
-    pumping: '/assets/products/pompage.jpg',
-    handling: '/assets/products/chariotelevateur_electrique.jpg',
-    motors: '/assets/products/moteur-electrics.jpg',
-    gearboxes: '/assets/products/moteur-electrics.jpg',
-    fillingMachines: '/assets/products/chariotelevateur_electrique.jpg',
-    transformers: '/assets/products/groupe-electrogenes.webp'
+    generators: 'https://images.unsplash.com/photo-1590496733658-953b1b623999?w=1200',
+    compressors: 'https://images.unsplash.com/photo-1622321453005-09ddaccdbd91?w=1200',
+    safety: 'https://images.unsplash.com/photo-1589793907316-f94015df3890?w=1200',
+    fireSafety: 'https://images.unsplash.com/photo-1596751303335-53259ebad1ba?w=1200',
+    pumping: 'https://images.unsplash.com/photo-1621905252507-b35bcadc0d6?w=1200',
+    handling: 'https://images.unsplash.com/photo-1586528116311-ad86d525974c?w=1200',
+    motors: 'https://images.unsplash.com/photo-1601233045618-f29e3a73fa13?w=1200',
+    gearboxes: 'https://images.unsplash.com/photo-1518107612744-839bac19d271?w=1200',
+    fillingMachines: 'https://images.unsplash.com/photo-1513530534585-c7b1394c6d51?w=1200',
+    transformers: 'https://images.unsplash.com/photo-1545641203-7d5700870381?w=1200'
 }
 
 export const heroImages = [
-    '/assets/products/groupe-electrogenes.webp',
-    '/assets/products/pompage.jpg',
-    '/assets/products/chariotelevateur_electrique.jpg',
-    '/assets/products/moteur-electrics.jpg'
+    'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200',
+    'https://images.unsplash.com/photo-1621905252507-b35bcadc0d6?w=1200',
+    'https://images.unsplash.com/photo-1586528116311-ad86d525974c?w=1200',
+    'https://images.unsplash.com/photo-1513828583688-c52646db42da?w=1200'
 ]
 
 export const partnerLogos = [

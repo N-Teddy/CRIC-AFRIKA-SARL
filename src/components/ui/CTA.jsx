@@ -17,12 +17,9 @@ const CTA = ({
     title,
     description,
     buttons,
-    gradient,
-    backgroundClass = 'bg-surface-muted',
-    textColor = 'text-ink',
+    backgroundClass = 'bg-dark',
+    textColor = 'text-white',
     className = '',
-    icon = null,
-    iconAnimation = null
 }) => {
     const iconMap = {
         Phone,
@@ -36,46 +33,19 @@ const CTA = ({
         FileText
     }
 
-    const IconComponent = icon ? iconMap[icon] : null
-
-    const sectionBackground = gradient
-        ? `bg-gradient-to-r ${gradient}`
-        : backgroundClass
     const descriptionColor = textColor.includes('white') ? 'text-white/70' : 'text-ink-muted'
 
     return (
-        <section className={`py-24 ${sectionBackground} ${className}`}>
+        <section className={`py-24 ${backgroundClass} ${className}`}>
             <div className="container mx-auto text-center">
                 <motion.div
                     className="max-w-3xl mx-auto"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: 0.4 }}
                     viewport={{ once: true }}
                 >
-                    {/* Animated Icon Section */}
-                    {IconComponent && (
-                        <div className="mb-10">
-                            <div className="inline-flex items-center justify-center w-24 h-24 bg-white/10 backdrop-blur-sm rounded-corporate border border-white/20">
-                                <motion.div
-                                    animate={
-                                        iconAnimation || {
-                                            y: [0, -10, 0]
-                                        }
-                                    }
-                                    transition={{
-                                        duration: 4,
-                                        repeat: Infinity,
-                                        ease: "easeInOut"
-                                    }}
-                                >
-                                    <IconComponent className={textColor} size={48} />
-                                </motion.div>
-                            </div>
-                        </div>
-                    )}
-
-                    <h2 className={`mb-6 text-4xl font-extrabold tracking-tight ${textColor} lg:text-5xl`}>
+                    <h2 className={`mb-6 text-h2 font-bold tracking-tight ${textColor}`}>
                         {title}
                     </h2>
                     <p className={`mb-12 text-lg leading-relaxed ${descriptionColor}`}>
@@ -99,7 +69,7 @@ const CTA = ({
                             )
 
                             const commonProps = {
-                                className: `inline-flex items-center justify-center px-10 py-5 rounded-button transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-xl ${button.className}`
+                                className: `inline-flex items-center justify-center px-10 py-5 rounded-[var(--radius-md)] transition-all duration-200 hover:-translate-y-0.5 shadow-md hover:shadow-lg ${button.className}`
                             }
 
                             if (isExternal) {

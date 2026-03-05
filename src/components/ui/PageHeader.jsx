@@ -7,18 +7,12 @@ const PageHeader = ({
     title,
     subtitle,
     breadcrumbs,
-    background = 'bg-hero-gradient'
 }) => {
     return (
-        <section className={`relative overflow-hidden pt-28 pb-16 border-b border-[#e1e1e1] ${background}`}>
-            <div className="absolute inset-0 pointer-events-none">
-                <div className="mesh-overlay opacity-50" />
-                <div className="absolute -top-12 right-12 w-48 h-48 rounded-full bg-[#ff8c42]/15 blur-3xl" />
-                <div className="absolute -bottom-12 left-10 w-56 h-56 rounded-full bg-[#a8d05f]/12 blur-3xl" />
-            </div>
-            <div className="container relative px-4 mx-auto text-center lg:px-8">
+        <section className="pt-36 pb-16 bg-surface-warm border-b border-border">
+            <div className="container mx-auto text-center">
                 <motion.h1
-                    className="mb-4 text-4xl font-semibold text-[#222222] lg:text-5xl"
+                    className="text-h1 font-bold text-ink mb-3"
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2 }}
@@ -26,7 +20,7 @@ const PageHeader = ({
                     {title}
                 </motion.h1>
                 <motion.p
-                    className="max-w-2xl mx-auto mb-6 text-base text-[#6f6f6f] lg:text-lg"
+                    className="text-body-lg text-ink-secondary max-w-2xl mx-auto mb-6"
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.25, delay: 0.05 }}
@@ -34,13 +28,13 @@ const PageHeader = ({
                     {subtitle}
                 </motion.p>
                 <motion.nav
-                    className="flex items-center justify-center gap-2 text-sm text-[#6f6f6f]"
+                    className="flex items-center justify-center gap-2 text-caption text-ink-muted"
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.25, delay: 0.1 }}
                     aria-label="Breadcrumb"
                 >
-                    <Link to="/" className="transition-colors duration-150 hover:text-[#222222]">
+                    <Link to="/" className="transition-colors duration-150 hover:text-ink">
                         Accueil
                     </Link>
                     <ChevronRight size={14} aria-hidden="true" />
@@ -50,8 +44,8 @@ const PageHeader = ({
                                 <span
                                     className={
                                         index === breadcrumbs.length - 1
-                                            ? 'text-[#222222]'
-                                            : 'text-[#6f6f6f]'
+                                            ? 'text-ink'
+                                            : 'text-ink-muted'
                                     }
                                 >
                                     {crumb}

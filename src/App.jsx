@@ -17,8 +17,14 @@ function App() {
                 <Router>
                     <ScrollToTopOnRoute />
                     <div className="min-h-screen bg-white">
+                        <a
+                            href="#main-content"
+                            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-6 focus:py-3 focus:bg-primary focus:text-white focus:rounded-[var(--radius-md)] focus:font-bold focus:text-sm focus:shadow-lg"
+                        >
+                            Aller au contenu principal
+                        </a>
                         <Header />
-                        <main>
+                        <main id="main-content">
                             <Routes>
                                 {routes.map(route => (
                                     <Route

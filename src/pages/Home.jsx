@@ -24,7 +24,7 @@ const Home = () => {
             {/* Hero Section */}
             <section className="relative min-h-[90vh] flex items-center pt-28 pb-20 bg-surface-muted overflow-hidden">
                 <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-                    style={{ backgroundImage: 'radial-gradient(#1b365d 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+                    style={{ backgroundImage: 'radial-gradient(var(--color-dark) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
                 <div className="container mx-auto relative z-10">
                     <div className="grid items-center gap-16 lg:grid-cols-2">
@@ -82,7 +82,7 @@ const Home = () => {
                             transition={{ duration: 0.8 }}
                             className="relative"
                         >
-                            <div className="relative z-10 rounded-corporate overflow-hidden shadow-2xl border-4 border-white">
+                            <div className="relative z-10 rounded-[var(--radius-md)] overflow-hidden shadow-2xl border-4 border-white">
                                 <img
                                     src={heroFeatureImage}
                                     alt="CRIC Africa Industrial"
@@ -90,9 +90,9 @@ const Home = () => {
                                     onError={handleImageError}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-corporate-blue/60 to-transparent" />
-                                <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/10 backdrop-blur-md rounded-corporate border border-white/20">
+                                <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/10 backdrop-blur-md rounded-[var(--radius-md)] border border-white/20">
                                     <div className="flex items-center gap-4">
-                                        <div className="p-3 bg-secondary rounded-button text-white shadow-lg">
+                                        <div className="p-3 bg-secondary rounded-[var(--radius-sm)] text-white shadow-lg">
                                             <Shield size={24} />
                                         </div>
                                         <div>
@@ -133,9 +133,9 @@ const Home = () => {
                             <motion.div
                                 key={service.key}
                                 whileHover={{ y: -8 }}
-                                className="group p-8 rounded-corporate border border-border bg-white transition-all hover:shadow-xl hover:border-primary/20"
+                                className="group p-8 rounded-[var(--radius-md)] border border-border bg-white transition-all hover:shadow-xl hover:border-primary/20"
                             >
-                                <div className="w-14 h-14 mb-8 rounded-button bg-surface-muted border border-border flex items-center justify-center transition-colors group-hover:bg-primary group-hover:text-white">
+                                <div className="w-14 h-14 mb-8 rounded-[var(--radius-sm)] bg-surface-muted border border-border flex items-center justify-center transition-colors group-hover:bg-primary group-hover:text-white">
                                     <service.icon size={28} />
                                 </div>
                                 <h3 className="text-xl font-bold text-ink mb-4">
@@ -180,10 +180,10 @@ const Home = () => {
                             <motion.div
                                 key={product.key}
                                 whileHover={{ scale: 1.02 }}
-                                className="p-8 rounded-corporate bg-white/5 border border-white/10 backdrop-blur-sm transition-all hover:bg-white/10"
+                                className="p-8 rounded-[var(--radius-md)] bg-white/5 border border-white/10 backdrop-blur-sm transition-all hover:bg-white/10"
                             >
                                 <div className="flex justify-between items-start mb-10">
-                                    <div className="w-12 h-12 rounded-button bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
+                                    <div className="w-12 h-12 rounded-[var(--radius-sm)] bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
                                         <product.icon size={24} className="text-white" />
                                     </div>
                                     <span className="text-[10px] font-bold uppercase tracking-widest text-secondary bg-secondary/10 px-3 py-1 rounded-full border border-secondary/20">
@@ -215,8 +215,8 @@ const Home = () => {
                         <div className="order-2 lg:order-1">
                             <div className="grid sm:grid-cols-2 gap-4">
                                 {safeBenefits.map((benefit, index) => (
-                                    <div key={index} className="p-6 bg-white rounded-corporate border border-border shadow-sm flex items-start gap-4">
-                                        <div className={`p-2 rounded-button ${index % 2 === 0 ? 'bg-primary/10 text-primary' : 'bg-secondary/10 text-secondary'}`}>
+                                    <div key={index} className="p-6 bg-white rounded-[var(--radius-md)] border border-border shadow-sm flex items-start gap-4">
+                                        <div className={`p-2 rounded-[var(--radius-sm)] ${index % 2 === 0 ? 'bg-primary/10 text-primary' : 'bg-secondary/10 text-secondary'}`}>
                                             <CheckCircle size={20} />
                                         </div>
                                         <p className="font-bold text-ink text-sm leading-tight">{benefit}</p>
@@ -237,7 +237,7 @@ const Home = () => {
 
                             <div className="space-y-4">
                                 {processKeys.map((key, index) => (
-                                    <div key={key} className="flex items-center gap-6 p-4 bg-white rounded-corporate border-l-4 border-l-secondary shadow-sm">
+                                    <div key={key} className="flex items-center gap-6 p-4 bg-white rounded-[var(--radius-md)] border-l-4 border-l-secondary shadow-sm">
                                         <div className="w-10 h-10 rounded-full bg-secondary/10 text-secondary flex items-center justify-center font-bold">
                                             0{index + 1}
                                         </div>
@@ -270,7 +270,7 @@ const Home = () => {
                             <motion.div
                                 key={testimonial.key}
                                 whileHover={{ y: -10 }}
-                                className="relative p-10 rounded-corporate bg-surface-muted border border-border group"
+                                className="relative p-10 rounded-[var(--radius-md)] bg-surface-muted border border-border group"
                             >
                                 <div className="absolute -top-4 left-10 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white shadow-lg">
                                     <span className="text-xl font-serif">“</span>
